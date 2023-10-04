@@ -1,0 +1,118 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="page-wrapper">
+  <!-- Navbar Marketplace-->
+  <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+  
+  <!-- Used for marketplace templates with filters on top-->
+
+
+
+  
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+            <!-- <li class="breadcrumb-item text-nowrap"><a href="#">Account</a></li> -->
+            <li class="breadcrumb-item text-nowrap active" aria-current="page">Orders history</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">Marketplace category</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container pb-5 mb-2 mb-md-4">
+    <!-- Toolbar-->
+    <div class="bg-light shadow-lg rounded-3 mt-n5 mb-4">
+      <div class="d-flex align-items-center ps-2">
+        <!-- Search-->
+        <div class="input-group"><i class="ci-search position-absolute top-50 start-0 translate-middle-y fs-md ms-3"></i>
+          <input class="form-control border-0 shadow-none" type="text" placeholder="Search in this category...">
+        </div>
+        <!-- Sort-->
+        <div class="d-flex align-items-center">
+          <div class="dropdown py-4 border-start"><a class="nav-link-style fs-md fw-medium dropdown-toggle p-4" href="#" data-bs-toggle="dropdown"><span class="d-inline-block py-1"><i class="ci-thumb-up align-middle opacity-60 mt-n1 me-2"></i>Popular</span></a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#"><i class="ci-flag me-2 opacity-60"></i>Newest</a></li>
+              <li><a class="dropdown-item" href="#"><i class="ci-rocket me-2 opacity-60"></i>Bestsellers</a></li>
+              <li><a class="dropdown-item" href="#"><i class="ci-loading me-2 opacity-60"></i>Updated</a></li>
+              <li><a class="dropdown-item" href="#"><i class="ci-arrow-down me-2 opacity-60"></i>Low Price</a></li>
+              <li><a class="dropdown-item" href="#"><i class="ci-arrow-up me-2 opacity-60"></i>High Price</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Pagination-->
+        <div class="d-none d-md-flex align-items-center border-start ps-4 me-2"><a href="{% url 'registerVendor' %}" class="btn btn-primary" ><i class="ci-edit opacity-60 me-2"></i>Add Your Business </a></div>
+      </div>
+    </div>
+    <!-- Products grid-->
+    <div class="row pt-3 mx-n2">
+      <!-- Product-->
+      {% for vendor in vendors %}
+      <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-grid-gutter">
+        <div class="card product-card-alt">
+          <div class="product-thumb">
+            <button class="btn-wishlist btn-sm" type="button"><i class="ci-heart"></i></button>
+           <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow fs-base mx-2" href="{% url 'vendor_detail' vendor.vendor_slug %}"><i class="ci-eye"></i></a>
+              <!-- <button class="btn btn-light btn-icon btn-shadow fs-base mx-2" type="button"><i class="ci-cart"></i></button> -->
+            </div> 
+            {% if vendor.user_profile.profile_picture %}
+            <a class="product-thumb-overlay" href="{% url 'vendor_detail' vendor.vendor_slug %}"></a><img src="{{vendor.user_profile.profile_picture.url}}" style="height:276px;width:295px;" alt="Product">
+            {% else %}
+            <img  src="{% static 'img/profile_picture1.jpg' %}" alt="Createx Studio">
+             {% endif %}
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
+              <!-- <div class="text-muted fs-xs me-1">by <a class="product-meta fw-medium" href="#">Createx Std. </a>in <a class="product-meta fw-medium" href="#">Graphics</a></div> -->
+              <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i>
+              </div>
+            </div>
+            <h3 class="product-title fs-sm mb-2"><a href="{% url 'vendor_detail' vendor.vendor_slug %}" >{{vendor.vendor_name}}</a></h3>
+            <!-- <div class="d-flex flex-wrap justify-content-between align-items-center">
+              <div class="fs-sm me-2"><i class="ci-download text-muted me-1"></i>109<span class="fs-xs ms-1">Sales</span></div>
+              <div class="bg-faded-accent text-accent rounded-1 py-1 px-2">$15.<small>00</small></div>
+            </div> -->
+
+            <!-- <a href="{% url 'vendor_detail' vendor.vendor_slug %}" class="btn btn-primary btn-sm d-block w-100 mb-2" type="button"><i class="ci-cart fs-sm me-1"></i>View Products</a> -->
+          </div>
+        </div>
+      </div>
+
+
+
+      
+      {% endfor %}
+    </div>
+    <hr class="my-3">
+    <!-- Pagination-->
+    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+      </ul>
+      <ul class="pagination">
+        <li class="page-item d-sm-none"><span class="page-link page-link-static">1 / 5</span></li>
+        <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">1<span class="visually-hidden">(current)</span></span></li>
+        <li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li>
+        <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
+        <li class="page-item d-none d-sm-block"><a class="page-link" href="#">4</a></li>
+        <li class="page-item d-none d-sm-block"><a class="page-link" href="#">5</a></li>
+      </ul>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+  {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+</main>
+{% endblock %}

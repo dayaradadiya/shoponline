@@ -1,0 +1,1034 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+{% load mathfilters %}
+
+<main class="page-wrapper">
+  
+  {% for item in dispute_cases %}
+  <form class="needs-validation modal fade" id="reject-{{forloop.counter}}"  action="{% url 'shop_rejection' item.id %}" tabindex="-1" method="POST" novalidate>
+    {% csrf_token %}
+    <div class="modal-dialog modal-lg" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Refund Details</h5>
+          <a href="{% url 'close_window_selr' %}"> <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></a>
+        </div>
+        <div class="modal-body">
+          <div class="row gx-4 gy-3">
+            <div class="col-sm-12">
+      
+              <div class="bg-secondary rounded-3 p-4 mb-4">
+            
+                <div class="d-flex align-items-center">
+                  <div class="ps-3">
+                     <label>Shop will process the refund to Customer, if item is already returned to Seller.</label><br> <br>
+                     
+                     
+                     <label>Buyer will receive <b> ${{item.total_product_amount}} </b> </label>
+                     <label for=""><small></small>(If Seller has received item)</small></label><br><br>
+                      <label for=""><b>Note : </b>Seller will not require to return item back to customer if customer already returned item to seller.</label><br> <br>
+                      <label>If Seller has rejected Customer's request, he can offer partial refund to customer or ask customer to return product and offer full refund </label><br> <br>
+                </div>
+                </div>
+              </div>  
+      </div>
+    </div>
+  </div>  
+  
+        
+  <div class="modal-footer">
+  
+  <form action="#" method="POST" >
+  <button type="submit" class="btn btn-primary btn-shadow  btn-sm">ok</button>
+  </form>
+       <a href="{% url 'close_window_admin' %}"><button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Cancel</button></a>
+  
+  </div>
+  
+  
+  </div>
+  
+  </div>
+  </div>
+  </form>
+  {% endfor %}
+
+{% for item in dispute_cases %}
+<form class="needs-validation modal fade" id="approve-{{forloop.counter}}"  action="{% url 'shop_approval' item.id %}" tabindex="-1" method="POST" novalidate>
+  {% csrf_token %}
+  <div class="modal-dialog modal-lg" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Refund Details</h5>
+        <a href="{% url 'close_window_selr' %}"> <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></a>
+      </div>
+      <div class="modal-body">
+        <div class="row gx-4 gy-3">
+          <div class="col-sm-12">
+    
+            <div class="bg-secondary rounded-3 p-4 mb-4">
+          
+              <div class="d-flex align-items-center">
+                <div class="ps-3">
+                   <label>Shop will process the refund to Seller,</label><br> <br>
+                   <label>Seller will receive <b> ${{item.total_product_amount}} </b> </label><br><br>
+
+                   <label for=""><b>Note : </b>Seller will require to return item back to customer if customer already returned item to seller.</label><br> <br>
+
+                   <br><br>
+              </div>
+              </div>
+            </div>  
+    </div>
+  </div>
+</div>  
+
+      
+<div class="modal-footer">
+
+<form action="#" method="POST" >
+<button type="submit" class="btn btn-primary btn-shadow  btn-sm">ok</button>
+</form>
+     <a href="{% url 'close_window_admin' %}"><button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Cancel</button></a>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+</form>
+{% endfor %}
+
+{% for item in dispute_cases %}
+<form class="needs-validation modal fade" id="return-details-{{forloop.counter}}" action="#" tabindex="-1" method="POST" novalidate>
+    {% csrf_token %}
+    <div class="modal-dialog modal-lg" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Return Item Details</h5>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gx-4 gy-3">
+            
+           
+            <div class="col-sm-12">
+      <!-- <h6>Add New Product</h6> -->
+      
+      <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Product Details</th>
+                <th>Refund Amount</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                        {% if item.variant.image  %}
+                        <td class="py-3">
+                        <center>{{item.variant.image_tag_url}}</center></td>
+                        
+                        {% else %}
+                        <td class="py-3">
+                    <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                        
+                        {% endif %}
+                     
+
+                    <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                        {% if item.product.variant == "Size-Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                    </div>
+                                    <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% elif item.product.variant == "Size" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                      </div>
+                         {% elif item.product.variant == "Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% endif %}
+
+                    </td>
+             
+
+                     <td class="py-3">${{ item.total_product_amount }} SGD</td>
+                      <td class="py-3"><span class="badge bg-danger m-0">{{item.return_status}}</span></td>
+                      
+                 
+                   
+                   
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
+     
+    <label class="form-label" for="unp-featured-image">Reason for return: </label>
+    <div>
+    {{item.reason}}
+  </div>
+  
+        <label class="form-label" for="unp-featured-image"><span style="color:red;">*</span> Return Item Images from Customer: </label>
+    
+<div class="bg-light shadow-lg rounded-3 px-4 py-3 mb-5">
+<div class="px-lg-12">
+<div class="row">
+        <div class="col-lg-12 w=100 pe-lg-0 pt-lg-4">
+          <div class="product-gallery">
+                    
+
+                    <div class="product-gallery-preview order-sm-2">
+                   
+                              <div class="product-gallery-preview-item active" id="first">
+                                <img class="image-zoom" src="{{ item.product.featured_image.url }}" data-zoom="{{ item.product.featured_image.url}}" alt="Product image">
+                                  <div class="image-zoom-pane"></div>
+                              </div>
+                      
+                      {% for i in item.refundimages_set.all %} 
+                      <div class="product-gallery-preview-item" id="first{{i.id}}">
+                        <img class="image-zoom" src="{{i.image.url}}" data-zoom="{{i.image.url}}" alt="Product image">
+                          <div class="image-zoom-pane"></div>
+                      </div>
+                      {% endfor %}
+
+                    
+                    </div>
+
+                    <div class="product-gallery-thumblist order-sm-1">
+                  
+                      <a class="product-gallery-thumblist-item" href="#first" ><img src="{{ item.product.featured_image.url }}" alt="Product thumb"></a>
+                      {% for i in item.refundimages_set.all %} 
+                            <a class="product-gallery-thumblist-item" href="#first{{i.id}}" ><img src="{{i.image.url}}" alt="Product thumb"></a>
+                      {% endfor %}
+                    </div>
+
+          </div>
+       
+        </div>
+
+
+
+        </div>
+        </div>
+    </div> 
+
+        <label class="form-label" for="unp-featured-image"><span style="color:red;">*</span> Return Item Images from Vendor: </label>
+        <div class="bg-light shadow-lg rounded-3 px-4 py-3 mb-5">  
+        <div class="px-lg-12">
+            <div class="row">
+                    <div class="col-lg-12 w=100 pe-lg-0 pt-lg-4">
+                      <div class="product-gallery">
+                                
+            
+                                <div class="product-gallery-preview order-sm-2">
+                               
+                                          <div class="product-gallery-preview-item active" id="first">
+                                            <img class="image-zoom" src="{{ item.product.featured_image.url }}" data-zoom="{{ item.product.featured_image.url}}" alt="Product image">
+                                              <div class="image-zoom-pane"></div>
+                                          </div>
+                                  
+                                  {% for i in item.disputeimages_set.all %} 
+                                  <div class="product-gallery-preview-item" id="first{{i.id}}">
+                                    <img class="image-zoom" src="{{i.image.url}}" data-zoom="{{i.image.url}}" alt="Product image">
+                                      <div class="image-zoom-pane"></div>
+                                  </div>
+                                  {% endfor %}
+            
+                                
+                                </div>
+            
+                                <div class="product-gallery-thumblist order-sm-1">
+                              
+                                  <a class="product-gallery-thumblist-item" href="#first" ><img src="{{ item.product.featured_image.url }}" alt="Product thumb"></a>
+                                  {% for i in item.disputeimages_set.all %} 
+                                        <a class="product-gallery-thumblist-item" href="#first{{i.id}}" ><img src="{{i.image.url}}" alt="Product thumb"></a>
+                                  {% endfor %}
+                                </div>
+            
+                      </div>
+                        <br>
+                      <div class="row">
+                        
+
+                        <video width="600" height="600" controls>
+                          <source src="{{item.returndispute.videofile.url}}" type="video/mp4">
+                        </video>
+                      </div> <br>
+                      <div class="row">
+                        <video width="600" height="600" controls>
+                          <source src="{{item.returndispute.videopod.url}}" type="video/mp4">
+                        </video>
+                      </div>
+
+                      <div>
+                        <br><br>
+                        <label><h5><span >* Actions </span></h5></label><br>
+                        <br>
+                          <label><b>Note :</b> </label> <label  style="color:red;">If approved seller will be paid with item amount, buyer's request status will be set as rejected </small></label><br>
+                             <a href="#approve-{{forloop.counter}}" class="btn btn-primary" data-bs-toggle="modal">Approve</a><br>
+                        
+                        </div> <br><br>
+                        <div>
+                          <label><b>Note :</b> </label> <label  style="color:red;">If rejected buyer will be paid with item amount</small></label><br>
+                              <a href="#reject-{{forloop.counter}}" class="btn btn-primary"  data-bs-toggle="modal">Reject</a>
+                              
+                               
+                        </div>
+                      </div>
+                    </div>
+                   
+            
+                    </div>
+                  </div> 
+            </div>
+        </div>
+    
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+    </div>  
+
+  </div>  
+</div>
+        
+
+</div>
+</div>
+</form>
+{% endfor %}
+
+
+
+
+  <!-- Page Title-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+            <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+            </li>
+            <li class="breadcrumb-item text-nowrap active" aria-current="page">Refund Hitory</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">My Refunds</h1>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- <div class="container pb-5 mb-2 mb-md-4"> -->
+      <div class="row">
+        <!-- Sidebar-->
+        {% include 'admin/admin_sidebar.html' %}
+        <!-- Content  -->
+      
+        <section class="col-lg-8 pt-lg-4 pb-4 mb-3">
+          <button class="btn btn-secondary" onclick="history.back()"> <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+          <br><br>
+          <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                      <!-- Tabs-->
+                      <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <li class="nav-item"><a class="nav-link px-0 active" href="#all" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">All</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">All</span></div></a></li>
+                            
+                                <li class="nav-item"><a class="nav-link px-0" href="#dispute" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Dispute</div>
+                                <div class="d-lg-none text-center"><i class="ci-location opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Dispute</span></div></a></li>
+                            
+                                <li class="nav-item"><a class="nav-link px-0" href="#returnNotDelivered" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Return Not Delivered</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Return Not Delivered</span></div></a></li>
+                                
+                                <li class="nav-item"><a class="nav-link px-0" href="#returnReadyToShip" data-bs-toggle="tab" role="tab">
+                                    <div class="d-none d-lg-block">Return ReadyToShip</div>
+                                    <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Return ReadyToShip</span></div></a></li>
+                            
+                        
+                                <li class="nav-item"><a class="nav-link px-0" href="#readytoprocess" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Return ReadyToProcess</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Return ReadyToProcess</span></div></a></li>
+
+                                
+                                    
+                                <li class="nav-item"><a class="nav-link px-0" href="#returnCancelled" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Return Request Cancelled</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Return Request Cancelled</span></div></a></li>
+                        
+                        
+                          
+                      </ul>
+                    <!-- Tab content-->
+                    <div class="tab-content">
+                      <!-- Profile-->
+    <div class="tab-pane fade show active" id="all" role="tabpanel">
+                 
+                            
+      <div class="table-responsive fs-md mb-4">
+
+            <table class="table table-hover mb-0">
+              <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Product Details</th>
+                      <th>Quantity x Product Price</th>
+                      <th>Refund Amount</th>
+                      <th>Status</th>
+                      <th>Return Reason</th>
+                    
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in all_refund %}
+              
+                  <tr>
+                              {% if item.variant.image  %}
+                              <td class="py-3">
+                              <center>{{item.variant.image_tag_url}}</center></td>
+                              
+                              {% else %}
+                              <td class="py-3">
+                          <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                              
+                              {% endif %}
+                           
+
+                          <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                              {% if item.product.variant == "Size-Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                          </div>
+                                          <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% elif item.product.variant == "Size" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                            </div>
+                               {% elif item.product.variant == "Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% endif %}
+
+                          </td>
+                   
+
+                           <td class="py-3">{{item.quantity}} x {{item.product_price }}</td>
+                           <td class="py-3">{{item.total_product_amount}}</td>
+                           <td class="py-3"><span class="badge bg-danger m-0">{{item.return_status}}</span></td>
+                         
+                        
+
+                            <td class="py-3"> {{item.reason}}</td>
+                           
+                       
+                         
+                         
+                  </tr>
+                  <tr></tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          </div>
+                              <!-- Pagination-->  
+                            
+                              <!-- Pagination-->
+                              <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                                {% if all_refund.has_other_pages %}
+                                    <ul class="pagination">
+                                          {% if all_refund.has_previous %}
+                                            
+                                              <li class="page-item"><a class="page-link" href="?page={{all_refund.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                            
+                                            {% else %}
+                                              <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                            
+                                            {% endif %}
+                      
+                                                  {% for i in all_refund.paginator.page_range %}
+                                                  {% if all_refund.number == i %}
+                                                  <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                                  {% else %}
+                                                  <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                                  {% endif %}
+                                                  {% endfor %}
+                                        
+                                            {% if all_refund.has_next %}
+                                                <li class="page-item"><a class="page-link" href="?page={{all_refund.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                            {% else %}   
+                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                            {% endif %}
+                                    </ul>
+                                {% endif %}
+                              </nav>
+                         </div>
+                    <!-- To Ship-->
+   <div class="tab-pane fade" id="dispute" role="tabpanel">
+         
+    <!-- Orders list-->
+    
+        <!-- Pagination-->  
+  <hr class="my-3">
+                      <div class="table-responsive fs-md mb-4">
+
+            <table class="table table-hover mb-0">
+              <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Product Detail</th>
+                      <th>Quantity x Product Price</th>
+                      <th>Refund Amount</th>
+                      <th>Status</th>
+                      <th>Order No</th>
+                      <th>Action</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in dispute_cases %}
+              
+                <tr>
+                            {% if item.variant.image  %}
+                            <td class="py-3">
+                            <center>{{item.variant.image_tag_url}}</center></td>
+                            
+                            {% else %}
+                            <td class="py-3">
+                              <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                            
+                            {% endif %}
+                         
+
+                        <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                            {% if item.product.variant == "Size-Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                        </div>
+                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% elif item.product.variant == "Size" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                          </div>
+                             {% elif item.product.variant == "Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% endif %}
+
+                        </td>
+                 
+
+                        <td class="py-3">{{item.quantity}} x {{item.product_price }}</td>
+                           <td class="py-3">{{item.total_product_amount}}</td>
+
+                         <td class="py-3"><span class="badge bg-danger m-0">{{item.return_status}}</span></td>
+                         <td class="py-3"> {{item.order.order_number}}</td>
+                        
+                        
+                         <td class="py-3">
+                          <form action="#" method="POST" >
+                            <a href="#return-details-{{forloop.counter}}"  style="color: Blue;" data-bs-toggle="modal">Return Item Details</a>
+                       </form>
+                      </td>
+                       
+                </tr>
+                <tr></tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+                      <!-- Pagination-->  
+                    
+                      <!-- Pagination-->
+                      <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                        {% if dispute_cases.has_other_pages %}
+                            <ul class="pagination">
+                                  {% if dispute_cases.has_previous %}
+                                    
+                                      <li class="page-item"><a class="page-link" href="?page={{dispute_cases.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% else %}
+                                      <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% endif %}
+              
+                                          {% for i in dispute_cases.paginator.page_range %}
+                                          {% if dispute_cases.number == i %}
+                                          <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                          {% else %}
+                                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                          {% endif %}
+                                          {% endfor %}
+                                
+                                    {% if dispute_cases.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{dispute_cases.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% else %}   
+                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% endif %}
+                            </ul>
+                        {% endif %}
+                      </nav>
+                 </div>
+                    <!-- Payment methods-->
+            
+
+                <div class="tab-pane fade" id="returnNotDelivered" role="tabpanel">
+                      
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                  <!-- Orders list-->
+                  <div class="table-responsive fs-md mb-4">
+                    <table class="table table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>Product #</th>
+                          <th>Details</th> 
+                          <th>Quantity x Product Price</th>
+                          <th>Refund Amount</th>
+                          <th>Buyer Payment</th>
+                          <th>Seller Payment</th>
+                          <th>Status</th>
+                          <th>Order No</th>
+                          <th>Updated Date</th>
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in return_notdelivered_cases %}
+          
+                        <tr>
+                                    {% if item.variant.image  %}
+                                    <td class="py-3">
+                                    <center>{{item.variant.image_tag_url}}</center></td>
+                                    
+                                    {% else %}
+                                    <td class="py-3">
+                                      <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                    
+                                    {% endif %}
+                                 
+      
+                                <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                                    {% if item.product.variant == "Size-Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                </div>
+                                                <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% elif item.product.variant == "Size" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                  </div>
+                                     {% elif item.product.variant == "Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% endif %}
+      
+                                </td>
+                         
+                                <td class="py-3">{{item.quantity}} x {{item.product_price }}</td>
+                                  <td class="py-3">{{item.total_product_amount}}</td>
+                                <td class="py-3">{{item.buyer_payment}}</td>
+                                <td class="py-3">{{item.seller_payment}}</td>
+
+                                 <td class="py-3"><span class="badge bg-success m-0">{{item.return_status}}</span></td>
+                                 <td class="py-3"> {{item.order.order_number}}</td>
+                                 <td class="py-3"> {{item.updated_at}}</td>
+                               
+                               
+                        </tr>
+                        <tr></tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Pagination-->  
+                
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if return_notdelivered_cases.has_other_pages %}
+                        <ul class="pagination">
+                              {% if return_notdelivered_cases.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{return_notdelivered_cases.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in return_notdelivered_cases.paginator.page_range %}
+                                      {% if return_notdelivered_cases.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if return_notdelivered_cases.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{return_notdelivered_cases.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+
+               <div class="tab-pane fade" id="returnReadyToShip" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                  <!-- Orders list-->
+                  <a href="{% url 'generateReturnShipping' %}"  class="btn btn-primary btn-sm" >Generate Return Shipping </a>
+                  <div class="table-responsive fs-md mb-4">
+                    <table class="table table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>Product</th>
+                          <th>Product Detail</th>
+                          <th>Quantity x Product Price</th>
+                          <th>Refund Amount</th>
+                          <th>Status</th>
+                          <th>Order No</th>
+                          <th>Date</th>
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in return_readytoship_cases %}
+          
+                        <tr>
+                                    {% if item.variant.image  %}
+                                    <td class="py-3">
+                                    <center>{{item.variant.image_tag_url}}</center></td>
+                                    
+                                    {% else %}
+                                    <td class="py-3">
+                                      <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                    
+                                    {% endif %}
+                                 
+      
+                                <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                                    {% if item.product.variant == "Size-Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                </div>
+                                                <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% elif item.product.variant == "Size" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                  </div>
+                                     {% elif item.product.variant == "Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% endif %}
+      
+                                </td>
+      
+                                <td class="py-3">{{item.quantity}} x {{item.product_price }}</td>
+                                <td class="py-3">{{item.total_product_amount}}</td>
+                                 <td class="py-3"><span class="badge bg-success m-0">{{item.return_status}}</span></td>
+                                 <td class="py-3"> {{item.order.order_number}}</td>
+                                 <td class="py-3">{{item.updated_at}}</td>
+                               
+                               
+                        </tr>
+                        <tr></tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Pagination-->  
+        
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if return_readytoship_cases.has_other_pages %}
+                        <ul class="pagination">
+                              {% if return_readytoship_cases.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{return_readytoship_cases.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in return_readytoship_cases.paginator.page_range %}
+                                      {% if return_readytoship_cases.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if return_readytoship_cases.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{return_readytoship_cases.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+         <div class="tab-pane fade" id="readytoprocess" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+
+                    <div class="table-responsive fs-md mb-4">
+            <table class="table table-hover mb-0">
+              <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Product Detail</th>
+                    <th>Quantity x Product Price</th>
+                    <th>Refund Amount</th>
+                    <th>Status</th>
+                    <th>Order No</th>
+                    <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in readytoprocess_cases %}
+              
+                <tr>
+                            {% if item.variant.image  %}
+                            <td class="py-3">
+                            <center>{{item.variant.image_tag_url}}</center></td>
+                            
+                            {% else %}
+                            <td class="py-3">
+                              <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                            
+                            {% endif %}
+                         
+
+                        <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                            {% if item.product.variant == "Size-Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                        </div>
+                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% elif item.product.variant == "Size" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                          </div>
+                             {% elif item.product.variant == "Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% endif %}
+
+                        </td>
+                        <td class="py-3">{{item.quantity}}</td>
+                 
+
+                        <td class="py-3">{{item.quantity}} x {{item.product_price }}</td>
+                           <td class="py-3">{{item.total_product_amount}}</td>
+                         <td class="py-3"><span class="badge bg-danger m-0">{{item.return_status}}</span></td>
+                         <td class="py-3">{{item.created_at}}</td>
+                         <td class="py-3">{{item.updated_at}}</td>
+                         <td class="py-3">{{item.order.order_number}}</td>
+                         <td class="py-3"> 
+                       
+                         <form action="#" method="POST" >
+                          <a href="#cancel-details-{{forloop.counter}}" class="btn btn-outline-danger btn-sm"  data-bs-toggle="modal">Check Details</a>
+                        </form> <br><br>
+                      </td>
+                </tr>
+                <tr></tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+                    <!-- Pagination-->
+                    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                      {% if readytoprocess_cases.has_other_pages %}
+                          <ul class="pagination">
+                                {% if readytoprocess_cases.has_previous %}
+                                  
+                                    <li class="page-item"><a class="page-link" href="?page={{readytoprocess_cases.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                  
+                                  {% else %}
+                                    <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                  
+                                  {% endif %}
+            
+                                        {% for i in readytoprocess_cases.paginator.page_range %}
+                                        {% if readytoprocess_cases.number == i %}
+                                        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                        {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                              
+                                  {% if readytoprocess_cases.has_next %}
+                                      <li class="page-item"><a class="page-link" href="?page={{readytoprocess_cases.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                  {% else %}   
+                                  <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                  {% endif %}
+                          </ul>
+                      {% endif %}
+                    </nav>
+                  </div>
+                  
+                    <div class="tab-pane fade" id="returnCancelled" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                          <div class="table-responsive fs-md mb-4">
+                            <table class="table table-hover mb-0">
+                              <thead>
+                                <tr>
+                                  <th>Order #</th>
+                                  <th>Name</th> 
+                                  <th>Total</th>
+                                  <th>Status</th>
+                                  <th>Order No</th>
+                                  <th>Date</th>
+                                  <th>Action</th>
+                                  
+                                  
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {% for item in return_requestcancelled %}
+              
+                                <tr>
+                                            {% if item.variant.image  %}
+                                            <td class="py-3">
+                                            <center>{{item.variant.image_tag_url}}</center></td>
+                                            
+                                            {% else %}
+                                            <td class="py-3">
+                                              <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                            
+                                            {% endif %}
+                                         
+              
+                                        <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                                            {% if item.product.variant == "Size-Color" %}
+                                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                            {{ item.variant.size.name}}
+                                                        </div>
+                                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                            {% elif item.product.variant == "Size" %}
+                                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                            {{ item.variant.size.name}}
+                                                          </div>
+                                             {% elif item.product.variant == "Color" %}
+                                                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                            {% endif %}
+              
+                                        </td>
+                                        <td class="py-3">{{item.quantity}}</td>
+                                 
+              
+                                        <td class="py-3">{{item.quantity}} x {{item.product_price }}</td>
+                                        <td class="py-3">{{item.total_product_amount}}</td>
+                                         <td class="py-3"><span class="badge bg-danger m-0">{{item.return_status}}</span></td>
+                                         <td class="py-3"> {{item.order.order_number}}</td>
+                                         <td class="py-3"> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">Return/Refund</a></td>
+                                       
+                                       
+                                </tr>
+                                <tr></tr>
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- Pagination-->  
+                        <hr class="my-3">
+                          <!-- Pagination-->
+                          <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                            {% if return_requestcancelled.has_other_pages %}
+                                <ul class="pagination">
+                                      {% if return_requestcancelled.has_previous %}
+                                        
+                                          <li class="page-item"><a class="page-link" href="?page={{return_requestcancelled.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                        
+                                        {% else %}
+                                          <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                        
+                                        {% endif %}
+                  
+                                              {% for i in return_requestcancelled.paginator.page_range %}
+                                              {% if return_requestcancelled.number == i %}
+                                              <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                              {% else %}
+                                              <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                              {% endif %}
+                                              {% endfor %}
+                                    
+                                        {% if return_requestcancelled.has_next %}
+                                            <li class="page-item"><a class="page-link" href="?page={{return_requestcancelled.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                        {% else %}   
+                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                        {% endif %}
+                                </ul>
+                            {% endif %}
+                          </nav>
+                      </div>
+
+                      
+                    </div>
+                 </div>
+        </section>
+      </div>
+    </div>
+  
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+  <script>  
+
+
+  $('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    var formData = {
+        'orderId': $('input[name=ordernumber]').val(),
+        'email': $('input[name=email]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+    };
+    $.ajax({
+            type: 'POST',
+            url: '{% url "tracker" %}',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            updates = JSON.parse(data);
+            if (updates.length > 0 & updates != {}) {
+                for (i = 0; i < updates.length; i++) {
+                    let text = updates[i]['text'];
+                    let time = updates[i]['time'];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${text}
+                    <span class="badge bg-info ms-2">${time}</span>
+                </li>`
+                    $('#items').append(mystr);
+                }
+            } else {
+            	mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    Sorry, We are not able to fetch this order id, Make sure to type correct order Id.</li>`
+            	$('#items').append(mystr);
+            }
+        });
+    event.preventDefault();
+});
+</script>
+  {% endblock %}

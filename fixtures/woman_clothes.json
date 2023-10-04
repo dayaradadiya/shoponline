@@ -1,0 +1,1073 @@
+[
+    {
+        "model": "store.sleeve_length",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "3/4 Sleeves"
+            }
+        
+    },
+    {
+        "model": "store.sleeve_length",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Long Sleeves"
+            }
+        
+    },
+    {
+        "model": "store.sleeve_length",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.sleeve_length",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Short Sleeves"
+            }
+        
+    },
+    {
+        "model": "store.sleeve_length",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Sleeveless"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Asymmetric"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Boat Neck"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Collar"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Halter"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Off Shoulder"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "7",
+        "fields": 
+            {
+                "name": "Round Neck"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "8",
+        "fields": 
+            {
+                "name": "Turtle Neck"
+            }
+        
+    },
+    {
+        "model": "store.neckline",
+        "pk": "9",
+        "fields": 
+            {
+                "name": "V Neck"
+            }
+        
+    },
+    {
+        "model": "store.occasion",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Casual"
+            }
+        
+    },
+    {
+        "model": "store.occasion",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Work"
+            }
+        
+    },
+    {
+        "model": "store.occasion",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Party"
+            }
+        
+    },
+    {
+        "model": "store.occasion",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Prom"
+            }
+        
+    },
+    {
+        "model": "store.occasion",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.waist_height",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "High Waist"
+            }
+        
+    },
+    {
+        "model": "store.waist_height",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Low Waist"
+            }
+        
+    },
+    {
+        "model": "store.waist_height",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Mid Waist"
+            }
+        
+    },
+    {
+        "model": "store.waist_height",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_length",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "3/4 Length / Capri"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_length",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_length",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Full Length"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_length",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Cropped"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Boyfriend"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Fit & Flare"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Regular"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Skinny"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Slim Fit"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "7",
+        "fields": 
+            {
+                "name": "Straight"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "8",
+        "fields": 
+            {
+                "name": "Tapered"
+            }
+        
+    },
+    {
+        "model": "store.bottoms_fit_type",
+        "pk": "9",
+        "fields": 
+            {
+                "name": "Wide Leg"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "A-Line"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Bodycon"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Fishtail"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Fit & Flare/Skater"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Pencil"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "7",
+        "fields": 
+            {
+                "name": "Pleated"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_style",
+        "pk": "8",
+        "fields": 
+            {
+                "name": "Wrap"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_length",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Maxi"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_length",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Midi"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_length",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Mini"
+            }
+        
+    },
+    {
+        "model": "store.dress_skirt_length",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.overalls_type",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Pants"
+            }
+        
+    },
+    {
+        "model": "store.overalls_type",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Shorts"
+            }
+        
+    },
+    {
+        "model": "store.overalls_type",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Skirt"
+            }
+        
+    },
+    {
+        "model": "store.outerwear_length",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Medium"
+            }
+        
+    },
+    {
+        "model": "store.outerwear_length",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "3/4 Length"
+            }
+        
+    },
+    {
+        "model": "store.outerwear_length",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Long"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Short"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Baseball Jackets"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Bomber Jackets"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Windbreakers"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Normal Jackets"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "7",
+        "fields": 
+            {
+                "name": "Denim jackets"
+            }
+        
+    },
+    {
+        "model": "store.jacket_type",
+        "pk": "8",
+        "fields": 
+            {
+                "name": "Leather jackets"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Long"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Dresses"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Jeans"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Maternity Wear"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Outerwear"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "7",
+        "fields": 
+            {
+                "name": "Pants & Leggings"
+            }
+        
+    },
+    {
+        "model": "store.apparel_type",
+        "pk": "8",
+        "fields": 
+            {
+                "name": "Shorts"
+            }
+        
+    },
+    {
+        "model": "store.bra_style",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Skirts"
+            }
+        
+    },
+    {
+        "model": "store.bra_style",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.bra_style",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Seamless"
+            }
+        
+    },
+    {
+        "model": "store.bra_style",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Strapless"
+            }
+        
+    },
+    {
+        "model": "store.bra_style",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Wireless"
+            }
+        
+    },
+    {
+        "model": "store.bra_type",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Single"
+            }
+        
+    },
+    {
+        "model": "store.bra_type",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Bandeau"
+            }
+        
+    },
+    {
+        "model": "store.bra_type",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Lightly Lined"
+            }
+        
+    },
+    {
+        "model": "store.bra_type",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Plunge"
+            }
+        
+    },
+    {
+        "model": "store.bra_type",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Push Up"
+            }
+        
+    },
+    {
+        "model": "store.bra_type",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "T Shirt"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Unlined"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Baby Dolls"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Bodysuits"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Costumes"
+            }
+        
+    },
+    {
+        "model": "store.bra_coverage",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Lingerie Sets"
+            }
+        
+    },
+    {
+        "model": "store.bra_coverage",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "3/4 Coverage"
+            }
+        
+    },
+    {
+        "model": "store.bra_coverage",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Full Coverage"
+            }
+        
+    },
+    {
+        "model": "store.bra_coverage",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.panty_style",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Stick On"
+            }
+        
+    },
+    {
+        "model": "store.panty_style",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Bikini"
+            }
+        
+    },
+    {
+        "model": "store.panty_style",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Boy Short"
+            }
+        
+    },
+    {
+        "model": "store.panty_style",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Cheeky"
+            }
+        
+    },
+    {
+        "model": "store.panty_style",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Disposable"
+            }
+        
+    },
+    {
+        "model": "store.panty_style",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Hipster"
+            }
+        
+    },
+    {
+        "model": "store.panties_type",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.panties_type",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "G-string"
+            }
+        
+    },
+    {
+        "model": "store.panties_type",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    },
+    {
+        "model": "store.panties_type",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Period Panties"
+            }
+        
+    },
+    {
+        "model": "store.shaper_style",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Push Up Panties"
+            }
+        
+    },
+    {
+        "model": "store.shaper_style",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Leg Shaper"
+            }
+        
+    },
+    {
+        "model": "store.shaper_style",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Mid Thigh Shaper"
+            }
+        
+    },
+    {
+        "model": "store.shaper_style",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Shapewear Corset"
+            }
+        
+    },
+    {
+        "model": "store.shaper_style",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Shaping Panties"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Waist Cincher"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Accessories"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Baby Dolls"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Bodysuits"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Bustiers / Sexy Bras"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Cami Sets"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "7",
+        "fields": 
+            {
+                "name": "Corsets / Shape Wear"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "8",
+        "fields": 
+            {
+                "name": "Costumes"
+            }
+        
+    },
+    {
+        "model": "store.sexy_lingerie_style",
+        "pk": "9",
+        "fields": 
+            {
+                "name": "Garters / Hosiery"
+            }
+        
+    },
+    {
+        "model": "store.bottom_style",
+        "pk": "1",
+        "fields": 
+            {
+                "name": "Cargo"
+            }
+        
+    },
+    {
+        "model": "store.bottom_style",
+        "pk": "2",
+        "fields": 
+            {
+                "name": "Cigarette Trousers"
+            }
+        
+    },
+    {
+        "model": "store.bottom_style",
+        "pk": "3",
+        "fields": 
+            {
+                "name": "Culottes"
+            }
+        
+    },
+    {
+        "model": "store.bottom_style",
+        "pk": "4",
+        "fields": 
+            {
+                "name": "Harem"
+            }
+        
+    },
+    {
+        "model": "store.bottom_style",
+        "pk": "5",
+        "fields": 
+            {
+                "name": "Joggers"
+            }
+        
+    },
+    {
+        "model": "store.bottom_style",
+        "pk": "6",
+        "fields": 
+            {
+                "name": "Others"
+            }
+        
+    }
+]

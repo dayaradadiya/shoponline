@@ -1,0 +1,769 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+{% load mathfilters %}
+
+<main class="page-wrapper">
+  
+  <!-- Page Title-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+            <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+            </li>
+            <li class="breadcrumb-item text-nowrap active" aria-current="page">Refund Hitory</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">My Reports</h1>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="container pb-5 mb-2 mb-md-4">
+      <div class="row">
+        <!-- Sidebar-->
+        <!-- Content  -->
+       
+        <section class="col-lg-12 pt-lg-4 pb-4 mb-3">
+          <button class="btn btn-secondary" onclick="history.back()"> <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+       <br><br>
+
+       <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-dark mb-0">Income Details</h1>
+      </div>
+      <br>
+       <form action="" method="post">
+        {% csrf_token %}
+        <b>From :</b> <input type="date" name="fromdate" id="">   &nbsp;&nbsp; 
+        <b>To : </b><input type="date" name="todate" id="">  &nbsp;&nbsp;
+        <a href="{% url 'vendor_balance' %}"><button type="submit" class="btn btn-primary btn-sm" value="Apply">Apply</button></a><br><br>
+        <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                      <!-- Tabs-->
+                      <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <li class="nav-item"><a class="nav-link px-0 active" href="#all" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">All</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">All</span></div></a></li>
+                            
+                                <li class="nav-item"><a class="nav-link px-0" href="#order_income" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Order Income</div>
+                                <div class="d-lg-none text-center"><i class="ci-location opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Order Income</span></div></a></li>
+                            
+                            
+                                <li class="nav-item"><a class="nav-link px-0" href="#cancelled_order" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Cancelled Order</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Cancelled Order</span></div></a></li>
+                                
+                        
+                                <li class="nav-item"><a class="nav-link px-0" href="#refund_order" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Refund from Order</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Refund from Order</span></div></a></li>
+                                
+                                <li class="nav-item"><a class="nav-link px-0" href="#ordered_returned" data-bs-toggle="tab" role="tab">
+                                    <div class="d-none d-lg-block">Income Order & Refund</div>
+                                    <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Income Order & Refund</span></div></a></li>
+                                
+                                <li class="nav-item"><a class="nav-link px-0" href="#ordered_cancelled" data-bs-toggle="tab" role="tab">
+                                      <div class="d-none d-lg-block">Income Order & Cancel</div>
+                                      <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Income Order & Cancel</span></div></a></li>
+
+                                <li class="nav-item"><a class="nav-link px-0" href="#mix" data-bs-toggle="tab" role="tab">
+                                        <div class="d-none d-lg-block">Order, Refund & Cancel income</div>
+                                        <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Ordered,Returned & Cancelled</span></div></a></li>
+                                
+                                        <li class="nav-item"><a class="nav-link px-0" href="#refund_cancelled" data-bs-toggle="tab" role="tab">
+                                          <div class="d-none d-lg-block">Refund & Cancel</div>
+                                          <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Returned & Cancelled</span></div></a></li>
+                              
+                          
+                      </ul>
+                    <!-- Tab content-->
+                    <div class="tab-content">
+                      <!-- Profile-->
+    <div class="tab-pane fade show active" id="all" role="tabpanel">
+                 
+                            
+      <div class="table-responsive fs-md mb-4">
+
+            <table class="table table-bordered">
+              <thead>
+                  <tr>
+                    <th>Order #</th>
+                    <th>Date</th>
+                    <th>Order Amount</th>
+                    <th>Seller Payout</th>
+                    <th>Customer Payout</th>
+                    <th>Shipping Charge</th>
+                    <th>Transaction Fees</th>
+                    <th>Platform Fees</th>
+                    <th>Status</th>
+                    
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in data %}
+              
+                 
+                    <tr>
+                      <td class="py-3">{{item.order.order_number}}</td>
+                      <td class="py-3">{{item.updated_at}}</td>
+                      <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                      <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                      <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                      <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                      <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                      <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                      <td class="py-3">{{item.order_status}}</td>
+                    </tr>
+                    {% endfor %}
+
+                         
+              </tbody>
+            </table>
+          </div>
+                              <!-- Pagination-->  
+                            
+                              <!-- Pagination-->
+                              <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                                {% if refund_all.has_other_pages %}
+                                    <ul class="pagination">
+                                          {% if refund_all.has_previous %}
+                                            
+                                              <li class="page-item"><a class="page-link" href="?page={{refund_all.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                            
+                                            {% else %}
+                                              <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                            
+                                            {% endif %}
+                      
+                                                  {% for i in refund_all.paginator.page_range %}
+                                                  {% if refund_all.number == i %}
+                                                  <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                                  {% else %}
+                                                  <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                                  {% endif %}
+                                                  {% endfor %}
+                                        
+                                            {% if refund_all.has_next %}
+                                                <li class="page-item"><a class="page-link" href="?page={{refund_all.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                            {% else %}   
+                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                            {% endif %}
+                                    </ul>
+                                {% endif %}
+                              </nav>
+                         </div>
+                    <!-- To Ship-->
+   <div class="tab-pane fade" id="order_income" role="tabpanel">
+         
+    <!-- Orders list-->
+    
+        <!-- Pagination-->  
+  <hr class="my-3">
+                           
+                            
+      <div class="table-responsive fs-md mb-4">
+
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Date</th>
+                <th>Order Amount</th>
+                <th>Seller Payout</th>
+                <th>Customer Payout</th>
+                <th>Shipping Charge</th>
+                <th>Transaction Fees</th>
+                <th>Platform Fees</th>
+                <th>Status</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+            {% for item in order_income %}
+          
+             
+                <tr>
+                  <td class="py-3">{{item.order.order_number}}</td>
+                  <td class="py-3">{{item.updated_at}}</td>
+                  <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                  <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                  <td class="py-3">{{item.order_status}}</td>
+                </tr>
+                {% endfor %}
+
+                     
+          </tbody>
+        </table>
+      </div>
+                      <!-- Pagination-->  
+                    
+                      <!-- Pagination-->
+                      <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                        {% if return_requested.has_other_pages %}
+                            <ul class="pagination">
+                                  {% if return_requested.has_previous %}
+                                    
+                                      <li class="page-item"><a class="page-link" href="?page={{return_requested.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% else %}
+                                      <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% endif %}
+              
+                                          {% for i in return_requested.paginator.page_range %}
+                                          {% if return_requested.number == i %}
+                                          <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                          {% else %}
+                                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                          {% endif %}
+                                          {% endfor %}
+                                
+                                    {% if return_requested.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{return_requested.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% else %}   
+                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% endif %}
+                            </ul>
+                        {% endif %}
+                      </nav>
+                 </div>
+                    <!-- Payment methods-->
+            
+        
+
+                <div class="tab-pane fade" id="cancelled_order" role="tabpanel">
+                      
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                  <!-- Orders list-->
+                      
+                            
+      <div class="table-responsive fs-md mb-4">
+
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Date</th>
+                <th>Order Amount</th>
+                <th>Seller Payout</th>
+                <th>Customer Payout</th>
+                <th>Shipping Charge</th>
+                <th>Transaction Fees</th>
+                <th>Platform Fees</th>
+                <th>Status</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+            {% for item in order_cancel %}
+          
+             
+                <tr>
+                  <td class="py-3">{{item.order.order_number}}</td>
+                  <td class="py-3">{{item.updated_at}}</td>
+                  <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                  <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                  <td class="py-3">{{item.order_status}}</td>
+                </tr>
+                {% endfor %}
+
+                     
+          </tbody>
+        </table>
+      </div>
+                  <!-- Pagination-->  
+                
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if return_responded.has_other_pages %}
+                        <ul class="pagination">
+                              {% if return_responded.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{return_responded.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in return_responded.paginator.page_range %}
+                                      {% if return_responded.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if return_responded.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{return_responded.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+
+               <div class="tab-pane fade" id="refund_order" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                  <!-- Orders list-->
+                  
+                       
+                            
+      <div class="table-responsive fs-md mb-4">
+
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Date</th>
+                <th>Order Amount</th>
+                <th>Seller Payout</th>
+                <th>Customer Payout</th>
+                <th>Shipping Charge</th>
+                <th>Transaction Fees</th>
+                <th>Platform Fees</th>
+                <th>Status</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+            {% for item in order_returned %}
+          
+             
+                <tr>
+                  <td class="py-3">{{item.order.order_number}}</td>
+                  <td class="py-3">{{item.updated_at}}</td>
+                  <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                  <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                  <td class="py-3">{{item.order_status}}</td>
+                </tr>
+                {% endfor %}
+
+                     
+          </tbody>
+        </table>
+      </div>
+                  <!-- Pagination-->  
+        
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if orderproducts_completed.has_other_pages %}
+                        <ul class="pagination">
+                              {% if orderproducts_completed.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{orderproducts_completed.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in orderproducts_completed.paginator.page_range %}
+                                      {% if orderproducts_completed.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if orderproducts_completed.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_completed.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+         <div class="tab-pane fade" id="ordered_returned" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+
+                   
+                            
+      <div class="table-responsive fs-md mb-4">
+
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Date</th>
+                <th>Order Amount</th>
+                <th>Seller Payout</th>
+                <th>Customer Payout</th>
+                <th>Shipping Charge</th>
+                <th>Transaction Fees</th>
+                <th>Platform Fees</th>
+                <th>Status</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+            {% for item in ordered_and_returned %}
+          
+             
+                <tr>
+                  <td class="py-3">{{item.order.order_number}}</td>
+                  <td class="py-3">{{item.updated_at}}</td>
+                  <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                  <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                  <td class="py-3">{{item.order_status}}</td>
+                </tr>
+                {% endfor %}
+
+                     
+          </tbody>
+        </table>
+      </div>
+                    <!-- Pagination-->
+                    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                      {% if orderproducts_cancelled.has_other_pages %}
+                          <ul class="pagination">
+                                {% if orderproducts_cancelled.has_previous %}
+                                  
+                                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                  
+                                  {% else %}
+                                    <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                  
+                                  {% endif %}
+            
+                                        {% for i in orderproducts_cancelled.paginator.page_range %}
+                                        {% if orderproducts_cancelled.number == i %}
+                                        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                        {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                              
+                                  {% if orderproducts_cancelled.has_next %}
+                                      <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                  {% else %}   
+                                  <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                  {% endif %}
+                          </ul>
+                      {% endif %}
+                    </nav>
+                  </div>
+                  
+                  <div class="tab-pane fade" id="ordered_cancelled" role="tabpanel">
+                    
+                    <!-- Orders list-->
+                    
+                        <!-- Pagination-->  
+                  <hr class="my-3">
+
+                 
+                          
+    <div class="table-responsive fs-md mb-4">
+
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Order #</th>
+              <th>Date</th>
+              <th>Order Amount</th>
+              <th>Seller Payout</th>
+              <th>Customer Payout</th>
+              <th>Shipping Charge</th>
+              <th>Transaction Fees</th>
+              <th>Platform Fees</th>
+              <th>Status</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+          {% for item in ordered_and_cancelled %}
+        
+           
+              <tr>
+                <td class="py-3">{{item.order.order_number}}</td>
+                <td class="py-3">{{item.updated_at}}</td>
+                <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                <td class="py-3">{{item.order_status}}</td>
+              </tr>
+              {% endfor %}
+
+                   
+        </tbody>
+      </table>
+    </div>
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if orderproducts_cancelled.has_other_pages %}
+                        <ul class="pagination">
+                              {% if orderproducts_cancelled.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in orderproducts_cancelled.paginator.page_range %}
+                                      {% if orderproducts_cancelled.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if orderproducts_cancelled.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+
+                <div class="tab-pane fade" id="mix" role="tabpanel">
+                    
+                    <!-- Orders list-->
+                    
+                        <!-- Pagination-->  
+                  <hr class="my-3">
+
+                 
+                          
+    <div class="table-responsive fs-md mb-4">
+
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Order #</th>
+              <th>Date</th>
+              <th>Order Amount</th>
+              <th>Seller Payout</th>
+              <th>Customer Payout</th>
+              <th>Shipping Charge</th>
+              <th>Transaction Fees</th>
+              <th>Platform Fees</th>
+              <th>Status</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+          {% for item in ordered_refund_cancelled %}
+        
+           
+              <tr>
+                <td class="py-3">{{item.order.order_number}}</td>
+                <td class="py-3">{{item.updated_at}}</td>
+                <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                <td class="py-3">{{item.order_status}}</td>
+              </tr>
+              {% endfor %}
+
+                   
+        </tbody>
+      </table>
+    </div>
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if orderproducts_cancelled.has_other_pages %}
+                        <ul class="pagination">
+                              {% if orderproducts_cancelled.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in orderproducts_cancelled.paginator.page_range %}
+                                      {% if orderproducts_cancelled.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if orderproducts_cancelled.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+                    <div class="tab-pane fade" id="refund_cancelled" role="tabpanel">
+                      
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                  <!-- Orders list-->
+                      
+                            
+      <div class="table-responsive fs-md mb-4">
+
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Date</th>
+                <th>Order Amount</th>
+                <th>Seller Payout</th>
+                <th>Customer Payout</th>
+                <th>Shipping Charge</th>
+                <th>Transaction Fees</th>
+                <th>Platform Fees</th>
+                <th>Status</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+            {% for item in refund_cancelled %}
+          
+             
+                <tr>
+                  <td class="py-3">{{item.order.order_number}}</td>
+                  <td class="py-3">{{item.updated_at}}</td>
+                  <td class="py-3"><span>$ {{item.amt_paid_by_customer}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_vendor_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_customer_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.total_shipping_payout}}</span></td>
+                  <td class="py-3"><span>$ {{item.stripe_transaction_fees}}</span></td>
+                  <td class="py-3"><span>$ {{item.platform_fees}}</span></td>
+                  <td class="py-3">{{item.order_status}}</td>
+                </tr>
+                {% endfor %}
+
+                     
+          </tbody>
+        </table>
+      </div>
+                  <!-- Pagination-->  
+                
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if return_responded.has_other_pages %}
+                        <ul class="pagination">
+                              {% if return_responded.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{return_responded.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in return_responded.paginator.page_range %}
+                                      {% if return_responded.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if return_responded.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{return_responded.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+                    </div>
+                 </div>
+                 </form>
+        </section>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+  <script>  
+
+
+  $('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    var formData = {
+        'orderId': $('input[name=ordernumber]').val(),
+        'email': $('input[name=email]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+    };
+    $.ajax({
+            type: 'POST',
+            url: '{% url "tracker" %}',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            updates = JSON.parse(data);
+            if (updates.length > 0 & updates != {}) {
+                for (i = 0; i < updates.length; i++) {
+                    let text = updates[i]['text'];
+                    let time = updates[i]['time'];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${text}
+                    <span class="badge bg-info ms-2">${time}</span>
+                </li>`
+                    $('#items').append(mystr);
+                }
+            } else {
+            	mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    Sorry, We are not able to fetch this order id, Make sure to type correct order Id.</li>`
+            	$('#items').append(mystr);
+            }
+        });
+    event.preventDefault();
+});
+</script>
+  {% endblock %}

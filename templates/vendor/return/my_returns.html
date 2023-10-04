@@ -1,0 +1,526 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+<main class="page-wrapper">
+    <!-- Order Details Modal-->
+        
+    <!-- Navbar 3 Level (Light)-->
+ 
+
+
+
+
+    {% for item in return_all %}
+    <form class="needs-validation modal fade" id="return-details-{{forloop.counter}}" action="#" tabindex="-1" method="POST" novalidate>
+      {% csrf_token %}
+      <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Return Item Details</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row gx-4 gy-3">
+              
+             
+              <div class="col-sm-12">
+        <!-- <h6>Add New Product</h6> -->
+        <label for="">Sellere responded by {{item.updated_at}} You can choose to end the discussion by continuing with your return</label>
+        <table class="table table-hover mb-0">
+          <thead>
+              <tr>
+                  <th>Product</th>
+                  <th>Product Details</th>
+                  <th>Refund Amount</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                          {% if item.variant.image  %}
+                          <td class="py-3">
+                          <center>{{item.variant.image_tag_url}}</center></td>
+                          
+                          {% else %}
+                          <td class="py-3">
+                      <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                          
+                          {% endif %}
+                       
+  
+                      <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                          {% if item.product.variant == "Size-Color" %}
+                                       <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                          {{ item.variant.size.name}}
+                                      </div>
+                                      <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                          {% elif item.product.variant == "Size" %}
+                                       <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                          {{ item.variant.size.name}}
+                                        </div>
+                           {% elif item.product.variant == "Color" %}
+                                       <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                          {% endif %}
+  
+                      </td>
+               
+  
+                      {% if item.variant %}
+                                  {% if item.variant.variant_discount %}
+                                          <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                  {% else %}
+                                          <td class="py-3">${{item.product_price }} SGD</td>
+                                  {% endif %}
+                       {% else %}
+                                  {% if item.product.discount %}
+                                          <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                    {% else %}        
+                                          <td class="py-3">${{ item.product_price }} SGD</td>
+                                    {% endif %}
+                       {% endif %}
+  
+                        <td class="py-3"><span class="badge bg-danger m-0">{{item.buyer_return_status}}</span></td>
+                        
+                   
+                     
+                     
+              </tr>
+              <tr></tr>
+          </tbody>
+      </table>
+       
+      <label class="form-label" for="unp-featured-image">Reason for return: </label>
+      <div>
+      {{item.reason}}
+    </div>
+    
+          <label class="form-label" for="unp-featured-image"><span style="color:red;">*</span> Return Item Image: </label>
+      
+  <div class="bg-light shadow-lg rounded-3 px-4 py-3 mb-5">
+  <div class="px-lg-6">
+  <div class="row">
+          <div class="col-lg-6 w=100 pe-lg-0 pt-lg-4">
+            <div class="product-gallery">
+                      
+  
+                      <div class="product-gallery-preview order-sm-2">
+                     
+                                <div class="product-gallery-preview-item active" id="first">
+                                  <img class="image-zoom" src="{{ item.product.featured_image.url }}" data-zoom="{{ item.product.featured_image.url}}" alt="Product image">
+                                    <div class="image-zoom-pane"></div>
+                                </div>
+                        
+                        {% for i in item.refundimages_set.all %} 
+                        <div class="product-gallery-preview-item" id="first{{i.id}}">
+                          <img class="image-zoom" src="{{i.image.url}}" data-zoom="{{i.image.url}}" alt="Product image">
+                            <div class="image-zoom-pane"></div>
+                        </div>
+                        {% endfor %}
+  
+                      
+                      </div>
+  
+                      <div class="product-gallery-thumblist order-sm-1">
+                    
+                        <a class="product-gallery-thumblist-item" href="#first" ><img src="{{ item.product.featured_image.url }}" alt="Product thumb"></a>
+                        {% for i in item.refundimages_set.all %} 
+                              <a class="product-gallery-thumblist-item" href="#first{{i.id}}" ><img src="{{i.image.url}}" alt="Product thumb"></a>
+                        {% endfor %}
+                      </div>
+  
+                     </div>
+                     <br><br>
+                     {% if item.return_status == 'Return Approved' or item.return_status == 'Partial Refund Offered' %}
+                      <h6>Actions :</h6>
+                     <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          
+                          <form action="#" method="POST" >
+                            <a href="#prefund-{{forloop.counter}}" class="btn btn-primary btn-shadow" data-bs-toggle="modal">Check Offer Details</a>
+                            </form>
+                            
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <form action="#" method="POST" >
+                            <a href="#continue-return-{{forloop.counter}}" class="btn btn-primary btn-shadow" data-bs-toggle="modal">Continue With Return</a>
+                            </form>
+                       
+                        </div>
+                      </div>
+                    
+                    </div>
+                                
+                      {% endif %}
+                      {% if item.return_status not in completedprocess %}
+                  
+                      <label for=""><b>Note:</b>You can cancel the request if you don't want to proceed with Return/Refund</label>
+                      <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          
+                          <form action="#" method="POST" >
+                            <a href="#cancel-request-{{forloop.counter}}" class="btn btn-primary btn-shadow" data-bs-toggle="modal">Cancel Reuest</a>
+                            </form>
+                            
+                        </div>
+                      </div>
+                      </div>
+                    {% endif %}
+                  
+       
+          </div>
+          </div>
+          </div>
+      
+      </div>
+          
+  
+    </div>  
+  </div>
+      </div>    
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+  </div>
+  </div>
+  </div>
+  </form>
+  {% endfor %}
+
+    <div class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+              <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+              <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+              </li>
+              <li class="breadcrumb-item text-nowrap active" aria-current="page">Orders history</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+          <h1 class="h3 text-light mb-0">My Returns</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container pb-5 mb-2 mb-md-4">
+      <div class="row">
+        <!-- Sidebar-->
+       
+    <section class="col-lg-12 pt-lg-4 pb-4 mb-3">
+      <button class="btn btn-secondary" onclick="history.back()"> <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+       
+      <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+        <h2 class="h3 py-2 text-center text-sm-start">My Returns Items</h2>
+                  <!-- Tabs-->
+                  <ul class="nav nav-tabs nav-justified" role="tablist">
+
+                    <li class="nav-item"><a class="nav-link px-0 active" href="#all" data-bs-toggle="tab" role="tab">
+                      <div class="d-none d-lg-block"><i class="ci-bag opacity-60 me-2"></i>All</div>
+                      <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">All</span></div></a></li>
+
+                    <li class="nav-item"><a class="nav-link px-0" href="#to_pickup" data-bs-toggle="tab" role="tab">
+                        <div class="d-none d-lg-block"><i class="ci-bag opacity-60 me-2"></i>To Pickup</div>
+                        <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">To Pickup</span></div></a></li>
+
+                   
+                  </ul>
+      <div class="tab-content">
+
+
+      <div class="tab-pane fade show active" id="all" role="tabpanel">
+ 
+      
+          <div class="table-responsive fs-md mb-4">
+
+            <table class="table table-bordered">
+              <thead>
+                  <tr>
+                  
+                      <th>Product</th>
+                      <th>Product Details</th>
+                      <th>Refund Amount</th>
+                      <th>Status</th>
+                      <!-- <th>Return Reason</th> -->
+                      <th>Order Number</th>
+                      <th>Actions</th>
+                      
+                    
+                  </tr>
+              </thead>
+               <tbody>
+{% for item in return_all %}
+            
+<tr>
+            {% if item.variant.image  %}
+            <td class="py-3">
+            <center>{{item.variant.image_tag_url}}</center></td>
+            
+            {% else %}
+            <td class="py-3">
+        <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+            
+            {% endif %}
+         
+
+        <td class="py-3">{{item.product.product_name|truncatewords:8}}
+            {% if item.product.variant == "Size-Color" %}
+                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+            {{ item.variant.size.name}}
+                        </div>
+                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+            {% elif item.product.variant == "Size" %}
+                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+            {{ item.variant.size.name}}
+                          </div>
+             {% elif item.product.variant == "Color" %}
+                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+            {% endif %}
+
+        </td>
+ 
+
+        {% if item.variant %}
+                    {% if item.variant.variant_discount %}
+                            <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp; SGD</td>
+                    {% else %}
+                            <td class="py-3">${{item.product_price }} SGD</td>
+                    {% endif %}
+         {% else %}
+                    {% if item.product.discount %}
+                            <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;SGD</td>
+                      {% else %}        
+                            <td class="py-3">${{ item.product_price }} SGD</td>
+                      {% endif %}
+         {% endif %}
+
+         <td class="py-3"><span class="badge bg-danger m-0">{{item.buyer_return_status}}</span></td>
+
+
+         <!-- <td class="py-3"> {{item.reason}}</td> -->
+
+         <td class="py-3">{{item.order.order_number}}</td>
+         
+         
+         <td class="py-3">
+          <form action="#" method="POST" >
+              <a href="#return-details-{{forloop.counter}}" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"> Return Item Details</a>
+            </form> &nbsp; &nbsp;
+            {% if item.return_status not in completedprocess %}
+            <form action="#" method="POST" >
+                <a href="#cancel-request-{{forloop.counter}}" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"> Cancel Request</a>
+            </form>
+            {% endif %}
+      
+        
+         </td>
+   
+        
+        
+</tr>
+<tr></tr>
+{% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination-->
+        <hr class="my-3">
+        <!-- Pagination-->
+        <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+          {% if return_all.has_other_pages %}
+              <ul class="pagination">
+                    {% if return_all.has_previous %}
+                      
+                        <li class="page-item"><a class="page-link" href="?page={{return_all.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                      
+                      {% else %}
+                        <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                      
+                      {% endif %}
+
+                            {% for i in return_all.paginator.page_range %}
+                            {% if return_all.number == i %}
+                            <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                            {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                  
+                      {% if return_all.has_next %}
+                          <li class="page-item"><a class="page-link" href="?page={{return_all.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                       {% else %}   
+                       <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                      {% endif %}
+              </ul>
+          {% endif %}
+        </nav>
+    </div>
+      <!-- Profile-->
+      <div class="tab-pane fade" id="to_pickup" role="tabpanel">
+ 
+          <!-- Orders list-->
+          <form action="{% url 'returnback_check_mychecklist' %}" id="myForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="text-danger"><b>Note: </b> Please select item and pickup date to download the return label,<br> Return shipping fees will be charged and wil be deducted from item price or refund amount</label> <br><br>
+       
+            &nbsp; &nbsp;<input type="checkbox" id="mainCheckbox"> 
+            <label for="">select items</label> &nbsp;  &nbsp;
+            <input type="date" name="returnback_pickup_date = models.DateField(blank=True, null=True)" id="datePicker"> &nbsp;  &nbsp; <label for="">Select Pickup Date</label> <br><br> <button type="submit" class="btn btn-outline-danger btn-sm"  id="submitButton" style="display:none;"> Download Return Label</button>
+         
+            <br> <br>
+            <div class="table-responsive fs-md mb-4">
+
+              <table class="table table-bordered">
+                <thead>
+                    <tr>
+                      <th>#</th>
+                        <th>Product</th>
+                        <th>Product Details</th>
+                        <th>Refund Amount</th>
+                        <th>Status</th>
+                        <th>Return Reason</th>
+                        <th>Order Number</th>
+                        <!-- <th>Action</th> -->
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for item in return_approved %}
+              
+                  <tr>
+                    <td class="py-3"><input type="checkbox" name="boxes" class="boxes" value="{{item.pk}}"></td>
+                              {% if item.variant.image  %}
+                              <td class="py-3">
+                              <center>{{item.variant.image_tag_url}}</center></td>
+                              
+                              {% else %}
+                              <td class="py-3">
+                          <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                              
+                              {% endif %}
+                           
+
+                          <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                              {% if item.product.variant == "Size-Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                          </div>
+                                          <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% elif item.product.variant == "Size" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                            </div>
+                               {% elif item.product.variant == "Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% endif %}
+
+                          </td>
+                   
+
+                          {% if item.variant %}
+                                      {% if item.variant.variant_discount %}
+                                              <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                      {% else %}
+                                              <td class="py-3">${{item.product_price }} SGD</td>
+                                      {% endif %}
+                           {% else %}
+                                      {% if item.product.discount %}
+                                              <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                        {% else %}        
+                                              <td class="py-3">${{ item.product_price }} SGD</td>
+                                        {% endif %}
+                           {% endif %}
+
+                           <td class="py-3"><span class="badge bg-danger m-0">{{item.buyer_return_status}}</span></td>
+
+
+                           <td class="py-3"> {{item.reason}}</td>
+
+                           <td class="py-3">{{item.order.order_number}}</td>
+                           <!-- <td>
+                            <form action="#" method="POST">
+                              <a class="btn btn-outline-danger btn-sm" href="#cancelreturn-{{forloop.counter}}"  data-bs-toggle="modal">Cancel Request</a>
+                            </form>
+                           </td> -->
+                       
+                  </tr>
+                  <tr></tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          
+       
+            
+          </div>
+
+     
+                
+        </form>
+
+    </div>
+
+
+    </div>
+    </div>
+    </section>
+     
+      </div>
+      </div>
+  </main>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+  <script>
+
+    $(document).on('change', '#mainCheckbox',function(e){
+      e.preventDefault();
+    
+      var mainCheckbox = document.getElementById("mainCheckbox");
+      var checkboxes = document.getElementsByClassName("boxes");
+    
+  
+        var isChecked = mainCheckbox.checked;
+    
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkboxes[i].checked = isChecked;
+        }
+      });
+
+
+
+
+
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 3);
+
+      const formattedToday = today.toISOString().split('T')[0];
+      const formattedTomorrow = tomorrow.toISOString().split('T')[0];
+
+      datePicker.min = formattedToday;
+      datePicker.max = formattedTomorrow;
+      
+     
+          $(document).on('change', '#datePicker',function(e){
+            e.preventDefault();
+
+            const datePicker = document.getElementById('datePicker');
+            const submitButton = document.getElementById('submitButton');
+            
+            if (datePicker.value !== '') {
+              submitButton.style.display = 'block'; // Show the button
+            } else {
+              submitButton.style.display = 'none';  // Hide the button
+            }
+          });
+          
+
+
+  </script>
+  {% endblock %}

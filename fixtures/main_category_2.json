@@ -1,0 +1,288 @@
+[
+    {
+        "model": "category.main_category",
+        "pk": "8",
+        "fields": 
+            {
+                "name": "Fashion Accessories",
+                "vendor": "1",
+                "slug": "fashion-accessories"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "9",
+        "fields": 
+            {
+                "name": "Home Appliances",
+                "vendor": "1",
+                "slug": "home-appliances"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "10",
+        "fields": 
+            {
+                "name": "Men Shoes",
+                "vendor": "1",
+                "slug": "men-shoes"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "11",
+        "fields": 
+            {
+                "name": "Mobile & Gadgets",
+                "vendor": "1",
+                "slug": "mobile-and-gadgets"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "12",
+        "fields": 
+            {
+                "name": "Muslim Fashion",
+                "vendor": "1",
+                "slug": "muslim-fashion"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "13",
+        "fields": 
+            {
+                "name": "Travel & Luggage",
+                "vendor": "1",
+                "slug": "travel-and-luggage"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "14",
+        "fields": 
+            {
+                "name": "Women Bags",
+                "vendor": "1",
+                "slug": "women-bags"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "15",
+        "fields": 
+            {
+                "name": "Women Shoes",
+                "vendor": "1",
+                "slug": "women-shoes"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "16",
+        "fields": 
+            {
+                "name": "Men Bags",
+                "vendor": "1",
+                "slug": "men-bags"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "17",
+        "fields": 
+            {
+                "name": "Watches",
+                "vendor": "1",
+                "slug": "watches"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "18",
+        "fields": 
+            {
+                "name": "Audio",
+                "vendor": "1",
+                "slug": "audio"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "19",
+        "fields": 
+            {
+                "name": "Food & Beverage",
+                "vendor": "1",
+                "slug": "food-and-beverage"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "20",
+        "fields": 
+            {
+                "name": "Pets",
+                "vendor": "1",
+                "slug": "pets"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "21",
+        "fields": 
+            {
+                "name": "Mom & Baby",
+                "vendor": "1",
+                "slug": "mom-and-baby"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "22",
+        "fields": 
+            {
+                "name": "Baby & Kids Fashion",
+                "vendor": "1",
+                "slug": "baby-and-kids-fashion"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "23",
+        "fields": 
+            {
+                "name": "Gaming & Consoles",
+                "vendor": "1",
+                "slug": "gaming-and-consoles"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "24",
+        "fields": 
+            {
+                "name": "Cameras & Drones",
+                "vendor": "1",
+                "slug": "cameras-and-drones"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "25",
+        "fields": 
+            {
+                "name": "Home & Living",
+                "vendor": "1",
+                "slug": "home-and-living"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "26",
+        "fields": 
+            {
+                "name": "Sports & Outdoors",
+                "vendor": "1",
+                "slug": "sports-and-outdoors"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "27",
+        "fields": 
+            {
+                "name": "Stationery",
+                "vendor": "1",
+                "slug": "stationery"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "28",
+        "fields": 
+            {
+                "name": "Hobbies & Collections",
+                "vendor": "1",
+                "slug": "hobbies-and-collections"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "29",
+        "fields": 
+            {
+                "name": "Automobiles",
+                "vendor": "1",
+                "slug": "automobiles"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "30",
+        "fields": 
+            {
+                "name": "Motorcycles",
+                "vendor": "1",
+                "slug": "motorcycles"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "31",
+        "fields": 
+            {
+                "name": "Tickets, Vouchers & Services",
+                "vendor": "1",
+                "slug": "tickets-vouchers-and-services"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "32",
+        "fields": 
+            {
+                "name": "Books & Magazines",
+                "vendor": "1",
+                "slug": "books-and-magazines"
+            }
+        
+    },
+    {
+        "model": "category.main_category",
+        "pk": "33",
+        "fields": 
+            {
+                "name": "Computers & Accessories",
+                "vendor": "1",
+                "slug": "computers-and-accessories"
+            }
+        
+    }
+]

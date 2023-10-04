@@ -1,0 +1,149 @@
+model,pk,main_category,name,vendor,slug
+category.category,135,17,Women Watches,1,women-watches
+category.category,136,17,Men Watches,1,men-watches
+category.category,137,17,Set & Couple Watches,1,set-&-couple-watches
+category.category,138,17,Watches Accessories,1,watches-accessories
+category.category,139,17,Others,1,others
+category.category,140,18,"Earphones, Headphones & Headsets",1,earphones-headphones-&-headsets
+category.category,141,18,Media Players,1,media-players
+category.category,142,18,Microphones,1,microphones
+category.category,143,18,Amplifiers & Mixers,1,amplifiers-&-mixers
+category.category,144,18,Home Audio & Speakers,1,home-audio-&-speakers
+category.category,145,18,Audio & Video Cables & Converters,1,audio-&-video-cables-&-converters
+category.category,146,18,Others,1,others
+category.category,147,19,Convenience / Ready-to-eat,1,convenience-ready-to-eat
+category.category,148,19,Snacks,1,snacks
+category.category,149,19,Food Staples,1,food-staples
+category.category,150,19,Cooking Essentials,1,cooking-essentials
+category.category,151,19,Baking Needs,1,baking-needs
+category.category,152,19,Breakfast Cereals & Spread,1,breakfast-cereals-&-spread
+category.category,153,19,Beverages,1,beverages
+category.category,154,19,Dairy & Eggs,1,dairy-&-eggs
+category.category,155,19,Fresh & Frozen Food,1,fresh-&-frozen-food
+category.category,156,19,Bakery,1,bakery
+category.category,157,19,Alcoholic Beverages,1,alcoholic-beverages
+category.category,158,19,Gift Set & Hampers,1,gift-set-&-hampers
+category.category,159,19,Others,1,others
+category.category,160,20,Pet Food,1,pet-food
+category.category,161,20,Pet Accessories,1,pet-accessories
+category.category,162,20,Litter & Toilet,1,litter-&-toilet
+category.category,163,20,Pet Grooming,1,pet-grooming
+category.category,164,20,Pet Clothing & Accessories,1,pet-clothing-&-accessories
+category.category,165,20,Pet Healthcare,1,pet-healthcare
+category.category,166,20,Others,1,others
+category.category,167,21,Baby Travel Essentials,1,baby-travel-essentials
+category.category,168,21,Feeding Essentials,1,feeding-essentials
+category.category,169,21,Maternity Accessories,1,maternity-accessories
+category.category,170,21,Maternity Healthcare,1,maternity-healthcare
+category.category,171,21,Bath & Body Care,1,bath-&-body-care
+category.category,172,21,Nursery,1,nursery
+category.category,173,21,Baby Safety,1,baby-safety
+category.category,174,21,Milk Formula & Baby Food,1,milk-formula-&-baby-food
+category.category,175,21,Baby Healthcare,1,baby-healthcare
+category.category,176,21,Diapering & Potty,1,diapering-&-potty
+category.category,177,21,Toys,1,toys
+category.category,178,21,Gift Sets & Packages,1,gift-sets-&-packages
+category.category,179,21,Others,1,others
+category.category,180,22,Baby Clothes,1,baby-clothes
+category.category,181,22,Baby Mittens & Footwear,1,baby-mittens-&-footwear
+category.category,182,22,Baby & Kids Accessories,1,baby-&-kids-accessories
+category.category,183,22,Boy Clothes,1,boy-clothes
+category.category,184,22,Girl Clothes,1,girl-clothes
+category.category,185,22,Boy Shoes,1,boy-shoes
+category.category,186,22,Girl Shoes,1,girl-shoes
+category.category,187,22,Others,1,others
+category.category,188,23,Console Machines,1,console-machines
+category.category,189,23,Console Accessories,1,console-accessories
+category.category,190,23,Video Games,1,video-games
+category.category,191,23,Others,1,others
+category.category,192,24,Cameras,1,cameras
+category.category,193,24,Security Cameras & Systems,1,security-cameras-&-systems
+category.category,194,24,Lenses,1,lenses
+category.category,195,24,Lens Accessories,1,lens-accessories
+category.category,196,24,Camera Accessories,1,camera-accessories
+category.category,197,24,Camera Care,1,camera-care
+category.category,198,24,Drones,1,drones
+category.category,199,24,Drone Accessories,1,drone-accessories
+category.category,200,24,Others,1,others
+category.category,201,25,Home Fragrance & Aromatherapy,1,home-fragrance-&-aromatherapy
+category.category,202,25,Bathrooms,1,bathrooms
+category.category,203,25,Bedding,1,bedding
+category.category,204,25,Decoration,1,decoration
+category.category,205,25,"Hand Warmers, Hot Water Bags & Ice Bags",1,"hand-warmers,-hot-water-bags-&-ice-bags"
+category.category,206,25,Furniture,1,furniture
+category.category,207,25,Gardening,1,gardening
+category.category,208,25,Tools & Home Improvement,1,tools-&-home-improvement
+category.category,209,25,Home Care Supplies,1,home-care-supplies
+category.category,210,25,Kitchenware,1,kitchenware
+category.category,211,25,Dinnerware,1,dinnerware
+category.category,212,25,Safety & Security,1,safety-&-security
+category.category,213,25,Home Organizers,1,home-organizers
+category.category,214,25,Party Supplies,1,party-supplies
+category.category,215,25,Fengshui & Religious Supplies,1,fengshui-&-religious-supplies
+category.category,216,25,Others,1,others
+category.category,217,26,Sports & Outdoor Recreation Equipments,1,sports-&-outdoor-recreation-equipments
+category.category,218,26,Sports Footwear,1,sports-footwear
+category.category,219,26,Sports & Outdoor Apparels,1,sports-&-outdoor-apparels
+category.category,220,26,Sports & Outdoor Accessories,1,sports-&-outdoor-accessories
+category.category,221,27,Gift & Wrapping,1,gift-&-wrapping
+category.category,222,27,Writing & Correction,1,writing-&-correction
+category.category,223,27,School & Office Equipment,1,school-&-office-equipment
+category.category,224,27,Art Supplies,1,art-supplies
+category.category,225,27,Notebooks & Papers,1,notebooks-&-papers
+category.category,226,27,Letters & Envelopes,1,letters-&-envelopes
+category.category,227,27,Others,1,others
+category.category,228,28,Collectible Items,1,collectible-items
+category.category,229,28,Souvenirs,1,souvenirs
+category.category,230,28,Toys & Games,1,toys-&-games
+category.category,231,28,Musical Instruments & Accessories,1,musical-instruments-&-accessories
+category.category,232,28,Vinyl Records,1,vinyl-records
+category.category,233,28,Photo Albums,1,photo-albums
+category.category,234,28,Needlework,1,needlework
+category.category,235,28,Others,1,others
+category.category,236,29,Automobiles,1,automobiles
+category.category,237,29,Automobile Interior Accessories,1,automobile-interior-accessories
+category.category,238,29,Automobile Exterior Accessories,1,automobile-exterior-accessories
+category.category,239,29,Automobile Spare Parts,1,automobile-spare-parts
+category.category,240,29,Automotive Tools,1,automotive-tools
+category.category,241,29,Automotive Care,1,automotive-care
+category.category,242,29,Automotive Oils & Lubes,1,automotive-oils-&-lubes
+category.category,243,29,Automotive Keychains & Key Covers,1,automotive-keychains-&-key-covers
+category.category,244,29,Others,1,others
+category.category,245,29,Automotive Services & Installation,1,automotive-services-&-installation
+category.category,246,30,Motorcycles,1,motorcycles
+category.category,247,30,Motorcycle Accessories,1,motorcycle-accessories
+category.category,248,30,Motorcycle Spare Parts,1,motorcycle-spare-parts
+category.category,249,30,Motorcycle Helmets & Riding Gear,1,motorcycle-helmets-&-riding-gear
+category.category,250,30,Others,1,others
+category.category,251,31,Events & Attractions,1,events-&-attractions
+category.category,252,31,F&B,1,f&b
+category.category,253,31,Shopping,1,shopping
+category.category,254,31,Utilities,1,utilities
+category.category,255,31,Services,1,services
+category.category,256,31,Beauty & Wellness,1,beauty-&-wellness
+category.category,257,31,Transport,1,transport
+category.category,258,31,Lessons & Workshops,1,lessons-&-workshops
+category.category,259,31,Telco,1,telco
+category.category,260,31,Travel,1,travel
+category.category,261,31,E-Money,1,e-money
+category.category,262,31,Gaming & App Stores,1,gaming-&-app-stores
+category.category,263,31,Streaming,1,streaming
+category.category,264,31,Shopnow,1,shopnow
+category.category,265,32,Magazines & Newspaper,1,magazines-&-newspaper
+category.category,266,32,Books,1,books
+category.category,267,32,E-Books,1,e-books
+category.category,268,32,Others,1,others
+category.category,269,33,Desktop Computers,1,desktop-computers
+category.category,270,33,Monitors,1,monitors
+category.category,271,33,Desktop & Laptop Components,1,desktop-&-laptop-components
+category.category,272,33,Data Storage,1,data-storage
+category.category,273,33,Network Components,1,network-components
+category.category,274,33,Softwares,1,softwares
+category.category,275,33,Office Equipment,1,office-equipment
+category.category,276,33,Printers & Scanners,1,printers-&-scanners
+category.category,277,33,Peripherals & Accessories,1,peripherals-&-accessories
+category.category,278,33,Keyboards & Mice,1,keyboards-&-mice
+category.category,279,33,Laptops,1,laptops
+category.category,280,33,Others,1,others
+category.category,281,34,Pay Scan & Pay Voucher,1,pay-scan-&-pay-voucher
+category.category,282,34,Deals,1,deals

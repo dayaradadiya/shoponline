@@ -1,0 +1,169 @@
+
+{% extends 'base_admin.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+<main class="page-wrapper">
+  <!-- Page Title-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+            <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+            </li>
+            <li class="breadcrumb-item text-nowrap active" aria-current="page">Orders history</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">My orders</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container pb-5 mb-2 mb-md-4"> -->
+    <div class="row">
+      <!-- Sidebar-->
+      <!-- Content  -->
+      {% include 'admin/admin_sidebar.html' %}
+      <section class="col-lg-8 pt-lg-4 pb-4 mb-3">
+     
+        
+        <div class="offcanvas-header align-items-center shadow-sm col-lg-6">
+          <h2 class="h5 mb-0">Filters</h2>
+          <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <h3 class="widget-title">Filter By Seller</h3>
+              <select class="form-select" name="vendor" id="vendor-list" onchange="location = finalurl2();" style="margin-left: auto;">
+                <option value="" id="vendor-placeholder" disabled selected hidden>Vendor</option>
+                {% for item in vendor %}
+                <option id="pr{{item.vendor_name}}" value="{{item.vendor_name}}">{{item.vendor_name}}</option>
+                {% endfor %}
+              </select>
+             
+
+        <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+<div class="tab-pane fade show active" id="to_pack" role="tabpanel">
+ 
+    <!-- Orders list-->
+    <br>
+    <br>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+        <th>Order</th>
+        <th>Vendor</th>
+        <th>Shipcharge paid by cust</th>
+        <th>Amt paid by customer </th>
+        <th>Items amount </th>
+        <th>Transaction fees </th>
+        <th>Platform fees </th>
+        <th>Total vendor payout </th>
+        <th>Total customer payout </th>
+        <th>Total shipping payout </th>
+        <th>Saving from shipping fees </th>
+        <th>Total refund to customer </th>
+        <th>Payout status </th>
+        <th>Created at </th>
+        <th>Updated at </th>
+        <th>Order status </th>
+      </tr>
+      </thead>
+   
+      <tbody>
+        {% for data in vendorpayout %}
+
+      <tr>
+    <td class="py-3"> {{ data.order }} </td>
+    <td class="py-3"> {{ data.vendor }} </td>
+    <td class="py-3"> {{ data.shipchargepaid_by_cust }} </td>
+    <td class="py-3"> {{ data.amt_paid_by_customer }} </td>
+    <td class="py-3"> {{ data.items_amount }} </td>
+    <td class="py-3"> {{ data.stripe_transaction_fees }} </td>
+    <td class="py-3"> {{ data.platform_fees }} </td>
+    <td class="py-3"> {{ data.total_vendor_payout }} </td>
+    <td class="py-3"> {{ data.total_customer_payout }} </td>
+    <td class="py-3"> {{ data.total_shipping_payout }} </td>
+    <td class="py-3"> {{ data.saving_from_shipping_fees }} </td>
+    <td class="py-3"> {{ data.total_refund_to_customer }} </td>
+    <td class="py-3"> {{ data.payout_status }} </td>
+    <td class="py-3"> {{ data.created_at }} </td>
+    <td class="py-3"> {{ data.updated_at }} </td>
+    <td class="py-3"> {{ data.order_status }} </td>
+  </tr>
+
+    {% endfor %}
+  </tbody>
+  </table>
+  
+      <div class="table-responsive fs-md mb-4">
+
+      
+    </div>
+
+   
+       
+    <!-- Pagination-->
+    <hr class="my-3">
+    <!-- Pagination-->
+    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+      {% if orderproducts_new.has_other_pages %}
+          <ul class="pagination">
+                {% if orderproducts_new.has_previous %}
+                  
+                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_new.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                  
+                  {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                  
+                  {% endif %}
+
+                        {% for i in orderproducts_new.paginator.page_range %}
+                        {% if orderproducts_new.number == i %}
+                        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+              
+                  {% if orderproducts_new.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{orderproducts_new.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                   {% else %}   
+                   <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                  {% endif %}
+          </ul>
+      {% endif %}
+    </nav>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<script>
+  // for getting the sorting status to be displayed in sorting dropdown placeholder
+  function get(name) {
+    if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))  //location.search give query sling part
+      return decodeURIComponent(name[1]);
+  }
+
+  if(get('vendor'))
+  document.getElementById('vendor-placeholder').innerHTML = "Vendor: " + document.getElementById('pr'+get('vendor')).innerHTML;
+
+  // for getting url after applying price filtering
+  function finalurl2() {
+    var url = new URL(window.location.href);
+    var search_params = url.searchParams;
+    search_params.set('vendor', document.getElementById("vendor-list").value);
+    url.search = search_params.toString();
+    var new_url = url.toString();
+    return new_url
+  }
+</script>
+
+{% endblock %}

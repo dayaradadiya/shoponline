@@ -1,0 +1,77 @@
+[
+    {
+        "model": "category.main_category",
+        "pk": 1,
+        "fields": {
+            "name": "Women clothes",
+            "vendor": 1,
+            "desc": "Clothing",
+            "cat_image": "photos/categories/02_kCy2kjI.jpg",
+            "slug": "womans-clothes"
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 2,
+        "fields": {
+            "name": "Men shoes",
+            "vendor": 1,
+            "desc": "Shoe",
+            "cat_image": "photos/categories/01_4H01Rop.jpg",
+            "slug": "men-shoes"
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 3,
+        "fields": {
+            "name": "Home & living",
+            "vendor": 1,
+            "desc": "",
+            "cat_image": "photos/categories/chair2.jpg",
+            "slug": "home-appliances"
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 4,
+        "fields": {
+            "name": "Deals",
+            "vendor": 1,
+            "desc": "Deals"
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 5,
+        "fields": {
+            "name": "Beauty",
+            "vendor": 1,
+            "desc": "cosmetics",
+            "cat_image": "photos/categories/09_6tjb32O.jpg",
+            "slug": "cosmetics"
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 6,
+        "fields": {
+            "name": "Men's clothes",
+            "vendor": 1,
+            "desc": "",
+            "cat_image": "photos/categories/39.jpg",
+            "slug": "mens-clothes"
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 7,
+        "fields": {
+            "name": "Health",
+            "vendor": 1,
+            "desc": "",
+            "cat_image": "photos/categories/62.jpg",
+            "slug": "health"
+        }
+    }
+]

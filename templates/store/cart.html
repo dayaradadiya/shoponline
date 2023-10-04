@@ -1,0 +1,196 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+ <!-- Page Title-->
+ <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+            <li class="breadcrumb-item text-nowrap"><a href="{% url 'store' %}">Shop</a>
+            </li>
+            <li class="breadcrumb-item text-nowrap active" aria-current="page">Cart</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">Your cart</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-2 mb-md-4">
+    <div class="row">
+      <!-- List of items-->
+     
+      <section class="col-lg-8">
+        <div class="d-flex justify-content-between align-items-center pt-3 pb-4 pb-sm-5 mt-1">
+          <h2 class="h6 text-light mb-0">Products</h2><a class="btn btn-outline-primary btn-sm ps-2" href="{% url 'store' %}"><i class="ci-arrow-left me-2"></i>Continue shopping</a>
+        </div>
+        <!-- Item-->
+        {% if not cart_items %}
+        <h2>Your shopping cart is empty</h2>
+         {% else %}
+
+         <!-- daya start  -->
+  
+
+        {% for cart_item in cart_items %}
+     
+          <div class="d-sm-flex justify-content-between my-4 pb-3 border-bottom">
+          
+     
+          {% if cart_item.variant.image %}
+          <div class="d-block d-sm-flex align-items-center text-center text-sm-start"><a class="d-inline-block flex-shrink-0 mx-auto" href="{{cart_item.product.get_url}}"><img src="{{ cart_item.variant.image }}" style="width:160px; height:170px;"  alt="Product"></a>
+          {% else %}
+          <div class="d-block d-sm-flex align-items-center text-center text-sm-start"> <a class="d-inline-block flex-shrink-0 mx-auto" href="{{cart_item.product.get_url}}"><img src="{{ cart_item.product.featured_image.url }}" style="width:160px; height:170px;"  alt="Product"></a>
+           {% endif %}  
+           
+           <div class="pt-2">
+              
+              {% if cart_item.variant  %}
+                <h3 class="widget-product-title  fs-base mb-2"><a href="{{cart_item.product.get_url}}">{{cart_item.product.product_name|truncatewords:8}}</a></h3>
+                  
+                
+                  {% if cart_item.product.variant == "Size-Color" %}
+                      <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ cart_item.variant.size.name}}
+                      </div>
+                      <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{cart_item.variant.color.name | capfirst}}</div>
+                  {% elif cart_item.product.variant == "Size" %}
+                      <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ cart_item.variant.size.name}}
+                      </div>
+                  {% elif cart_item.product.variant == "Color" %}
+                      <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{cart_item.variant.color.name | capfirst}}</div>
+                  {% endif %}
+                
+                  {% else %}  
+                <h3 class="product-title fs-base mb-2"><a href="{{cart_item.product.get_url}}">{{cart_item.product.product_name|truncatewords:8}}</a></h3>
+              {% endif %}
+              
+            
+              {% if cart_item.variant %}
+                          {% if cart_item.variant.variant_discount %}
+                               <div class="fs-lg text-accent pt-2">${% call_sellprice cart_item.variant.variant_price cart_item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ cart_item.variant.variant_price }} </del> SGD</div>
+                          {% else %}
+                                <div class="fs-lg text-accent pt-2">${{ cart_item.variant.variant_price }} SGD</div>
+                          {% endif%}
+               {% else %}
+                          {% if cart_item.product.discount %}
+                              <div class="fs-lg text-accent pt-2">${% call_sellprice cart_item.product.price  cart_item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ cart_item.product.price }} SGD</del></div>
+                          {% else %}
+                              <div class="fs-lg text-accent pt-2">${{ cart_item.product.price }} SGD</div>
+                          {% endif%}        
+                        
+                {% endif %}
+           
+           
+            </div>
+          </div>
+          <div class="pt-2 pt-sm-0 ps-sm-3 mx-auto mx-sm-0 text-center text-sm-start" style="max-width: 15rem;">
+                 <div class="pt-2 ">
+                    <h3 class="product-title fs-base mb-2"><a href="shop-single-v1.html">Sub Total</a></h3>
+                    {% if cart_item.product.variant == 'None' %}
+                        <div class="fs-sm"><span class="text-muted me-2"></span>${{cart_item.sub_total}}</div>
+                    {% else %}
+                        <div class="fs-sm"><span class="text-muted me-2"></span>${{cart_item.variant_sub_total}}</div>
+                    {% endif %}
+
+                    <div class="fs-sm"><span class="text-muted me-2"></span></div>
+                    <div class="fs-lg text-accent pt-2"></div>
+                  </div>
+                  </div>
+        
+              <div class="pt-2 pt-sm-0 ps-sm-3 mx-auto mx-sm-0 text-center text-sm-start" style="max-width: 15rem;">
+                <div class="pt-2">
+                <label class="form-label" for="quantity1"> Quantity      </label>
+                
+                
+                <!-- <input class="form-control" type="number" id="quantity1" min="1" value="{{cart_item.quantity}}"> -->
+                <div class="center">
+                  <!-- <span class="input-group-btn"> -->
+                    <span class="input-group-prepend">
+                    <form action="{% url 'add_cart_button' cart_item.product.id cart_item.id  %}"  method="post">
+                    
+          
+                        {% csrf_token %}
+
+                        {% if cart_item.variant  %}
+                        <input type="hidden" name="variantid" value="{{ cart_item.variant.id  }}">
+                        {% endif %}
+
+
+                        <button type="submit" class="btn btn-light btn-dark2 btn-sm" style="color:#fff; background-color: #FE696A;"  data-type="plus"><i class="fa fa-plus"></i></button></a>
+                    </form>
+                  </span> 
+                  <input type="text"  class="input-number text-center" value="{{cart_item.quantity}}" min="{{ cart_item.product.min_order_quantity }}" max="{{ cart_item.variant.get_max_allowed_qty }}" size="1px" readonly><br>
+                  <!-- <span class="input-group-btn"> -->
+                    <span class="input-group-append">
+                          <a href="{% url 'remove_cart' cart_item.product.id cart_item.id %}"><button type="button" class="btn btn-light btn-dark2 btn-sm" style="color:#fff; background-color: #FE696A;" data-type="minus" >
+                            <i class="fa fa-minus"></i></button></a>
+                    
+                  </span> 
+          
+                </div>
+                
+                
+            <a href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}"  onclick="return confirm('Are you sure you want to delete this item?')" ><button class="btn btn-link px-0 text-danger" type="button"><i class="ci-close-circle me-2"></i><span class="fs-sm">Remove</span></button></a>
+              </div>
+              
+       
+   </div>
+        </div>
+        {% endfor %}
+    
+        <a href="{% url 'store' %}"><button class="btn btn-outline-accent d-block w-100 mt-4" type="button"><i class="ci-loading fs-base me-2"></i>Update cart</button></a>
+        {% endif %}
+      </section>
+      <!-- Sidebar-->
+      {% if cart_items %}
+       
+      <aside class="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+        <div class="bg-white rounded-3 shadow-lg p-4">
+          <div class="py-2 px-xl-2">
+            <div class="text-center mb-4 pb-3 border-bottom">
+              <h2 class="h6 mb-3 pb-1">Total</h2>
+              <h3 class="fw-normal">${{total}}</h3>
+            </div>
+            <div class="mb-3 mb-4">
+              <label class="form-label mb-3" for="order-comments"><span class="badge bg-info fs-xs me-2">Note</span><span class="fw-medium">Additional comments</span></label>
+              <textarea class="form-control" rows="6" id="order-comments"></textarea>
+            </div>
+            <div class="accordion" id="order-options">
+              <div class="accordion-item">
+                <h3 class="accordion-header"><a class="accordion-button" href="#promo-code" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="promo-code">Apply promo code</a></h3>
+                <div class="accordion-collapse collapse show" id="promo-code" data-bs-parent="#order-options">
+                  <form class="accordion-body needs-validation" method="post" novalidate>
+                    <div class="mb-3">
+                      <input class="form-control" type="text" placeholder="Promo code" required>
+                      <div class="invalid-feedback">Please provide promo code.</div>
+                    </div>
+                    <button class="btn btn-outline-primary d-block w-100" type="submit">Apply promo code</button>
+                  </form>
+                </div>
+              </div>
+              
+            </div><a class="btn btn-primary btn-shadow d-block w-100 mt-4" href="{% url 'checkout' %}"><i class="ci-card fs-lg me-2"></i>Proceed to Checkout</a>
+          </div><a class="btn btn-primary btn-shadow d-block w-100 mt-4" href="{% url 'store' %}"><i class="ci-cart fs-lg me-2" style="color:#f8f8f8;"></i>Continue Shopping</a>
+        </div>
+          </div>
+        </div>
+      </aside>
+      {% endif %}
+    </div>
+    {% if user.is_authenticated %}
+    {% include 'chat/partials/chat_bubble.html' %}
+    {% endif %}
+  </div>
+
+
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

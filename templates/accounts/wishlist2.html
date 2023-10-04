@@ -1,0 +1,122 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+ <!-- Page Title-->
+ <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+            <li class="breadcrumb-item text-nowrap"><a href="{% url 'store' %}">Shop</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">Your Wishlist</h1>
+   
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-5 mb-2 mb-md-4">
+    <div class="row">
+      <!-- List of items-->
+     
+      <section class="col-lg-12">
+        <div class="d-flex justify-content-between align-items-center pt-3 pb-4 pb-sm-5 mt-1">
+          <h2 class="h6 text-light mb-0">Products</h2><a class="btn btn-outline-primary btn-sm ps-2" href="{% url 'store' %}"><i class="ci-arrow-left me-2"></i>Continue shopping</a>
+        </div>
+        <!-- Item-->
+        <br><br>
+        {% if not wishlist %}
+        <h2>Your wishlist is empty</h2>
+         {% else %}
+
+            {% if wishlist.count > 1 %}
+            <label class= "form-label" for="">There are {{wishlist.count}} products in this list</label>
+            {% elif wishlist.count  == 1 %}
+            <label class= "form-label" for="">There is {{wishlist.count}} product in this list</label>
+            {% endif %}
+
+            <table  class="table table-sm">
+                <thead>
+                    <tr>
+                        
+                        <th class="per70 text-center">Product</th>
+                        <th class="per120 text-center">Product detail</th>
+                        <th class="per5 text-center">Price</th>
+                        <th class="per25 text-center">Stock Status</th>
+                        <th class="per70 text-center">Action</th>
+                        <th class="per70 text-center">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tbody>
+                        {% for item in wishlist %}
+                        <tr>
+                            <td>
+                                <div class="d-sm-flex justify-content-between align-items-center my-2 pb-3 border-bottom">
+        
+                                    <div class="d-block d-sm-flex align-items-center text-center text-sm-start"><a class="d-inline-block flex-shrink-0 mx-auto me-sm-4" href="{{item.product.get_url}}"><img src="{{ item.product.featured_image.url }}" style="width:160px; height:170px;"  alt="Product"></a>
+                                    </div>
+                                </div>
+                                </td>
+                                <td style= "max-width: 400px; max-height: 150px; overflow: hidden;"> 
+                                        <div class="pt-2 text-center">
+                                    <h3 class="product-title fs-base mb-2"><a href="{{item.product.get_url}}">{{product.product_name|truncatewords:8}}</a></h3>
+                                        </div>
+                                      
+                                </td>
+                            
+                                <td>
+                                    {% if item.product.discount %}
+                                             <div class="fs-lg text-accent pt-2">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> </div>
+
+                                    {% else %}
+                                             <div class="fs-lg text-accent pt-2">${{ item.product.price }}</div>
+                                    {% endif %}
+
+                                </td>
+                                <td>
+                                    <div class="pt-2 text-center">
+                                        <h3 class="product-title fs-base mb-2"><a href="{{item.product.get_url}}">
+                                          {% if item.product.stock > 0 %} In Stock {% else %} Out of stock {% endif %}</a></h3>
+                                            </div>
+                                </td>
+                                <td>
+                                  <div class="card-body card-body-hidden text-center">
+                            
+                                    <a href="{{ item.product.get_url }}"><button class="btn btn-primary btn-sm d-block w-100 mb-2 viewbuttton" type="button"><i class="ci-cart fs-sm me-1"></i>View Details</button></a>
+                                <!-- <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view" data-bs-toggle="modal" data-bs-target="#productModalId-{{forloop.counter}}"><i class="ci-eye align-middle me-1"></i>Quick view</a></div> -->
+                              </div>
+                                </td>
+                                <td>
+                                  <!-- <a href="{% url 'remove_wishlist_item' item.product.id item.id %}"  onclick="return confirm('Are you sure you want to delete this item?')" ><button class="btn btn-link px-0 text-danger" type="button"><i class="ci-close-circle me-2"></i><span class="fs-sm">Remove</span></button></a> -->
+                                  <a href="{% url 'remove_wishlist_item' item.product.id item.id %}"   ><button class="btn btn-link px-0 text-danger" type="button"><i class="ci-close-circle me-2 delete"></i><span class="fs-sm">Remove</span></button></a>
+          
+                                </td>
+                        </tr>
+                        {% endfor %}
+                </tbody> 
+            </table>
+      
+        
+        
+        {% endif %}
+      </section>
+      {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+      <!-- Sidebar-->
+    
+    </div>
+  </div>
+  
+
+{% endblock %}

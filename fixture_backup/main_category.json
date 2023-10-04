@@ -1,0 +1,365 @@
+[
+    {
+        "model": "category.main_category",
+        "pk": 1,
+        "fields": {
+            "name": "Women clothes",
+            "desc": "Clothing",
+            "cat_image": "photos/categories/02_Kny2PlN.jpg",
+            "slug": "womans-clothes",
+            "is_active": true
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 2,
+        "fields": {
+            "name": "Men shoes",
+            "desc": "Shoe",
+            "cat_image": "photos/categories/01_4H01Rop.jpg",
+            "slug": "men-shoes",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 3,
+        "fields": {
+            "name": "Home & living",
+            "desc": "",
+            "cat_image": "photos/categories/chair4.jpg",
+            "slug": "home-appliances",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 5,
+        "fields": {
+            "name": "Beauty",
+            "desc": "cosmetics",
+            "cat_image": "photos/categories/09_SvMzA9o.jpg",
+            "slug": "cosmetics",
+            "is_active": true
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 6,
+        "fields": {
+            "name": "Men's clothes",
+            "desc": "",
+            "cat_image": "photos/categories/24.jpg",
+            "slug": "mens-clothes",
+            "is_active": true
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 7,
+        "fields": {
+            "name": "Health",
+            "desc": "",
+            "cat_image": "photos/categories/69.jpg",
+            "slug": "health",
+            "is_active": true
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 8,
+        "fields": {
+            "name": "Fashion accessories",
+            "desc": "",
+            "cat_image": "",
+            "slug": "fashion-accessories",
+            "is_active": true
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 9,
+        "fields": {
+            "name": "Home Appliances",
+            "desc": "",
+            "cat_image": "",
+            "slug": "home-appliances",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 10,
+        "fields": {
+            "name": "Men shoes",
+            "desc": "",
+            "cat_image": "",
+            "slug": "men-shoes",
+            "is_active": true
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 11,
+        "fields": {
+            "name": "Mobile & Gadgets",
+            "desc": "",
+            "cat_image": "",
+            "slug": "mobile-and-gadgets",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 12,
+        "fields": {
+            "name": "Muslim Fashion",
+            "desc": "",
+            "cat_image": "",
+            "slug": "muslim-fashion",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 13,
+        "fields": {
+            "name": "Travel & Luggage",
+            "desc": "",
+            "cat_image": "",
+            "slug": "travel-and-luggage",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 14,
+        "fields": {
+            "name": "Women Bags",
+            "desc": "",
+            "cat_image": "",
+            "slug": "women-bags",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 15,
+        "fields": {
+            "name": "Women shoes",
+             "desc": "",
+            "cat_image": "",
+            "slug": "women-shoes",
+            "is_active": true
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 16,
+        "fields": {
+            "name": "Men Bags",
+            "desc": "",
+            "cat_image": "",
+            "slug": "men-bags",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 17,
+        "fields": {
+            "name": "Watches",
+            "desc": "",
+            "cat_image": "",
+            "slug": "watches",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 18,
+        "fields": {
+            "name": "Audio",
+            "desc": "",
+            "cat_image": "",
+            "slug": "audio",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 19,
+        "fields": {
+            "name": "Food & Beverage",
+            "desc": "",
+            "cat_image": "",
+            "slug": "food-and-beverage",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 20,
+        "fields": {
+            "name": "Pets",
+            "desc": "",
+            "cat_image": "",
+            "slug": "pets",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 21,
+        "fields": {
+            "name": "Mom & Baby",
+            "desc": "",
+            "cat_image": "",
+            "slug": "mom-and-baby",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 22,
+        "fields": {
+            "name": "Baby & Kids Fashion",
+            "desc": "",
+            "cat_image": "",
+            "slug": "baby-and-kids-fashion",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 23,
+        "fields": {
+            "name": "Gaming & Consoles",
+            "desc": "",
+            "cat_image": "",
+            "slug": "gaming-and-consoles",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 24,
+        "fields": {
+            "name": "Cameras & Drones",
+            "desc": "",
+            "cat_image": "",
+            "slug": "cameras-and-drones",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 25,
+        "fields": {
+            "name": "Home & Living",
+            "desc": "",
+            "cat_image": "",
+            "slug": "home-and-living",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 26,
+        "fields": {
+            "name": "Sports & Outdoors",
+            "desc": "",
+            "cat_image": "",
+            "slug": "sports-and-outdoors",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 27,
+        "fields": {
+            "name": "Stationery",
+            "desc": "",
+            "cat_image": "",
+            "slug": "stationery",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 28,
+        "fields": {
+            "name": "Hobbies & Collections",
+            "desc": "",
+            "cat_image": "",
+            "slug": "hobbies-and-collections",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 29,
+        "fields": {
+            "name": "Automobiles",
+             "desc": "",
+            "cat_image": "",
+            "slug": "automobiles",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 30,
+        "fields": {
+            "name": "Motorcycles",
+            "desc": "",
+            "cat_image": "",
+            "slug": "motorcycles",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 31,
+        "fields": {
+            "name": "Tickets, Vouchers & Services",
+            "desc": "",
+            "cat_image": "",
+            "slug": "tickets-vouchers-and-services",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 32,
+        "fields": {
+            "name": "Books & Magazines",
+            "desc": "",
+            "cat_image": "",
+            "slug": "books-and-magazines",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 33,
+        "fields": {
+            "name": "Computers & Accessories",
+            "desc": "",
+            "cat_image": "",
+            "slug": "computers-and-accessories",
+            "is_active": false
+        }
+    },
+    {
+        "model": "category.main_category",
+        "pk": 34,
+        "fields": {
+            "name": "Deals near me",
+            "desc": "deals-near-me",
+            "cat_image": "",
+            "slug": "deals-near-me",
+            "is_active": false
+        }
+    }
+]

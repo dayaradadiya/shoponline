@@ -1,0 +1,380 @@
+[
+    {
+        "model": "accounts.bank",
+        "pk": "1",
+        "fields": 
+            {
+                "bank_name": "Australia and New Zealand Banking Group Limited (ANZ)"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "2",
+        "fields": 
+            {
+                "bank_name": "Bangkok Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "3",
+        "fields": 
+            {
+                "bank_name": "Bank of America"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "4",
+        "fields": 
+            {
+                "bank_name": "Bank of China"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "5",
+        "fields": 
+            {
+                "bank_name": "Bank of East Asia"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "6",
+        "fields": 
+            {
+                "bank_name": "Bank of India"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "7",
+        "fields": 
+            {
+                "bank_name": "Bank of Singapore"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "8",
+        "fields": 
+            {
+                "bank_name": "Bank of Tokyo-Mitsubishi UFJ"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "9",
+        "fields": 
+            {
+                "bank_name": "BNP Paribas"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "10",
+        "fields": 
+            {
+                "bank_name": "Calyon"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "11",
+        "fields": 
+            {
+                "bank_name": "CIMB Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "12",
+        "fields": 
+            {
+                "bank_name": "Citibank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "13",
+        "fields": 
+            {
+                "bank_name": "Citibank International Personal Bank Singapore"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "14",
+        "fields": 
+            {
+                "bank_name": "Credit Agricole"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "15",
+        "fields": 
+            {
+                "bank_name": "Credit Suisse"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "16",
+        "fields": 
+            {
+                "bank_name": "DBS Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "17",
+        "fields": 
+            {
+                "bank_name": "Deutsche Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "18",
+        "fields": 
+            {
+                "bank_name": "GIC Private Limited"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "19",
+        "fields": 
+            {
+                "bank_name": "Hong Leong Finance"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "20",
+        "fields": 
+            {
+                "bank_name": "Hongkong and Shanghai Banking Corporation"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "21",
+        "fields": 
+            {
+                "bank_name": "HSBC"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "22",
+        "fields": 
+            {
+                "bank_name": "ICICI Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "23",
+        "fields": 
+            {
+                "bank_name": "Indian Overseas Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "24",
+        "fields": 
+            {
+                "bank_name": "Industrial and Commercial Bank of China (ICBC)"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "25",
+        "fields": 
+            {
+                "bank_name": "JPMorgan Chase Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "26",
+        "fields": 
+            {
+                "bank_name": "Maybank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "27",
+        "fields": 
+            {
+                "bank_name": "Merrill Lynch"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "28",
+        "fields": 
+            {
+                "bank_name": "Oversea-Chinese Banking Corporation (OCBC)"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "29",
+        "fields": 
+            {
+                "bank_name": "POSB Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "30",
+        "fields": 
+            {
+                "bank_name": "PT Bank Mandiri (Persero) Tbk."
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "31",
+        "fields": 
+            {
+                "bank_name": "PT Bank Negara Indonesia (Persero) Tbk."
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "32",
+        "fields": 
+            {
+                "bank_name": "RHB Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "33",
+        "fields": 
+            {
+                "bank_name": "Royal Bank of Scotland"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "34",
+        "fields": 
+            {
+                "bank_name": "Skandinaviska Enskilda Banken"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "35",
+        "fields": 
+            {
+                "bank_name": "Standard Chartered Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "36",
+        "fields": 
+            {
+                "bank_name": "State Bank of India (SBI)"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "37",
+        "fields": 
+            {
+                "bank_name": "State Street Bank and Trust Company"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "38",
+        "fields": 
+            {
+                "bank_name": "The Islamic Bank of Asia"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "39",
+        "fields": 
+            {
+                "bank_name": "THE ROYAL BANK OF SCOTLAND N.V."
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "40",
+        "fields": 
+            {
+                "bank_name": "UBS AG"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "41",
+        "fields": 
+            {
+                "bank_name": "UCO Bank"
+            }
+        
+    },
+    {
+        "model": "accounts.bank",
+        "pk": "42",
+        "fields": 
+            {
+                "bank_name": "United Overseas Bank (UOB)"
+            }
+        
+    }
+]

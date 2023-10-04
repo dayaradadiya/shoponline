@@ -1,0 +1,1302 @@
+model,pk,category,name,slug
+category.sub_category,1,1,T-shirts,t-shirt
+category.sub_category,2,2,Sneakers,sneakers-keds
+category.sub_category,3,3,"Benches, chairs & stools",bean-bag-chairs
+category.sub_category,4,4,Pants,pants
+category.sub_category,6,6,Lips,mate-lipstick
+category.sub_category,7,2,Girl,girls-shoe
+category.sub_category,8,7,Tanks & Camisoles,tanks-and-camisoles
+category.sub_category,9,7,Tube Tops,tube-tops
+category.sub_category,10,7,T-shirts,t-shirts
+category.sub_category,11,7,Bodysuits,bodysuits
+category.sub_category,12,7,Others,others
+category.sub_category,13,8,Leggings & Treggings,leggings-and-treggings
+category.sub_category,14,8,Pants,pants
+category.sub_category,15,8,Others,others
+category.sub_category,16,9,Shorts,shorts
+category.sub_category,17,9,Skorts,skorts
+category.sub_category,18,14,Jumpsuits,jumpsuits
+category.sub_category,19,14,Playsuits,playsuits
+category.sub_category,20,14,Overall,overall
+category.sub_category,21,14,Others,others
+category.sub_category,22,15,Winter Jackets & Coats,winter-jackets-and-coats
+category.sub_category,23,15,Capes,capes
+category.sub_category,24,15,Blazers,blazers
+category.sub_category,25,15,Jackets,jackets
+category.sub_category,26,15,Vests,vests
+category.sub_category,27,15,Others,others
+category.sub_category,28,16,Sweatshirts,sweatshirts
+category.sub_category,29,16,Hoodies,hoodies
+category.sub_category,30,16,Others,others
+category.sub_category,31,17,Couple Sets,couple-sets
+category.sub_category,32,17,Family Sets,family-sets
+category.sub_category,33,17,Individual Sets,individual-sets
+category.sub_category,34,17,Others,others
+category.sub_category,35,18,Sets,sets
+category.sub_category,36,18,Bras,bras
+category.sub_category,37,18,Panties,panties
+category.sub_category,38,18,Thermal Innerwear,thermal-innerwear
+category.sub_category,39,18,Bra Accessories,bra-accessories
+category.sub_category,40,18,Shapewear,shapewear
+category.sub_category,41,18,Safety Pants,safety-pants
+category.sub_category,42,18,Sexy Lingerie,sexy-lingerie
+category.sub_category,43,18,Others,others
+category.sub_category,44,19,Pajamas,pajamas
+category.sub_category,45,19,Night Dresses,night-dresses
+category.sub_category,46,19,Kimonos & Robes,kimonos-and-robes
+category.sub_category,47,19,Others,others
+category.sub_category,48,20,Nursing Bras,nursing-bras
+category.sub_category,49,20,Maternity Dresses,maternity-dresses
+category.sub_category,50,20,Maternity Tops,maternity-tops
+category.sub_category,51,20,Breastfeeding Wear,breastfeeding-wear
+category.sub_category,52,20,Maternity Sets,maternity-sets
+category.sub_category,53,20,Maternity Bottoms,maternity-bottoms
+category.sub_category,54,20,Others,others
+category.sub_category,55,21,Tops,tops
+category.sub_category,56,21,Bottoms,bottoms
+category.sub_category,57,21,Sets,sets
+category.sub_category,58,21,Dresses,dresses
+category.sub_category,59,21,Others,others
+category.sub_category,60,23,Batik,batik
+category.sub_category,61,23,Kebaya,kebaya
+category.sub_category,62,23,Cotton,cotton
+category.sub_category,63,23,Wool,wool
+category.sub_category,64,23,"Velvet, Silk & Satin",velvet-silk-and-satin
+category.sub_category,65,23,Leather,leather
+category.sub_category,66,23,Vinyl & Nylon,vinyl-and-nylon
+category.sub_category,67,23,Denim,denim
+category.sub_category,68,23,Canvas,canvas
+category.sub_category,69,23,Kain Pasang,kain-pasang
+category.sub_category,70,23,Songket,songket
+category.sub_category,71,23,Others,others
+category.sub_category,72,24,Socks,socks
+category.sub_category,73,24,Pantyhose,pantyhose
+category.sub_category,74,24,Others,others
+category.sub_category,75,25,Hoodies,hoodies
+category.sub_category,76,25,Sweatshirts,sweatshirts
+category.sub_category,77,25,Others,others
+category.sub_category,78,27,Winter Jackets & Coats,winter-jackets-and-coats
+category.sub_category,79,27,Jackets,jackets
+category.sub_category,80,27,Vests,vests
+category.sub_category,81,27,Others,others
+category.sub_category,82,28,Suit Sets,suit-sets
+category.sub_category,83,28,Suit Jackets & Blazers,suit-jackets-and-blazers
+category.sub_category,84,28,Suit Pants,suit-pants
+category.sub_category,85,28,Suit Vests & Waistcoats,suit-vests-and-waistcoats
+category.sub_category,86,28,Others,others
+category.sub_category,87,29,Cargo,cargo
+category.sub_category,88,29,Joggers,joggers
+category.sub_category,89,29,Pants,pants
+category.sub_category,90,29,Others,others
+category.sub_category,91,31,Shirts,shirts
+category.sub_category,92,31,Polo Shirts,polo-shirts
+category.sub_category,93,31,T-Shirts,t-shirts
+category.sub_category,94,31,Tanks,tanks
+category.sub_category,95,31,Others,others
+category.sub_category,96,32,Underwear,underwear
+category.sub_category,97,32,Undershirts,undershirts
+category.sub_category,98,32,Thermal Innerwear,thermal-innerwear
+category.sub_category,99,32,Others,others
+category.sub_category,100,35,Tops,tops
+category.sub_category,101,35,Bottoms,bottoms
+category.sub_category,102,35,Sets,sets
+category.sub_category,103,35,Others,others
+category.sub_category,104,39,Hand Care,hand-care
+category.sub_category,105,39,Foot Care,foot-care
+category.sub_category,106,39,Nail Care,nail-care
+category.sub_category,107,39,Others,others
+category.sub_category,108,40,Shampoo,shampoo
+category.sub_category,109,40,Hair Colour,hair-colour
+category.sub_category,110,40,Hair Treatment,hair-treatment
+category.sub_category,111,40,Hair and Scalp Conditioner,hair-and-scalp-conditioner
+category.sub_category,112,40,Hair Styling,hair-styling
+category.sub_category,113,40,Others,others
+category.sub_category,114,41,Bath & Body Care,bath-and-body-care
+category.sub_category,115,41,Skincare,skincare
+category.sub_category,116,41,Shaving & Grooming,shaving-and-grooming
+category.sub_category,117,41,Hair Care,hair-care
+category.sub_category,118,41,Others,others
+category.sub_category,119,49,Weight Management,weight-management
+category.sub_category,120,49,Beauty Supplements,beauty-supplements
+category.sub_category,121,49,Fitness,fitness
+category.sub_category,122,49,Well Being,well-being
+category.sub_category,123,49,Others,others
+category.sub_category,124,51,Traditional Medicine,traditional-medicine
+category.sub_category,125,51,Health Monitors & Tests,health-monitors-and-tests
+category.sub_category,126,51,Scale & Body Fat Analyzers,scale-and-body-fat-analyzers
+category.sub_category,127,51,Nasal Care,nasal-care
+category.sub_category,128,51,First Aid Supplies,first-aid-supplies
+category.sub_category,129,51,Stethoscopes,stethoscopes
+category.sub_category,130,51,Pain Relievers,pain-relievers
+category.sub_category,131,51,Laboratory Tools,laboratory-tools
+category.sub_category,132,51,Medical Gloves & Masks,medical-gloves-and-masks
+category.sub_category,133,51,Injury & Disability Support,injury-and-disability-support
+category.sub_category,134,51,Others,others
+category.sub_category,135,52,Hand Sanitizers,hand-sanitizers
+category.sub_category,136,52,Eye Care,eye-care
+category.sub_category,137,52,Ear Care,ear-care
+category.sub_category,138,52,Oral Care,oral-care
+category.sub_category,139,52,Adult Diapers & Incontinence,adult-diapers-and-incontinence
+category.sub_category,140,52,Feminine Care,feminine-care
+category.sub_category,141,52,Massage & Therapy Devices,massage-and-therapy-devices
+category.sub_category,142,52,Insect Repellents,insect-repellents
+category.sub_category,143,52,Others,others
+category.sub_category,144,53,Condoms,condoms
+category.sub_category,145,53,Lubricants,lubricants
+category.sub_category,146,53,Sex Toys,sex-toys
+category.sub_category,147,53,Performance Enhancement,performance-enhancement
+category.sub_category,148,53,Others,others
+category.sub_category,149,57,Headbands,headbands
+category.sub_category,150,57,"Hair Ties, Ribbons & Scrunchies",hair-ties-ribbons-and-scrunchies
+category.sub_category,151,57,Hair Clips & Hair Pins,hair-clips-and-hair-pins
+category.sub_category,152,57,Wigs & Extensions,wigs-and-extensions
+category.sub_category,153,57,"Headpieces, Tiaras & Flower Crowns",headpieces-tiaras-and-flower-crowns
+category.sub_category,154,57,Others,others
+category.sub_category,155,62,Sunglasses,sunglasses
+category.sub_category,156,62,Frames & Glasses,frames-and-glasses
+category.sub_category,157,62,Eyewear Cases & Accessories,eyewear-cases-and-accessories
+category.sub_category,158,62,Others,others
+category.sub_category,159,63,Platinum & K Gold,platinum-and-k-gold
+category.sub_category,160,63,Silver,silver
+category.sub_category,161,63,Diamond,diamond
+category.sub_category,162,63,Jade,jade
+category.sub_category,163,63,Others,others
+category.sub_category,164,66,Brooches & Pins,brooches-and-pins
+category.sub_category,165,66,Patches,patches
+category.sub_category,166,66,"Charms, Pendants & Ornaments",charms-pendants-and-ornaments
+category.sub_category,167,66,Cufflinks,cufflinks
+category.sub_category,168,66,Tattoos,tattoos
+category.sub_category,169,66,Masks,masks
+category.sub_category,170,66,Handkerchiefs,handkerchiefs
+category.sub_category,171,66,Others,others
+category.sub_category,172,70,Projectors & Projector Screens,projectors-and-projector-screens
+category.sub_category,173,70,Pointers,pointers
+category.sub_category,174,70,Others,others
+category.sub_category,175,71,Foot Baths & Spas,foot-baths-and-spas
+category.sub_category,176,71,Water Flossers,water-flossers
+category.sub_category,177,71,Sewing Machines & Accessories,sewing-machines-and-accessories
+category.sub_category,178,71,Telephones,telephones
+category.sub_category,179,71,Irons & Steamers,irons-and-steamers
+category.sub_category,180,71,Air Treatment,air-treatment
+category.sub_category,181,71,Vacuum Cleaners & Floor Care Appliances,vacuum-cleaners-and-floor-care-appliances
+category.sub_category,182,71,Others,others
+category.sub_category,183,72,Washing Machines & Dryers,washing-machines-and-dryers
+category.sub_category,184,72,Water Heaters,water-heaters
+category.sub_category,185,72,Cooling,cooling
+category.sub_category,186,72,Futon & Shoe Dryers,futon-and-shoe-dryers
+category.sub_category,187,72,Heaters,heaters
+category.sub_category,188,72,Others,others
+category.sub_category,189,73,TVs,tvs
+category.sub_category,190,73,TV Antennas,tv-antennas
+category.sub_category,191,73,TV Boxes & Receivers,tv-boxes-and-receivers
+category.sub_category,192,73,TV Brackets,tv-brackets
+category.sub_category,193,73,Others,others
+category.sub_category,194,74,"Water Filters, Coolers & Dispensers",water-filters-coolers-and-dispensers
+category.sub_category,195,74,Kettles,kettles
+category.sub_category,196,74,Wine Fridges,wine-fridges
+category.sub_category,197,74,"Juicers, Blenders & Soya Bean Machines",juicers-blenders-and-soya-bean-machines
+category.sub_category,198,74,Coffee Machines & Accessories,coffee-machines-and-accessories
+category.sub_category,199,74,Mixers,mixers
+category.sub_category,200,74,Dishwashers,dishwashers
+category.sub_category,201,74,"Stoves, Hobs & Gas Regulators",stoves-hobs-and-gas-regulators
+category.sub_category,202,74,Air Fryers,air-fryers
+category.sub_category,203,74,Deep Fryers,deep-fryers
+category.sub_category,204,74,Microwaves,microwaves
+category.sub_category,205,74,Ovens,ovens
+category.sub_category,206,74,Toasters,toasters
+category.sub_category,207,74,Food Processors & Meat Grinders,food-processors-and-meat-grinders
+category.sub_category,208,74,Multi-function Cookers,multi-function-cookers
+category.sub_category,209,74,Pressure Cookers,pressure-cookers
+category.sub_category,210,74,Slow Cookers & Sous Vide Machines,slow-cookers-and-sous-vide-machines
+category.sub_category,211,74,Rice Cookers,rice-cookers
+category.sub_category,212,74,Specialty Cookware,specialty-cookware
+category.sub_category,213,74,Refrigerators,refrigerators
+category.sub_category,214,74,Freezers,freezers
+category.sub_category,215,74,Hoods,hoods
+category.sub_category,216,74,Others,others
+category.sub_category,217,75,Electric Sockets & Extension Cords,electric-sockets-and-extension-cords
+category.sub_category,218,75,Electrical Safety,electrical-safety
+category.sub_category,219,75,Electricity Savers,electricity-savers
+category.sub_category,220,75,Doorbells,doorbells
+category.sub_category,221,75,Switches,switches
+category.sub_category,222,75,House Alarms,house-alarms
+category.sub_category,223,75,Lightning Protection,lightning-protection
+category.sub_category,224,75,Others,others
+category.sub_category,225,79,Fashion Boots,fashion-boots
+category.sub_category,226,79,Rain Boots,rain-boots
+category.sub_category,227,79,Safety Boots,safety-boots
+category.sub_category,228,79,Others,others
+category.sub_category,229,84,Flip Flops,flip-flops
+category.sub_category,230,84,Sandals,sandals
+category.sub_category,231,84,Indoor Slippers,indoor-slippers
+category.sub_category,232,84,Health Slippers,health-slippers
+category.sub_category,233,84,Others,others
+category.sub_category,234,85,Shoe Care & Cleaning Tools,shoe-care-and-cleaning-tools
+category.sub_category,235,85,Shoe Deodorizers,shoe-deodorizers
+category.sub_category,236,85,Shoe Laces,shoe-laces
+category.sub_category,237,85,Shoe Horns & Trees,shoe-horns-and-trees
+category.sub_category,238,85,Shoe Insoles,shoe-insoles
+category.sub_category,239,85,Others,other
+category.sub_category,240,93,Smartwatches & Fitness Trackers,smartwatches-and-fitness-trackers
+category.sub_category,241,93,VR Devices,vr-devices
+category.sub_category,242,93,GPS Trackers,gps-trackers
+category.sub_category,243,93,Others,others
+category.sub_category,244,94,Selfie Accessories,selfie-accessories
+category.sub_category,245,94,Mobile Lens,mobile-lens
+category.sub_category,246,94,Mobile Flashes & Selfie Lights,mobile-flashes-and-selfie-lights
+category.sub_category,247,94,USB & Mobile Fans,usb-and-mobile-fans
+category.sub_category,248,94,Stylus,stylus
+category.sub_category,249,94,Phone Grips,phone-grips
+category.sub_category,250,94,Phone Straps & Keychains,phone-straps-and-keychains
+category.sub_category,251,94,Memory Cards,memory-cards
+category.sub_category,252,94,Casting Devices,casting-devices
+category.sub_category,253,94,Mobile Pouches,mobile-pouches
+category.sub_category,254,94,"Cables, Chargers & Converters",cables-chargers-and-converters
+category.sub_category,255,94,USB & Mobile Lights,usb-and-mobile-lights
+category.sub_category,256,94,Pocket Wifi,pocket-wifi
+category.sub_category,257,94,Powerbanks & Batteries,powerbanks-and-batteries
+category.sub_category,258,94,Wearable Accessories,wearable-accessories
+category.sub_category,259,94,Screen Protectors,screen-protectors
+category.sub_category,260,94,"Cases, Covers, & Skins",cases-covers-and-skins
+category.sub_category,261,94,Others,others
+category.sub_category,262,97,Veils,veils
+category.sub_category,263,97,Accessories,accessories
+category.sub_category,264,97,Muslimah Sports Apparels,muslimah-sports-apparels
+category.sub_category,265,97,Muslimah Swimwear,muslimah-swimwear
+category.sub_category,266,97,Top,top
+category.sub_category,267,97,Dresses,dresses
+category.sub_category,268,97,Bottoms,bottoms
+category.sub_category,269,97,Others,others
+category.sub_category,270,98,Prayer Sets,prayer-sets
+category.sub_category,271,98,Prayer Mats,prayer-mats
+category.sub_category,272,98,"Peci, Songkok & Kopiah",peci-songkok-and-kopiah
+category.sub_category,273,98,Telekung,telekung
+category.sub_category,274,98,Telekung Travel,telekung-travel
+category.sub_category,275,98,Others,others
+category.sub_category,276,99,Tops,tops
+category.sub_category,277,99,Robe & Jubah,robe-and-jubah
+category.sub_category,278,99,Pants,pants
+category.sub_category,279,99,Sarong,sarong
+category.sub_category,280,99,Baju Melayu,baju-melayu
+category.sub_category,281,99,Others,others
+category.sub_category,282,100,Girl's Muslim Attire,girl's-muslim-attire
+category.sub_category,283,100,Boy's Muslim Attire,boy's-muslim-attire
+category.sub_category,284,100,Others,others
+category.sub_category,285,101,Vests,vests
+category.sub_category,286,101,Jackets,jackets
+category.sub_category,287,101,Coats,coats
+category.sub_category,288,101,Cardigans,cardigans
+category.sub_category,289,101,Others,others
+category.sub_category,290,104,Duffel & Weekender Bags,duffel-and-weekender-bags
+category.sub_category,291,104,Foldable Bags,foldable-bags
+category.sub_category,292,104,Drawstring Bags,drawstring-bags
+category.sub_category,293,104,Others,others
+category.sub_category,294,106,Passport Holders & Covers,passport-holders-and-covers
+category.sub_category,295,106,Travel Organizers,travel-organizers
+category.sub_category,296,106,Luggage Protectors & Covers,luggage-protectors-and-covers
+category.sub_category,297,106,Luggage Tags,luggage-tags
+category.sub_category,298,106,Luggage Straps,luggage-straps
+category.sub_category,299,106,Luggage Locks,luggage-locks
+category.sub_category,300,106,Luggage Scales,luggage-scales
+category.sub_category,301,106,Travel Pillows & Eye Covers,travel-pillows-and-eye-covers
+category.sub_category,302,106,Travel Size Bottles & Containers,travel-size-bottles-and-containers
+category.sub_category,303,106,Others,others
+category.sub_category,304,109,Laptop Bags & Cases,laptop-bags-and-cases
+category.sub_category,305,109,Laptop Sleeves,laptop-sleeves
+category.sub_category,306,109,Laptop Backpacks,laptop-backpacks
+category.sub_category,307,109,Others,others
+category.sub_category,308,115,Card Holders,card-holders
+category.sub_category,309,115,Coin Holders & Purses,coin-holders-and-purses
+category.sub_category,310,115,Phone & Key Wallets,phone-and-key-wallets
+category.sub_category,311,115,Bifold & Trifold Wallets,bifold-and-trifold-wallets
+category.sub_category,312,115,Long Wallets,long-wallets
+category.sub_category,313,115,Others,others
+category.sub_category,314,116,Bag Straps,bag-straps
+category.sub_category,315,116,Bag Holders,bag-holders
+category.sub_category,316,116,Charms & Twillies,charms-and-twillies
+category.sub_category,317,116,Bag Organizers,bag-organizers
+category.sub_category,318,116,Cleaning & Care Equipment,cleaning-and-care-equipment
+category.sub_category,319,116,Others,others
+category.sub_category,320,118,Rain Boots,rain-boots
+category.sub_category,321,118,Fashion Boots,fashion-boots
+category.sub_category,322,118,Others,others
+category.sub_category,323,120,Ballet Flats,ballet-flats
+category.sub_category,324,120,Loafers & Boat Shoes,loafers-and-boat-shoes
+category.sub_category,325,120,Oxfords & Lace-Ups,oxfords-and-lace-ups
+category.sub_category,326,120,"Slip Ons, Mary Janes & Mules",slip-ons-mary-janes-and-mules
+category.sub_category,327,120,Others,others
+category.sub_category,328,123,Flat Sandals,flat-sandals
+category.sub_category,329,123,Flip Flops,flip-flops
+category.sub_category,330,123,Health Slippers,health-slippers
+category.sub_category,331,123,Indoor Slippers,indoor-slippers
+category.sub_category,332,123,Others,others
+category.sub_category,333,124,Shoe Deodorizers,shoe-deodorizers
+category.sub_category,334,124,Insoles & Heel Liners,insoles-and-heel-liners
+category.sub_category,335,124,Shoe Horns & Trees,shoe-horns-and-trees
+category.sub_category,336,124,Shoe Care & Cleaning Tools,shoe-care-and-cleaning-tools
+category.sub_category,337,124,Shoe Laces,shoe-laces
+category.sub_category,338,124,Others,others
+category.sub_category,339,127,Laptop Bags & Cases,laptop-bags-and-cases
+category.sub_category,340,127,Laptop Sleeves,laptop-sleeves
+category.sub_category,341,127,Laptop Backpacks,laptop-backpacks
+category.sub_category,342,127,Others,others
+category.sub_category,343,133,Card Holders,card-holders
+category.sub_category,344,133,Coin Holders & Purses,coin-holders-and-purses
+category.sub_category,345,133,Phone & Key Wallets,phone-and-key-wallets
+category.sub_category,346,133,Bifold & Trifold Wallets,bifold-and-trifold-wallets
+category.sub_category,347,133,Long Wallets,long-wallets
+category.sub_category,348,133,Others,others
+category.sub_category,349,138,Straps,straps
+category.sub_category,350,138,Service Tools,service-tools
+category.sub_category,351,138,Buckles,buckles
+category.sub_category,352,138,Batteries,batteries
+category.sub_category,353,138,Boxes,boxes
+category.sub_category,354,138,Others,others
+category.sub_category,355,141,MP3 & MP4 Players,mp3-and-mp4-players
+category.sub_category,356,141,"CD, DVD, & Blu-ray Players",cd-dvd-and-blu-ray-players
+category.sub_category,357,141,Voice Recorders,voice-recorders
+category.sub_category,358,141,Radio & Cassette Players,radio-and-cassette-players
+category.sub_category,359,141,Others,others
+category.sub_category,360,144,Speakers,speakers
+category.sub_category,361,144,Home Theater Systems,home-theater-systems
+category.sub_category,362,144,AV Receivers,av-receivers
+category.sub_category,363,144,Others,others
+category.sub_category,364,147,Cooked Food,cooked-food
+category.sub_category,365,147,Others,others
+category.sub_category,366,147,Instant Rice & Porridge,instant-rice-and-porridge
+category.sub_category,367,147,Instant Hotpot,instant-hotpot
+category.sub_category,368,147,Instant Noodles,instant-noodles
+category.sub_category,369,148,Sweets & Candies,sweets-and-candies
+category.sub_category,370,148,Chocolate,chocolate
+category.sub_category,371,148,"Biscuits, Cookies & Wafers",biscuits-cookies-and-wafers
+category.sub_category,372,148,Chips & Crisps,chips-and-crisps
+category.sub_category,373,148,Seeds,seeds
+category.sub_category,374,148,Popcorn,popcorn
+category.sub_category,375,148,Seaweed,seaweed
+category.sub_category,376,148,Nuts,nuts
+category.sub_category,377,148,Others,others
+category.sub_category,378,148,"Pudding, Jellies & Marshmallow",pudding-jellies-and-marshmallow
+category.sub_category,379,148,Dried Snacks,dried-snacks
+category.sub_category,380,149,Dried Goods,dried-goods
+category.sub_category,381,149,Noodles,noodles
+category.sub_category,382,149,Rice,rice
+category.sub_category,383,149,Pasta,pasta
+category.sub_category,384,149,Others,others
+category.sub_category,385,149,Canned Food,canned-food
+category.sub_category,386,149,Preserved Vegetables,preserved-vegetables
+category.sub_category,387,150,Oil,oil
+category.sub_category,388,150,Seasonings & Condiments,seasonings-and-condiments
+category.sub_category,389,150,Sugar,sugar
+category.sub_category,390,150,Sweetener,sweetener
+category.sub_category,391,150,"Stock, Gravy & Instant Soup",stock-gravy-and-instant-soup
+category.sub_category,392,150,Cooking Paste & Kit,cooking-paste-and-kit
+category.sub_category,393,150,Flavour Enhancers,flavour-enhancers
+category.sub_category,394,150,Flour Coating,flour-coating
+category.sub_category,395,150,Others,others
+category.sub_category,396,151,Baking Flavoring,baking-flavoring
+category.sub_category,397,151,Baking Powder & Soda,baking-powder-and-soda
+category.sub_category,398,151,Baking Premix Flour,baking-premix-flour
+category.sub_category,399,151,Flour,flour
+category.sub_category,400,151,Food Coloring,food-coloring
+category.sub_category,401,151,Baking decoration,baking-decoration
+category.sub_category,402,151,Others,others
+category.sub_category,403,152,Honey & Maple Syrups,honey-and-maple-syrups
+category.sub_category,404,152,Jam & Spread,jam-and-spread
+category.sub_category,405,152,"Cereal, Granola & Oats",cereal-granola-and-oats
+category.sub_category,406,152,Breakfast Bar,breakfast-bar
+category.sub_category,407,152,Others,others
+category.sub_category,408,153,Coffee,coffee
+category.sub_category,409,153,Tea & Tea Bags,tea-and-tea-bags
+category.sub_category,410,153,Chocolate Drinks,chocolate-drinks
+category.sub_category,411,153,Energy & Isotonic Drinks,energy-and-isotonic-drinks
+category.sub_category,412,153,Water,water
+category.sub_category,413,153,Juice & Juice Vinegar,juice-and-juice-vinegar
+category.sub_category,414,153,Cordial & Syrups,cordial-and-syrups
+category.sub_category,415,153,Carbonated Drinks & Tonics,carbonated-drinks-and-tonics
+category.sub_category,416,153,Powdered Drink Mixes,powdered-drink-mixes
+category.sub_category,417,153,Dessert Drink,dessert-drink
+category.sub_category,418,153,Traditional & Herbal Drinks,traditional-and-herbal-drinks
+category.sub_category,419,153,Drink Toppings,drink-toppings
+category.sub_category,420,153,Non-dairy Milk,non-dairy-milk
+category.sub_category,421,153,Others,others
+category.sub_category,422,154,Milk,milk
+category.sub_category,423,154,Yogurt & Cultured Milk,yogurt-and-cultured-milk
+category.sub_category,424,154,Creamers,creamers
+category.sub_category,425,154,Butter & Margarine,butter-and-margarine
+category.sub_category,426,154,Cheese & Cheese Powder,cheese-and-cheese-powder
+category.sub_category,427,154,Ice cream,ice-cream
+category.sub_category,428,154,Eggs,eggs
+category.sub_category,429,154,Beancurd,beancurd
+category.sub_category,430,154,Others,others
+category.sub_category,431,155,Meat,meat
+category.sub_category,432,156,Seafood,seafood
+category.sub_category,433,156,Vegetarian Meat,vegetarian-meat
+category.sub_category,434,156,Others,others
+category.sub_category,435,156,Vegetables,vegetables
+category.sub_category,436,156,Fruits,fruits
+category.sub_category,437,156,Mushroom,mushroom
+category.sub_category,438,156,Frozen Processed Food,frozen-processed-food
+category.sub_category,439,156,Processed Meat & Seafood,processed-meat-and-seafood
+category.sub_category,440,156,Breads,breads
+category.sub_category,441,156,Cakes & Pies,cakes-and-pies
+category.sub_category,442,156,Pastry,pastry
+category.sub_category,443,156,Others,others
+category.sub_category,444,157,Beer & Cider,beer-and-cider
+category.sub_category,445,157,Wine & Champagne,wine-and-champagne
+category.sub_category,446,157,Liquor & Spirits,liquor-and-spirits
+category.sub_category,447,157,"Sake, Soju & Umeshu",sake-soju-and-umeshu
+category.sub_category,448,157,Others,others
+category.sub_category,449,160,Dog Food,dog-food
+category.sub_category,450,160,Dog Treats,dog-treats
+category.sub_category,451,160,Cat Food,cat-food
+category.sub_category,452,160,Cat Treats,cat-treats
+category.sub_category,453,160,Small Pet Food,small-pet-food
+category.sub_category,454,160,Small Pet Treats,small-pet-treats
+category.sub_category,455,160,Aquarium Pet Food,aquarium-pet-food
+category.sub_category,456,160,Bird Feed,bird-feed
+category.sub_category,457,160,Reptile Food,reptile-food
+category.sub_category,458,160,Others,others
+category.sub_category,459,161,Bowls & Feeders,bowls-and-feeders
+category.sub_category,460,161,Travel Essentials,travel-essentials
+category.sub_category,461,161,"Leashes, Collars, Harnesses & Muzzles",leashes-collars-harnesses-and-muzzles
+category.sub_category,462,161,Toys,toys
+category.sub_category,463,161,Pet Furniture,pet-furniture
+category.sub_category,464,161,Aquarium Needs,aquarium-needs
+category.sub_category,465,161,Others,others
+category.sub_category,466,162,Cat Litter & Boxes,cat-litter-and-boxes
+category.sub_category,467,162,Small Pet Bedding & Litter,small-pet-bedding-and-litter
+category.sub_category,468,162,Diapers,diapers
+category.sub_category,469,162,Dog Training Pads & Trays,dog-training-pads-and-trays
+category.sub_category,470,162,Poop Bags & Scoopers,poop-bags-and-scoopers
+category.sub_category,471,162,Others,others
+category.sub_category,472,163,Hair Care,hair-care
+category.sub_category,473,163,Oral Care,oral-care
+category.sub_category,474,163,Claw Care,claw-care
+category.sub_category,475,163,Others,others
+category.sub_category,476,164,Pet Clothing,pet-clothing
+category.sub_category,477,164,Wet Weather Gear,wet-weather-gear
+category.sub_category,478,164,"Boots, Socks & Paw Protectors",boots-socks-and-paw-protectors
+category.sub_category,479,164,Neck Accessories,neck-accessories
+category.sub_category,480,164,Eyewear,eyewear
+category.sub_category,481,164,Hair Accessories,hair-accessories
+category.sub_category,482,164,Hats,hats
+category.sub_category,483,164,Others,others
+category.sub_category,484,165,Anti Fleas & Ticks,anti-fleas-and-ticks
+category.sub_category,485,165,Medication,medication
+category.sub_category,486,165,Others,others
+category.sub_category,487,165,Vitamins & Supplements,vitamins-and-supplements
+category.sub_category,488,167,Baby Carrier,baby-carrier
+category.sub_category,489,167,Strollers & Travel Systems,strollers-and-travel-systems
+category.sub_category,490,167,Stroller Accessories,stroller-accessories
+category.sub_category,491,167,Car & Motorbike Seats,car-and-motorbike-seats
+category.sub_category,492,167,Car & Motorbike Seats Accessories,car-and-motorbike-seats-accessories
+category.sub_category,493,167,Diaper Bags,diaper-bags
+category.sub_category,494,167,Child Harnesses & Leashes,child-harnesses-and-leashes
+category.sub_category,495,167,Others,others
+category.sub_category,496,168,Bottle-feeding,bottle-feeding
+category.sub_category,497,168,Breastfeeding,breastfeeding
+category.sub_category,498,168,Highchairs & Booster Seats,highchairs-and-booster-seats
+category.sub_category,499,168,Utensils,utensils
+category.sub_category,500,168,Bibs,bibs
+category.sub_category,501,168,Pacifiers,pacifiers
+category.sub_category,502,168,Food Processors,food-processors
+category.sub_category,503,168,Others,others
+category.sub_category,504,169,Supporting Belts,supporting-belts
+category.sub_category,505,169,Maternity Pillows,maternity-pillows
+category.sub_category,506,169,Others,others
+category.sub_category,507,170,Maternity Milk,maternity-milk
+category.sub_category,508,170,Maternity Vitamins & Supplement,maternity-vitamins-and-supplement
+category.sub_category,509,170,Moisturizers & Creams,moisturizers-and-creams
+category.sub_category,510,170,Others,others
+category.sub_category,511,171,Bathing Tubs & Seats,bathing-tubs-and-seats
+category.sub_category,512,171,"Bath Robes, Towels & Wash Cloths",bath-robes-towels-and-wash-cloths
+category.sub_category,513,171,Shower Caps,shower-caps
+category.sub_category,514,171,Bathing Tools & Accessories,bathing-tools-and-accessories
+category.sub_category,515,171,Hair Care & Body Wash,hair-care-and-body-wash
+category.sub_category,516,171,Baby Colognes & Fragrances,baby-colognes-and-fragrances
+category.sub_category,517,171,Baby Grooming Tools,baby-grooming-tools
+category.sub_category,518,171,Wipes,wipes
+category.sub_category,519,171,Baby Laundry Detergent,baby-laundry-detergent
+category.sub_category,520,171,Others,others
+category.sub_category,521,172,Cribs & Cradles & Beds,cribs-and-cradles-and-beds
+category.sub_category,522,172,"Bouncers, Rockers & Jumpers",bouncers-rockers-and-jumpers
+category.sub_category,523,172,Walkers,walkers
+category.sub_category,524,172,Mattresses & Bedding,mattresses-and-bedding
+category.sub_category,525,172,Storage & Organization,storage-and-organization
+category.sub_category,526,172,Others,others
+category.sub_category,527,173,Monitors,monitors
+category.sub_category,528,173,Mosquito Netting,mosquito-netting
+category.sub_category,529,173,"Bumpers, Rails & Guards","bumpers,-rails-and-guards"
+category.sub_category,530,173,Edge & Corner Guards,edge-and-corner-guards
+category.sub_category,531,173,Baby Gates & Doorways,baby-gates-and-doorways
+category.sub_category,532,173,Safety Locks & Straps,safety-locks-and-straps
+category.sub_category,533,173,Others,others
+category.sub_category,534,174,Milk Formula,milk-formula
+category.sub_category,535,174,"Baby Porridge, Puree & Cereal","baby-porridge,-puree-and-cereal"
+category.sub_category,536,174,Baby Snack,baby-snack
+category.sub_category,537,174,Others,others
+category.sub_category,538,175,Baby Vitamins & Supplements,baby-vitamins-and-supplements
+category.sub_category,539,175,Nasal Care,nasal-care
+category.sub_category,540,175,Baby Skincare,baby-skincare
+category.sub_category,541,175,Baby Oral Care,baby-oral-care
+category.sub_category,542,175,Sun Care,sun-care
+category.sub_category,543,175,Others,others
+category.sub_category,544,176,Changing Pads & Kits,changing-pads-and-kits
+category.sub_category,545,176,Potty Training & Commode Chairs,potty-training-and-commode-chairs
+category.sub_category,546,176,Disposable Diapers,disposable-diapers
+category.sub_category,547,176,Cloth Diapers & Accessories,cloth-diapers-and-accessories
+category.sub_category,548,176,Others,others
+category.sub_category,549,177,Baby & Toddler Toys,baby-and-toddler-toys
+category.sub_category,550,177,Block Toys,block-toys
+category.sub_category,551,177,Dolls & Stuffed Toys,dolls-and-stuffed-toys
+category.sub_category,552,177,Pretend Play,pretend-play
+category.sub_category,553,177,Toy Vehicles,toy-vehicles
+category.sub_category,554,177,Sports & Outdoor Play,sports-and-outdoor-play
+category.sub_category,555,177,Educational Toys,educational-toys
+category.sub_category,556,177,Robot Toys,robot-toys
+category.sub_category,557,177,Slime & Squishy Toys,slime-and-squishy-toys
+category.sub_category,558,177,Others,others
+category.sub_category,559,180,Regular Outerwear,regular-outerwear
+category.sub_category,560,180,Winter Outerwear,winter-outerwear
+category.sub_category,561,180,Dresses,dresses
+category.sub_category,562,180,Bottoms,bottoms
+category.sub_category,563,180,Sleepwear,sleepwear
+category.sub_category,564,180,Tops,tops
+category.sub_category,565,180,Bodysuits & Jumpsuits,bodysuits-and-jumpsuits
+category.sub_category,566,180,Sets,sets
+category.sub_category,567,180,Swimwear,swimwear
+category.sub_category,568,180,Others,others
+category.sub_category,569,182,Bags & Luggage,bags-and-luggage
+category.sub_category,570,182,Hats & Caps,hats-and-caps
+category.sub_category,571,182,Eyewear,eyewear
+category.sub_category,572,182,Hair Accessories,hair-accessories
+category.sub_category,573,182,Gloves,gloves
+category.sub_category,574,182,Belts,belts
+category.sub_category,575,182,Socks,socks
+category.sub_category,576,182,Scarves,scarves
+category.sub_category,577,182,Watches,watches
+category.sub_category,578,182,Jewelry,jewelry
+category.sub_category,579,182,Rain Gear,rain-gear
+category.sub_category,580,182,Earmuffs,earmuffs
+category.sub_category,581,182,Others,others
+category.sub_category,582,183,Costumes,costumes
+category.sub_category,583,183,Underwear & Innerwear,underwear-and-innerwear
+category.sub_category,584,183,Sleepwear,sleepwear
+category.sub_category,585,183,Swimwear,swimwear
+category.sub_category,586,183,Tops,tops
+category.sub_category,587,183,Outerwear,outerwear
+category.sub_category,588,183,Bottoms,bottoms
+category.sub_category,589,183,Suits & Sets,suits-and-sets
+category.sub_category,590,183,Others,others
+category.sub_category,591,184,Costumes,costumes
+category.sub_category,592,184,Underwear & Innerwear,underwear-and-innerwear
+category.sub_category,593,184,Sleepwear,sleepwear
+category.sub_category,594,184,Swimwear,swimwear
+category.sub_category,595,184,Tops,tops
+category.sub_category,596,184,Outerwear,outerwear
+category.sub_category,597,184,Bottoms,bottoms
+category.sub_category,598,184,Rompers & Jumpsuits,rompers-and-jumpsuits
+category.sub_category,599,184,Dresses,dresses
+category.sub_category,600,184,Suits & Sets,suits-and-sets
+category.sub_category,601,184,Others,others
+category.sub_category,602,185,Boots,boots
+category.sub_category,603,185,Sandals,sandals
+category.sub_category,604,185,Sneakers,sneakers
+category.sub_category,605,185,Flip Flops,flip-flops
+category.sub_category,606,185,Formal Shoes,formal-shoes
+category.sub_category,607,185,Loafers,loafers
+category.sub_category,608,185,Others,others
+category.sub_category,609,186,Boots,boots
+category.sub_category,610,186,Sandals,sandals
+category.sub_category,611,186,Sneakers,sneakers
+category.sub_category,612,186,Loafers,loafers
+category.sub_category,613,186,Flip Flops,flip-flops
+category.sub_category,614,186,Flats,flats
+category.sub_category,615,186,Others,others
+category.sub_category,616,188,Xbox,xbox
+category.sub_category,617,188,Wii,wii
+category.sub_category,618,188,Nintendo DS,nintendo-ds
+category.sub_category,619,188,Gameboy,gameboy
+category.sub_category,620,188,PS Vita,ps-vita
+category.sub_category,621,188,PSP,psp
+category.sub_category,622,188,Others,others
+category.sub_category,623,190,Playstation,playstation
+category.sub_category,624,190,Xbox,xbox
+category.sub_category,625,190,Wii,wii
+category.sub_category,626,190,Nintendo DS,nintendo-ds
+category.sub_category,627,190,Gameboy,gameboy
+category.sub_category,628,190,Switch,switch
+category.sub_category,629,190,PS Vita,ps-vita
+category.sub_category,630,190,PSP,psp
+category.sub_category,631,190,PC Game,pc-game
+category.sub_category,632,190,Others,others
+category.sub_category,633,192,Point & Shoot,point-and-shoot
+category.sub_category,634,192,Mirrorless Cameras,mirrorless-cameras
+category.sub_category,635,192,Action Cameras,action-cameras
+category.sub_category,636,192,Video Camcorders,video-camcorders
+category.sub_category,637,192,Instant Cameras,instant-cameras
+category.sub_category,638,192,Analog Cameras,analog-cameras
+category.sub_category,639,192,DSLRs,dslrs
+category.sub_category,640,192,Others,others
+category.sub_category,641,193,CCTV Security Cameras,cctv-security-cameras
+category.sub_category,642,193,DVRs,dvrs
+category.sub_category,643,193,Dummy Cameras,dummy-cameras
+category.sub_category,644,193,Others,others
+category.sub_category,645,195,Lens Mount & Adaptors,lens-mount-and-adaptors
+category.sub_category,646,195,Lens Caps,lens-caps
+category.sub_category,647,195,Filters,filters
+category.sub_category,648,195,Lens Hoods,lens-hoods
+category.sub_category,649,195,Others,others
+category.sub_category,650,196,Flashes,flashes
+category.sub_category,651,196,Flash Accessories,flash-accessories
+category.sub_category,652,196,Gimbals & Stabilizers,gimbals-and-stabilizers
+category.sub_category,653,196,Lighting & Studio Equipments,lighting-and-studio-equipments
+category.sub_category,654,196,Photo Films & Papers,photo-films-and-papers
+category.sub_category,655,196,Photo Printers,photo-printers
+category.sub_category,656,196,Camera Cases & Bags,camera-cases-and-bags
+category.sub_category,657,196,Battery Chargers,battery-chargers
+category.sub_category,658,196,Batteries & Battery Grips,batteries-and-battery-grips
+category.sub_category,659,196,"Tripods, Monopods, & Accessories","tripods,-monopods,-and-accessories"
+category.sub_category,660,196,Others,others
+category.sub_category,661,197,Dry Boxes & Cabinets,dry-boxes-and-cabinets
+category.sub_category,662,197,Cleaning Kit,cleaning-kit
+category.sub_category,663,197,Silica Gel,silica-gel
+category.sub_category,664,197,Blowers,blowers
+category.sub_category,665,197,Lenspens & Brushes,lenspens-and-brushes
+category.sub_category,666,197,Others,others
+category.sub_category,667,201,Air Fresheners & Home Fragrance,air-fresheners-and-home-fragrance
+category.sub_category,668,201,Essential Oils,essential-oils
+category.sub_category,669,201,"Diffusers, Humidifiers & Oil Burners",diffusers-humidifiers-and-oil-burners
+category.sub_category,670,201,Others,others
+category.sub_category,671,202,"Toilet Bowls, Seats & Covers",toilet-bowls-seats-and-covers
+category.sub_category,672,202,Toothbrush Holders & Toothpaste Dispensers,toothbrush-holders-and-toothpaste-dispensers
+category.sub_category,673,202,"Soap Dispensers, Holders & Boxes",soap-dispensers-holders-and-boxes
+category.sub_category,674,202,Bathroom Racks & Cabinets,bathroom-racks-and-cabinets
+category.sub_category,675,202,Bathtubs,bathtubs
+category.sub_category,676,202,Towels & Bathrobes,towels-and-bathrobes
+category.sub_category,677,202,Showerheads & Bidet Sprays,showerheads-and-bidet-sprays
+category.sub_category,678,202,Bath Brushes & Loofahs,bath-brushes-and-loofahs
+category.sub_category,679,202,Shower Curtains,shower-curtains
+category.sub_category,680,202,Shower Seats & Commodes,shower-seats-and-commodes
+category.sub_category,681,202,Safety Handles,safety-handles
+category.sub_category,682,202,Shower Caps,shower-caps
+category.sub_category,683,202,Others,others
+category.sub_category,684,203,Cooling Mats,cooling-mats
+category.sub_category,685,203,Mattress Protectors & Toppers,mattress-protectors-and-toppers
+category.sub_category,686,203,"Blankets, Comforters & Quilts",blankets-comforters-and-quilts
+category.sub_category,687,203,Pillows,pillows
+category.sub_category,688,203,"Bedsheets, Pillowcases & Bolster Cases",bedsheets-pillowcases-and-bolster-cases
+category.sub_category,689,203,Mattresses,mattresses
+category.sub_category,690,203,Mosquito Nets,mosquito-nets
+category.sub_category,691,203,Bolsters,bolsters
+category.sub_category,692,203,Others,others
+category.sub_category,693,204,Flowers,flowers
+category.sub_category,694,204,Furniture & Appliance Covers,furniture-and-appliance-covers
+category.sub_category,695,204,Curtains & Blinds,curtains-and-blinds
+category.sub_category,696,204,Photo Frames & Wall Decoration,photo-frames-and-wall-decoration
+category.sub_category,697,204,Wallpapers & Wall Stickers,wallpapers-and-wall-stickers
+category.sub_category,698,204,Clocks,clocks
+category.sub_category,699,204,Floor Mats,floor-mats
+category.sub_category,700,204,Carpets & Rugs,carpets-and-rugs
+category.sub_category,701,204,Vases & Vessels,vases-and-vessels
+category.sub_category,702,204,Candles & Candleholders,candles-and-candleholders
+category.sub_category,703,204,Mirrors,mirrors
+category.sub_category,704,204,Table Cloths,table-cloths
+category.sub_category,705,204,Others,others
+category.sub_category,706,206,Cushions,cushions
+category.sub_category,707,206,Doorstoppers,doorstoppers
+category.sub_category,708,206,Bed Frames & Headboards,bed-frames-and-headboards
+category.sub_category,709,206,Desks & Tables,desks-and-tables
+category.sub_category,710,206,Wardrobes,wardrobes
+category.sub_category,711,206,"Benches, Chairs & Stools",benches-chairs-and-stools
+category.sub_category,712,206,Sofas,sofas
+category.sub_category,713,206,Cupboards & Cabinets,cupboards-and-cabinets
+category.sub_category,714,206,Shelves & Racks,shelves-and-racks
+category.sub_category,715,206,Others,others
+category.sub_category,716,207,Plants,plants
+category.sub_category,717,207,Garden Decorations,garden-decorations
+category.sub_category,718,207,Garden Soils & Growing Media,garden-soils-and-growing-media
+category.sub_category,719,207,Fertilizer,fertilizer
+category.sub_category,720,207,Seeds & Bulbs,seeds-and-bulbs
+category.sub_category,721,207,Pots & Planters,pots-and-planters
+category.sub_category,722,207,Irrigation Systems,irrigation-systems
+category.sub_category,723,207,Gardening Tools,gardening-tools
+category.sub_category,724,207,Others,others
+category.sub_category,725,207,Lawn Mowers,lawn-mowers
+category.sub_category,726,208,Industrial Adhesives & Tapes,industrial-adhesives-and-tapes
+category.sub_category,727,208,"Protective Gloves, Goggles & Masks",protective-gloves-goggles-and-masks
+category.sub_category,728,208,Sinks & Water Taps,sinks-and-water-taps
+category.sub_category,729,208,Roofing & Flooring,roofing-and-flooring
+category.sub_category,730,208,Wall Paints & Coatings,wall-paints-and-coatings
+category.sub_category,731,208,Tools,tools
+category.sub_category,732,208,"Water Pumps, Parts & Accessories",water-pumps-parts-and-accessories
+category.sub_category,733,208,"Air Pumps, Parts & Accessories",air-pumps-parts-and-accessories
+category.sub_category,734,208,Ladders,ladders
+category.sub_category,735,208,Trollies,trollies
+category.sub_category,736,208,"Shades, Awnings & Tarpaulins",shades-awnings-and-tarpaulins
+category.sub_category,737,208,Construction Materials,construction-materials
+category.sub_category,738,208,Doors & Windows,doors-and-windows
+category.sub_category,739,208,Others,others
+category.sub_category,740,209,Clotheslines & Drying Racks,clotheslines-and-drying-racks
+category.sub_category,741,209,Cleaning Brushes,cleaning-brushes
+category.sub_category,742,209,Brooms,brooms
+category.sub_category,743,209,Dusters,dusters
+category.sub_category,744,209,Mops,mops
+category.sub_category,745,209,"Basins, Buckets & Water Dippers",basins-buckets-and-water-dippers
+category.sub_category,746,209,Sponges & Scouring Pads,sponges-and-scouring-pads
+category.sub_category,747,209,Trash & Recycling Bins,trash-and-recycling-bins
+category.sub_category,748,209,Plastic Bags & Trash Bags,plastic-bags-and-trash-bags
+category.sub_category,749,209,Cleaning Cloths,cleaning-cloths
+category.sub_category,750,209,Pest & Weed Control,pest-and-weed-control
+category.sub_category,751,209,Tissue & Paper Towels,tissue-and-paper-towels
+category.sub_category,752,209,Toilet Paper,toilet-paper
+category.sub_category,753,209,Cleaning Agents,cleaning-agents
+category.sub_category,754,209,Laundry Care,laundry-care
+category.sub_category,755,209,Others,others
+category.sub_category,756,210,Grills & Accessories,grills-and-accessories
+category.sub_category,757,210,Bakewares & Decorations,bakewares-and-decorations
+category.sub_category,758,210,Pans,pans
+category.sub_category,759,210,Pots,pots
+category.sub_category,760,210,Food Storage,food-storage
+category.sub_category,761,210,Cling Wrap,cling-wrap
+category.sub_category,762,210,Aluminium Foil,aluminium-foil
+category.sub_category,763,210,"Tea, Coffee & Bartending Equipments",tea-coffee-and-bartending-equipments
+category.sub_category,764,210,Kitchen Racks,kitchen-racks
+category.sub_category,765,210,Aprons & Kitchen Gloves,aprons-and-kitchen-gloves
+category.sub_category,766,210,Spatulas & Cooking Tweezers,spatulas-and-cooking-tweezers
+category.sub_category,767,210,Chopping Boards,chopping-boards
+category.sub_category,768,210,Knives & Kitchen Scissors,knives-and-kitchen-scissors
+category.sub_category,769,210,Whisks & Beaters,whisks-and-beaters
+category.sub_category,770,210,Can & Bottle Openers,can-and-bottle-openers
+category.sub_category,771,210,Measuring Glasses & Spoons,measuring-glasses-and-spoons
+category.sub_category,772,210,Strainers,strainers
+category.sub_category,773,210,"Graters, Peelers & Cutters",graters-peelers-and-cutters
+category.sub_category,774,210,Kitchen Weighing Scales,kitchen-weighing-scales
+category.sub_category,775,210,Sealers,sealers
+category.sub_category,776,210,"Lighters, Matches & Fire Starters",lighters-matches-and-fire-starters
+category.sub_category,777,210,Others,others
+category.sub_category,778,211,"Jugs, Pitchers & Accessories",jugs-pitchers-and-accessories
+category.sub_category,779,211,Tea Pots & Sets,tea-pots-and-sets
+category.sub_category,780,211,"Cups, Mugs & Glasses",cups-mugs-and-glasses
+category.sub_category,781,211,Water Bottles & Accessories,water-bottles-and-accessories
+category.sub_category,782,211,Bowls,bowls
+category.sub_category,783,211,Plates,plates
+category.sub_category,784,211,Cutleries,cutleries
+category.sub_category,785,211,Straws,straws
+category.sub_category,786,211,Food Covers,food-covers
+category.sub_category,787,211,Placemats & Coasters,placemats-and-coasters
+category.sub_category,788,211,Others,others
+category.sub_category,789,212,Safes,safes
+category.sub_category,790,212,Fire Fighting Equipments,fire-fighting-equipments
+category.sub_category,791,212,Door Hardware & Locks,door-hardware-and-locks
+category.sub_category,792,212,Others,others
+category.sub_category,793,213,Hangers & Pegs,hangers-and-pegs
+category.sub_category,794,213,"Storage Boxes, Bags & Baskets",storage-boxes-bags-and-baskets
+category.sub_category,795,213,Shoe Storage Boxes,shoe-storage-boxes
+category.sub_category,796,213,Hooks,hooks
+category.sub_category,797,213,Laundry Bags & Baskets,laundry-bags-and-baskets
+category.sub_category,798,213,Desk Organizers,desk-organizers
+category.sub_category,799,213,Wardrobe Organizers,wardrobe-organizers
+category.sub_category,800,213,Jewelry Organizers,jewelry-organizers
+category.sub_category,801,213,Tissue Holders,tissue-holders
+category.sub_category,802,213,Others,others
+category.sub_category,803,214,Balloons,balloons
+category.sub_category,804,214,Wooden Clips,wooden-clips
+category.sub_category,805,214,Backdrops & Banners,backdrops-and-banners
+category.sub_category,806,214,Cards,cards
+category.sub_category,807,214,Disposable Tableware,disposable-tableware
+category.sub_category,808,214,Party Hats & Masks,party-hats-and-masks
+category.sub_category,809,214,Sashes,sashes
+category.sub_category,810,214,Others,others
+category.sub_category,811,217,Fishing,fishing
+category.sub_category,812,217,Cycling,cycling
+category.sub_category,813,217,Camping & Hiking,camping-and-hiking
+category.sub_category,814,217,Rock Climbing,rock-climbing
+category.sub_category,815,217,Boardsports,boardsports
+category.sub_category,816,217,Archery,archery
+category.sub_category,817,217,"Soccer, Futsal & Sepak Takraw",soccer-futsal-and-sepak-takraw
+category.sub_category,818,217,Basketball,basketball
+category.sub_category,819,217,Volleyball,volleyball
+category.sub_category,820,217,Badminton,badminton
+category.sub_category,821,217,Tennis,tennis
+category.sub_category,822,217,Table Tennis,table-tennis
+category.sub_category,823,217,Boxing & Martial Arts,boxing-and-martial-arts
+category.sub_category,824,217,Golf,golf
+category.sub_category,825,217,Baseball & Softball,baseball-and-softball
+category.sub_category,826,217,Squash,squash
+category.sub_category,827,217,Rugby,rugby
+category.sub_category,828,217,Billiards,billiards
+category.sub_category,829,217,Surfing & Wakeboarding,surfing-and-wakeboarding
+category.sub_category,830,217,Ice Skating & Winter Sports,ice-skating-and-winter-sports
+category.sub_category,831,217,Swimming & Diving,swimming-and-diving
+category.sub_category,832,217,Boating,boating
+category.sub_category,833,217,Yoga & Pilates,yoga-and-pilates
+category.sub_category,834,217,Fitness Equipment,fitness-equipment
+category.sub_category,835,217,Darts,darts
+category.sub_category,836,217,Others,others
+category.sub_category,837,218,Basketball Shoes,basketball-shoes
+category.sub_category,838,218,Running Shoes,running-shoes
+category.sub_category,839,218,Training Shoes,training-shoes
+category.sub_category,840,218,Tennis Shoes,tennis-shoes
+category.sub_category,841,218,Volleyball Shoes,volleyball-shoes
+category.sub_category,842,218,Badminton Shoes,badminton-shoes
+category.sub_category,843,218,Futsal Shoes,futsal-shoes
+category.sub_category,844,218,Hiking Shoes,hiking-shoes
+category.sub_category,845,218,Soccer Shoes,soccer-shoes
+category.sub_category,846,218,Kid's Sport Shoes,kid's-sport-shoes
+category.sub_category,847,218,Others,others
+category.sub_category,848,219,Sets,sets
+category.sub_category,849,219,Jackets,jackets
+category.sub_category,850,219,Tops,tops
+category.sub_category,851,219,Jerseys,jerseys
+category.sub_category,852,219,Bottoms,bottoms
+category.sub_category,853,219,Swimming Attire,swimming-attire
+category.sub_category,854,219,Sports Bras,sports-bras
+category.sub_category,855,219,Kid's Sports Apparel,kid's-sports-apparel
+category.sub_category,856,219,Others,others
+category.sub_category,857,220,Stopwatches & Pedometers,stopwatches-and-pedometers
+category.sub_category,858,220,Shoe Bags,shoe-bags
+category.sub_category,859,220,Sports Wristbands,sports-wristbands
+category.sub_category,860,220,Sports Headbands,sports-headbands
+category.sub_category,861,220,Sports & Outdoor Hats,sports-and-outdoor-hats
+category.sub_category,862,220,Dry Bags,dry-bags
+category.sub_category,863,220,Rain Coats,rain-coats
+category.sub_category,864,220,Umbrellas,umbrellas
+category.sub_category,865,220,Mouthguards & Sport Tapes,mouthguards-and-sport-tapes
+category.sub_category,866,220,Training Equipments,training-equipments
+category.sub_category,867,220,Gym Protective Gears,gym-protective-gears
+category.sub_category,868,220,Others,others
+category.sub_category,869,221,Gift Wrappers,gift-wrappers
+category.sub_category,870,221,Gift Boxes,gift-boxes
+category.sub_category,871,221,Gift Bags,gift-bags
+category.sub_category,872,221,Ribbons,ribbons
+category.sub_category,873,221,Bubble Wraps,bubble-wraps
+category.sub_category,874,221,Carton Boxes,carton-boxes
+category.sub_category,875,221,Others,others
+category.sub_category,876,222,Pens & Inks,pens-and-inks
+category.sub_category,877,222,Pencils,pencils
+category.sub_category,878,222,Eraser & Correction Supplies,eraser-and-correction-supplies
+category.sub_category,879,222,Markers,markers
+category.sub_category,880,222,Highlighters,highlighters
+category.sub_category,881,222,Others,others
+category.sub_category,882,223,Writing Boards & Board Stands,writing-boards-and-board-stands
+category.sub_category,883,223,Calculators,calculators
+category.sub_category,884,223,Pen Knives & Paper Cutters,pen-knives-and-paper-cutters
+category.sub_category,885,223,Strings & Tapes,strings-and-tapes
+category.sub_category,886,223,Glues,glues
+category.sub_category,887,223,Label Printers,label-printers
+category.sub_category,888,223,Lanyards & Name Tags,lanyards-and-name-tags
+category.sub_category,889,223,"Clips, Pins & Tacks",clips-pins-and-tacks
+category.sub_category,890,223,Hole Punchers,hole-punchers
+category.sub_category,891,223,Scissors,scissors
+category.sub_category,892,223,Ink Stamps & Pads,ink-stamps-and-pads
+category.sub_category,893,223,Staplers & Staples,staplers-and-staples
+category.sub_category,894,223,Calendars,calendars
+category.sub_category,895,223,"Folders, Paper Organizers & Accessories",folders-paper-organizers-and-accessories
+category.sub_category,896,223,"Rulers, Protractors & Stencils",rulers-protractors-and-stencils
+category.sub_category,897,223,Sharpeners,sharpeners
+category.sub_category,898,223,Pencil Cases,pencil-cases
+category.sub_category,899,223,Others,others
+category.sub_category,900,224,Color Pencils,color-pencils
+category.sub_category,901,224,Crayons & Pastels,crayons-and-pastels
+category.sub_category,902,224,Water & Poster Colours,water-and-poster-colours
+category.sub_category,903,224,Oil Paint,oil-paint
+category.sub_category,904,224,Acrylic Paint,acrylic-paint
+category.sub_category,905,224,Paint Brushes,paint-brushes
+category.sub_category,906,224,Paint Palettes,paint-palettes
+category.sub_category,907,224,Canvases & Easels,canvases-and-easels
+category.sub_category,908,224,Sketch Books,sketch-books
+category.sub_category,909,224,Others,others
+category.sub_category,910,225,Bookmarks,bookmarks
+category.sub_category,911,225,Book Covers,book-covers
+category.sub_category,912,225,Thermal Paper & Continuous Paper,thermal-paper-and-continuous-paper
+category.sub_category,913,225,Printing & Photocopy Paper,printing-and-photocopy-paper
+category.sub_category,914,225,Loose Leaf,loose-leaf
+category.sub_category,915,225,Memo & Sticky Notes,memo-and-sticky-notes
+category.sub_category,916,225,Art Paper & Boards,art-paper-and-boards
+category.sub_category,917,225,Notebooks & Notepads,notebooks-and-notepads
+category.sub_category,918,225,Labels & Stickers,labels-and-stickers
+category.sub_category,919,225,Others,others
+category.sub_category,920,226,Envelopes & Angpao,envelopes-and-angpao
+category.sub_category,921,226,Post Cards,post-cards
+category.sub_category,922,226,Postage Stamps & Duty Stamps,postage-stamps-and-duty-stamps
+category.sub_category,923,226,Others,others
+category.sub_category,924,228,Action Figurines,action-figurines
+category.sub_category,925,228,Statues & Sculptures,statues-and-sculptures
+category.sub_category,926,228,Mecha Models & Diecast,mecha-models-and-diecast
+category.sub_category,927,228,Vehicle Models & Diecast,vehicle-models-and-diecast
+category.sub_category,928,228,Stones & Minerals,stones-and-minerals
+category.sub_category,929,228,Idol Collectibles,idol-collectibles
+category.sub_category,930,228,Sports Collectibles,sports-collectibles
+category.sub_category,931,228,Anime & Manga Collectibles,anime-and-manga-collectibles
+category.sub_category,932,228,Coins & Bank Notes,coins-and-bank-notes
+category.sub_category,933,228,Others,others
+category.sub_category,934,229,Hand Fans,hand-fans
+category.sub_category,935,229,Keychains,keychains
+category.sub_category,936,229,Coin Banks,coin-banks
+category.sub_category,937,229,Fridge Magnets,fridge-magnets
+category.sub_category,938,229,Others,others
+category.sub_category,939,230,"Dice, Board & Card Games",dice-board-and-card-games
+category.sub_category,940,230,Magic Toys,magic-toys
+category.sub_category,941,230,Prank Toys,prank-toys
+category.sub_category,942,230,Rubik's Cubes,rubik's-cubes
+category.sub_category,943,230,Spinning Tops,spinning-tops
+category.sub_category,944,230,Kendamas,kendamas
+category.sub_category,945,230,Yo-yos,yo-yos
+category.sub_category,946,230,Remote Control Toys & Accessories,remote-control-toys-and-accessories
+category.sub_category,947,230,Capsule Toys,capsule-toys
+category.sub_category,948,230,Others,others
+category.sub_category,949,231,Keyboards & Pianos,keyboards-and-pianos
+category.sub_category,950,231,Percussion Instruments,percussion-instruments
+category.sub_category,951,231,Wind Instruments,wind-instruments
+category.sub_category,952,231,Music Accessories,music-accessories
+category.sub_category,953,231,Others,others
+category.sub_category,954,231,String Instruments,string-instruments
+category.sub_category,955,237,Navigation & AV Receivers,navigation-and-av-receivers
+category.sub_category,956,237,"Amplifiers, Speakers & Subwoofers",amplifiers-speakers-and-subwoofers
+category.sub_category,957,237,Organizers & Compartments,organizers-and-compartments
+category.sub_category,958,237,"Perfumes, Air Fresheners & Purifiers",perfumes-air-fresheners-and-purifiers
+category.sub_category,959,237,Carpets & Mats,carpets-and-mats
+category.sub_category,960,237,Seat Headrests & Back Supports,seat-headrests-and-back-supports
+category.sub_category,961,237,Car Mattresses,car-mattresses
+category.sub_category,962,237,Steering Wheels & Covers,steering-wheels-and-covers
+category.sub_category,963,237,Seats & Seat Covers,seats-and-seat-covers
+category.sub_category,964,237,Phone Holders,phone-holders
+category.sub_category,965,237,"USB Chargers, FM & Bluetooth Transmitters",usb-chargers-fm-and-bluetooth-transmitters
+category.sub_category,966,237,Pedals & Gear Sticks,pedals-and-gear-sticks
+category.sub_category,967,237,Sun Shields & Dash Covers,sun-shields-and-dash-covers
+category.sub_category,968,237,Locks & Security,locks-and-security
+category.sub_category,969,237,Camcorders & Parking Cameras,camcorders-and-parking-cameras
+category.sub_category,970,237,"HUD, Speedometers & Gauges",hud-speedometers-and-gauges
+category.sub_category,971,237,Others,others
+category.sub_category,972,238,Garnish,garnish
+category.sub_category,973,238,Antennas,antennas
+category.sub_category,974,238,Covers,covers
+category.sub_category,975,238,"Stickers, Logos & Emblems",stickers-logos-and-emblems
+category.sub_category,976,238,Mud Flaps & Splash Guards,mud-flaps-and-splash-guards
+category.sub_category,977,238,Sill Plates,sill-plates
+category.sub_category,978,238,Gutters,gutters
+category.sub_category,979,238,Horns & Accessories,horns-and-accessories
+category.sub_category,980,238,Mirrors & Accessories,mirrors-and-accessories
+category.sub_category,981,238,License Plate Accessories,license-plate-accessories
+category.sub_category,982,238,Others,others
+category.sub_category,983,239,"Body, Frame & Bumpers",body-frame-and-bumpers
+category.sub_category,984,239,Windshield Wipers & Washers,windshield-wipers-and-washers
+category.sub_category,985,239,Exhaust & Emissions,exhaust-and-emissions
+category.sub_category,986,239,"Wheels, Rims & Accessories",wheels-rims-and-accessories
+category.sub_category,987,239,Tires & Accessories,tires-and-accessories
+category.sub_category,988,239,"Shocks, Struts & Suspension",shocks-struts-and-suspension
+category.sub_category,989,239,"Radiators, Engine Cooling & Climate Control",radiators-engine-cooling-and-climate-control
+category.sub_category,990,239,"Drivetrain, Transmission & Clutches",drivetrain-transmission-and-clutches
+category.sub_category,991,239,Bearing & Seals,bearing-and-seals
+category.sub_category,992,239,Engine Parts,engine-parts
+category.sub_category,993,239,Brake System,brake-system
+category.sub_category,994,239,"Belts, Hoses & Pulleys",belts-hoses-and-pulleys
+category.sub_category,995,239,Electronics,electronics
+category.sub_category,996,239,Fuel System,fuel-system
+category.sub_category,997,239,Others,others
+category.sub_category,998,240,"Test, Diagnostic & Repair Tools",test-diagnostic-and-repair-tools
+category.sub_category,999,240,Tire Pressure Detectors,tire-pressure-detectors
+category.sub_category,1000,240,Others,others
+category.sub_category,1001,241,Wash & Waxes,wash-and-waxes
+category.sub_category,1002,241,Glass Care & Water Repellents,glass-care-and-water-repellents
+category.sub_category,1003,241,Interior Care,interior-care
+category.sub_category,1004,241,Tire & Wheel Care,tire-and-wheel-care
+category.sub_category,1005,241,"Polish, Coating & Sealants",polish-coating-and-sealants
+category.sub_category,1006,241,Others,others
+category.sub_category,1007,242,Oils,oils
+category.sub_category,1008,242,Fuel Additives & Savers,fuel-additives-and-savers
+category.sub_category,1009,242,Greases & Lubricants,greases-and-lubricants
+category.sub_category,1010,242,Antifreezes & Coolants,antifreezes-and-coolants
+category.sub_category,1011,242,Automotive Fluids,automotive-fluids
+category.sub_category,1012,242,Others,others
+category.sub_category,1013,247,Carpets,carpets
+category.sub_category,1014,247,"Speedometers, Odometers & Gauges",speedometers-odometers-and-gauges
+category.sub_category,1015,247,Covers,covers
+category.sub_category,1016,247,"Stickers, Logos & Emblems",stickers-logos-and-emblems
+category.sub_category,1017,247,Seats & Seat Covers,seats-and-seat-covers
+category.sub_category,1018,247,Mirrors & Accessories,mirrors-and-accessories
+category.sub_category,1019,247,Locks & Security,locks-and-security
+category.sub_category,1020,247,Boxes & Cases,boxes-and-cases
+category.sub_category,1021,247,Phone Holders,phone-holders
+category.sub_category,1022,247,Mud Flaps & Splash Guards,mud-flaps-and-splash-guards
+category.sub_category,1023,247,Others,others
+category.sub_category,1024,248,Ignition & Engine Parts,ignition-and-engine-parts
+category.sub_category,1025,248,Fuel System,fuel-system
+category.sub_category,1026,248,Brake System,brake-system
+category.sub_category,1027,248,"Shocks, Struts & Suspension",shocks-struts-and-suspension
+category.sub_category,1028,248,"Drivetrain, Transmission & Clutches",drivetrain-transmission-and-clutches
+category.sub_category,1029,248,Batteries & Accessories,batteries-and-accessories
+category.sub_category,1030,248,Horns & Accessories,horns-and-accessories
+category.sub_category,1031,248,Cables & Tubes,cables-and-tubes
+category.sub_category,1032,248,Body & Frame,body-and-frame
+category.sub_category,1033,248,Exhaust & Emissions,exhaust-and-emissions
+category.sub_category,1034,248,"Wheels, Rims & Accessories",wheels-rims-and-accessories
+category.sub_category,1035,248,Tires & Accessories,tires-and-accessories
+category.sub_category,1036,248,Lighting,lighting
+category.sub_category,1037,248,Others,others
+category.sub_category,1038,251,Theme Parks & Attractions,theme-parks-and-attractions
+category.sub_category,1039,251,"Events, Fairs & Conferences",events-fairs-and-conferences
+category.sub_category,1040,251,Movies,movies
+category.sub_category,1041,251,Concerts & Exhibitions,concerts-and-exhibitions
+category.sub_category,1042,251,Others,others
+category.sub_category,1043,252,Dine-in & Takeaway,dine-in-and-takeaway
+category.sub_category,1044,252,Food Delivery,food-delivery
+category.sub_category,1045,252,Others,others
+category.sub_category,1046,253,Malls & Department Stores,malls-and-department-stores
+category.sub_category,1047,253,Supermarkets,supermarkets
+category.sub_category,1048,253,Others,others
+category.sub_category,1049,255,Housekeeping,housekeeping
+category.sub_category,1050,255,Delivery & Moving,delivery-and-moving
+category.sub_category,1051,255,Insurance,insurance
+category.sub_category,1052,255,Air-Conditioning Servicing,air-conditioning-servicing
+category.sub_category,1053,255,Photography & Printing,photography-and-printing
+category.sub_category,1054,255,Others,others
+category.sub_category,1055,255,Design,design
+category.sub_category,1056,256,Health,health
+category.sub_category,1057,256,Dental,dental
+category.sub_category,1058,256,Fitness,fitness
+category.sub_category,1059,256,Hair,hair
+category.sub_category,1060,256,Spa & Massage,spa-and-massage
+category.sub_category,1061,256,Others,others
+category.sub_category,1062,259,Internet & Cable TV,internet-and-cable-tv
+category.sub_category,1063,259,Mobile Data,mobile-data
+category.sub_category,1064,259,Mobile Top-ups & Pre-paid,mobile-top-ups-and-pre-paid
+category.sub_category,1065,259,Others,others
+category.sub_category,1066,260,Accommodation,accommodation
+category.sub_category,1067,260,Hot Springs,hot-springs
+category.sub_category,1068,260,Flights,flights
+category.sub_category,1069,260,Trains,trains
+category.sub_category,1070,260,Buses,buses
+category.sub_category,1071,260,Car Rentals,car-rentals
+category.sub_category,1072,260,Tour & Packages,tour-and-packages
+category.sub_category,1073,260,Others,others
+category.sub_category,1074,264,Shopnow Official,shopnow-official
+category.sub_category,1075,264,Shopnow Paid Ads Credits,shopnow-paid-ads-credits
+category.sub_category,1076,264,Others,others
+category.sub_category,1077,264,Digital Products,digital-products
+category.sub_category,1078,265,Business,business
+category.sub_category,1079,265,Lifestyle,lifestyle
+category.sub_category,1080,265,Teenager,teenager
+category.sub_category,1081,265,Others,others
+category.sub_category,1082,266,Comics & Manga,comics-and-manga
+category.sub_category,1083,266,Children's Books,children's-books
+category.sub_category,1084,266,"Agriculture, Forestry & Fishery",agriculture-forestry-and-fishery
+category.sub_category,1085,266,Adult's Books,adult's-books
+category.sub_category,1086,266,"Arts, Design & Photography",arts-design-and-photography
+category.sub_category,1087,266,Recipes & Cooking,recipes-and-cooking
+category.sub_category,1088,266,Business & Investment,business-and-investment
+category.sub_category,1089,266,"Politics, Law & Social Sciences",politics-law-and-social-sciences
+category.sub_category,1090,266,Computers & Technology,computers-and-technology
+category.sub_category,1091,266,"Health, Fitness & Dieting",health-fitness-and-dieting
+category.sub_category,1092,266,Travel & Tourism,travel-and-tourism
+category.sub_category,1093,266,Language Learning & Dictionaries,language-learning-and-dictionaries
+category.sub_category,1094,266,Hobbies,hobbies
+category.sub_category,1095,266,LGBTQ+ Literature,lgbtq+-literature
+category.sub_category,1096,266,Light Novels,light-novels
+category.sub_category,1097,266,Classic Literature,classic-literature
+category.sub_category,1098,266,Fantasy,fantasy
+category.sub_category,1099,266,"Action, Crime & Thrillers",action-crime-and-thrillers
+category.sub_category,1100,266,Romance,romance
+category.sub_category,1101,266,Biography & Memoirs,biography-and-memoirs
+category.sub_category,1102,266,Science & Maths,science-and-maths
+category.sub_category,1103,266,Medical,medical
+category.sub_category,1104,266,Parenting & Family,parenting-and-family
+category.sub_category,1105,266,Psychology & Relationships,psychology-and-relationships
+category.sub_category,1106,266,Religion & Philosophy,religion-and-philosophy
+category.sub_category,1107,266,History & Cultures,history-and-cultures
+category.sub_category,1108,266,"Careers, Self Help & Personal Development",careers-self-help-and-personal-development
+category.sub_category,1109,266,Horoscopes,horoscopes
+category.sub_category,1110,266,Education & School,education-and-school
+category.sub_category,1111,266,Sticker & Colouring Books,sticker-and-colouring-books
+category.sub_category,1112,266,Music,music
+category.sub_category,1113,266,Baby & Soft Books,baby-and-soft-books
+category.sub_category,1114,266,Audio Books,audio-books
+category.sub_category,1115,266,Others,others
+category.sub_category,1116,269,Desktop PC,desktop-pc
+category.sub_category,1117,269,Mini PC,mini-pc
+category.sub_category,1118,269,Server PC,server-pc
+category.sub_category,1119,269,All-in-One Desktops,all-in-one-desktops
+category.sub_category,1120,269,Others,others
+category.sub_category,1121,271,Fans & Heatsinks,fans-and-heatsinks
+category.sub_category,1122,271,Processors,processors
+category.sub_category,1123,271,Motherboards,motherboards
+category.sub_category,1124,271,Graphics Cards,graphics-cards
+category.sub_category,1125,271,Thermal Paste,thermal-paste
+category.sub_category,1126,271,Power Supply Units,power-supply-units
+category.sub_category,1127,271,RAM,ram
+category.sub_category,1128,271,UPS & Stabilizers,ups-and-stabilizers
+category.sub_category,1129,271,PC Cases,pc-cases
+category.sub_category,1130,271,Optical Drives,optical-drives
+category.sub_category,1131,271,Sound Cards,sound-cards
+category.sub_category,1132,271,Others,others
+category.sub_category,1133,272,Hard Drives,hard-drives
+category.sub_category,1134,272,SSD,ssd
+category.sub_category,1135,272,Network Attached Storage (NAS),network-attached-storage-(nas)
+category.sub_category,1136,272,Flash Drives & OTG,flash-drives-and-otg
+category.sub_category,1137,272,Hard Disk Casings & Dockings,hard-disk-casings-and-dockings
+category.sub_category,1138,272,Compact Discs,compact-discs
+category.sub_category,1139,272,Others,others
+category.sub_category,1140,273,Modems & Wireless Routers,modems-and-wireless-routers
+category.sub_category,1141,273,Repeaters,repeaters
+category.sub_category,1142,273,Wireless Adapters & Network Cards,wireless-adapters-and-network-cards
+category.sub_category,1143,273,Powerline Adapters,powerline-adapters
+category.sub_category,1144,273,Network Switches & PoE,network-switches-and-poe
+category.sub_category,1145,273,Network Cables & Connectors,network-cables-and-connectors
+category.sub_category,1146,273,KVM Switches,kvm-switches
+category.sub_category,1147,273,Print Servers,print-servers
+category.sub_category,1148,273,Others,others
+category.sub_category,1149,275,Typewriters,typewriters
+category.sub_category,1150,275,Absence Machines,absence-machines
+category.sub_category,1151,275,Paper Shredders,paper-shredders
+category.sub_category,1152,275,Money Counters,money-counters
+category.sub_category,1153,275,Others,others
+category.sub_category,1154,276,"Printers, Scanners & Photocopy Machines",printers-scanners-and-photocopy-machines
+category.sub_category,1155,276,Thermal & Barcode Printers,thermal-and-barcode-printers
+category.sub_category,1156,276,Inks & Toners,inks-and-toners
+category.sub_category,1157,276,3D Printers,3d-printers
+category.sub_category,1158,276,Others,others
+category.sub_category,1159,277,USB Hubs & Card Readers,usb-hubs-and-card-readers
+category.sub_category,1160,277,Webcams,webcams
+category.sub_category,1161,277,Laptop Skins & Covers,laptop-skins-and-covers
+category.sub_category,1162,277,Cooling Pads,cooling-pads
+category.sub_category,1163,277,Laptop Stands & Foldable Laptop Desks,laptop-stands-and-foldable-laptop-desks
+category.sub_category,1164,277,Keyboard & Trackpad Covers,keyboard-and-trackpad-covers
+category.sub_category,1165,277,Laptop Batteries,laptop-batteries
+category.sub_category,1166,277,Laptop Chargers & Adaptors,laptop-chargers-and-adaptors
+category.sub_category,1167,277,Video Conference Devices,video-conference-devices
+category.sub_category,1168,277,Mouse Pads,mouse-pads
+category.sub_category,1169,277,Others,others
+category.sub_category,1170,278,Mice,mice
+category.sub_category,1171,278,Keyboards,keyboards
+category.sub_category,1172,278,Drawing Tablets,drawing-tablets
+category.sub_category,1173,278,Others,others
+category.sub_category,1174,281,"Pay Scan & Pay Voucher
+
+",pay-scan-and-pay-voucher
+category.sub_category,1175,7,Shirts & Blouses,shirts-and-blouses
+category.sub_category,1176,9,Others,others
+category.sub_category,1177,284,Socks,socks
+category.sub_category,1178,284,Pantyhose,pantyhose
+category.sub_category,1179,284,Others,others
+category.sub_category,1180,119,Others,others
+category.sub_category,1181,10,Others,others
+category.sub_category,1182,11,Others,others
+category.sub_category,1183,12,Others,others
+category.sub_category,1184,13,Others,others
+category.sub_category,1185,16,Others,others
+category.sub_category,1186,22,Others,others
+category.sub_category,1187,285,Others,others
+category.sub_category,1188,24,Others,others
+category.sub_category,1189,26,Others,others
+category.sub_category,1190,30,Others,others
+category.sub_category,1191,33,Others,others
+category.sub_category,1192,34,Others,others
+category.sub_category,1193,36,Others,others
+category.sub_category,1194,37,Others,others
+category.sub_category,1195,38,Others,others
+category.sub_category,1196,286,Others,others
+category.sub_category,1197,42,Others,others
+category.sub_category,1198,46,Others,others
+category.sub_category,1199,47,Others,others
+category.sub_category,1200,50,Others,others
+category.sub_category,1201,54,Others,others
+category.sub_category,1202,55,Others,others
+category.sub_category,1203,56,Others,others
+category.sub_category,1204,57,Others,others
+category.sub_category,1205,59,Others,others
+category.sub_category,1206,60,Others,others
+category.sub_category,1207,61,Others,others
+category.sub_category,1208,62,Others,others
+category.sub_category,1209,65,Others,others
+category.sub_category,1210,66,Others,others
+category.sub_category,1211,68,Others,others
+category.sub_category,1212,69,Others,others
+category.sub_category,1213,76,Others,others
+category.sub_category,1214,77,Others,others
+category.sub_category,1215,78,Others,others
+category.sub_category,1216,80,Others,others
+category.sub_category,1217,81,Others,others
+category.sub_category,1218,82,Others,others
+category.sub_category,1219,83,Others,others
+category.sub_category,1220,86,Others,others
+category.sub_category,1221,90,Others,others
+category.sub_category,1222,91,Others,others
+category.sub_category,1223,92,Others,others
+category.sub_category,1224,95,Others,others
+category.sub_category,1225,96,Others,others
+category.sub_category,1226,102,Others,others
+category.sub_category,1227,103,Others,others
+category.sub_category,1228,104,Others,others
+category.sub_category,1229,107,Others,others
+category.sub_category,1230,108,Others,others
+category.sub_category,1231,110,Others,others
+category.sub_category,1232,111,Others,others
+category.sub_category,1233,112,Others,others
+category.sub_category,1234,113,Others,others
+category.sub_category,1235,114,Others,others
+category.sub_category,1236,117,Others,others
+category.sub_category,1237,119,Others,others
+category.sub_category,1238,121,Others,others
+category.sub_category,1239,122,Others,others
+category.sub_category,1240,125,Others,others
+category.sub_category,1241,126,Others,others
+category.sub_category,1242,128,Others,others
+category.sub_category,1243,129,Others,others
+category.sub_category,1244,130,Others,others
+category.sub_category,1245,131,Others,others
+category.sub_category,1246,132,Others,others
+category.sub_category,1247,134,Others,others
+category.sub_category,1248,135,Others,others
+category.sub_category,1249,136,Others,others
+category.sub_category,1250,137,Others,others
+category.sub_category,1251,139,Others,others
+category.sub_category,1252,140,Others,others
+category.sub_category,1253,142,Others,others
+category.sub_category,1254,143,Others,others
+category.sub_category,1255,145,Others,others
+category.sub_category,1256,146,Others,others
+category.sub_category,1257,158,Others,others
+category.sub_category,1258,159,Others,others
+category.sub_category,1259,166,Others,others
+category.sub_category,1260,178,Others,others
+category.sub_category,1261,179,Others,others
+category.sub_category,1262,178,Others,others
+category.sub_category,1263,187,Others,others
+category.sub_category,1264,189,Others,others
+category.sub_category,1265,191,Others,others
+category.sub_category,1266,194,Others,others
+category.sub_category,1267,198,Others,others
+category.sub_category,1268,199,Others,others
+category.sub_category,1269,200,Others,others
+category.sub_category,1270,205,Others,others
+category.sub_category,1271,215,Others,others
+category.sub_category,1272,216,Others,others
+category.sub_category,1273,227,Others,others
+category.sub_category,1274,232,Others,others
+category.sub_category,1275,233,Others,others
+category.sub_category,1276,234,Others,others
+category.sub_category,1277,235,Others,others
+category.sub_category,1278,236,Others,others
+category.sub_category,1279,243,Others,others
+category.sub_category,1280,244,Others,others
+category.sub_category,1281,245,Others,others
+category.sub_category,1282,246,Others,others
+category.sub_category,1283,249,Others,others
+category.sub_category,1284,250,Others,others
+category.sub_category,1285,254,Others,others
+category.sub_category,1286,257,Others,others
+category.sub_category,1287,258,Others,others
+category.sub_category,1288,261,Others,others
+category.sub_category,1289,262,Others,others
+category.sub_category,1290,263,Others,others
+category.sub_category,1291,267,Others,others
+category.sub_category,1292,268,Others,others
+category.sub_category,1293,270,Others,others
+category.sub_category,1294,274,Others,others
+category.sub_category,1295,279,Others,others
+category.sub_category,1296,280,Others,others
+category.sub_category,1297,287,Others,others
+category.sub_category,1298,288,Others,others
+category.sub_category,1299,289,Others,others
+category.sub_category,1300,290,Others,others

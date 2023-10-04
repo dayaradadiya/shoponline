@@ -1,0 +1,44 @@
+
+{% load static %}
+  <aside class="col-lg-4 pt-4 pt-lg-0 pe-xl-5">
+    <div class="bg-white rounded-3 shadow-lg pt-1 mb-5 mb-lg-0">
+      <div class="d-md-flex justify-content-between align-items-center text-center text-md-start p-4">
+        <div class="d-md-flex align-items-center">
+          <div class="img-thumbnail rounded-circle position-relative flex-shrink-0 mx-auto mb-2 mx-md-0 mb-md-0" style="width: 6.375rem;">
+            {% if user.user_profile.profile_picture %}
+            <img class="rounded-circle" src="{{ user.user_profile.profile_picture.url }}" alt="Susan Gardner">
+            {% else %}
+            <img class="rounded-circle" src="{% static 'img/profile_picture1.jpg' %}" alt="Createx Studio">
+            {% endif %}
+          </div>
+          <div class="ps-md-3">
+            <h3 class="fs-base mb-0">{{user.full_name}}</h3><span class="text-accent fs-sm">{{user.email}}</span>
+          </div>
+        </div><a class="btn btn-primary d-lg-none mb-2 mt-3 mt-md-0" href="#account-menu" data-bs-toggle="collapse" aria-expanded="false"><i class="ci-menu me-2"></i>Account menu</a>
+      </div>
+      <div class="d-lg-block collapse" id="account-menu">
+        <div class="bg-secondary px-4 py-3">
+          <h3 class="fs-sm mb-0 text-muted">Dashboard</h3>
+        </div>
+        <ul class="list-unstyled mb-0">
+          <li class="border-bottom mb-0 {% if '/customer/' == request.path or '/custDashboard/' == request.path %}active{% endif %}"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{% url 'customer' %}"><i class="ci-bag opacity-60 me-2"></i>Customer Dashboard</a></li>
+          <li class="border-bottom mb-0 {% if '/my_orders/' in request.path or '/order_details/' in request.path %}active{% endif %} "><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{% url 'customer_my_orders' %}"><i class="ci-bag opacity-60 me-2"></i>My Orders</a></li>
+
+          <li class="border-bottom mb-0 {% if '/my_orders/' in request.path or '/custorder_cancellation/' in request.path %}active{% endif %} "><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{% url 'custorder_cancellation' %}"><i class="ci-bag opacity-60 me-2"></i>Cancellations</a></li>
+          <li class="border-bottom mb-0 {% if '/my_orders/' in request.path or '/customer_my_returns/' in request.path %}active{% endif %} "><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{% url 'customer_my_returns' %}"><i class="ci-bag opacity-60 me-2"></i>My Returns</a></li>
+
+
+
+          <li class="border-bottom mb-0 {% if '/wishlist_view/' in request.path  %}active{% endif %} "><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{% url 'wishlist_view' %}"><i class="ci-heart opacity-60 me-2"></i>My Wishlist</a></li>
+        </ul>
+        <div class="bg-secondary px-4 py-3">
+          <h3 class="fs-sm mb-0 text-muted">Account settings</h3>
+        </div>
+        <ul class="list-unstyled mb-0">
+          <li class="border-bottom mb-0 {% if '/profile/' in request.path %}active{% endif %}"><a class="nav-link-style d-flex align-items-center px-4 py-3 active" href="{% url 'cprofile' %}"><i class="ci-user opacity-60 me-2"></i>Profile info</a></li>
+          <li class="border-bottom mb-0 {% if '/address/' in request.path %}active{% endif %}"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{% url 'customer_address' %}"><i class="ci-location opacity-60 me-2"></i>Addresses</a></li>
+          <li class="d-lg-none border-top mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{% url 'logout' %}"><i class="ci-sign-out opacity-60 me-2"></i>Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>

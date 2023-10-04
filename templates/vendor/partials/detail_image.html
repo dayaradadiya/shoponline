@@ -1,0 +1,43 @@
+
+<div class="d-block d-sm-flex align-items-center py-4 border-bottom"   hx-target="this" hx-swap="outerHTML" hx-encoding="multipart/form-data">
+
+
+
+    <table class="table table-hover table-borderless">
+               
+        <tbody>
+            <tr>
+            <td>
+    {% if image.pk %}
+    <div class="fs-sm"><span class="text-muted me-2"><b>Image ID:</b></span>
+    {{ image.pk}}
+    </div>
+    {% endif %}
+</td>
+  <td>
+    {% if image %}
+    <div class="fs-sm"><span class="text-muted me-2"><b>Image:</b></span>
+            <div class="d-flex align-items-center"><img class="rounded" src="{{image.image.url}}" width="100"></div>
+    {% endif %}
+</td>
+
+    <!-- &nbsp; &nbsp;          
+    <button class="btn btn-accent" hx-get="{% url 'update_image' image.id %}"><i class="ci-edit opacity-60 me-2"></i>Update</button>
+    
+    &nbsp; &nbsp;
+    <button class="btn btn-primary" hx-post="{% url 'delete_image' image.id %}"><i class="fa fa-minus opacity-60 me-2"></i>Delete</button> -->
+    </tr>
+    <tr>
+<td>
+    <div class="d-flex justify-content-center justify-content-sm-start pt-3">
+    <a hx-get="{% url 'update_image' image.id %}"><button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Add/Edit Image"><i class="ci-edit text-info"></i></button></a>
+
+    <a hx-get="{% url 'delete_image' image.id %}" onclick="return confirm('Are you sure you want to delete this image?')"><button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i class="ci-trash text-danger"></i></button></a>
+</div>
+</tr>
+</td>
+</tbody>
+</table>
+
+    <!--  -->
+</div>

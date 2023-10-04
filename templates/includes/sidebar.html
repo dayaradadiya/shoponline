@@ -1,0 +1,238 @@
+
+{% block script %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    
+    $(".ajaxLoader").hide()
+    $(document).ready(function(){
+        $(".form-check-input,#priceFilterBtn,#catlist").on('click', function(){
+            var filter_object={};
+            var _minPrice=$('#maxPrice').attr('min');
+            var _maxPrice=$('#maxPrice').attr('max');
+            filter_object.minPrice=_minPrice;
+            filter_object.maxPrice=_maxPrice;
+            $(".form-check-input").each(function(index,ele){
+                var filter_value=$(this).val();
+                var filter_key=$(this).data('filter');
+                filter_object[filter_key]=Array.from(document.querySelectorAll('input[data-filter='+filter_key+']:checked')).map(function(el){
+                    return el.value;
+                });
+            });
+            console.log(filter_object)
+            $.ajax({
+                url:"{% url 'filter-data' %}",
+                data:filter_object,
+                dataType:'json',
+                beforeSend:function(){
+                    $(".ajaxLoader").show()
+                }	,		
+                success:function(res){
+                    console.log(res)
+                    $(".ajaxLoader").hide()
+                    $("#filteredProducts").html(res.data)
+                    // window.location.href ="http://127.0.0.1:8000/ajax/product-list.html"
+                }
+            });
+        });
+    // Filter Product According to the price
+    $("#maxPrice").on('blur',function(){
+        var _min=$(this).attr('min');
+        var _max=$(this).attr('max');
+        var _value=$(this).val();
+        console.log(_value,_min,_max);
+        if(_value < parseInt(_min) || _value > parseInt(_max)){
+            alert('Values should be '+_min+'-'+_max);
+            $(this).val(_min);
+            $(this).focus();
+            $("#rangeInput").val(_min);
+            return false;
+        }
+    });
+// End
+});
+
+
+  
+    </script>
+{% endblock %}
+
+<!-- <style>
+    input[type=range]{
+    -webkit-appearance: none;
+    width:100%;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+    width: 1000px;
+    height: 5px;
+    background: #FCBE00;
+    border: none;
+    border-radius: 3px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -5px;
+    }
+    input[type=range]:focus {
+    outline: none;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #FCBE00;
+    }
+ </style> -->
+
+<aside class="col-lg-4">
+    <!-- Sidebar-->
+    <div class="offcanvas offcanvas-collapse bg-white w-100 rounded-3 shadow-lg py-1" id="shop-sidebar" style="max-width: 22rem;">
+      <div class="offcanvas-header align-items-center shadow-sm">
+        <h2 class="h5 mb-0">Filters</h2>
+        <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+        <!-- Categories-->
+        <div class="widget widget-categories mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Categories</h3>
+          
+          <div class="accordion mt-n1" id="shop-categories">
+              
+            <!-- <div class="accordion-item">
+              <h3 class="accordion-header"><a class="accordion-button" href="#{{maincategory.name}}" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="{{maincategory.name}} ">{{first_category.name}}</a></h3>
+              <div class="accordion-collapse collapse show" id="{{maincategory.name}}" data-bs-parent="#shop-categories">
+                <div class="accordion-body">
+                  <div class="widget widget-links widget-filter">
+                    <div class="input-group input-group-sm mb-2">
+                      <input class="widget-filter-search form-control rounded-end" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+                    </div>
+                    <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+                      <li class="widget-list-item widget-filter-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'main_category_product_list' first_category.id  %}"><span class="widget-filter-item-text">View all</span>
+                        <span class="fs-xs text-muted ms-3">2,548</span>
+                      </a></li>
+                      {% for cat in first_category.category_set.all %}
+                      <li class="widget-list-item widget-filter-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'category_product_list' cat.id  %}">
+                        <span class="widget-filter-item-text">{{cat.name}}</span>
+                        <span class="fs-xs text-muted ms-3">235</span>
+                      </a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+           
+              {% for i in main_category %}
+                <div class="accordion-item">
+                    <h3 class="accordion-header"><a class="accordion-button collapsed" href="#{{i.slug}}" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="{{i.slug}}">{{i.id}}</a></h3>
+                    <div class="accordion-collapse collapse" id="{{i.slug}}" data-bs-parent="#shop-categories">
+                      <div class="accordion-body">
+                        <div class="widget widget-links widget-filter">
+                            <div class="input-group input-group-sm mb-2">
+                              <input class="widget-filter-search form-control rounded-end" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+                            </div>
+                                <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+                                    <li class="widget-list-item widget-filter-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'main_category_product_list' i.id  %}"><span class="widget-filter-item-text">View all</span>
+                                      <!-- <span class="fs-xs text-muted ms-3">{{main_cat_count}}</span> -->
+                                    </a></li>
+                                  
+                                  {% for cat in i.category_set.all %}
+                                      <li class="widget-list-item widget-filter-item" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'category_product_list' cat.id  %}"><span class="widget-filter-item-text">{{cat.name}}</span>
+                                        <!-- <span class="fs-xs text-muted ms-3">{{products_cat_count}}</span> -->
+                                      </a></li>
+                                  {% endfor %} 
+                                </ul>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              {% endfor %}
+          </div>
+         
+        </div>
+
+        <!-- Price range-->
+        <!-- <div class="widget mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Price</h3>
+          <div class="range-slider" data-start-min="250" data-start-max="680" data-min="0" data-max="1000" data-step="1">
+            <div class="range-slider-ui"></div>
+            <div class="d-flex pb-1">
+              <div class="w-50 pe-2 me-2">
+                <div class="input-group input-group-sm"><span class="input-group-text">$</span>
+                  <input class="form-control range-slider-value-min" type="text">
+                </div>
+              </div>
+              <div class="w-50 ps-2">
+                <div class="input-group input-group-sm"><span class="input-group-text">$</span>
+                  <input class="form-control range-slider-value-max" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+              <div class="product-widget mb-30">
+                <h5 class="pt-title">Filter By Price</h5>
+                <div class="price__slider mt-30">
+                    <li class="list-group-item">
+                        <input type="range" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}} id="rangeInput" oninput="maxPrice.value=this.value" />
+                        <p>{{minMaxPrice.price__min}}-{{minMaxPrice.price__max}}</p>
+                    </li>
+                    <li class="list-group-item">
+                        Max: <input type="number" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value" id="maxPrice" />
+                        <button id="priceFilterBtn" class="btn btn-primary btn-sm mt-1">Filter</button>
+                    </li>
+                </div>
+            </div>
+       <br>
+        <!-- Filter by Brand-->
+        <div class="widget widget-filter mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Brand</h3>
+          <div class="input-group input-group-sm mb-2">
+            <input class="widget-filter-search form-control rounded-end pe-5" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+          </div>
+          <ul class="widget-list widget-filter-list list-unstyled pt-1" style="max-height: 11rem;" data-simplebar data-simplebar-auto-hide="false">
+            {% for i in brand %}
+            <li class="widget-filter-item d-flex justify-content-between align-items-center mb-1">
+              <div class="form-check">
+                <input type="checkbox" data-filter="brand" id="brand-{{i.id}}" value="{{i.id}}" class="form-check-input">
+                <label class="form-check-label widget-filter-item-text" for="brand-{{i.id}}">{{i.name}}</label>
+              </div><span class="fs-xs text-muted">425</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Filter by Size-->
+        <div class="widget widget-filter mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Size</h3>
+          <div class="input-group input-group-sm mb-2">
+            <input class="widget-filter-search form-control rounded-end pe-5" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+          </div>
+          <ul class="widget-list widget-filter-list list-unstyled pt-1" style="max-height: 11rem;" data-simplebar data-simplebar-auto-hide="false">
+            {% for i in size %}
+            <li class="widget-filter-item d-flex justify-content-between align-items-center mb-1">
+              <div class="form-check">
+                <input  type="checkbox" data-filter="size" id="size-{{i.id}}" value="{{i.id}}" class="form-check-input">
+                <label class="form-check-label widget-filter-item-text" for="size-{{i.id}}">{{i.name}}</label>
+              <!-- </div><span class="fs-xs text-muted">34</span> -->
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Filter by Color-->
+        <div class="widget">
+          <h3 class="widget-title">Color</h3>
+          <div class="d-flex flex-wrap">
+            {% for i in color %}
+            <div class="form-check form-option text-center mb-2 mx-1" style="width: 4rem;">
+              <input  type="checkbox" data-filter="color" id="color-{{i.color__id}}" value="{{i.color__id}}" class="form-check-input">
+              <label class="form-option-label rounded-circle" for="color-{{i.color__id}}"><span class="form-option-color rounded-circle" style="background-color: {{i.color__code}};"></span></label>
+              <label class="d-block fs-xs text-muted mt-n1" for="color-{{i.color__id}}">{{i.color__name}}</label>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>

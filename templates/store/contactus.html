@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  
+  <!-- Body-->
+  <body class="handheld-toolbar-enabled">
+    <main class="page-wrapper">
+      <!-- Page Title (Light)-->
+      <div class="bg-secondary py-4">
+        <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+          <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb flex-lg-nowrap justify-content-center justify-content-lg-start">
+                <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+                <li class="breadcrumb-item text-nowrap active" aria-current="page">Contacts</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+            <h1 class="h3 mb-0">Contacts</h1>
+          </div>
+        </div>
+      </div>
+      <!-- Contact detail cards-->
+      <section class="container-fluid pt-grid-gutter">
+        <div class="row">
+          <div class="col-xl-3 col-sm-6 mb-grid-gutter"><a class="card h-100" href="#" data-scroll>
+              <div class="card-body text-center"><i class="ci-location h3 mt-2 mb-4 text-primary"></i>
+                <h3 class="h6 mb-2">Main store address</h3>
+                <p class="fs-sm text-muted">#02-78, Blk 226, Street 21, Pasir Ris, 510226, Singapore</p>
+              </div></a></div>
+          <div class="col-xl-3 col-sm-6 mb-grid-gutter">
+            <div class="card h-100">
+              <div class="card-body text-center"><i class="ci-time h3 mt-2 mb-4 text-primary"></i>
+                <h3 class="h6 mb-3">Working hours</h3>
+                <ul class="list-unstyled fs-sm text-muted mb-0">
+                  <li>Mon - Fri: 10AM - 7PM</li>
+                  <li class="mb-0">Sta: 11AM - 5PM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-grid-gutter">
+            <div class="card h-100">
+              <div class="card-body text-center"><i class="ci-phone h3 mt-2 mb-4 text-primary"></i>
+                <h3 class="h6 mb-3">Phone numbers</h3>
+                <ul class="list-unstyled fs-sm mb-0">
+                  <li><span class="text-muted me-1">For customers:</span><a class="nav-link-style" href="tel:+108044357260">+65 86024984</a></li>
+                  <li class="mb-0"><span class="text-muted me-1">Tech support:</span><a class="nav-link-style" href="tel:+6586024984">+65 86024984</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-grid-gutter">
+            <div class="card h-100">
+              <div class="card-body text-center"><i class="ci-mail h3 mt-2 mb-4 text-primary"></i>
+                <h3 class="h6 mb-3">Email addresses</h3>
+                <ul class="list-unstyled fs-sm mb-0">
+                  <li><span class="text-muted me-1">For customers:</span><a class="nav-link-style" href="mailto:+65 86024984">customer@shopnow.sg</a></li>
+                  <li class="mb-0"><span class="text-muted me-1">Tech support:</span><a class="nav-link-style" href="mailto:support@shopnow.com">support@shopnow.sg</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Split section: Map + Contact form-->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 px-4 px-xl-5 py-5 border-top">
+          
+            <h2 class="h4 mb-4">Drop us a line</h2>
+            <form  action="{% url 'contactus' %}" method="POST" class="needs-validation mb-3" novalidate>
+                {% csrf_token %}
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label" for="cf-name">Your name:&nbsp;<span class="text-danger">*</span></label>
+                  <input class="form-control" type="text" id="cf-name" placeholder="John Doe" name="name" required>
+                  <div class="invalid-feedback">Please fill in you name!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="cf-email">Email address:&nbsp;<span class="text-danger">*</span></label>
+                  <input class="form-control" type="email" id="cf-email" placeholder="johndoe@email.com" name="email" required>
+                  <div class="invalid-feedback">Please provide valid email address!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="cf-phone">Your phone:&nbsp;<span class="text-danger">*</span></label>
+                  <input class="form-control" type="text" id="cf-phone" placeholder="+65 00000000" name="phone" required>
+                  <div class="invalid-feedback">Please provide valid phone number!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="cf-subject">Subject:</label>
+                  <input class="form-control" type="text" id="cf-subject" placeholder="Provide short title of your request" name="subject"> 
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="cf-message">Message:&nbsp;<span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="cf-message" rows="6" placeholder="Please describe in detail your request" name="content" required></textarea>
+                  <div class="invalid-feedback">Please write a message!</div>
+                  <button class="btn btn-primary mt-4" type="submit">Send message</button>
+                  {% for message in messages %}
+                  {% if message.tags == 'success' %}
+                  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                  <script>
+                      $(document).ready(function(){
+                          $("exampleModal").modal('show');    
+                      });
+                  </script>
+                  {% endif %}
+                  {% endfor %}
+              
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      {% if user.is_authenticated %}
+      {% include 'chat/partials/chat_bubble.html' %}
+      {% endif %}
+    </main>
+
+  
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="True">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><i class="ci-check-circle"></i>&nbsp;&nbsp; Perfect !</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                    <div class="text-center tmt-3">
+                        <i class="ci-check-circle" style="color:#a5dc86;"></i>
+                    </div>
+            </div>
+            <br>
+            <div class="mb-3"><strong>Message sent Successfully !</strong> </div>
+            <h6 style="font-size:12px;">I will contact you as soon as possible. Thanks !</h6>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+            </div>
+          </div> 
+    
+        </div>
+       
+      </div>
+      <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

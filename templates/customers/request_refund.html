@@ -1,0 +1,267 @@
+
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load product_tags %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
+
+
+
+<main class="page-wrapper">
+    <!-- Navbar Marketplace-->
+    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+
+    <!-- Dashboard header-->
+
+    <form class="needs-validation modal fade" id="update-address" action="{% url 'change_refund_address' item.id active_address.id %}" method="POST" tabindex="-1" novalidate>
+     
+      {% csrf_token %}
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add a new address</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row gx-4 gy-3">
+              <div class="col-sm-6">
+                <label class="form-label" for="address-fn">First name</label>
+                <input class="form-control" type="text" id="address-fn" name="first_name" value={{active_address.first_name}} required >
+                <div class="invalid-feedback">Please fill in you first name!</div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="address-fn">Last name</label>
+                <input class="form-control" type="text" id="address-fn" name="last_name" value={{active_address.last_name}} required >
+                <div class="invalid-feedback">Please fill in you last name!</div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="address-line1">Address Line 1</label>
+                <input class="form-control" type="text" id="address-line1" name="address_line_1" value="{{active_address.address_line_1}}" required>
+                <div class="invalid-feedback">Please fill in your address!</div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="address-line2">Unit No</label>
+                <input class="form-control" type="text" id="address-line2" value= "{{active_address.unit_no}}" name="unit_no">
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="address-zip">Country</label>
+                <input class="form-control" type="text" id="address-country" name="country"  value="{{active_address.country}}" required>
+                <div class="invalid-feedback">Please add country</div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="address-zip">Postal code</label>
+                <input class="form-control" type="text" id="address-zip" name="postal_code"  value= {{active_address.postal_code}} required>
+                <div class="invalid-feedback">Please add your Postal code!</div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="address-zip">Phone No</label>
+                <input class="form-control" type="text" id="address-zip" name="mobile" value="{{active_address.mobile}}" required>
+                <div class="invalid-feedback">Please add your mobile no!</div>
+              </div>
+             
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary btn-shadow" type="submit">Add address</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+              <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+              <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+              </li>
+              <li class="breadcrumb-item text-nowrap active" aria-current="page">Order Details</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+          <h1 class="h3 text-light mb-0">Order Details</h1>
+        </div>
+      </div>
+    </div> 
+    <div class="container pb-5 mb-2 mb-md-4">
+      <div class="row">
+        <!-- Sidebar-->
+        {% include 'includes/c_sidebar.html' %}
+        <!-- Content  -->
+        <section class="col-lg-8">
+          <!-- Toolbar-->
+          <div class="d-flex justify-content-between align-items-center pt-lg-2 pb-4 pb-lg-5 mb-lg-3">
+            <div class="d-flex align-items-center">
+              <!-- <label class="d-none d-lg-block fs-sm text-light text-nowrap opacity-75 me-2" for="order-sort">Sort orders:</label> -->
+              <!-- <label class="d-lg-none fs-sm text-nowrap opacity-75 me-2" for="order-sort">Sort orders:</label>
+              <select class="form-select" id="order-sort">
+                <option>All</option>
+                <option>Delivered</option>
+                <option>In Progress</option>
+                <option>Delayed</option>
+                <option>Canceled</option>
+              </select> -->
+            </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" href="{% url 'logout' %}"><i class="ci-sign-out me-2"></i>Sign out</a>
+          </div>
+
+
+<div class="container">
+				  <br><br>
+    <form action="#" method="POST" id="myForm"  enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="">Returned Item Details</label>
+      <div class="table-responsive fs-md mb-4">
+        <table class="table table-hover mb-0">
+          <thead>
+              <tr>
+                  <th>Product</th>
+                  <th>Product Detail</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                  
+                  <th>Status</th>
+                  <th>Order No</th>
+              </tr>
+          </thead>
+          <tbody>
+        
+         
+              <tr>
+                        {% if item.variant.image  %}
+                        <td class="py-3"><center>{{item.variant.image_tag_url}}</center></td>
+                        
+                        {% else %}
+                        <td class="py-3"><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                        
+                        {% endif %}
+                       
+
+                      <td class="py-3">{{item.product.product_name}}
+                          {% if item.product.variant == "Size-Color" %}
+                                       <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                          {{ item.variant.size.name}}
+                                      </div>
+                                      <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                          {% elif item.product.variant == "Size" %}
+                                       <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                          {{ item.variant.size.name}}
+                                        </div>
+                           {% elif item.product.variant == "Color" %}
+                                       <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                          {% endif %}
+
+                      </td>
+                      <td class="py-3">{{item.quantity}}</td>
+               
+
+                      {% if item.variant %}
+                                  {% if item.variant.variant_discount %}
+                                          <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                  {% else %}
+                                          <td class="py-3">${{item.product_price }} SGD</td>
+                                  {% endif %}
+                       {% else %}
+                                  {% if item.product.discount %}
+                                          <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                    {% else %}        
+                                          <td class="py-3">${{ item.product_price }} SGD</td>
+                                    {% endif %}
+                       {% endif %}
+                       <td class="py-3"><span class="badge bg-success m-0">{{item.status}}</span></td>
+                       <td class="py-3">{{item.order.order_number}}</td>
+                     
+                      
+                     
+                     
+              </tr>
+              <tr></tr>
+          </tbody>
+        </table>
+        <label class="form-label" for="unp-variant"><span style="color:red;">*</span> Product Images : </label>
+        <div class="file-drop-area mb-3">
+          <div class="file-drop-icon ci-cloud-upload"></div><span class="file-drop-message">Drag and drop here to upload product screenshot</span>
+          <input class="file-drop-input" type="file" multiple name="images">
+          <button class="file-drop-btn btn btn-primary btn-sm mb-2" type="button">Upload Files </button>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 mb-3">
+                  <label class="form-label" for="unp-product-information"><span style="color:red;">* </span>Additional Information:   </label>
+                   {{form.additional_information}}
+            </div>
+        </div>
+
+        
+        <div class="row">
+          <div class="col-sm-6 mb-3">
+                  <label class="form-label" for="unp-product-information"><span style="color:red;">* </span>Reason :   </label>
+                  {% render_field form.main_reason class="custom-select mb-4 form-control" autocomplete="off"  hx-get="/request_refund/reason/" hx-target="#id_reason"  %}
+          </div>
+      </div>
+
+
+      <div class="row">
+              <div class="col-sm-6 mb-3">
+                <label class="form-label" for="unp-product-information"><span style="color:red;">* </span>Reason in Detail :   </label>
+                {% render_field form.reason class="custom-select mb-4 form-control" autocomplete="off" %}
+             
+              </div>
+      
+        </div>  
+
+        <br><br>
+        <label class="form-label" for="unp-variant"><span style="color:red;">*</span> Pickup Address : </label>
+        
+        <div class="bg-secondary rounded-3 px-4 pt-4 pb-2">
+          <div class="row">
+            <div class="col-sm-8">
+              <ul class="list-unstyled fs-sm">
+                <li><span class="text-muted">Client:&nbsp;</span>{{active_address.full_name}}</li>
+                <li><span class="text-muted">Address:&nbsp;</span> {{active_address.unit_no}} &nbsp; &nbsp; {{active_address.address_line_1}}</li>
+                <li>{{active_address.country}} - {{active_address.postal_code}}</li>
+                <li><span class="text-muted">Phone:&nbsp;</span> {{active_address.mobile}}</li>
+              </ul>
+              <!-- <form action="#" method="POST" > -->
+               
+                <!-- <div class="text-sm-end pt-4"> -->
+                  <a class="btn btn-primary post_details-btn" href="#update-address"  data-bs-toggle="modal">Change Address</a>
+                <!-- </div> -->
+                  
+               
+            <!-- </form> -->
+              
+            </div>
+          </div>
+        </div>
+
+       
+      </div> 
+      <input type="checkbox" id="terms" name="terms">  &nbsp;  &nbsp;<label for="">I have read and accepted the return policy</label>
+      
+        
+        <br><br>
+       <div>
+        <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+      </div>
+    </form>
+
+</div>
+        </section>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+</main>
+
+
+
+
+
+{% endblock %}

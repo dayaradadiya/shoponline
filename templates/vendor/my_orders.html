@@ -1,0 +1,589 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+<main class="page-wrapper">
+    <!-- Order Details Modal-->
+
+    <!-- Navbar 3 Level (Light)-->
+    
+    <!-- Page Title-->
+    {% for item in orderproducts_new %}
+    <form class="needs-validation modal fade" id="request-form-{{forloop.counter}}" action="{% url 'request_extension' item.order.order_number item.id %}" tabindex="-1" method="POST" novalidate>
+      {% csrf_token %}
+      <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add a new address</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row gx-4 gy-3">
+              <div class="col-sm-6">
+                <label class="form-label" for="address-fn">Current SLA</label>
+                {{item.get_time_diff}} hrs
+              </div>
+             
+              <div class="col-sm-6">
+                <label class="form-label" for="address-zip">SLA Extension</label>
+                <select class="form-select flex-shrink-0" name="ext_days" style="width: 14rem;">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  </select>
+              </div>
+             
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary btn-shadow" type="submit">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    {% endfor %}
+
+    {% for item in orderproducts_new %}
+    <form class="needs-validation modal fade" id="cancel-form-{{forloop.counter}}" action="{% url 'cancel_item_vendor' item.order.order_number item.id %}" tabindex="-1" method="POST" novalidate>
+      {% csrf_token %}
+      <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Select Cancellation Reason</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row gx-4 gy-3">
+              
+             
+              <div class="col-sm-6">
+                <label class="form-label" for="address-zip"><small>Please note that your item will be cancelled immediately after the confirmation</small></label>
+                <select class="form-select flex-shrink-0" name="cancel_reason" style="width: 14rem;">
+                  <option>Out of stock</option>
+                  <option>Incorrect pricing</option>
+                  <option>Incorrect/incomplete/wrong selection of address</option>
+                  <option>Buyer requested</option>
+                  <option>Buyer unreachable </option>
+                  <option>System error</option>
+                 
+                  </select>
+              </div>
+             
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary btn-shadow" type="submit">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    {% endfor %}
+
+    {% for item in orderproducts_packed %}
+    {% if item.status == 'Packed' %}
+    <form class="needs-validation modal fade" id="cancel-packed-{{forloop.counter}}" action="{% url 'cancel_item_vendor' item.order.order_number item.id %}" tabindex="-1" method="POST" novalidate>
+      {% csrf_token %}
+      <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Select Cancellation Reason</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row gx-4 gy-3">
+              
+             
+              <div class="col-sm-6">
+                <label class="form-label" for="address-zip"><small>Please note that your item will be cancelled immediately after the confirmation</small></label>
+                <select class="form-select flex-shrink-0" name="cancel_reason" style="width: 14rem;">
+                  <option>Out of stock</option>
+                  <option>Incorrect pricing</option>
+                  <option>Incorrect/incomplete/wrong selection of address</option>
+                  <option>Buyer requested</option>
+                  <option>Buyer unreachable </option>
+                  <option>System error</option>
+                 
+                  </select>
+
+                  
+              </div>
+             
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary btn-shadow" type="submit">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    {% endif %}
+    {% endfor %}
+
+    <div class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+              <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+              <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+              </li>
+              <li class="breadcrumb-item text-nowrap active" aria-current="page">Orders history</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+          <h1 class="h3 text-light mb-0">My orders</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container pb-5 mb-2 mb-md-4">
+      <div class="row">
+        <!-- Sidebar-->
+       
+    <section class="col-lg-12 pt-lg-4 pb-4 mb-3">
+      <button class="btn btn-secondary" onclick="history.back()"> <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+       
+      <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+        <h2 class="h3 py-2 text-center text-sm-start">Orders</h2>
+                  <!-- Tabs-->
+                  <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li class="nav-item"><a class="nav-link px-0 active" href="#to_pack" data-bs-toggle="tab" role="tab">
+                        <div class="d-none d-lg-block"><i class="ci-bag opacity-60 me-2"></i>To Pack</div>
+                        <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">To Pack</span></div></a></li>
+                    <li class="nav-item"><a class="nav-link px-0" href="#to_arrange_shipment" data-bs-toggle="tab" role="tab">
+                        <div class="d-none d-lg-block"><i class="ci-location opacity-60 me-2"></i>To Arrange Shipment</div>
+                        <div class="d-lg-none text-center"><i class="ci-location opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">To Arrange Shipment</span></div></a></li>
+                    <li class="nav-item"><a class="nav-link px-0" href="#to_handover" data-bs-toggle="tab" role="tab">
+                        <div class="d-none d-lg-block"><i class="ci-bag opacity-60 me-2"></i>To Handover</div>
+                        <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">To Handover</span></div></a></li>
+                  </ul>
+    <div class="tab-content">
+      <!-- Profile-->
+      <div class="tab-pane fade show active" id="to_pack" role="tabpanel">
+ 
+          <!-- Orders list-->
+          <form action="{% url 'check_mychecklist' %}" id="myForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            &nbsp; &nbsp;<input type="checkbox" id="mainCheckbox">  &nbsp;  &nbsp; &nbsp; &nbsp; <button type="submit" class="btn btn-outline-danger btn-sm">Bulk Print</button>
+           
+            <br> <br>
+            <div class="table-responsive fs-md mb-4">
+
+            <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th>Product</th>
+                      <th>Product Detail</th>
+                      <th>Qty</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Order No</th>
+                      <th>SLA</th>
+                      <th>Actions</th>
+                      <th>Other Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in orderproducts_new %}
+                  <tr>
+                         <td class="py-3"><input type="checkbox" name="boxes" class="boxes" value="{{item.pk}}"></td>
+                              {% if item.variant.image  %}
+                              <td class="py-3"><center>{{item.variant.image_tag_url}}</center></td>
+                              {% else %}
+                              <td class="py-3"><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                              {% endif %}
+                           
+
+                          <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                              {% if item.product.variant == "Size-Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                          </div>
+                                          <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% elif item.product.variant == "Size" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                            </div>
+                               {% elif item.product.variant == "Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% endif %}
+
+                          </td>
+                          <td class="py-3">{{item.quantity}}</td>
+                   
+
+                          {% if item.variant %}
+                                      {% if item.variant.variant_discount %}
+                                              <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                      {% else %}
+                                              <td class="py-3">${{item.product_price }} SGD</td>
+                                      {% endif %}
+                           {% else %}
+                                      {% if item.product.discount %}
+                                              <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                        {% else %}        
+                                              <td class="py-3">${{ item.product_price }} SGD</td>
+                                        {% endif %}
+                           {% endif %}
+                           <td class="py-3"><span class="badge bg-info m-0">{{item.status}}</span></td>
+                           <td class="py-3">{{item.order.order_number}}</td>
+                           <td>{{item.get_time_diff}} hrs</td>
+                           <td class="py-3">
+                            <a href="{% url 'order_pdf' item.order.order_number item.id %}" class="btn btn-outline-danger btn-sm">Print</a> <br>
+                            <br>  
+                            <a href="{% url 'download_pdf' item.order.order_number item.id %}" class="btn btn-outline-danger btn-sm">Download</a>
+                            </td>
+                            <td>
+                            <form action="#" method="POST">
+                              <a href="#cancel-form-{{forloop.counter}}" class="btn btn-outline-danger btn-sm"  data-bs-toggle="modal">Cancel Item</a>
+                            </form> <br><br>
+                            <form action="#" method="POST">
+                                    <a class="btn btn-outline-danger btn-sm" href="#request-form-{{forloop.counter}}"  data-bs-toggle="modal">Request Extension</a>
+                            </form>
+                          
+                          </td>
+                
+                         
+                  </tr>
+                  <tr></tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+         
+                
+        </form>
+          <!-- Pagination-->
+          <hr class="my-3">
+          <!-- Pagination-->
+          <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+            {% if orderproducts_new.has_other_pages %}
+                <ul class="pagination">
+                      {% if orderproducts_new.has_previous %}
+                        
+                          <li class="page-item"><a class="page-link" href="?page={{orderproducts_new.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                        
+                        {% else %}
+                          <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                        
+                        {% endif %}
+  
+                              {% for i in orderproducts_new.paginator.page_range %}
+                              {% if orderproducts_new.number == i %}
+                              <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                              {% else %}
+                              <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                              {% endif %}
+                              {% endfor %}
+                    
+                        {% if orderproducts_new.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{orderproducts_new.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                         {% else %}   
+                         <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                        {% endif %}
+                </ul>
+            {% endif %}
+          </nav>
+      </div>
+
+  <div class="tab-pane fade" id="to_arrange_shipment" role="tabpanel">
+ 
+    <!-- Orders list-->
+   
+    <form action="{% url 'mass_readytoship' %}" method="post" id="myForm2"   enctype="multipart/form-data">
+      {% csrf_token %}
+      &nbsp; &nbsp;<input type="checkbox" id="mainCheckbox2">  &nbsp;  &nbsp; &nbsp; &nbsp; <button type="submit" class="btn btn-outline-danger btn-sm">Ready To Ship</button>
+      <br>  <br>
+    <div class="table-responsive fs-md mb-4">
+
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product</th>
+                <th>Product Detail</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Order No</th>
+                <th>SLA</th>
+                <th>Actions</th>
+                <th>Other Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for item in orderproducts_packed %}
+            <tr>
+                   <td class="py-3"><input type="checkbox" name="readyboxes" class="readyboxes"  value="{{item.pk}}"></td>
+                        {% if item.variant.image  %}
+                        <td class="py-3"><center>{{item.variant.image_tag_url}}</center></td>
+                        {% else %}
+                        <td class="py-3"><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                        {% endif %}
+                     
+
+                    <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                        {% if item.product.variant == "Size-Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                    </div>
+                                    <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% elif item.product.variant == "Size" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                      </div>
+                         {% elif item.product.variant == "Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% endif %}
+
+                    </td>
+                    <td class="py-3">{{item.quantity}}</td>
+             
+
+                    {% if item.variant %}
+                                {% if item.variant.variant_discount %}
+                                        <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                {% else %}
+                                        <td class="py-3">${{item.product_price }} SGD</td>
+                                {% endif %}
+                     {% else %}
+                                {% if item.product.discount %}
+                                        <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                  {% else %}        
+                                        <td class="py-3">${{ item.product_price }} SGD</td>
+                                  {% endif %}
+                     {% endif %}
+                     <td class="py-3"><span class="badge bg-info m-0">{{item.status}}</span></td>
+                     <td class="py-3">{{item.order.order_number}}</td>
+                     <td class="py-3">{{item.get_time_diff_readytoship}} Hrs</td>
+                     <td class="py-3"> <a href="{% url 'readytoship' item.order.order_number item.id %}" class="btn btn-outline-danger btn-sm">Ready To Ship</a> &nbsp;
+                     </td>
+                     <td>
+                      <form action="#" method="POST" >
+                        <a href="#cancel-packed-{{forloop.counter}}" class="btn btn-outline-danger btn-sm"  data-bs-toggle="modal">Cancel Item</a>
+                      </form>  &nbsp;  
+
+                    
+                    </td>
+          
+                   
+            </tr>
+            <tr></tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    
+          
+  </form>
+    <!-- Pagination-->
+    <hr class="my-3">
+    <!-- Pagination-->
+    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+      {% if orderproducts_packed.has_other_pages %}
+          <ul class="pagination">
+                {% if orderproducts_packed.has_previous %}
+                  
+                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_packed.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                  
+                  {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                  
+                  {% endif %}
+
+                        {% for i in orderproducts_packed.paginator.page_range %}
+                        {% if orderproducts_packed.number == i %}
+                        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+              
+                  {% if orderproducts_packed.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{orderproducts_packed.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                   {% else %}   
+                   <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                  {% endif %}
+          </ul>
+      {% endif %}
+    </nav>
+        </div>
+
+    <div class="tab-pane fade" id="to_handover" role="tabpanel">
+ 
+    <form action="{% url 'shipped_in_bulk' %}" id="myForm3" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      &nbsp; &nbsp;<input type="checkbox" id="mainCheckbox3">  &nbsp;  &nbsp; &nbsp; &nbsp; <button type="submit" class="btn btn-outline-danger btn-sm">Handed Over</button>
+      <br>  <br>
+    <div class="table-responsive fs-md mb-4">
+
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product</th>
+                <th>Product Detail</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Order No</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for item in orderproducts_readytoship %}
+            <tr>
+                   <td class="py-3"><input type="checkbox" name="readyhandover" class="readyhandover" value="{{item.pk}}"></td>
+                        {% if item.variant.image  %}
+                        <td class="py-3"><center>{{item.variant.image_tag_url}}</center></td>
+                        {% else %}
+                        <td class="py-3"><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                        {% endif %}
+                     
+
+                    <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                        {% if item.product.variant == "Size-Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                    </div>
+                                    <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% elif item.product.variant == "Size" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                      </div>
+                         {% elif item.product.variant == "Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% endif %}
+
+                    </td>
+                    <td class="py-3">{{item.quantity}}</td>
+             
+
+                    {% if item.variant %}
+                                {% if item.variant.variant_discount %}
+                                        <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                {% else %}
+                                        <td class="py-3">${{item.product_price }} SGD</td>
+                                {% endif %}
+                     {% else %}
+                                {% if item.product.discount %}
+                                        <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                  {% else %}        
+                                        <td class="py-3">${{ item.product_price }} SGD</td>
+                                  {% endif %}
+                     {% endif %}
+                     <td class="py-3"><span class="badge bg-info m-0">{{item.status}}</span></td>
+                     <td class="py-3">{{item.order.order_number}}</td>
+                     <td class="py-3"> <a href="{% url 'item_shipped' item.order.order_number item.id %}" class="btn btn-outline-danger btn-sm">Handed Over</a></td>
+          
+                   
+            </tr>
+            <tr></tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      </div>
+      
+  
+</form>
+<hr class="my-3">
+<!-- Pagination-->
+<nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+  {% if orderproducts_readytoship.has_other_pages %}
+      <ul class="pagination">
+            {% if orderproducts_readytoship.has_previous %}
+              
+                <li class="page-item"><a class="page-link" href="?page={{orderproducts_readytoship.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+              
+              {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+              
+              {% endif %}
+
+                    {% for i in orderproducts_readytoship.paginator.page_range %}
+                    {% if orderproducts_readytoship.number == i %}
+                    <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+          
+              {% if orderproducts_readytoship.has_next %}
+                  <li class="page-item"><a class="page-link" href="?page={{orderproducts_readytoship.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+               {% else %}   
+               <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+              {% endif %}
+      </ul>
+  {% endif %}
+</nav>
+    </div>
+    </div>
+    </section>
+     
+      </div>
+      </div>
+      {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+  </main>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+  <script>
+
+    $(document).on('change', '#mainCheckbox',function(e){
+      e.preventDefault();
+    
+      var mainCheckbox = document.getElementById("mainCheckbox");
+      var checkboxes = document.getElementsByClassName("boxes");
+    
+  
+        var isChecked = mainCheckbox.checked;
+    
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkboxes[i].checked = isChecked;
+        }
+      });
+
+
+
+  $(document).on('change', '#mainCheckbox2',function(e){
+        e.preventDefault();
+      
+        var mainCheckbox = document.getElementById("mainCheckbox2");
+        var checkboxes = document.getElementsByClassName("readyboxes");
+      
+    
+          var isChecked = mainCheckbox.checked;
+      
+          for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = isChecked;
+          }
+        });
+
+
+      
+        $(document).on('change', '#mainCheckbox3',function(e){
+          e.preventDefault();
+        
+          var mainCheckbox = document.getElementById("mainCheckbox3");
+          var checkboxes = document.getElementsByClassName("readyhandover");
+        
+      
+            var isChecked = mainCheckbox.checked;
+        
+            for (var i = 0; i < checkboxes.length; i++) {
+              checkboxes[i].checked = isChecked;
+            }
+          });
+
+  </script>
+  {% endblock %}

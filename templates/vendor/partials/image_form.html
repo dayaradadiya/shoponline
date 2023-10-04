@@ -1,0 +1,27 @@
+
+{% load tailwind_filters %}
+{% load widget_tweaks  %}
+<div hx-target="this" hx-swap="outerHTML"  >
+    <form method="POST" action="." hx-encoding="multipart/form-data">
+        {% csrf_token %}
+        {{ imageform|crispy }}
+
+        {% for field in imageform %}
+                {% if field.errors %}
+                <ul class="errorlist">
+                  {% for error in field.errors %}
+                  <li style="color: red;">{{error}}</li>
+                  {% endfor %}
+                  </ul>
+                {% endif %} 
+              {% endfor %}
+
+        {% if image %}
+        <button class="btn btn-accent" hx-post="{% url 'update_image' image.id %}"><i class="ci-edit opacity-60 me-2"></i>Save Changes</button>
+        {% else %}
+        <button class="btn btn-accent" hx-post=".">Submit</button>
+        {% endif %}
+
+
+    </form>
+</div>

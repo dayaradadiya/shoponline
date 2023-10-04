@@ -1,0 +1,56 @@
+{% if data|length < 1 %}
+{% load static %}
+{% load product_tags %}
+
+ <div class="row justify-content-center pt-lg-4 text-center">
+    <div class="col-lg-5 col-md-7 col-sm-9"><img class="d-block mx-auto mb-5" src="{% static 'img/pages/404.png' %}" width="340" alt="404 Error">
+      <h1 class="h3">404 error</h1>
+      <h3 class="h5 fw-normal mb-4">We can't seem to find the product you are looking for.</h3>
+      </div>
+  </div>  
+{% else %}
+{% for product in data %}
+<div class="col-md-4 col-sm-6 px-2 mb-4 column">
+  <div class="card product-card">
+    {% if product.discount %}
+           <span class="badge bg-danger badge-shadow">{{product.discount}}% OFF</span>
+    {% endif %}
+    <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="{{product.get_url}}"><img src="{{product.featured_image.url}}" alt="Product" style="height:250px; width:300px;"></a>
+    <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">{{product.category}}</a>
+      <h3 class="product-title fs-sm"><a href="{{product.get_url}}">{{product.product_name|truncatewords:8}}</a></h3>
+      <div class="d-flex justify-content-between">
+       
+
+        {% if product.discount %}
+             <div class="product-price"><span class="text-accent">${% call_sellprice product.price  product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ product.price }}</del></span> </div>
+
+        {% else %}
+             <div class="product-price"><span class="text-accent">${{product.price}}</span></div>
+        {% endif %}   
+
+
+
+        <div class="rating-star">
+          <span>
+              <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+              <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+              <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+              <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+              <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+              <!-- <span>{{ product.countReview }} reviews</span> -->
+          </span>
+      </div>
+    </div>
+      </div>
+    <div class="card-body card-body-hidden">
+    
+          <a href="{{ product.get_url }}"><button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button"><i class="ci-cart fs-sm me-1"></i>View Details</button></a>
+      <!-- <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view" data-bs-toggle="modal" data-bs-target="#productModalId-{{forloop.counter}}"><i class="ci-eye align-middle me-1"></i>Quick view</a></div> -->
+    </div>
+  </div>
+  <hr class="d-sm-none">
+  </div>
+  <hr class="d-sm-none">
+
+{% endfor %}
+{% endif %}

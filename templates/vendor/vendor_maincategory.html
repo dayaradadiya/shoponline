@@ -1,0 +1,91 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+<main class="page-wrapper">
+    <!-- Navbar Marketplace-->
+    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+    
+    <!-- Dashboard header-->
+    <div class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+              <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+              <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+              </li>
+              <li class="breadcrumb-item text-nowrap active" aria-current="page">Products</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+          <h1 class="h3 text-light mb-0">Seller Categories</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-5 pb-3">
+      <div class="bg-light shadow-lg rounded-3 overflow-hidden">
+        <div class="row">
+          <!-- Sidebar-->
+      {%  include 'includes/v_sidebar.html' %}
+          <!-- Content-->
+          <section class="col-lg-8 pt-lg-4 pb-4 mb-3">
+            <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+              <!-- Title-->
+              <div class="d-sm-flex flex-wrap justify-content-between align-items-center border-bottom">
+                <h2 class="h3 py-2 me-2 text-center text-sm-start">Add Main Category<span class="badge bg-faded-accent fs-sm text-body align-middle ms-2">{{product_count}}</span></h2>
+               
+              </div>
+              <br><br>  
+              <!-- Product-->
+              <h5>Seller categories</h5>
+              <a href="{% url 'add_main_category' %}" class="btn btn-info btn-sm btn-sm float-right m-1">Add Main Category</a>
+           
+           
+              <table class="table table-hover table-borderless">
+               <thead>
+                <th>No</th>
+                <th>Category</th>
+                <th>Action</th>
+               </thead>
+                <tbody>
+                  {% for cat in main_categories %}
+                  <tr>
+                    <td>
+                      <div class="d-flex justify-content-center justify-content-sm-start pt-3" style="font:color">
+                      {{forloop.counter}}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex justify-content-center justify-content-sm-start pt-3">
+                      <a href="{% url 'products_by_maincategory' cat.id %}">{{cat}}</a>
+                    </div>
+                    </td>
+                      
+                    <td>
+                      <div class="d-flex justify-content-center justify-content-sm-start pt-3">
+                        <!-- <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Download"><i class="ci-download text-accent"></i></button> -->
+                        <a href="{% url 'edit_main_category' cat.id %}"><button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit Category"><i class="ci-edit text-info"></i></button></a>
+                    
+                        <a href="{% url 'delete_main_category' cat.id %}" onclick="return confirm('Are you sure you want to delete this main category?')"><button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i class="ci-trash text-danger"></i></button></a>
+                    
+                     </div>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+             
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+  </main>
+  {% endblock %}

@@ -1,0 +1,11 @@
+model,pk,sub_category,name,vendor,slug
+category.fifth_level_category,1,109,Inner Hijab,1,inner-hijab
+category.fifth_level_category,2,109,Hijab Pin,1,hijab-pin
+category.fifth_level_category,3,109,Others,1,others
+category.fifth_level_category,4,192,Sticks & Chasers,1,sticks-&-chasers
+category.fifth_level_category,5,192,"Chew, Bones & Balls",1,"chew,-bones-&-balls"
+category.fifth_level_category,6,192,Frisbees,1,frisbees
+category.fifth_level_category,7,192,Others,1,others
+category.fifth_level_category,8,411,Ignition Coils,1,ignition-coils
+category.fifth_level_category,9,411,Spark Plugs,1,spark-plugs
+category.fifth_level_category,10,411,Others,1,others

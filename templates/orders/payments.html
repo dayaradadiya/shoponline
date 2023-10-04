@@ -1,0 +1,522 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+  <!-- Body-->
+    <!-- Sign in / sign up modal-->
+                                  
+    <main class="page-wrapper">
+      
+      <!-- Page Title-->
+      <div class="page-title-overlap bg-dark pt-4">
+        <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+          <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+                <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+                <li class="breadcrumb-item text-nowrap"><a href="{% url 'store' %}">Shop</a>
+                </li>
+                <li class="breadcrumb-item text-nowrap active" aria-current="page">Payments</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+            <h1 class="h3 text-light mb-0">Checkout</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container pb-5 mb-2 mb-md-4">
+        <div class="row">
+          <section class="col-lg-8">
+            <!-- Steps-->
+            <div class="steps steps-light pt-2 pb-3 mb-5"><a class="step-item active current" href="{% url 'cart' %}">
+                <div class="step-progress"><span class="step-count">1</span></div>
+                <div class="step-label"><i class="ci-cart"></i>Cart</div></a>
+                
+                <a class="step-item active current" href="{% url 'checkout' %}">
+                <div class="step-progress"><span class="step-count">2</span></div>
+                <div class="step-label"><i class="ci-user-circle"></i>Details</div></a>
+                
+                <a class="step-item active current" href="{% url 'checkout' %}">
+                <!-- <div class="step-progress"><span class="step-count">3</span></div>
+                <div class="step-label"><i class="ci-package"></i>Shipping</div></a><a class="step-item active current" href="checkout-payment.html"> -->
+                <div class="step-progress"><span class="step-count">3</span></div>
+                <div class="step-label"><i class="ci-card"></i>Payment</div></a>
+                
+                <a class="step-item current" href="{% url 'checkout' %}">
+                <div class="step-progress"><span class="step-count">4</span></div>
+                <div class="step-label"><i class="ci-check-circle"></i>Order Complete</div></a>
+              
+              </div>
+                <h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Review your order</h2>
+              <!-- Item-->
+              {% for item in vendor_p %}
+              {% for cart_item in cart_items %}
+                {% if cart_item.vendor_id == item.vendor_id %}
+        
+            <div class="d-sm-flex justify-content-between my-4 pb-3 border-bottom">
+        
+               {% if cart_item.variant.image %}
+               <div class="d-block d-sm-flex align-items-center text-center text-sm-start"><a class="d-inline-block flex-shrink-0 mx-auto me-sm-4" href="{{cart_item.product.get_url}}"><img src="{{ cart_item.variant.image }}" style="width:160px; height:170px;"  alt="Product"></a>
+               {% else %}
+               <div class="d-block d-sm-flex align-items-center text-center text-sm-start"><a class="d-inline-block flex-shrink-0 mx-auto me-sm-4" href="{{cart_item.product.get_url}}"><img src="{{ cart_item.product.featured_image.url }}" style="width:160px; height:170px;"  alt="Product"></a>
+                {% endif %}  
+                      
+                      <div class="pt-2">
+                        {% if cart_item.variant  %}
+                        <h3 class="product-title fs-base mb-2"><a href="{{cart_item.product.get_url}}">{{cart_item.product.product_name|truncatewords:8}}</a></h3>
+                          
+
+                          {% if cart_item.product.variant == "Size-Color" %}
+                              <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                {{ cart_item.variant.size.name}}
+                              </div>
+                              <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{cart_item.variant.color.name | capfirst}}</div>
+                          {% elif cart_item.product.variant == "Size" %}
+                              <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                {{ cart_item.variant.size.name}}
+                              </div>
+                          {% elif cart_item.product.variant == "Color" %}
+                              <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{cart_item.variant.color.name | capfirst}}</div>
+                          {% endif %}
+
+                        {% else %}  
+                        <h3 class="product-title fs-base mb-2"><a href="{{cart_item.product.get_url}}">{{cart_item.product.product_name|truncatewords:8}}</a></h3>
+                      {% endif %}
+                       
+
+                
+
+                       {% if cart_item.variant %}
+                                {% if cart_item.variant.variant_discount %}
+                                      <div class="fs-lg text-accent pt-2">${% call_sellprice cart_item.variant.variant_price cart_item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ cart_item.variant.variant_price }} </del> SGD</div>
+                                {% else %}
+                                      <div class="fs-lg text-accent pt-2">${{ cart_item.variant.variant_price }} SGD</div>
+                                {% endif%}
+                      {% else %}
+                                {% if cart_item.product.discount %}
+                                    <div class="fs-lg text-accent pt-2">${% call_sellprice cart_item.product.price  cart_item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ cart_item.product.price }} SGD</del></div>
+                                {% else %}
+                                    <div class="fs-lg text-accent pt-2">${{ cart_item.product.price }} SGD</div>
+                                {% endif%}        
+                     
+                       {% endif %}
+                      
+                      </div>
+                    </div>
+                    <div class="pt-2 pt-sm-0 ps-sm-3 mx-auto mx-sm-0 text-center text-sm-start" style="max-width: 15rem;">
+                    <div class="pt-2 ">
+                      <h3 class="product-title fs-base mb-2"><a href="shop-single-v1.html">Sub Total</a></h3>
+                      {% if cart_item.product.variant == 'None' %}
+                          <div class="fs-sm"><span class="text-muted me-2"></span>${{cart_item.sub_total}}</div>
+                      {% else %}
+                          <div class="fs-sm"><span class="text-muted me-2"></span>${{cart_item.variant_sub_total}}</div>
+                      {% endif %}
+          
+                      <div class="fs-sm"><span class="text-muted me-2"></span></div>
+                      <div class="fs-lg text-accent pt-2"></div>
+                    </div>
+                    </div>
+                    <div class="pt-2 pt-sm-0 ps-sm-3 mx-auto mx-sm-0 text-center text-sm-start" style="max-width: 15rem;">
+                    <div class="pt-2 ">
+                      <h3 class="product-title fs-base mb-2"><a href="shop-single-v1.html">Quantity</a></h3>
+                    <div class="fs-sm"><span class="text-muted me-2"></span>{{cart_item.quantity}}</div>
+                    <div class="fs-sm"><span class="text-muted me-2"></span></div>
+                    <div class="fs-lg text-accent pt-2"></div>
+                  </div>
+                  </div>
+
+            </div>
+              {% endif  %}
+           {% endfor %}
+      
+           <div class="bg-secondary rounded p-3 mt-4 mb-2">
+        
+      <h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Shipping option</h2>
+            <div class="table-responsive">
+            <table class="table table-hover fs-sm border-top">
+              <thead>
+                <tr>
+                  <th class="align-middle">Shipping method</th>
+                  <th class="align-middle">Delivery time</th>
+                  <th class="align-middle">Handling fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 
+                  <td class="align-middle"><span class="text-dark fw-medium">Standard</span><br></td>
+                  <td class="align-middle">{{startdate}} - {{enddate}}</td>
+                  <td class="align-middle">${{item.shipchargepaid_by_cust}}</td>
+                </tr>
+                
+               
+              </tbody>
+            </table>
+          </div> 
+             </div>
+        {% endfor %}			
+                <!-- <div class="bg-secondary roun
+                  ded-3 px-4 pt-4 pb-2">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h4 class="h6">Shipping to:</h4>
+                      <ul class="list-unstyled fs-sm">
+                        <li><span class="text-muted">Client:&nbsp;</span>{{order.full_name}}</li>
+                        <li><span class="text-muted">Address:&nbsp;</span>{{order.full_address}}</li>
+                        <li>{{order.city}}, {{order.state}},{{order.country}} - {{order.pin_code}}</li>
+                        <li><span class="text-muted">Phone:&nbsp;</span> {{order.phone}}</li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6">
+                      <h4 class="h6">Payment method:</h4>
+                      <ul class="list-unstyled fs-sm">
+                        <li><span class="text-muted">Credit Card:&nbsp;</span>**** **** **** 5300</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+            <!-- Payment methods accordion-->
+            <!-- <h2 class="h6 pb-3 mb-2">Choose payment method</h2> -->
+         
+            <h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Choose payment method</h2>
+            <div class="accordion mb-2" id="payment-method">
+              <div class="accordion-item">
+                <h3 class="accordion-header"><a class="accordion-button" href="#card" data-bs-toggle="collapse"><i class="ci-card fs-lg me-2 mt-n1 align-middle"></i>Pay with Credit Card</a></h3>
+                <div class="accordion-collapse collapse show" id="card" data-bs-parent="#payment-method">
+                  <div class="accordion-body">
+                    <p class="fs-sm">We accept following credit cards:&nbsp;&nbsp;<img class="d-inline-block align-middle" src="{% static 'img/cards.png' %}" width="187" alt="Cerdit Cards"></p>
+                    <div class="credit-card-wrapper"></div>
+                    <!-- <form class="credit-card-form row">
+                      <div class="mb-3 col-sm-6">
+                        <input class="form-control" type="text" name="number" placeholder="Card Number" required>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                      </div>
+                      <div class="mb-3 col-sm-3">
+                        <input class="form-control" type="text" name="expiry" placeholder="MM/YY" required>
+                      </div>
+                      <div class="mb-3 col-sm-3">
+                        <input class="form-control" type="text" name="cvc" placeholder="CVC" required>
+                      </div>
+                      <div class="col-sm-6">
+                        <button class="btn btn-outline-primary d-block w-100 mt-0" type="submit">Submit</button>
+                      </div>
+                    </form> -->
+                    <button class="btn btn-primary"  id="checkout" onclick="buy(event)">Pay with Credit or Debit Card</button>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><a class="accordion-button collapsed" href="#paypal" data-bs-toggle="collapse"><i class="ci-paypal me-2 align-middle"></i>Pay with PayPal</a></h3>
+                <div class="accordion-collapse collapse" id="paypal" data-bs-parent="#payment-method">
+                  <div class="accordion-body fs-sm">
+                    <p><span class='fw-medium'>PayPal</span> - the safer, easier way to pay</p>
+                    <form class="row needs-validation" method="post" novalidate> 
+                      
+                     <!-- <div class="col-sm-6">
+                        <div class="mb-3">
+                          <input class="form-control" type="email" placeholder="E-mail" required>
+                          <div class="invalid-feedback">Please enter valid email address</div>
+                        </div>
+                      </div> -->
+                      <!-- <div class="col-sm-6">
+                        <div class="mb-3">
+                          <input class="form-control" type="password" placeholder="Password" required>
+                          <div class="invalid-feedback">Please enter your password</div>
+                        </div>
+                      </div> -->
+                      <div class="col-12">
+                        <!-- <div class="d-flex flex-wrap justify-content-between align-items-center"> -->
+                          <!-- <a class="nav-link-style" href="#">Forgot password?</a> -->
+                          <!-- <button class="btn btn-primary" type="submit">Log In</button>  -->
+
+                          <div id="paypal-button-container">
+
+                            <!-- paypal button will load -->
+                          </div>
+                        <!-- </div> -->
+                      </div>
+                  </form> 
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="accordion-item">
+                <h3 class="accordion-header"><a class="accordion-button collapsed" href="#points" data-bs-toggle="collapse"><i class="ci-gift me-2"></i>Redeem Reward Points</a></h3>
+                <div class="accordion-collapse collapse" id="points" data-bs-parent="#payment-method">
+                  <div class="accordion-body">
+                    <p>You currently have<span class="fw-medium">&nbsp;384</span>&nbsp;Reward Points to spend.</p>
+                    <div class="form-check d-block">
+                      <input class="form-check-input" type="checkbox" id="use_points">
+                      <label class="form-check-label" for="use_points">Use my Reward Points to pay for this order.</label>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <!-- Navigation (desktop)-->
+            <div class="d-none d-lg-flex pt-4">
+              <div class="w-50 pe-3"><a class="btn btn-secondary d-block w-100" href="{% url 'checkout' %}"><i class="ci-arrow-left mt-sm-0 me-1"></i><span class="d-none d-sm-inline">Back to Place order</span><span class="d-inline d-sm-none">Back</span></a></div>
+              <!-- <div class="w-50 ps-2"><a class="btn btn-primary d-block w-100" href="checkout-review.html"><span class="d-none d-sm-inline">Review your order</span><span class="d-inline d-sm-none">Review order</span><i class="ci-arrow-right mt-sm-0 ms-1"></i></a></div> -->
+            </div>
+          </section>
+          <!-- Sidebar-->
+          <aside class="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+            <div class="bg-white rounded-3 shadow-lg p-4 ms-lg-auto">
+              <div class="py-2 px-xl-2">
+                <div class="widget mb-3">
+                  <h2 class="widget-title text-center">Order summary</h2>
+                 
+                  <!-- <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="{{ product.get_url }}"><img src="{{ cart_item.product.featured_image.url }}" width="64" alt="Product"></a>
+                    <div class="ps-2">
+                      <h6 class="widget-product-title"><a href="{{ product.get_url }}">{{ cart_item.product.product_name }}</a></h6>
+                      <div class="widget-product-meta"><span class="text-accent me-2">${{ cart_item.product.price }}</span><span class="text-muted">x {{cart_item.quantity}}</span></div>
+                    </div>
+                  </div> -->
+                 
+                </div>
+                <ul class="list-unstyled fs-sm pb-2 border-bottom">
+                  <li class="d-flex justify-content-between align-items-center"><span class="me-2">Subtotal:</span><span class="text-end">${{total}}</span></li>
+                  <li class="d-flex justify-content-between align-items-center"><span class="me-2">Shipping:</span><span class="text-end">${{total_ship_charge}}</span></li>
+                  <li class="d-flex justify-content-between align-items-center"><span class="me-2">Taxes:</span><span class="text-end">${{tax}}</span></li>
+                  <li class="d-flex justify-content-between align-items-center"><span class="me-2">Discount:</span><span class="text-end">—</span></li>
+                </ul>
+                <h3 class="fw-normal text-center my-4">${{grand_total}}</h3>
+                <form class="needs-validation" method="post" novalidate>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Promo code" required>
+                    <div class="invalid-feedback">Please provide promo code.</div>
+                  </div>
+                  <button class="btn btn-outline-primary d-block w-100" type="submit">Apply promo code</button>
+                </form>
+                
+                <div class="bg-secondary rounded-3 px-4 pt-4 pb-2">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h4 class="h6">Shipping to:</h4>
+                      <ul class="list-unstyled fs-sm">
+                        <li><span class="text-muted">Client:&nbsp;</span>{{order.full_name}}</li>
+                        <li><span class="text-muted">Address:&nbsp;</span>{{order.full_address}}</li>
+                        <li>{{order.country}} - {{order.pin_code}}</li>
+                        <li><span class="text-muted">Phone:&nbsp;</span> {{order.phone}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </aside>
+        </div>
+        <!-- Navigation (mobile)-->
+        <div class="row d-lg-none">
+          <div class="col-lg-8">
+            <div class="d-flex pt-4 mt-3">
+              <div class="w-50 pe-3"><a class="btn btn-secondary d-block w-100" href="{% url 'cart' %}"><i class="ci-arrow-left mt-sm-0 me-1"></i>
+                <span class="d-none d-sm-inline">Back to Shipping</span><span class="d-inline d-sm-none">Back</span></a>
+              </div>
+              <div class="w-50 ps-2"><a class="btn btn-primary d-block w-100" href="checkout-review.html">
+                <span class="d-none d-sm-inline">Review your order</span><span class="d-inline d-sm-none">Review order</span>
+                <i class="ci-arrow-right mt-sm-0 ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+    </main>
+
+
+
+  {% block scripts %}
+   <!-- Paypal script -->
+   
+   <script type="application/javascript" src="https://js.stripe.com/v3/"> </script>
+   <script>
+
+
+
+//  var amount = "{{grand_total}}"
+ // var url = "{% url 'payments' %}"
+  // var csrftoken = getCookie('csrftoken');
+  // var orderID = "{{ order.order_number}}"
+   // var payment_method = 'PayPal'
+
+  // paypal.Buttons({
+
+    // style: {
+     //  color: 'blue',
+      // shape: 'rect',
+      // label: 'pay',
+      // height: 40
+  //   },
+    // Order is created on the server and the order id is returned
+    // createOrder: function(data, actions) {
+     //  return actions.order.create({
+      //   purchase_units : [{
+      //     amount : {
+       //      value : amount,
+        //   }
+     //  //   }]
+    //   });
+    // },
+    // Finalize the transaction on the server after payer approval
+    // onApprove: function(data, actions) {
+     //  return actions.order.capture().then(function(details){
+      //   console.log(details);
+       //  sendData();
+       //  function sendData(){
+       //    fetch(url,{
+           //  method : "POST",
+          //   headers : {
+            //   "content-type" : "application/json",
+            //   "X-CSRFToken" : csrftoken,
+           //  },
+           //  body : JSON.stringify({
+           //    orderID : orderID,
+           //    transID : details.id,
+           //    payment_method : payment_method,
+             //  status : details.status
+        //     })
+       //    })
+       //    .then(response => response.json())
+       //    .then(data => console.log(data));
+     //    }
+    //   });
+   //  }
+
+  // }).render('#paypal-button-container');
+
+  
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+var amount = "{{ grand_total }}"
+var url = "{% url 'payments' %}"
+var orderID = "{{ order.order_number }}"
+var payment_method = 'PayPal'
+var redirect_url = "{% url 'order_complete' %}"
+
+paypal.Buttons({
+
+  style: {
+    color: 'blue',
+    shape: 'rect',
+    label: 'pay',
+    height: 40
+  },
+    // Sets up the transaction when a payment button is clicked
+    createOrder: (data, actions) => {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: amount, // Can also reference a variable or function
+                }
+            }]
+        });
+    },
+    // Finalize the transaction after payer approval
+    onApprove: (data, actions) => {
+        return actions.order.capture().then(function (orderData) {
+            // Successful capture! For dev/demo purposes:
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            const transaction = orderData.purchase_units[0].payments.captures[0];
+            sendData();
+            function sendData(){
+                fetch(url,{
+                    method : 'POST',
+                    headers:{
+                        "content-type" : "application.json",
+                        "X-CSRFToken" : csrftoken,
+                    },
+                    body: JSON.stringify({
+                        orderID : orderID,
+                        transID : orderData.id,
+                        payment_method : payment_method,
+                        status : orderData.status,
+                    }),
+                })
+                .then((response) => response.json()) 
+                .then((data) => { 
+                  window.location.href = redirect_url + '?order_number='+data.order_number+'&payment_id='+data.transaction_no;
+                });
+          
+            }
+            // When ready to go live, remove the alert and show a success message within this page. For example:
+            // const element = document.getElementById('paypal-button-container');
+            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            // Or go to another URL:  actions.redirect('thank_you.html');
+        });
+    }
+}).render('#paypal-button-container');
+
+
+
+//ADDED FOR STRIPE
+function buy(event){
+  event.preventDefault()
+  var payment_method = 'card' 
+  var orderID = "{{ order.order_number }}"
+  let  data= {
+      'order_number' : orderID,
+      'payment_method' : payment_method,
+      //csrfmiddlewaretoken : csrftoken ,
+  }
+  
+  var stripe = Stripe('{{ pub_key }}')
+  fetch('/orders/start_order/',{
+          method :'POST',
+          headers : {
+              'Content-Type' : 'application/json',
+              'X-CSRFToken' : csrftoken
+          },
+          credentials : 'same-origin',
+          body : JSON.stringify(data)
+      })
+      .then(function(response){
+          return response.json()
+      })
+      .then(function(session){
+          stripe.redirectToCheckout({sessionId : session.session.id})
+          const element = document.getElementById('checkout');
+          element.innerHTML = '';
+          element.innerHTML = '<h4 class="text-center"><i class="fa fa-spinner fa-spin"></i> Please wait....</h4>';
+      })
+      .then(function(result){
+         console.log(result)
+          if(result.error){
+              alert(result.error.message)
+          }
+      })
+      .catch(function(error){
+          console.log('Errors',error.message)
+      }) 
+  
+  return false
+
+
+}
+
+</script>
+
+{% endblock %}
+
+    {% endblock %}

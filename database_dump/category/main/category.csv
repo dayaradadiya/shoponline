@@ -1,0 +1,290 @@
+model,pk,main_category,name,slug
+category.category,1,6,Tops,tops
+category.category,2,2,Sneakers,sneakers
+category.category,3,3,Furniture,furniture
+category.category,4,1,Pants & leggings,pant-and-leggings
+category.category,6,5,Makeup,makeup
+category.category,7,1,Tops,tops
+category.category,8,1,Pants & Leggings,pants and leggings
+category.category,9,1,Shorts,shorts
+category.category,10,1,Skirts,skirts
+category.category,11,1,Jeans,jeans
+category.category,12,1,Dresses,dresses
+category.category,13,1,Wedding Dresses,wedding-dresses
+category.category,14,1,"Jumpsuits, Playsuits & Overalls",jumpsuits-playsuits-and-overalls
+category.category,15,1,"Jackets, Coats & Vests",jackets-coats-and-vests
+category.category,16,1,Sweaters & Cardigans,sweaters-and-cardigans
+category.category,17,1,Sets,sets
+category.category,18,1,Lingerie & Underwear,lingerie-and-underwear
+category.category,19,1,Sleepwear & Pajamas,sleepwear-and-pajamas
+category.category,20,1,Maternity Wear,maternity-wear
+category.category,21,1,Traditional Wear,traditional-wear
+category.category,22,1,Costumes,costumes
+category.category,23,1,Fabric,fabric
+category.category,24,6,Jeans,jeans
+category.category,25,6,Hoodies & Sweatshirts,hoodies-and-sweatshirts
+category.category,26,6,Sweaters & Cardigans,sweaters-and-cardigans
+category.category,27,6,"Jackets, Coats & Vests",jackets-coats-and-vests
+category.category,28,6,Suits,suits
+category.category,29,6,Pants,pants
+category.category,30,6,Shorts,shorts
+category.category,31,6,Tops,tops
+category.category,32,6,Innerwear & Underwear,innerwear-and-underwear
+category.category,33,6,Sleepwear,sleepwear
+category.category,34,6,Sets,sets
+category.category,35,6,Traditional Wear,traditional-wear
+category.category,36,6,Costumes,costumes
+category.category,37,6,Occupational Attire,occupational-attire
+category.category,38,6,Others,others
+category.category,39,5,"Hand, Foot & Nail Care",hand-foot-and-nail-care
+category.category,40,5,Hair Care,hair-care
+category.category,41,5,Men's Care,mens-care
+category.category,42,5,Perfumes & Fragrances,perfumes-and-fragrances
+category.category,43,5,Makeup,makeup
+category.category,44,5,Beauty Tools,beauty-tools
+category.category,45,5,Skincare,skincare
+category.category,46,5,Beauty Sets & Packages,beauty-sets-and-packages
+category.category,47,5,Others,others
+category.category,48,5,Bath & Body Care,bath-and-body-care
+category.category,49,7,Food Supplement,food-supplement
+category.category,50,7,Others,others
+category.category,51,7,Medical Supplies,medical-supplies
+category.category,52,7,Personal Care,personal-care
+category.category,53,7,Sexual Wellness,sexual-wellness
+category.category,54,8,Rings,rings
+category.category,55,8,Earrings,earrings
+category.category,56,8,Scarves & Shawls,scarves-and-shawls
+category.category,57,8,Gloves,gloves
+category.category,58,8,Hair Accessories,hair-accessories
+category.category,59,8,Bracelets & Bangles,bracelets-and-bangles
+category.category,60,8,Anklets,anklets
+category.category,61,8,Hats & Caps,hats-and-caps
+category.category,62,8,Necklaces,necklaces
+category.category,63,8,Eyewear,eyewear
+category.category,64,8,Investment Precious Metals,investment-precious-metals
+category.category,65,8,Belts,belts
+category.category,66,8,"Neckties, Bow Ties & Cravats",neckties-bow-ties-and-cravats
+category.category,67,8,Additional Accessories,additional-accessories
+category.category,68,8,Accessories Sets & Packages,accessories-sets-and-packages
+category.category,69,8,Others,others
+category.category,70,9,Projectors & Accessories,projectors-and-accessories
+category.category,71,9,Small Household Appliances,small-household-appliances
+category.category,72,9,Large Household Appliances,large-household-appliances
+category.category,73,9,TVs & Accessories,tvs-and-accessories
+category.category,74,9,Kitchen Appliances,kitchen-appliances
+category.category,75,9,Electrical Circuitry & Parts,electrical-circuitry-and-parts
+category.category,76,9,Batteries,batteries
+category.category,77,9,Remote Controls,remote-controls
+category.category,78,9,Others,others
+category.category,79,10,Boots,boots
+category.category,80,10,Sneakers,sneakers
+category.category,81,10,Slip Ons & Mules,slip-ons-and-mules
+category.category,82,10,Loafers & Boat Shoes,loafers-and-boat-shoes
+category.category,83,10,Oxfords & Lace-Ups,oxfords-and-lace-ups
+category.category,84,10,Sandals & Flip Flops,sandals-and-flip-flops
+category.category,85,10,Shoe Care & Accessories,shoe-care-and-accessories
+category.category,86,10,Others,others
+category.category,87,10,Batteries,batteries
+category.category,88,10,Remote Controls,remote-controls
+category.category,89,10,Others,others
+category.category,90,11,Sim Cards,sim-cards
+category.category,91,11,Tablets,tablets
+category.category,92,11,Mobile Phones,mobile-phones
+category.category,93,11,Wearable Devices,wearable-devices
+category.category,94,11,Accessories,accessories
+category.category,95,11,Walkie Talkies,walkie-talkies
+category.category,96,11,Others,others
+category.category,97,12,Women Muslim Wear,women-muslim-wear
+category.category,98,12,Prayer Attire & Equipment,prayer-attire-and-equipment
+category.category,99,12,Men Muslim Wear,men-muslim-wear
+category.category,100,12,Kid Muslim Wear,kid-muslim-wear
+category.category,101,12,Outerwear,outerwear
+category.category,102,12,Sets,sets
+category.category,103,12,Others,others
+category.category,104,13,Luggage,luggage
+category.category,105,13,Travel Bags,travel-bags
+category.category,106,13,Travel Accessories,travel-accessories
+category.category,107,13,Others,others
+category.category,108,14,Backpacks,backpacks
+category.category,109,14,Laptop Bags,laptop-bags
+category.category,110,14,Clutches & Wristlets,clutches-and-wristlets
+category.category,111,14,Waist Bags & Chest Bags,waist-bags-and-chest-bags
+category.category,112,14,Tote Bags,tote-bags
+category.category,113,14,Top-handle Bags,top-handle-bags
+category.category,114,14,Crossbody & Shoulder Bags,crossbody-and-shoulder-bags
+category.category,115,14,Wallets,wallets
+category.category,116,14,Bag Accessories,bag-accessories
+category.category,117,14,Others,others
+category.category,118,15,Boots,boots
+category.category,119,15,Sneakers,sneakers
+category.category,120,15,Flats,flats
+category.category,121,15,Heels,heels
+category.category,122,15,Wedges,wedges
+category.category,123,15,Flat Sandals & Flip Flops,flat-sandals-and-flip-flops
+category.category,124,15,Shoe Care & Accessories,shoe-care-and-accessories
+category.category,125,15,Others,others
+category.category,126,16,Backpacks,backpacks
+category.category,127,16,Laptop Bags,laptop-bags
+category.category,128,16,Tote Bags,tote-bags
+category.category,129,16,Briefcases,briefcases
+category.category,130,16,Clutches,clutches
+category.category,131,16,Waist Bags & Chest Bags,waist-bags-and-chest-bags
+category.category,132,16,Crossbody & Shoulder Bags,crossbody-and-shoulder-bags
+category.category,133,16,Wallets,wallets
+category.category,134,16,Others,others
+category.category,135,17,Women Watches,women-watches
+category.category,136,17,Men Watches,men-watches
+category.category,137,17,Set & Couple Watches,set-and-couple-watches
+category.category,138,17,Watches Accessories,watches-accessories
+category.category,139,17,Others,others
+category.category,140,18,"Earphones, Headphones & Headsets",earphones-headphones-and-headsets
+category.category,141,18,Media Players,media-players
+category.category,142,18,Microphones,microphones
+category.category,143,18,Amplifiers & Mixers,amplifiers-and-mixers
+category.category,144,18,Home Audio & Speakers,home-audio-and-speakers
+category.category,145,18,Audio & Video Cables & Converters,audio-and-video-cables-and-converters
+category.category,146,18,Others,others
+category.category,147,19,Convenience / Ready-to-eat,convenience-ready-to-eat
+category.category,148,19,Snacks,snacks
+category.category,149,19,Food Staples,food-staples
+category.category,150,19,Cooking Essentials,cooking-essentials
+category.category,151,19,Baking Needs,baking-needs
+category.category,152,19,Breakfast Cereals & Spread,breakfast-cereals-and-spread
+category.category,153,19,Beverages,beverages
+category.category,154,19,Dairy & Eggs,dairy-and-eggs
+category.category,155,19,Fresh & Frozen Food,fresh-and-frozen-food
+category.category,156,19,Bakery,bakery
+category.category,157,19,Alcoholic Beverages,alcoholic-beverages
+category.category,158,19,Gift Set & Hampers,gift-set-and-hampers
+category.category,159,19,Others,others
+category.category,160,20,Pet Food,pet-food
+category.category,161,20,Pet Accessories,pet-accessories
+category.category,162,20,Litter & Toilet,litter-and-toilet
+category.category,163,20,Pet Grooming,pet-grooming
+category.category,164,20,Pet Clothing & Accessories,pet-clothing-and-accessories
+category.category,165,20,Pet Healthcare,pet-healthcare
+category.category,166,20,Others,others
+category.category,167,21,Baby Travel Essentials,baby-travel-essentials
+category.category,168,21,Feeding Essentials,feeding-essentials
+category.category,169,21,Maternity Accessories,maternity-accessories
+category.category,170,21,Maternity Healthcare,maternity-healthcare
+category.category,171,21,Bath & Body Care,bath-and-body-care
+category.category,172,21,Nursery,nursery
+category.category,173,21,Baby Safety,baby-safety
+category.category,174,21,Milk Formula & Baby Food,milk-formula-and-baby-food
+category.category,175,21,Baby Healthcare,baby-healthcare
+category.category,176,21,Diapering & Potty,diapering-and-potty
+category.category,177,21,Toys,toys
+category.category,178,21,Gift Sets & Packages,gift-sets-and-packages
+category.category,179,21,Others,others
+category.category,180,22,Baby Clothes,baby-clothes
+category.category,181,22,Baby Mittens & Footwear,baby-mittens-and-footwear
+category.category,182,22,Baby & Kids Accessories,baby-and-kids-accessories
+category.category,183,22,Boy Clothes,boy-clothes
+category.category,184,22,Girl Clothes,girl-clothes
+category.category,185,22,Boy Shoes,boy-shoes
+category.category,186,22,Girl Shoes,girl-shoes
+category.category,187,22,Others,others
+category.category,188,23,Console Machines,console-machines
+category.category,189,23,Console Accessories,console-accessories
+category.category,190,23,Video Games,video-games
+category.category,191,23,Others,others
+category.category,192,24,Cameras,cameras
+category.category,193,24,Security Cameras & Systems,security-cameras-and-systems
+category.category,194,24,Lenses,lenses
+category.category,195,24,Lens Accessories,lens-accessories
+category.category,196,24,Camera Accessories,camera-accessories
+category.category,197,24,Camera Care,camera-care
+category.category,198,24,Drones,drones
+category.category,199,24,Drone Accessories,drone-accessories
+category.category,200,24,Others,others
+category.category,201,25,Home Fragrance & Aromatherapy,home-fragrance-and-aromatherapy
+category.category,202,25,Bathrooms,bathrooms
+category.category,203,25,Bedding,bedding
+category.category,204,25,Decoration,decoration
+category.category,205,25,"Hand Warmers, Hot Water Bags & Ice Bags","hand-warmers,-hot-water-bags-and-ice-bags"
+category.category,206,25,Furniture,furniture
+category.category,207,25,Gardening,gardening
+category.category,208,25,Tools & Home Improvement,tools-and-home-improvement
+category.category,209,25,Home Care Supplies,home-care-supplies
+category.category,210,25,Kitchenware,kitchenware
+category.category,211,25,Dinnerware,dinnerware
+category.category,212,25,Safety & Security,safety-and-security
+category.category,213,25,Home Organizers,home-organizers
+category.category,214,25,Party Supplies,party-supplies
+category.category,215,25,Fengshui & Religious Supplies,fengshui-and-religious-supplies
+category.category,216,25,Others,others
+category.category,217,26,Sports & Outdoor Recreation Equipments,sports-and-outdoor-recreation-equipments
+category.category,218,26,Sports Footwear,sports-footwear
+category.category,219,26,Sports & Outdoor Apparels,sports-and-outdoor-apparels
+category.category,220,26,Sports & Outdoor Accessories,sports-and-outdoor-accessories
+category.category,221,27,Gift & Wrapping,gift-and-wrapping
+category.category,222,27,Writing & Correction,writing-and-correction
+category.category,223,27,School & Office Equipment,school-and-office-equipment
+category.category,224,27,Art Supplies,art-supplies
+category.category,225,27,Notebooks & Papers,notebooks-and-papers
+category.category,226,27,Letters & Envelopes,letters-and-envelopes
+category.category,227,27,Others,others
+category.category,228,28,Collectible Items,collectible-items
+category.category,229,28,Souvenirs,souvenirs
+category.category,230,28,Toys & Games,toys-and-games
+category.category,231,28,Musical Instruments & Accessories,musical-instruments-and-accessories
+category.category,232,28,Vinyl Records,vinyl-records
+category.category,233,28,Photo Albums,photo-albums
+category.category,234,28,Needlework,needlework
+category.category,235,28,Others,others
+category.category,236,29,Automobiles,automobiles
+category.category,237,29,Automobile Interior Accessories,automobile-interior-accessories
+category.category,238,29,Automobile Exterior Accessories,automobile-exterior-accessories
+category.category,239,29,Automobile Spare Parts,automobile-spare-parts
+category.category,240,29,Automotive Tools,automotive-tools
+category.category,241,29,Automotive Care,automotive-care
+category.category,242,29,Automotive Oils & Lubes,automotive-oils-and-lubes
+category.category,243,29,Automotive Keychains & Key Covers,automotive-keychains-and-key-covers
+category.category,244,29,Others,others
+category.category,245,29,Automotive Services & Installation,automotive-services-and-installation
+category.category,246,30,Motorcycles,motorcycles
+category.category,247,30,Motorcycle Accessories,motorcycle-accessories
+category.category,248,30,Motorcycle Spare Parts,motorcycle-spare-parts
+category.category,249,30,Motorcycle Helmets & Riding Gear,motorcycle-helmets-and-riding-gear
+category.category,250,30,Others,others
+category.category,251,31,Events & Attractions,events-and-attractions
+category.category,252,31,F&B,fandb
+category.category,253,31,Shopping,shopping
+category.category,254,31,Utilities,utilities
+category.category,255,31,Services,services
+category.category,256,31,Beauty & Wellness,beauty-and-wellness
+category.category,257,31,Transport,transport
+category.category,258,31,Lessons & Workshops,lessons-and-workshops
+category.category,259,31,Telco,telco
+category.category,260,31,Travel,travel
+category.category,261,31,E-Money,e-money
+category.category,262,31,Gaming & App Stores,gaming-and-app-stores
+category.category,263,31,Streaming,streaming
+category.category,264,31,Shopnow,shopnow
+category.category,265,32,Magazines & Newspaper,magazines-and-newspaper
+category.category,266,32,Books,books
+category.category,267,32,E-Books,e-books
+category.category,268,32,Others,others
+category.category,269,33,Desktop Computers,desktop-computers
+category.category,270,33,Monitors,monitors
+category.category,271,33,Desktop & Laptop Components,desktop-and-laptop-components
+category.category,272,33,Data Storage,data-storage
+category.category,273,33,Network Components,network-components
+category.category,274,33,Softwares,softwares
+category.category,275,33,Office Equipment,office-equipment
+category.category,276,33,Printers & Scanners,printers-and-scanners
+category.category,277,33,Peripherals & Accessories,peripherals-and-accessories
+category.category,278,33,Keyboards & Mice,keyboards-and-mice
+category.category,279,33,Laptops,laptops
+category.category,280,33,Others,others
+category.category,281,34,Pay Scan & Pay Voucher,pay-scan-and-pay-voucher
+category.category,282,34,Deals,deals
+category.category,283,1,Hoodies & sweatshirts,hoodies-and-sweatshirts
+category.category,284,1,Socks & Stockings,socks-andstockings
+category.category,285,1,Others,others
+category.category,286,6,Socks,socks
+category.category,287,25,Lighting,lighting
+category.category,288,26,Others,others
+category.category,289,28,"CD, DVD & Bluray",cd-dvd-and-bluray
+category.category,290,31,Others,others

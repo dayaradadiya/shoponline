@@ -1,0 +1,967 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+ 
+
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <main class="page-wrapper">
+
+      
+    <!-- Size chart modal-->
+     <link rel="stylesheet" media="screen" href="{% static 'css/customrate.css' %}">
+    <div class="modal fade" id="size-chart">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-secondary">
+            <ul class="nav nav-tabs card-header-tabs" role="tablist" style="margin-bottom: -1rem;">
+              <li class="nav-item"><a class="nav-link fw-medium active" href="#mens" data-bs-toggle="tab" role="tab" aria-controls="mens" aria-selected="true">Men's sizes</a></li>
+              <li class="nav-item"><a class="nav-link fw-medium" href="#womens" data-bs-toggle="tab" role="tab" aria-controls="womens" aria-selected="false">Women's sizes</a></li>
+            </ul>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="mens" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table fs-sm text-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="align-middle bg-secondary">US<br>Sizes</th>
+                        <th class="align-middle">Euro<br>Sizes</th>
+                        <th class="align-middle">UK<br>Sizes</th>
+                        <th class="align-middle">Inches</th>
+                        <th class="align-middle">CM</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="bg-secondary fw-medium">6</td>
+                        <td>39</td>
+                        <td>5.5</td>
+                        <td>9.25"</td>
+                        <td>23.5</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">6.5</td>
+                        <td>39</td>
+                        <td>6</td>
+                        <td>9.5"</td>
+                        <td>24.1</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">7</td>
+                        <td>40</td>
+                        <td>6.5</td>
+                        <td>9.625"</td>
+                        <td>24.4</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">7.5</td>
+                        <td>40-41</td>
+                        <td>7</td>
+                        <td>9.75"</td>
+                        <td>24.8</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">8</td>
+                        <td>41</td>
+                        <td>7.5</td>
+                        <td>9.9375"</td>
+                        <td>25.4</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">8.5</td>
+                        <td>41-42</td>
+                        <td>8</td>
+                        <td>10.125"</td>
+                        <td>25.7</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">9</td>
+                        <td>42</td>
+                        <td>8.5</td>
+                        <td>10.25"</td>
+                        <td>26</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">9.5</td>
+                        <td>42-43</td>
+                        <td>9</td>
+                        <td>10.4375"</td>
+                        <td>26.7</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">10</td>
+                        <td>43</td>
+                        <td>9.5</td>
+                        <td>10.5625"</td>
+                        <td>27</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">10.5</td>
+                        <td>43-44</td>
+                        <td>10</td>
+                        <td>10.75"</td>
+                        <td>27.3</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">11</td>
+                        <td>44</td>
+                        <td>10.5</td>
+                        <td>10.9375"</td>
+                        <td>27.9</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">11.5</td>
+                        <td>44-45</td>
+                        <td>11</td>
+                        <td>11.125"</td>
+                        <td>28.3</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">12</td>
+                        <td>45</td>
+                        <td>11.5</td>
+                        <td>11.25"</td>
+                        <td>28.6</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">13</td>
+                        <td>46</td>
+                        <td>12.5</td>
+                        <td>11.5625"</td>
+                        <td>29.4</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">14</td>
+                        <td>47</td>
+                        <td>13.5</td>
+                        <td>11.875"</td>
+                        <td>30.2</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">15</td>
+                        <td>48</td>
+                        <td>14.5</td>
+                        <td>12.1875"</td>
+                        <td>31</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">16</td>
+                        <td>49</td>
+                        <td>15.5</td>
+                        <td>12.5"</td>
+                        <td>31.8</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="womens" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table fs-sm text-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="align-middle bg-secondary">US<br>Sizes</th>
+                        <th class="align-middle">Euro<br>Sizes</th>
+                        <th class="align-middle">UK<br>Sizes</th>
+                        <th class="align-middle">Inches</th>
+                        <th class="align-middle">CM</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="bg-secondary fw-medium">4</td>
+                        <td>35</td>
+                        <td>2</td>
+                        <td>8.1875"</td>
+                        <td>20.8</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">4.5</td>
+                        <td>35</td>
+                        <td>2.5</td>
+                        <td>8.375"</td>
+                        <td>21.3</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">5</td>
+                        <td>35-36</td>
+                        <td>3</td>
+                        <td>8.5"</td>
+                        <td>21.6</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">5.5</td>
+                        <td>36</td>
+                        <td>3.5</td>
+                        <td>8.75"</td>
+                        <td>22.2</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">6</td>
+                        <td>36-37</td>
+                        <td>4</td>
+                        <td>8.875"</td>
+                        <td>22.5</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">6.5</td>
+                        <td>37</td>
+                        <td>4.5</td>
+                        <td>9.0625"</td>
+                        <td>23</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">7</td>
+                        <td>37-38</td>
+                        <td>5</td>
+                        <td>9.25"</td>
+                        <td>23.5</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">7.5</td>
+                        <td>38</td>
+                        <td>5.5</td>
+                        <td>9.375"</td>
+                        <td>23.8</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">8</td>
+                        <td>38-39</td>
+                        <td>6</td>
+                        <td>9.5"</td>
+                        <td>24.1</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">8.5</td>
+                        <td>39</td>
+                        <td>6.5</td>
+                        <td>9.6875"</td>
+                        <td>24.6</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">9</td>
+                        <td>39-40</td>
+                        <td>7</td>
+                        <td>9.875"</td>
+                        <td>25.1</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">9.5</td>
+                        <td>40</td>
+                        <td>7.5</td>
+                        <td>10"</td>
+                        <td>25.4</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">10</td>
+                        <td>40-41</td>
+                        <td>8</td>
+                        <td>10.1875"</td>
+                        <td>25.9</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">10.5</td>
+                        <td>41</td>
+                        <td>8.5</td>
+                        <td>10.3125"</td>
+                        <td>26.2</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">11</td>
+                        <td>41-42</td>
+                        <td>9</td>
+                        <td>10.5"</td>
+                        <td>26.7</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">11.5</td>
+                        <td>42</td>
+                        <td>9.5</td>
+                        <td>10.6875"</td>
+                        <td>27.1</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-secondary fw-medium">12</td>
+                        <td>42-43</td>
+                        <td>10</td>
+                        <td>10.875"</td>
+                        <td>27.6</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page Title-->
+    <div class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+              <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+              <li class="breadcrumb-item text-nowrap"><a href="#">Shop</a>
+              </li>
+              <li class="breadcrumb-item text-nowrap active" aria-current="page">Product Detail</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+          <h1 class="h3 text-light mb-0">{{single_product.product_name}}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Gallery + details-->
+      <div class="bg-light shadow-lg rounded-3 px-4 py-3 mb-5">
+        <div class="px-lg-3">
+          <div class="row">
+            <!-- Product gallery-->
+            <div class="col-lg-7 pe-lg-0 pt-lg-4">
+              <div class="product-gallery">
+                        
+
+                        <div class="product-gallery-preview order-sm-2">
+                          {% if variant.image %}
+                                <div class="product-gallery-preview-item active" id="first">
+                                  <img class="image-zoom" src="{{ variant.image }}" data-zoom="{{ variant.image }}" alt="Product image">
+                                    <div class="image-zoom-pane"></div>
+                                </div>
+
+
+
+                          {% else %}
+                                  <div class="product-gallery-preview-item active" id="first">
+                                    <img class="image-zoom" src="{{ single_product.featured_image.url }}" data-zoom="{{ single_product.featured_image.url }}" alt="Product image">
+                                      <div class="image-zoom-pane"></div>
+                                  </div>
+                          
+
+                          {% endif %}
+
+                          
+                          
+                          {% for i in images %} 
+                          <div class="product-gallery-preview-item" id="first{{i.id}}">
+                            <img class="image-zoom" src="{{i.image.url}}" data-zoom="{{i.image.url}}" alt="Product image">
+                              <div class="image-zoom-pane"></div>
+                          </div>
+                          {% endfor %}
+
+                        
+                        </div>
+
+                        <div class="product-gallery-thumblist order-sm-1">
+                          
+                          <a class="product-gallery-thumblist-item active" href="#first" ><img src="{{single_product.featured_image.url}}" alt="Product thumb"></a>
+                          {% for i in images %} 
+                                <a class="product-gallery-thumblist-item" href="#first{{i.id}}" ><img src="{{i.image.url}}" alt="Product thumb"></a>
+                          {% endfor %}
+                        </div>
+              </div>
+            </div>
+            <!-- Product details-->
+            <!-- <div class="col-lg-5 pt-4 pt-lg-0">
+              <div class="product-details ms-auto pb-3"> -->
+            <div class="col-md-5">
+              <div class="product-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div class="rating-star">
+                    <span>
+                        <i class="fa fa-star{% if single_product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 1.5 %}-o{% elif single_product.averageReview >= 1.5 and single_product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <span>{{ single_product.countReview }} reviews</span>
+                    </span>
+                </div>
+                <button class="btn-wishlist btn-sm " id="add-to-wishlist"  type="button" data-bs-toggle="tooltip" data-bs-placement="left" data-product-item="{{single_product.id}}" title="Add to wishlist"><i class="ci-heart"></i></button>
+                </div>
+                <div class="d-flex justify-content-between align-items-center pb-1">
+                  <!-- <label class="form-label" for="product-size">Size:</label> -->
+                  <p><strong>Brand:</strong>  {{single_product.brand}}
+                </div>
+               
+                <!-- <div class="mb-3"><span class="h3 fw-normal text-accent me-1">${{single_product.price}}</span>
+                  <del class="text-muted fs-lg me-3"><small></small></del><span class="badge bg-danger badge-shadow align-middle mt-n2">Sale</span>
+                </div> -->
+                
+                <!-- <form class="mb-grid-gutter" action="{% url 'add_cart' single_product.id %}" method="POST"> -->
+                  <!-- {% csrf_token %} -->
+                      <!-- <div class="fs-sm mb-4"><span class="text-heading fw-medium me-1">Color:</span><span class="text-muted" id="colorOption" >Red/Dark blue/White</span></div>
+                    <div class="position-relative me-n4 mb-3">
+                      <div class="form-check form-option form-check-inline mb-2">
+                        {% for i in single_product.variation_set.all %}
+                        <input class="form-check-input choose-color" type="radio" name="color" id="color1" for="colorOption"  onclick="changeText(this)" data-color="{{i.variation_value}}" >
+                        <label class="form-option-label rounded-circle"  for="color1" ><span class="form-option-color rounded-circle"  style="background-color: {{i.variation_value}}"></span></label>
+                        {% endfor %}
+                      </div> -->
+                 
+                      <!-- <div class="product-badge product-available mt-n1"><i class="ci-security-check"></i>Product available</div> -->
+                    <!-- </div> -->
+                    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}" type="text/javascript"></script>   
+                    <script src="{% static '/js/jquery-2.2.4.min.js' %}" type="text/javascript"></script>
+                     
+                      <script>
+
+        
+                        $(document).on('change', '#post-form',function(e){
+                          e.preventDefault();
+                          $.ajax({
+                              type:'POST',
+                              url:'{% url "ajaxcolor" %}',
+                              data:{
+                                  productid:$('#productid').val(),
+                                  size:$('#size').val(),
+                                  csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                                  action: 'post'
+                              },
+                              dataType : 'json',
+                              success: function (res) {
+                                  console.log(res.data);
+                                  $('#appendHere').html(res.data);
+                              },
+                              error: function (res) {
+                                  alert("Got an error dude " + res);
+                              }
+                          });
+                      });
+
+           
+                      
+                            </script>
+                          <div class="product-btns">
+                          <div class="row">
+                          {% if single_product.variant == "Size-Color" %}
+                    
+                                <div class="product-options">
+                                    <div class="size-option">
+                                        <form method="POST" id="post-form">
+                                            <input type="hidden" name="productid" id="productid" value="{{ single_product.id }}">
+                                            <div class="d-flex justify-content-between align-items-center pb-1">
+                                                     <!-- <label class="form-label" for="product-size">Size:</label> -->
+                                                     <p><strong>Size:</strong></p>
+                                              </div>
+                                            {% csrf_token %}
+                                            <select class = "form-select" name="size" id="size">
+                                              <!-- <option value="" selected>Select Size</option> -->
+                                                {% for rs in sizes %}
+                                                    <option {% if variant.size_id == rs.size_id %} selected {% endif %} value="{{ rs.size_id | lower }}">{{ rs.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                          </form>
+                                    </div>
+                    
+                                    <form method="post" action="?q=selectvariant" id="post-color">
+                                        {% csrf_token %}
+                                        <div id="appendHere">
+                                            <input type="hidden" name="size" id="size" value="{{ size_id }}">
+                                            <ul class="color-option">
+                                              <div class="d-flex justify-content-between align-items-center pb-1">
+                                                <!-- <label class="form-label" for="product-size">Size:</label> -->
+                                                <p><strong>Color:</strong></p>
+                                              </div>
+                                              
+                                             
+                                               {% for rs in colors %}
+                                                      <input type="radio"  {% if variant.id == rs.id %} checked {% endif %} name="variantid" id="variantid" value="{{ rs.id }}" onchange="this.form.submit();">
+                                                      <li {% if variant.id == rs.id %} class="active" {% endif %}>
+                                                        <a style="background-color:{{ rs.color.code }}; color: #D9D9D9; text-shadow: 1px 1px #000000; width: 90px"> 
+                                                           {% if  rs.variant_discount %} 
+                                                                   ${% call_sellprice rs.variant_price rs.variant_discount %} &nbsp;<del class="fs-sm text-muted">${{ rs.variant_price }}</del>
+                                                            {% else %}
+                                                                   ${{ rs.variant_price }}
+                                                            {% endif %}
+                                                        </a>
+                                                          <img src="{{ rs.image }}" style="height: 70px">
+                                                      </li>
+                                               {% endfor %}
+                                            </ul>
+                                          </div>
+                                        </form>
+                                        <!-- <span class="text-danger" id="payment-method-error"></span> -->
+                                      </div>
+                    
+                    
+                          {% elif single_product.variant == "Size" %}
+                          <input type="hidden" name="productid" id="productid" value="{{ single_product.id }}">
+                                <form method="post" action="?q=selectvariant" id="post-color">
+                                    {% csrf_token %}
+                                    <div id="appendHere">
+                                        <input type="hidden" name="size" id="size" value="{{ size_id }}">
+                                        <ul class="color-option" >
+                                          <div class="d-flex justify-content-between align-items-center pb-1">
+                                            <!-- <label class="form-label" for="product-size">Size:</label> -->
+                                            <p><strong>Size:</strong></p>
+                                          </div>
+                                            {% for rs in sizes_all %}
+                                                <input type="radio"  {% if variant.id == rs.id %} checked {% endif %} name="variantid" id="variantid" value="{{ rs.id }}" onchange="this.form.submit();">
+                                                <li  {% if variant.id == rs.id %} class="active" {% endif %}>
+                                                    <a style=" color: #204d74;  width: 90px">
+                                                     
+                                                      {% if  rs.variant_discount %} 
+                                                             {{ rs.size }} ${% call_sellprice rs.variant_price rs.variant_discount %} &nbsp;<del class="fs-sm text-muted">${{ rs.variant_price }}</del>
+                                                       {% else %}
+                                                               {{ rs.size }} ${{ rs.variant_price }}
+                                                         {% endif %}
+
+                                                        
+                                                    </a>
+                                                </li>
+                                                
+                                            {% endfor %}
+                                        </ul>
+                                    </div>  
+                                </form>
+                                <br><br>
+                    
+                          {% elif single_product.variant == "Color" %}
+                                <form method="post" action="?q=selectvariant" id="post-color">
+                                    {% csrf_token %}
+                                    <div id="appendHere">
+                                        <input type="hidden" name="size" id="size" value="{{ size_id }}">
+                                        <ul class="color-option">
+                                          <div class="d-flex justify-content-between align-items-center pb-1">
+                                            <!-- <label class="form-label" for="product-size">Size:</label> -->
+                                            <p><strong>Color:</strong></p>
+                                          </div>
+                                          
+                                            {% for rs in colors %}
+                                                <input type="radio"  {% if variant.id == rs.id %} checked {% endif %} name="variantid" id="variantid" value="{{ rs.id }}" onchange="this.form.submit();">
+                                                <li  {% if variant.id == rs.id %} class="active" {% endif %}>
+                                                    <a style="background-color:{{ rs.color.code }}; color: #D9D9D9; text-shadow: 1px 1px #000000; width: 90px">
+                                                     
+                                                      {% if  rs.variant_discount %} 
+                                                              ${% call_sellprice rs.variant_price rs.variant_discount %} &nbsp;<del class="fs-sm text-muted">${{ rs.variant_price }}</del>
+                                                       {% else %}
+                                                               ${{ rs.variant_price }}
+                                                       {% endif %}
+                                                     
+                                                    
+                                                    </a>
+                                                    <br>
+                                                    <img src="{{ rs.image }}" style="height: 50px">
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                  </form>
+                            </div>
+                          {% endif %}
+                    
+                                
+                    
+                                    {% if  single_product.variant != 'None'   %}
+                                    <form action="{% url 'add_cart' single_product.id %}" method="post"  id="addchart-form">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="variantid" id="variantid" value="{{ variant.id }}">
+                                        <br>
+                                        <div id="SelectedProduct">
+                                            <p><strong>Availability:</strong> {% if variant.variant_stock > 0  %} 
+                                              In Stock <div class="fs-sm"><span class="text-muted me-2">Only {{ variant.variant_stock }} items left </span></div>  {% else %} Out of Stock {% endif %}</p>
+                                              {% if single_product.variant == "Size-Color" %}
+                                                      <p><strong>Selected :</strong> Size : {{ variant.size  }}  Color : {{ variant.color }} </p>
+                                              {% elif single_product.variant == "Size" %}
+                                                      <p><strong>Selected :</strong> Size : {{ variant.size  }}  </p>
+                                              {% elif single_product.variant == "Color" %}
+                                                      <p><strong>Selected :</strong> Color : {{ variant.color }} </p>
+                                              {% endif %}
+                                            
+                                              {% if variant.variant_discount %}
+                                                    <div class="mb-3"><span class="h3 fw-normal text-accent me-1">${% call_sellprice variant.variant_price variant.variant_discount %}</span>
+                                                      <del class="text-muted fs-lg me-3">${{ variant.variant_price }}</del><span class="badge bg-danger badge-shadow align-middle mt-n2">{{variant.variant_discount}}% OFF</span>
+                                                    </div>
+                                              {% else %}
+                                                    <div class="mb-3"><span class="h3 fw-normal text-accent me-1">${{ variant.variant_price }}</span>
+                                                    </div>
+                                              {% endif %}
+
+                                            <div class="qty-input">
+                                              
+                                              <span><strong>Qty :</strong> </span>
+                                                <!-- <div class="d-flex justify-content-between"> -->
+                                              <div class="mb-3 d-flex align-items-center">
+                                                <input class="input" name="quantity" type="number"  class="form-control"   value="1" min="{{ single_product.min_order_quantity }}" max="{{ variant.get_max_allowed_qty }}">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <button onclick="return payMethodConfirm();" type="submit" {% if variant.variant_stock < 1 %} disabled {% endif %} class="btn btn-primary btn-shadow d-block w-100" >
+                                                  <i class="ci-cart fs-lg me-2" style="color:#f8f8f8;"></i>Add to Cart
+                                                 </button>
+                                              </div>
+                                              
+                                            </div>
+                                        </div>
+                                    </form>
+                                  {% else %}
+                                
+                                    <form action="{% url 'add_cart' single_product.id %}" method="post"  id="addchart-form">
+                                        {% csrf_token %}
+                                        <div id="SelectedProduct">
+                                            <p><strong>Availability:</strong> {% if single_product.stock > 0  %} In Stock {% else %} Out of Stock {% endif %}</p>
+                                            {% if single_product.discount %}
+                                                  <div class="mb-3"><span class="h3 fw-normal text-accent me-1">${% call_sellprice single_product.price single_product.discount %}</span>
+                                                    <del class="text-muted fs-lg me-3">${{ single_product.price }}</del><span class="badge bg-danger badge-shadow align-middle mt-n2">{{single_product.discount}}% OFF</span>
+                                                  </div>
+                                            {% else %}
+                                                  <div class="mb-3"><span class="h3 fw-normal text-accent me-1">${{ single_product.price }}</span>
+                                                  </div>
+
+                                            {% endif %}
+
+                                            <div class="qty-input">
+
+                                              <span><strong>Qty :</strong> </span>
+                                            <div class="mb-3 d-flex align-items-center">
+                                                <input class="input" name="quantity" type="number" class="form-control" value="1" min="{{ single_product.min_order_quantity }}" max="{{ single_product.get_max_allowed_qty }}">
+                                               &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                                <button  type="submit" {% if single_product.stock < 1 %} disabled {% endif %} class="btn btn-primary btn-shadow d-block w-100"  >
+                                                  <i class="ci-cart fs-lg me-2" style="color:#f8f8f8;"></i>Add to Cart
+                                                 </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </form>
+                                
+                                {% endif %}
+                                <div>
+                                  <b><span class="text-danger" id="payment-method-error"></span></b>
+                                </div>
+                        </div>
+                        <br>
+                <!-- </form> -->
+                <!-- Product panels-->
+                <div class="accordion mb-4" id="productPanels">
+                  <!-- <div class="accordion-item">
+                    <h3 class="accordion-header"><a class="accordion-button" href="#productInfo" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="productInfo"><i class="ci-announcement text-muted fs-lg align-middle mt-n1 me-2"></i>Product info</a></h3>
+                    <div class="accordion-collapse collapse show" id="productInfo" data-bs-parent="#productPanels">
+                      <div class="accordion-body">
+                        <h6 class="fs-sm mb-2">Composition</h6>
+                        {{single_product.product_information}}
+                        </div>
+                    </div>
+                  </div> -->
+               
+                </div>
+                <!-- Sharing-->
+                <!-- <label class="form-label d-inline-block align-middle my-2 me-3">Share:</label><a class="btn-share btn-twitter me-2 my-2" href="#"><i class="ci-twitter"></i>Twitter</a><a class="btn-share btn-instagram me-2 my-2" href="#"><i class="ci-instagram"></i>Instagram</a><a class="btn-share btn-facebook my-2" href="#"><i class="ci-facebook"></i>Facebook</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <hr class="mt-4 mb-3">
+      <div class="row pt-4">
+        <div class="col-md-6">
+        <div class="product-review pb-4 mb-4 border-bottom">
+      <h2 class="h3 mb-4 pb-2">Product Specification</h2>
+      <div class="col-lg-5 col-sm-6">
+        <h3 class="h6">General specs</h3>
+        
+        <ul class="list-unstyled fs-sm pb-2">
+          <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Brand</span><span>{{single_product.brand}}  </span></li>
+          {% for label, value in product_specn.get_fields %}
+               {% if value  %}
+                      <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">{{ label|capfirst }}</span><span> 
+                        {{ value }}
+                        </span></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+    </div>
+
+      {% if  single_product.product_information %}
+      <!-- <div class="col-md-6 mt-2 pt-4 mt-md-0 pt-md-0"> -->
+        <div class="col-lg-5 col-sm-6">
+          <h2 class="h3 mb-4 pb-2">About Product</h3>
+            {{single_product.product_information|safe}}
+          
+        </div>
+        {% endif %}
+        </div>
+      <!-- Product description section 1-->
+      <!-- <div class="row align-items-center py-md-3">
+        {{single_product.description}}
+      </div> -->
+      <!-- Product description section 2-->
+      {% if single_product.description %}
+      <div class="row align-items-center py-4 py-lg-5">
+        <h2 class="h3 mb-4 pb-2">Product Description</h2>
+        <div class="col-lg-4 col-md-6 offset-lg-1 py-4">
+          {{single_product.description|safe}}
+        </div>
+      
+      
+
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <!-- Reviews-->
+    <div class="border-top border-bottom my-lg-3 py-5">
+      <div class="container pt-md-2" id="reviews">
+        <div class="row pb-3">
+        
+          <div class="col-lg-12 col-md-7">
+            <div class="bg-secondary py-grid-gutter px-grid-gutter rounded-3">
+              <h3 class="h4 pb-2">Write a review</h3>
+              <form action="{% url 'submit_review' single_product.id %}" method="POST">
+                {% csrf_token %}
+                <div>
+                  <label for="How do you rate this product?"></label>
+                          <br>
+                          <div class="rate">
+                            <input type="radio" name="rating" id="rating10" value="5" required/><label for="rating10" title="5"></label>
+                            <input type="radio" name="rating" id="rating9" value="4.5" required/><label for="rating9" title="4.5" class="half"></label>
+                            <input type="radio" name="rating" id="rating8" value="4" required/><label for="rating8" title="4"></label>
+                            <input type="radio" name="rating" id="rating7" value="3.5" required/><label for="rating7" title="3.5" class="half"></label>
+                            <input type="radio" name="rating" id="rating6" value="3" required/><label for="rating6" title="3"></label>
+                            <input type="radio" name="rating" id="rating5" value="2.5" required/><label for="rating5" title="2.5" class="half"></label>
+                            <input type="radio" name="rating" id="rating4" value="2" required/><label for="rating4" title="2"></label>
+                            <input type="radio" name="rating" id="rating3" value="1.5" required/><label for="rating3" title="1.5" class="half"></label>
+                            <input type="radio" name="rating" id="rating2" value="1" required/><label for="rating2" title="1"></label>
+                            <input type="radio" name="rating" id="rating1" value="0.5" required/><label for="rating1" title="0.5" class="half"></label>
+                        </div>
+                          <br>
+                  <div class="mb-3">
+                    <label class="form-label" for="review-name">Raview Title<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" required id="review-name">
+                    <div class="invalid-feedback">Please enter review title!</div><small class="form-text text-muted">Will be displayed on the comment.</small>
+                  </div>
+                
+                  <div class="mb-3">
+                    <label class="form-label" for="review-text">Review<span class="text-danger">*</span></label>
+                    <textarea class="form-control" rows="6" required id="review-text"></textarea>
+                    <div class="invalid-feedback">Please write a review!</div><small class="form-text text-muted">Your review must be at least 50 characters.</small>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="review-pros">Pros</label>
+                    <textarea class="form-control" rows="2" placeholder="Separated by commas" id="review-pros"></textarea>
+                  </div>
+                  <div class="mb-3 mb-4">
+                    <label class="form-label" for="review-cons">Cons</label>
+                    <textarea class="form-control" rows="2" placeholder="Separated by commas" id="review-cons"></textarea>
+                  </div>
+                {% if user.is_authenticated %}
+                        {% if orderproduct %}
+                               <button class="btn btn-primary btn-shadow d-block w-40" type="submit">Submit a Review</button>
+                        {% else %}
+                             <p>You must purchase the order to post a review.</p>
+                        {% endif %}
+                  {%else%}
+                    <p>You must be logged in to post a review. <span><a href="{% url 'login' %}">Login now</a></span></p>
+                  {% endif %}
+                </div>
+                {% include 'includes/alerts.html' %}
+              </form>
+            </div>
+            
+            
+           
+            
+          </div> 
+        </div>
+        <hr class="mt-4 mb-3">
+        <div class="row pt-4">
+          <!-- Reviews list-->
+          <div class="col-md-12">
+            <div class="d-flex justify-content-end pb-4">
+              <div class="d-flex align-items-center flex-nowrap">
+                <label class="fs-sm text-muted text-nowrap me-2 d-none d-sm-block" for="sort-reviews">Sort by:</label>
+                <select class="form-select form-select-sm" id="sort-reviews">
+                  <option>Newest</option>
+                  <option>Oldest</option>
+                  <option>Popular</option>
+                  <option>High rating</option>
+                  <option>Low rating</option>
+                </select>
+              </div>
+            </div>
+            <!-- Review-->
+            <h3>Customer Reviews</h3>
+            <div class="rating-star">
+              <span>
+                  <i class="fa fa-star{% if single_product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                  <i class="fa fa-star{% if single_product.averageReview < 1.5 %}-o{% elif single_product.averageReview >= 1.5 and single_product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                  <i class="fa fa-star{% if single_product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                  <i class="fa fa-star{% if single_product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                  <i class="fa fa-star{% if single_product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                  <span>{{ single_product.countReview }} reviews</span>
+              </span>
+          </div>
+            {% for review in reviews %}
+            <div class="product-review pb-8 mb-4 border-bottom">
+              <div class="d-flex mb-3">
+                <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" src="{% static 'img/shop/reviews/01.jpg' %}" width="50" alt="Rafael Marquez">
+                  <div class="ps-3">
+                    <h6 class="fs-sm mb-0">{{review.user.full_name}}</h6><span class="fs-ms text-muted">{{review.updated_at}}</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="rating-star">
+                    <span>
+                        <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
+                    </span>
+                </div>
+                  <!-- <div class="fs-ms text-muted">83% of users found this review helpful</div> -->
+                </div>
+              </div>
+              <p class="fs-md mb-2">{{review.review}}</p>
+              <ul class="list-unstyled fs-ms pt-1">
+                <li class="mb-1"><span class="fw-medium">Pros:&nbsp;</span>{{review.pros}}</li>
+                <li class="mb-1"><span class="fw-medium">Cons:&nbsp;</span>{{review.cons}}</li>
+              </ul>
+              <!-- <div class="text-nowrap">
+                <button class="btn-like" type="button">15</button>
+                <button class="btn-dislike" type="button">3</button>
+              </div> -->
+            </div>
+            {% endfor %}
+          </div>
+          <!-- Leave review form-->
+          
+        </div>
+      </div>
+    </div>
+    <!-- Product carousel (Style with)-->
+    {% if products %}
+    <div class="container pt-5">
+      <h2 class="h3 text-center pb-4">Style with</h2>
+      <div class="tns-carousel tns-controls-static tns-controls-outside">
+        <div class="tns-carousel-inner" data-carousel-options="{&quot;items&quot;: 2, &quot;controls&quot;: true, &quot;nav&quot;: false, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2, &quot;gutter&quot;: 18},&quot;768&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 20}, &quot;1100&quot;:{&quot;items&quot;:4, &quot;gutter&quot;: 30}}}">
+         {% for product in products %}
+          <div>
+            <div class="card product-card card-static">
+              <button class="btn-wishlist btn-sm " id="add-to-wishlist"  type="button" data-bs-toggle="tooltip" data-bs-placement="left" data-product-item="{{product.id}}" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="{{product.get_url}}"><img src="{{product.featured_image.url}}" style="height:250px; width:300px;" alt="Product"></a>
+              <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="{{product.get_url}}">{{product.vendor}}</a>
+                <h3 class="product-title fs-sm"><a href="#">{{product.product_name|truncatewords:8}}</a></h3>
+                <div class="d-flex justify-content-between">
+                  <div class="product-price"><span class="text-accent">${{product.price}}</span></div>
+                
+                  <div class="rating-star">
+                    <span>
+                        <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <span>{{ product.countReview }} reviews</span>
+                    </span>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <!-- Product carousel (You may also like)-->
+    {% if item %}
+    <div class="container py-5 my-md-3">
+      <h2 class="h3 text-center pb-4">You may also like</h2>
+      <div class="tns-carousel tns-controls-static tns-controls-outside">
+        <div class="tns-carousel-inner" data-carousel-options="{&quot;items&quot;: 2, &quot;controls&quot;: true, &quot;nav&quot;: false, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2, &quot;gutter&quot;: 18},&quot;768&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 20}, &quot;1100&quot;:{&quot;items&quot;:4, &quot;gutter&quot;: 30}}}">
+          <!-- Product-->
+          {% for product in item %}
+          <div>
+            <div class="card product-card card-static">
+              <button class="btn-wishlist btn-sm " id="add-to-wishlist"  type="button" data-bs-toggle="tooltip" data-bs-placement="left" data-product-item="{{product.id}}" title="Add to wishlist">
+                <i class="ci-heart"></i>
+              </button>
+              <a class="card-img-top d-block overflow-hidden" href="{{product.get_url}}">
+                <img src="{{product.featured_image.url}}" style="height:250px; width:300px;" alt="Product"></a>
+              <div class="card-body py-2">
+                <a class="product-meta d-block fs-xs pb-1" href="{{proguct.get_url}}">{{product.vendor.vendor_name}}</a>
+                <h3 class="product-title fs-sm"><a href="#">{{product.product_name|truncatewords:8}}</a></h3>
+                <div class="d-flex justify-content-between">
+                  <div class="product-price"><span class="text-accent">{{product.price}}</span></div>
+                  <div class="rating-star">
+                    <span>
+                        <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                        <span>{{ product.countReview }} reviews</span>
+                    </span>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- Product-->
+        
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <script>
+      function payMethodConfirm(){
+          var payMethod = $("input[name='variantid']:checked").val()
+          if(!payMethod){
+              $('#payment-method-error').html("Select Color!");
+              return false;
+             
+          }else{
+            $('#payment-method-error').html("");
+        }
+      }
+  
+      
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+<script>
+  $(document).on('click', '#add-to-wishlist',function(e){
+    e.preventDefault();
+     let product_id = $(this).attr("data-product-item")
+     let this_val = $(this)
+
+     console.log('product id is :',product_id)
+
+     $.ajax({
+      url:'{% url "add-to-wishlist" %}',
+      data:{
+          "id":product_id,
+      },
+      dataType : "json",
+      beforeSend : function(){
+        console.log("Adding to wishlist....")
+      },
+      success: function (res) {
+        if (res.bool === true){
+          this_val.html("✓")
+          console.log("Added to wishlist...");
+          $('#wishlist_counter').html(res.wishlist_counter['wishlist_count'])
+        }
+      },
+});
+
+  })
+</script>
+{% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+  </main>
+  <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

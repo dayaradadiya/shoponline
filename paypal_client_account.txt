@@ -1,0 +1,152 @@
+stripe lost password code - esxu-oddk-nntj-uxjx-mkiz
+id : sb-fvquo23958460@personal.example.com
+
+password : Inf0tech@1
+
+https://www.youtube.com/watch?v=f2MJnARSvVE
+
+refund - JustDjango-https://www.youtube.com/watch?v=6GYasxgR4vI
+
+
+https://www.youtube.com/watch?v=KVq_DjIfnBo  - Django Dynamic Forms Tutorial with Htmx
+
+https://www.youtube.com/watch?v=RoJH1HfHNpU - add chat module
+
+
+https://www.youtube.com/watch?v=6GYasxgR4vI - refund
+
+
+
+pending :
+
+make site mobile friendly
+
+product page
+
+
+
+click received button on to_receive page to change order status to completed
+add order returned page - vendor dashboard
+send email to vendor for order returned
+
+report of payment to vendor, 
+add page to vendordashboard for bank account details and NRIC of vendor
+
+add return policy page, add general help
+
+payment methods  - stripe - save customer id
+				
+
+
+
+promo code functionality
+https://www.youtube.com/watch?v=6E_NeVjxCdE  -modal form for address
+coupon functionality
+
+add shipping calculator
+add shipping charges to buyer
+
+chatbot to talk to sellers
+
+ use Google Analytics to know your customers’ behavior with your ecommerce website and Google Webmasters tools will provide you the SEO performance of your website. 
+
+-----------------------------------------------------------
+
+stripe go for stripe connect to monetize deduction and get details for every order
+
+https://github.com/encode/django-rest-framework/issues/6886 - duplicate items when go back while paying through stripe
+
+https://www.youtube.com/watch?v=9e7CTR2Ya4Y - completed till 3.33.48
+reference :
+https://www.youtube.com/watch?v=txZhYYZLfVk&list=PLKcvQn8OTDUbRpJxRVjZ81nA4LjLokuFn&index=8
+
+------------------------------------------
+problem solutions
+-------------------------------------------------
+I was facing a similar problem in Django 1.10 and none of the above solutions worked for me.
+
+What eventually worked was running this command:
+
+python manage.py migrate --fake myappname zero
+This reset all migrations (to the zeroth state)
+
+This followed by :
+
+python manage.py migrate myappname
+
+
+
+
+-----------------------------------
+create payment link in stripe
+
+https://www.youtube.com/watch?v=i3F7gEwwkSw
+----------------------------------------------
+customize admin panel
+
+
+https://www.youtube.com/watch?v=8kJNPzeIb2E
+--------------------
+
+bulk upload of 
+products
+variants
+specifications
+
+upload excel file
+image compression as per display place
+check what is upi on transactions
+
+order cancel option for seller
+
+tracking url
+
+google analytics report
+
+facebook pixel
+
+facebook ad and seo
+
+custom funnel - facebook ad or instagram add
+
+guest checkout
+
+show revenue as per latest shipment and other charges changed
+
+
+
+
+
+
+
+-----------------------
+stripe refund
+
+https://www.youtube.com/watch?v=D6fd4coADsQ
+
+-----------------
+https://seller.shopee.sg/edu/article/12347/return-refund-process-#:~:text=The%20refund%20will%20automatically%20be,%2Dday%20grey%2Dout%20period.
+https://seller.shopee.sg/edu/article/12348/return-refund-dispute-
+
+
+---------------------------------
+https://www.youtube.com/watch?v=3dyQigrEj8A
+
+---------------------------------------
+
+chat help
+https://www.section.io/engineering-education/building-chat-application-with-django-channel/
+downloads -> chatapp
+
+
+--------------------------------------------
+https://www.youtube.com/watch?v=erdlKMcYe1E
+---------------------------------------------------
+
+additional security to admin page
+https://www.youtube.com/watch?v=7jB7CfDt-Ts
+
+
+------------------------------------------
+
+https://awstip.com/implementing-two-factor-authentication-2fa-with-django-and-django-rest-framework-drf-e945163b450a

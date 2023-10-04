@@ -1,0 +1,126 @@
+
+{% extends 'base_admin.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+<main class="page-wrapper">
+  <!-- Page Title-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+            <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+            </li>
+            <li class="breadcrumb-item text-nowrap active" aria-current="page">Orders history</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">My orders</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container pb-5 mb-2 mb-md-4"> -->
+    <div class="row">
+      <!-- Sidebar-->
+      <!-- Content  -->
+      {% include 'admin/admin_sidebar.html' %}
+      <section class="col-lg-8 pt-lg-4 pb-4 mb-3">
+    
+
+        <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+<div class="tab-pane fade show active" id="to_pack" role="tabpanel">
+ 
+    <!-- Orders list-->
+    <form action="{% url 'check_mychecklist' %}" id="myForm" enctype="multipart/form-data">
+      {% csrf_token %}
+     
+      <br> <br>
+      <a href="{% url 'shipping_data_toexcel' %}" class="btn btn-primary btn-sm">Generate Excel</a>
+
+      <div class="table-responsive fs-md mb-4">
+
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Order</th>
+              <th>Vendor</th> 
+              <th>Parcel Content</th> 
+              <th>Parcel Value</th> 
+              <th>Pickup Date</th> 
+              <th>Sender Name</th> 
+              <th>Receiver Name</th>   
+              <th>Amt Paid</th> 
+              <th>Items Amount</th> 
+              <th>Shipcharge</th> 
+            </tr>
+        </thead>
+        <tbody>
+          {% for item in returnship_details %}
+            <tr>
+              <td class="py-3"> {{ item.order }} </td>
+              <td class="py-3"> {{ item.vendor }} </td> 
+              <td class="py-3"> {{ item.parcel_content }} </td> 
+              <td class="py-3"> {{ item.parcel_value }} </td> 
+              <td class="py-3"> {{ item.return_pickup_date }} </td> 
+              <td class="py-3"> {{ item.sender_name }} </td> 
+              <td class="py-3"> {{ item.receiver_name }} </td>   
+              <td class="py-3"> {{ item.amt_paid_by_customer }} </td> 
+              <td class="py-3"> {{ item.items_amount }} </td> 
+              <td class="py-3"> {{ item.shipchargepaid_by_cust }} </td> 
+              <td class="py-3"> {{ item.courier_company }} </td>  
+                 
+            </tr>
+            <tr></tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+   
+          
+  </form>
+    <!-- Pagination-->
+    <hr class="my-3">
+    <!-- Pagination-->
+    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+      {% if ship_details.has_other_pages %}
+          <ul class="pagination">
+                {% if ship_details.has_previous %}
+                  
+                    <li class="page-item"><a class="page-link" href="?page={{ship_details.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                  
+                  {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                  
+                  {% endif %}
+
+                        {% for i in ship_details.paginator.page_range %}
+                        {% if ship_details.number == i %}
+                        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+              
+                  {% if ship_details.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{ship_details.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                   {% else %}   
+                   <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                  {% endif %}
+          </ul>
+      {% endif %}
+    </nav>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+
+{% endblock %}

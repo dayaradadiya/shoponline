@@ -1,0 +1,252 @@
+[
+    {
+        "model": "category.category",
+        "pk": 1,
+        "fields": {
+            "main_category": 6,
+            "name": "Tops",
+            "vendor": 1,
+            "slug": "tops"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 2,
+        "fields": {
+            "main_category": 2,
+            "name": "Sneakers",
+            "vendor": 1,
+            "slug": "sneakers"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 3,
+        "fields": {
+            "main_category": 3,
+            "name": "Furniture",
+            "vendor": 1,
+            "slug": "furniture"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 4,
+        "fields": {
+            "main_category": 1,
+            "name": "Pants & leggings",
+            "vendor": 1,
+            "slug": "pant-and-leggings"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 6,
+        "fields": {
+            "main_category": 5,
+            "name": "Makeup",
+            "vendor": 1,
+            "slug": "makeup"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 7,
+        "fields": {
+            "main_category": 1,
+            "name": "Tops",
+            "vendor": 1,
+            "slug": "tops"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 7,
+        "fields": {
+            "main_category": 1,
+            "name": "Tops",
+            "vendor": 1,
+            "slug": "tops"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 8,
+        "fields": {
+            "main_category": 1,
+            "name": "Pants & Leggings",
+            "vendor": 1,
+            "slug": "pants & leggings"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 9,
+        "fields": {
+            "main_category": 1,
+            "name": "Shorts",
+            "vendor": 1,
+            "slug": "shorts"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 10,
+        "fields": {
+            "main_category": 1,
+            "name": "Skirts",
+            "vendor": 1,
+            "slug": "skirts"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 11,
+        "fields": {
+            "main_category": 1,
+            "name": "Jeans",
+            "vendor": 1,
+            "slug": "jeans"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 12,
+        "fields": {
+            "main_category": 1,
+            "name": "Dresses",
+            "vendor": 1,
+            "slug": "dresses"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 13,
+        "fields": {
+            "main_category": 1,
+            "name": "Wedding Dresses",
+            "vendor": 1,
+            "slug": "wedding-dresses"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 14,
+        "fields": {
+            "main_category": 1,
+            "name": "Jumpsuits, Playsuits & Overalls",
+            "vendor": 1,
+            "slug": "jumpsuits-playsuits-&-overalls"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 15,
+        "fields": {
+            "main_category": 1,
+            "name": "Jackets, Coats & Vests",
+            "vendor": 1,
+            "slug": "jackets-coats-&-vests"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 16,
+        "fields": {
+            "main_category": 1,
+            "name": "Sweaters & Cardigans",
+            "vendor": 1,
+            "slug": "sweaters-&-cardigans"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 17,
+        "fields": {
+            "main_category": 1,
+            "name": "Sets",
+            "vendor": 1,
+            "slug": "sets"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 18,
+        "fields": {
+            "main_category": 1,
+            "name": "Lingerie & Underwear",
+            "vendor": 1,
+            "slug": "lingerie-&-underwear"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 19,
+        "fields": {
+            "main_category": 1,
+            "name": "Sleepwear & Pajamas",
+            "vendor": 1,
+            "slug": "sleepwear-&-pajamas"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 20,
+        "fields": {
+            "main_category": 1,
+            "name": "Maternity Wear",
+            "vendor": 1,
+            "slug": "maternity-wear"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 21,
+        "fields": {
+            "main_category": 1,
+            "name": "Traditional Wear",
+            "vendor": 1,
+            "slug": "traditional-wear"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 22,
+        "fields": {
+            "main_category": 1,
+            "name": "Costumes",
+            "vendor": 1,
+            "slug": "costumes"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 23,
+        "fields": {
+            "main_category": 1,
+            "name": "Fabric",
+            "vendor": 1,
+            "slug": "fabric"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 24,
+        "fields": {
+            "main_category": 1,
+            "name": "Socks & Stockings",
+            "vendor": 1,
+            "slug": "Socks-&-Stockings"
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 25,
+        "fields": {
+            "main_category": 1,
+            "name": "Others",
+            "vendor": 1,
+            "slug": "others"
+        }
+    }
+]

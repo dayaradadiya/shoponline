@@ -1,0 +1,480 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load product_tags %}
+{% load widget_tweaks %}
+  <!-- Body-->
+
+
+  
+    <main class="page-wrapper">
+
+      <!-- daya start-->
+
+      {% for a in address %}
+      <form class="needs-validation modal fade" id="update-address-{{forloop.counter}}" action="{% url 'edit_order_address' a.id %}" method="POST" tabindex="-1" novalidate>
+     
+        {% csrf_token %}
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add a new address</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row gx-4 gy-3">
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-fn">First name</label>
+                  <input class="form-control" type="text" id="address-fn" name="first_name" value={{a.first_name}} required >
+                  <div class="invalid-feedback">Please fill in you first name!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-fn">Last name</label>
+                  <input class="form-control" type="text" id="address-fn" name="last_name" value={{a.last_name}} required >
+                  <div class="invalid-feedback">Please fill in you last name!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-line1">Address Line 1</label>
+                  <input class="form-control" type="text" id="address-line1" name="address_line_1" value="{{a.address_line_1}}" required>
+                  <div class="invalid-feedback">Please fill in your address!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-line2">Unit No</label>
+                  <input class="form-control" type="text" id="address-line2" value= "{{a.unit_no}}" name="unit_no">
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-zip">Country</label>
+                  <input class="form-control" type="text" id="address-country" name="country"  value="{{a.country}}" required>
+                  <div class="invalid-feedback">Please add country</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-zip">Postal code</label>
+                  <input class="form-control" type="text" id="address-zip" name="postal_code"  value= {{a.postal_code}} required>
+                  <div class="invalid-feedback">Please add your Postal code!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-zip">Phone No</label>
+                  <input class="form-control" type="text" id="address-zip" name="mobile" value="{{a.mobile}}" required>
+                  <div class="invalid-feedback">Please add your mobile no!</div>
+                </div>
+               
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-primary btn-shadow" type="submit">Update address</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      {% endfor %}
+
+       <form class="needs-validation modal fade" id="add-address" action="{% url 'add_order_address' %}" tabindex="-1" method="POST" novalidate>
+        {% csrf_token %}
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add a new address</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row gx-4 gy-3">
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-fn">First name</label>
+                  <input class="form-control" type="text" id="address-fn" name="first_name" required>
+                  <div class="invalid-feedback">Please fill in you first name!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-fn">Last name</label>
+                  <input class="form-control" type="text" id="address-fn" name="last_name" required>
+                  <div class="invalid-feedback">Please fill in you last name!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-line1">Address Line 1</label>
+                  <input class="form-control" type="text" id="address-line1" name="address_line_1" required>
+                  <div class="invalid-feedback">Please fill in your address!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-line2">Unit No</label>
+                  <input class="form-control" type="text" id="address-line2" name="unit_no">
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-zip">Country</label>
+                  <input class="form-control" type="text" id="address-country" name="country"  required>
+                  <div class="invalid-feedback">Please add country</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-zip">Postal code</label>
+                  <input class="form-control" type="text" id="address-zip" name="postal_code"  required>
+                  <div class="invalid-feedback">Please add your Postal code!</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="address-zip">Phone No</label>
+                  <input class="form-control" type="text" id="address-zip" name="mobile" required>
+                  <div class="invalid-feedback">Please add your mobile no!</div>
+                </div>
+               
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-primary btn-shadow" type="submit">Add address</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+
+ ---------------------------
+ <form class="needs-validation modal fade" id="add-edit-address" tabindex="-1" method="POST" novalidate>
+        {% csrf_token %}
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add/Edit Address</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          <div class="modal-body">
+              <div class="row gx-4 gy-3">
+           <div class="col-sm-12">
+
+           
+            <form action="#" method="POST" >
+               
+                <div class="text-sm-end pt-4"><a class="btn btn-primary post_details-btn" style="aligh:right;" href="#add-address"  data-bs-toggle="modal">Add new address</a></div>
+                  
+
+            </form>
+            <!-- Addresses list-->
+            <div class="table-responsive fs-md">
+              <h5>Select your default Shipping Address</h5>
+              <table class="table table-hover mb-0">
+                {% for a in address %}
+                <thead>
+                  <tr>
+                    <th>Address {{forloop.counter}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr>
+                    <td class="py-3 align-middle">
+                        <address>
+                          <div class="col-sm-12">
+                            <ul class="list-unstyled fs-sm">
+                              <li><span class="text-muted">Name:&nbsp;</span>{{a.full_name}}</li>
+                              <li><span class="text-muted">Address:&nbsp;</span>{{a.unit_no}}, {{a.address_line_1}}</li>
+                              <li><span class="text-muted">Pin Code:&nbsp;</span>{{a.postal_code}}</li>
+                              <li><span class="text-muted">Phone:&nbsp;</span> {{a.mobile}}</li>
+                            </ul>
+                          </div>
+                         </address>
+                         {% if a.status %}
+                        
+                         <i data-address-id="{{a.id}}" class="ci-check-circle text-success me-2 check{{a.id}} check"></i>
+                         <button data-address-id="{{a.id}}"  style="display: None;" class="btn btn-primary make-default-address button{{a.id}} action_btn">Default Address</button>
+                         {% else %}
+                         
+                         <i data-address-id="{{a.id}}" style="display: None;" class="ci-check-circle text-success me-2 check check{{a.id}} "></i>
+                         <button data-address-id="{{a.id}}"  class="btn btn-primary make-default-address button{{a.id}} action_btn" data-bs-toggle="tooltip" title="Make default">Default Address</button>
+                         {% endif %}
+
+                        
+                       
+
+                        &nbsp;&nbsp;
+                       <a href="{% url 'delete_order_address' a.id %}" onclick="return confirm('Are you sure you want to delete this address?')"><button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete address"><i class="ci-trash text-danger"></i></button></a>
+                       &nbsp;&nbsp;              
+                       <!-- <form action="#" method="POST" > -->
+               
+                        <a href="#update-address-{{forloop.counter}}"  data-bs-toggle="modal"><button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit Address"><i class="ci-edit text-info"></i></button></a>
+                    
+                       
+                    <!-- </form> -->
+                    </td>
+                    
+                  </tr>
+                  {% endfor %}
+                
+                </tbody>
+              </table>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+   <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- daya end -->
+      <!-- Navbar 3 Level (Light)-->
+      
+      <!-- Page Title-->
+      <div class="page-title-overlap bg-dark pt-4">
+        <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+          <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+                <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+                <li class="breadcrumb-item text-nowrap"><a href="{% url 'store' %}">Shop</a>
+                </li>
+                <li class="breadcrumb-item text-nowrap active" aria-current="page">Checkout</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+            <h1 class="h3 text-light mb-0">Checkout</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container pb-5 mb-2 mb-md-4">
+        <div class="row">
+          <section class="col-lg-8">
+            <!-- Steps-->
+            <div class="steps steps-light pt-2 pb-3 mb-5">
+              <a class="step-item active current" href="{% url 'cart' %}">
+                <div class="step-progress"><span class="step-count">1</span></div>
+                <div class="step-label"><i class="ci-cart"></i>Cart</div></a>
+                
+                <a class="step-item active current" href="{% url 'checkout' %}">
+                <div class="step-progress"><span class="step-count">2</span></div>
+                <div class="step-label"><i class="ci-user-circle"></i>Details</div></a>
+                
+                <a class="step-item" href="{% url 'checkout' %}">
+                <!-- <div class="step-progress"><span class="step-count">3</span></div>
+                <div class="step-label"><i class="ci-package"></i>Shipping</div></a><a class="step-item" href="checkout-payment.html"> -->
+                <div class="step-progress"><span class="step-count">3</span></div>
+                <div class="step-label"><i class="ci-card"></i>Payment</div></a>
+                
+                <a class="step-item" href="{% url 'checkout' %}">
+                <div class="step-progress"><span class="step-count">4</span></div>
+                <div class="step-label"><i class="ci-check-circle"></i>Review</div></a>
+              
+              </div>
+            <!-- Autor info-->
+            <form action="{% url 'place_order' %}" method = 'POST'>
+              {% csrf_token %}
+              <div class="d-sm-flex justify-content-between align-items-center bg-secondary p-4 rounded-3 mb-grid-gutter">
+                <div class="d-flex align-items-center">
+                  <div class="img-thumbnail rounded-circle position-relative flex-shrink-0"><span class="badge bg-warning position-absolute end-0 mt-n2" data-bs-toggle="tooltip" title="Reward points"></span>
+                    {% if user_profile.profile_picture %}
+                    <img class="rounded-circle" src="{{user_profile.profile_picture.url}}" width="90" alt="Susan Gardner">
+                    {% else %}
+                    <img class="rounded-circle" src="{% static 'img/shop/account/avatar.jpg' %}" width="90" alt="Createx Studio">
+                    {% endif %}
+                  </div>
+                  <div class="ps-3">
+                    <h3 class="fs-base mb-0">{{request.user.full_name}}</h3>
+                    <span class="text-accent fs-sm">{{request.user.email}}</span>
+                  </div>
+                </div>
+                {% if address %}
+                <a href="#add-edit-address"   class="btn btn-light btn-sm btn-shadow mt-3 mt-sm-0"  data-bs-toggle="modal"><i class="ci-edit me-2"></i>Add/Edit Address</a>
+                    {% endif %}
+              </div>
+            <!-- Shipping address-->
+            <h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Delivery address</h2>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-fn">First Name :</label>
+                  <!-- <input class="form-control" name="first_name" type="text" id="checkout-fn" value="{{request.user.first_name}}"> -->
+                  {% render_field form.first_name class="form-control" autocomplete="off" %} 
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-ln">Last Name :</label>
+                  <!-- <input class="form-control" name="last_name" type="text" id="checkout-ln" value="{{request.user.last_name}}"> -->
+                 {% render_field form.last_name class="form-control" autocomplete="off" %} 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-email">E-mail Address :</label>
+                  <input class="form-control" name="email" type="email" id="checkout-email" value="{{request.user.email}}">
+             
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-phone">Phone Number :</label>
+                  <!-- <input class="form-control" name="phone" type="text" id="checkout-phone" value="{{active_address.mobile}}"> -->
+                   {% render_field form.mobile class="form-control" autocomplete="off" %} 
+                </div>
+              </div>
+            </div>
+          
+            <div class="row">
+             
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-zip">Postal Code :</label>
+                  <!-- <input class="form-control" type="text" name="pin_code" id="checkout-zip" value="{{active_address.postal_code}}"> -->
+                    {% render_field form.postal_code class="form-control" autocomplete="off" %} 
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-zip">Country :</label>
+                  <!-- <input class="form-control" type="text" name="country" id="checkout-zip" value="{{active_address.country}}"> -->
+                   {% render_field form.country class="form-control" autocomplete="off" %} 
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-address-1">Address Line 1 :</label>
+                  <!-- <input class="form-control" name="address_line_1" type="text" id="checkout-address-1" value="{{active_address.address_line_1}}"> -->
+                 {% render_field form.address_line_1 class="form-control" autocomplete="off" %} 
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-address-2">Unit No :</label>
+                  <!-- <input class="form-control" name="unit_no" type="text" id="checkout-address-2" value="{{active_address.unit_no}}"> -->
+                    {% render_field form.unit_no class="form-control" autocomplete="off" %} 
+                </div>
+              </div>
+            </div>
+           
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="form-label" for="checkout-ordernote">Order Note</label>
+                  <input class="form-control" name="order_note" type="text" id="checkout-ordernote">
+                  <small class="form-text text-muted">Max 100 chars..</small>
+                 
+                </div>
+              </div>
+            </div>
+            <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" checked id="same-address">
+              <label class="form-check-label" for="same-address">Same as shipping address</label>
+            </div> -->
+            {% for field in form %}
+            {% if field.errors %}
+            <ul class="errorlist">
+              {% for error in field.errors %}
+              <li style="color: red;">{{error}}</li>
+              {% endfor %}
+              </ul>
+            {% endif %} 
+          {% endfor %}
+
+            <!-- Navigation (desktop)-->
+            <div class="d-none d-lg-flex pt-4 mt-3">
+              <div class="w-50 pe-3"><a class="btn btn-secondary d-block w-100" href="{% url 'cart' %}"><i class="ci-arrow-left mt-sm-0 me-1"></i><span class="d-none d-sm-inline">Back to Cart</span><span class="d-inline d-sm-none">Back</span></a></div>
+              <!-- <div class="w-50 ps-2"><button type="submit" class="btn btn-primary d-block w-100"><span class="d-none d-sm-inline">Proceed to Payment</span><span class="d-inline d-sm-none">Next</span><i class="ci-arrow-right mt-sm-0 ms-1"></i></button></div> -->
+              <div class="w-50 ps-2"><button type="submit" class="btn btn-primary d-block w-100" ><span class="d-none d-sm-inline">Proceed to Payment</span><span class="d-inline d-sm-none">Next</span><i class="ci-arrow-right mt-sm-0 ms-1"></i></button></div>
+            </div>
+            </form>
+          </section>
+          <!-- Sidebar-->
+          <aside class="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+            <div class="bg-white rounded-3 shadow-lg p-4 ms-lg-auto">
+              <div class="py-2 px-xl-2">
+                <div class="widget mb-3">
+                  <h2 class="widget-title text-center">Order summary</h2>
+                  {% for cart_item in cart_items %}
+                      {% if cart_item.variant %}
+                           {% if cart_item.variant.image %}
+                                 <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="{{ cart_item.product.get_url }}"><img src="{{ cart_item.variant.image }}" style="width:64px; height:65px;"  alt="Product"></a>
+                            {% else %}
+                                 <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="{{ cart_item.product.get_url }}"><img src="{{ cart_item.product.featured_image.url }}" width="64" height="66" alt="Product"></a>
+                            {% endif %}
+                              <div class="ps-2">
+                                <h6 class="widget-product-title"><a href="{{ product.get_url }}">{{ cart_item.product.product_name|truncatewords:8 }}</a></h6>
+                                {% if cart_item.variant.variant_discount %}
+                                     <div class="widget-product-meta"><span class="text-accent me-2">${% call_sellprice cart_item.variant.variant_price cart_item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ cart_item.variant.variant_price }}</del></span><span class="text-muted">x {{cart_item.quantity}}</span></div>
+                                {% else %}
+                                     <div class="widget-product-meta"><span class="text-accent me-2">${{ cart_item.variant.variant_price }}</span><span class="text-muted">x {{cart_item.quantity}}</span></div>
+                                
+                                {% endif %}
+                              
+                              </div>
+                            </div>
+                      {% else %}
+                      <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="{{ cart_item.product.get_url }}"><img src="{{ cart_item.product.featured_image.url }}" width="64" alt="Product"></a>
+                        <div class="ps-2">
+                          <h6 class="widget-product-title"><a href="{{ product.get_url }}">{{ cart_item.product.product_name|truncatewords:8 }}</a></h6>
+                          {% if cart_item.product.discount %}
+                                <div class="widget-product-meta"><span class="text-accent me-2">${% call_sellprice cart_item.product.price  cart_item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ cart_item.product.price }}</del></span><span class="text-muted">x {{cart_item.quantity}}</span></div>
+                          {% else %}
+                                <div class="widget-product-meta"><span class="text-accent me-2">${{ cart_item.product.price }}</span><span class="text-muted">x {{cart_item.quantity}}</span></div>
+                          {% endif %}
+                        </div>
+                      </div>
+                      {% endif %}
+                {% endfor %}
+                </div>
+                <ul class="list-unstyled fs-sm pb-2 border-bottom">
+                  <li class="d-flex justify-content-between align-items-center"><span class="me-2">Subtotal:</span><span class="text-end">${{total}}</span></li>
+                  <li class="d-flex justify-content-between align-items-center"><span class="me-2">Discount:</span><span class="text-end">—</span></li>
+                </ul>
+                <h3 class="fw-normal text-center my-4">${{ grand_total }}</h3>
+                <form class="needs-validation" method="post" novalidate>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Promo code" required>
+                    <div class="invalid-feedback">Please provide promo code.</div>
+                  </div>
+                  <button class="btn btn-outline-primary d-block w-100" type="submit">Apply promo code</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <!-- Navigation (mobile)-->
+        <div class="row d-lg-none">
+          <div class="col-lg-8">
+            <div class="d-flex pt-4 mt-3">
+              <div class="w-50 pe-3"><a class="btn btn-secondary d-block w-100" href="{% url 'cart' %}"><i class="ci-arrow-left mt-sm-0 me-1"></i><span class="d-none d-sm-inline">Back to Cart</span><span class="d-inline d-sm-none">Back</span></a></div>
+              <div class="w-50 ps-2"><a class="btn btn-primary d-block w-100" href="{% url 'place_order' %}"><span class="d-none d-sm-inline">Proceed to Shipping</span><span class="d-inline d-sm-none">Next</span><i class="ci-arrow-right mt-sm-0 ms-1"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+    </main>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //making default address
+        $(document).on("click",".make-default-address",function(){
+            let id = $(this).attr("data-address-id")
+            let this_val = $(this)
+    
+            console.log("ID is :",id);
+            console.log("Element is :",this_val)
+    
+            $.ajax({
+                url:"{% url 'make_address_default' %}",
+                data:{
+                    "id":id
+                } ,
+                dataType:'json',        
+                success:function(res){
+                    console.log("Address made default...   ")
+                    if(res.boolean == true){
+                        $(".check").hide()
+                        $(".action_btn").show()
+    
+                        $(".check"+id).show()
+                        $(".button"+id).hide()
+                    }
+                    
+                }
+            });
+        })
+    </script>
+    
+</html>
+{% endblock %}

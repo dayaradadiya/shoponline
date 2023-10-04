@@ -1,0 +1,50 @@
+
+
+<aside class="col-lg-4">
+    <!-- Sidebar-->
+    <div class="offcanvas offcanvas-collapse bg-white w-100 rounded-3 shadow-lg py-1" id="shop-sidebar" style="max-width: 22rem;">
+      <div class="offcanvas-header align-items-center shadow-sm">
+        <h2 class="h5 mb-0">Filters</h2>
+        <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter" >
+        <!-- Categories-->
+        <div class="widget widget-categories mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Categories</h3>
+          
+          <div class="accordion mt-n1" id="shop-categories">
+       
+           
+              {% for i in vendor_mcategories %}
+                <div class="accordion-item">
+                    <h3 class="accordion-header"><a class="accordion-button collapsed" href="#data-{{i.id}}" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="data-{{i.id}}">{{i.name}}</a></h3>
+                    <div class="accordion-collapse collapse py-3" id="data-{{i.id}}" data-bs-parent="#shop-categories">
+                      <div class="accordion-body">
+                        <div class="widget widget-links widget-filter">
+                            <div class="input-group input-group-sm mb-2">
+                              <input class="widget-filter-search form-control rounded-end" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+                            </div>
+                                <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+                                    <li class="widget-list-item widget-filter-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'main_category_product_list' i.id  %}"><span class="widget-filter-item-text">View all</span>
+                                      <!-- <span class="fs-xs text-muted ms-3">{{main_cat_count}}</span> -->
+                                    </a></li>
+                                  
+                                  {% for cat in i.vendor_categories_set.all %}
+                                      <li class="widget-list-item widget-filter-item" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'category_product_list' cat.id  %}"><span class="widget-filter-item-text">{{cat.name}}</span>
+                                        <!-- <span class="fs-xs text-muted ms-3">{{products_cat_count}}</span> -->
+                                      </a></li>
+                                  {% endfor %} 
+                                </ul>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              {% endfor %}
+          </div>
+         
+        </div>
+
+         
+ 
+
+

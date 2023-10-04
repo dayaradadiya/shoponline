@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="page-wrapper">
+  <div class="container py-4 py-lg-5 my-4">
+    <div class="row">
+  <div class="col-md-6 pt-4 mt-3 mt-md-0">
+      <h2 class="h4 mb-3">Partner with ShopNow</h2>
+      <p class="fs-sm text-muted mb-4">Register your shop and get more customers.</p>
+      <form action="{% url 'registerVendor' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="row gx-4 gy-3">
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-fn">First Name</label>
+              {{form.first_name}}
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-ln">Last Name</label>
+              {{form.last_name}}
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-vn">Vendor Name</label>
+              {{v_form.vendor_name}}
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-vl">Vendor License</label> 
+              {{v_form.vendor_liscence}}
+            </div>   
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-un">Username</label>
+              {{form.username}}
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-email">E-mail Address</label>
+              {{form.email}}
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-phone">Phone Number</label>
+              {{form.phone_number}}
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-phone">Seller Type</label>
+              {{v_form.stype}}
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-password">Password</label>
+              {{form.password}}
+              <div class="invalid-feedback">Please enter password!</div>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="reg-password-confirm">Confirm Password</label>
+              {{form.confirm_password}}
+            </div>
+            {% for field in form %}
+            {% if field.errors %}
+            <ul class="errorlist">
+              {% for error in field.errors %}
+              <li style="color: red;">{{error}}</li>
+              {% endfor %}
+              </ul>
+            {% endif %} 
+          {% endfor %}
+        
+          {% if form.non_field_errors %}
+          <li style="color: red;">{{form.non_field_errors}}</li>
+          {% endif %}
+          
+              {% for field in v_form %}
+              {% if field.errors %}
+              <ul class="errorlist">
+              {% for error in field.errors %}
+              <li style="color: red">{{error}}</li>
+              {% endfor %}
+              </ul>
+              {% endif %}
+              {% endfor %}
+
+              {% if v_form.non_field_errors %}
+              <li style="color: red">{{v_form.non_field_errors}}</li>
+              {% endif %}
+
+            <div class="col-12 text-end">
+              <button class="btn btn-primary" type="submit"><i class="ci-user me-2 ms-n1"></i>Sign Up</button>
+            </div>
+            <div class="col-sm-12">
+              {% include 'includes/alerts.html' %}
+            </div>
+			
+      </form>
+    </div>
+  </div>
+</div>
+</main>
+{% endblock %}

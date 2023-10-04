@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<main class="page-wrapper">
+    
+
+
+    <div class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+              <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+              <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+              </li>
+              <li class="breadcrumb-item text-nowrap active" aria-current="page">Profile</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+          <h1 class="h3 text-light mb-0">Seller Profile</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-5 pb-3">
+      <div class="bg-light shadow-lg rounded-3 overflow-hidden">
+        <div class="row">
+          <!-- Sidebar-->
+         {% include 'includes/v_sidebar.html' %}
+          <!-- Content-->
+          <section class="col-lg-8 pt-lg-4 pb-4 mb-3">
+            <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+              <h2 class="h3 py-2 text-center text-sm-start">Manage Your Account</h2>
+              <!-- Tabs-->
+              <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li class="nav-item"><a class="nav-link px-0 active" href="Bank Account" data-bs-toggle="tab" role="tab">
+                    <div class="d-none d-lg-block"><i class="ci-user opacity-60 me-2"></i>Bank Account Information</div>
+                    <div class="d-lg-none text-center"><i class="ci-user opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Profile</span></div></a></li>
+               
+                <!-- <li class="nav-item"><a class="nav-link px-0" href="#payment" data-bs-toggle="tab" role="tab">
+                    <div class="d-none d-lg-block"><i class="ci-card opacity-60 me-2"></i>Payment methods</div>
+                    <div class="d-lg-none text-center"><i class="ci-card opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Payment</span></div></a></li> -->
+              </ul>
+              <!-- Tab content-->
+              
+              <div class="tab-content">
+                <form action="{% url 'vaccount' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <!-- Profile-->
+                <div class="tab-pane fade show active" id="profile" role="tabpanel">
+                    
+                    <h2 class="h5 py-2 text-center text-sm-start">Upload Bank Document</h2>
+                    
+                    
+                    <div class="bg-secondary rounded-3 p-4 mb-4">
+                      
+                      <div class="d-flex align-items-center">
+                        {% if bank_info.bank_doc %}
+                        <img class="rounded" src="{{bank_info.bank_doc.url}}" width="90" alt="Createx Studio">
+                        {% else %}
+                        <img class="rounded" src="{% static 'img/shop/account/avatar.jpg' %}" width="90" alt="Createx Studio">
+                        {% endif %}
+                        <div class="ps-3">
+                          <label>Bank Information Document *</label>
+                          <div class="upload-gallery">
+                            {{bank_acc_form.bank_doc}}
+                         </div>
+                         <label class="text-danger">{{bank_acc_form.bank_doc.errors }}</label>
+                        </div>
+                      </div>
+                    </div>
+
+                  
+
+                    <h2 class="h5 py-2 text-center text-sm-start">Add Bank Information</h2>
+                    
+                    <div class="col-sm-6">
+                      <label class="form-label" for="dashboard-nationality">Bank Account Holder Name *</label>
+                      {{bank_acc_form.bank_acc_holder_name}}
+                    </div>
+                    <br>
+                    <div class="col-sm-6">
+                      <label class="form-label" for="dashboard-nationality">Account Number *</label>
+                      {{bank_acc_form.acc_no}}
+                    </div>
+                    <br>
+                      <div class="col-sm-10 mb-3">
+                        <label class="form-label" for="unp-product-information"><span style="color:red;">* </span>Bank *   </label>
+                        {% render_field bank_acc_form.bank_name class="custom-select mb-4 form-control" autocomplete="off"  %}
+                        
+                      </div>
+                      <br>
+       
+
+                    <div class="col-sm-6">
+                      <label class="form-label" for="dashboard-nationality">Branch Name *</label>
+                      {{bank_acc_form.branch_name}}
+                    </div>
+                    
+                    <!-- <div class="col-sm-6">
+                      <label class="form-label" for="dashboard-country">Country</label>
+                      <select class="form-select" id="dashboard-country">
+                        <option value>Select country</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Madagascar" selected>Madagascar</option>
+                        <option value="Spain">Spain</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="USA">USA</option>
+                      </select>
+                    </div> -->
+                    {% for field in ic_form %}
+                        {% if field.errors %}
+                        <ul class="errorlist">
+                          {% for error in field.errors %}
+                          <li style="color: red;">{{error}}</li>
+                          {% endfor %}
+                          </ul>
+                        {% endif %} 
+                     {% endfor %}
+
+                
+                    <div class="col-12">
+                      <hr class="mt-2 mb-4">
+                      <div class="d-sm-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary mt-3 mt-sm-0" type="submit">Update Profile</button>
+                      </div>
+                    </div>
+                  </div>
+            </form>
+                <!-- Notifications-->
+                
+                <!-- Payment methods-->
+                
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+  </main>
+{% endblock %}

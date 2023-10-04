@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'chat:user_detail' user.id %}">{{ user.name }}</a>
+
+<hr class="my-6">
+<div class="mt-8">
+    <h2 class="mb-4 text-lg">Rooms</h2>
+    {% include 'chat/partials/room_list.html' %}
+
+</div>
+
+
+{% endblock %}

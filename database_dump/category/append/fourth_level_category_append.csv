@@ -1,0 +1,307 @@
+model,pk,sub_category,name,vendor,slug
+category.fourth_level_category,136,380,Beans & Grains,1,beans-&-grains
+category.fourth_level_category,137,380,Dried Seafood,1,dried-seafood
+category.fourth_level_category,138,380,Traditional Herbs,1,traditional-herbs
+category.fourth_level_category,139,380,Others,1,others
+category.fourth_level_category,140,385,Canned Fruits,1,canned-fruits
+category.fourth_level_category,141,385,Canned Meat,1,canned-meat
+category.fourth_level_category,142,385,Canned Seafood,1,canned-seafood
+category.fourth_level_category,143,385,Canned Vegetables,1,canned-vegetables
+category.fourth_level_category,144,385,Canned Soup,1,canned-soup
+category.fourth_level_category,145,385,Others,1,others
+category.fourth_level_category,146,388,Pepper,1,pepper
+category.fourth_level_category,147,388,Salt,1,salt
+category.fourth_level_category,148,388,Herbs & Spices,1,herbs-&-spices
+category.fourth_level_category,149,388,Sauce,1,sauce
+category.fourth_level_category,150,388,Chilli & Sambal,1,chilli-&-sambal
+category.fourth_level_category,151,388,Vinegar,1,vinegar
+category.fourth_level_category,152,388,Cooking Wine,1,cooking-wine
+category.fourth_level_category,153,388,Dressing,1,dressing
+category.fourth_level_category,154,388,Others,1,others
+category.fourth_level_category,155,422,Fresh Milk,1,fresh-milk
+category.fourth_level_category,156,422,UHT Milk,1,uht-milk
+category.fourth_level_category,157,422,Condensed & Evaporated Milk,1,condensed-&-evaporated-milk
+category.fourth_level_category,158,422,Powdered Milk,1,powdered-milk
+category.fourth_level_category,159,422,Others,1,others
+category.fourth_level_category,160,431,Beef,1,beef
+category.fourth_level_category,161,431,Poultry,1,poultry
+category.fourth_level_category,162,431,Pork,1,pork
+category.fourth_level_category,163,431,Lamb,1,lamb
+category.fourth_level_category,164,431,Others,1,others
+category.fourth_level_category,165,432,Fish,1,fish
+category.fourth_level_category,166,432,Prawn,1,prawn
+category.fourth_level_category,167,432,Crab,1,crab
+category.fourth_level_category,168,432,Others,1,others
+category.fourth_level_category,169,435,Cabbage & Brussel Sprouts,1,cabbage-&-brussel-sprouts
+category.fourth_level_category,170,435,Fresh Herbs,1,fresh-herbs
+category.fourth_level_category,171,435,Leafy Vegetables,1,leafy-vegetables
+category.fourth_level_category,172,435,"Brinjals, Gourds & Squashes",1,brinjals-gourds-&-squashes
+category.fourth_level_category,173,435,Broccoli & Cauliflowers,1,broccoli-&-cauliflowers
+category.fourth_level_category,174,435,Chilli & Capsicum,1,chilli-&-capsicum
+category.fourth_level_category,175,435,"Garlic, Ginger & Onion",1,garlic-ginger-&-onion
+category.fourth_level_category,176,435,"Peas, Beans, Nuts & Corn",1,peas-beans-nuts-&-corn
+category.fourth_level_category,177,435,Root & Stem Vegetables,1,root-&-stem-vegetables
+category.fourth_level_category,178,435,Sprouts,1,sprouts
+category.fourth_level_category,179,435,Salads Vegetables,1,salads-vegetables
+category.fourth_level_category,180,435,Pre-cut & Assorted Vegetable Set,1,pre-cut-&-assorted-vegetable-set
+category.fourth_level_category,181,435,Others,1,others
+category.fourth_level_category,182,436,Apples & Pears,1,apples-&-pears
+category.fourth_level_category,183,436,Bananas,1,bananas
+category.fourth_level_category,184,436,Berries,1,berries
+category.fourth_level_category,185,436,Citrus,1,citrus
+category.fourth_level_category,186,436,Grapes,1,grapes
+category.fourth_level_category,187,436,Melons,1,melons
+category.fourth_level_category,188,436,Stonefruits,1,stonefruits
+category.fourth_level_category,189,436,Tropical & Exotic Fruits,1,tropical-&-exotic-fruits
+category.fourth_level_category,190,436,Pre-cut & Assorted Fruit Set,1,pre-cut-&-assorted-fruit-set
+category.fourth_level_category,191,436,Others,1,others
+category.fourth_level_category,192,462,Dog & Cat Toys,1,dog-&-cat-toys
+category.fourth_level_category,193,462,Small Pet Toys,1,small-pet-toys
+category.fourth_level_category,194,462,Bird Toys,1,bird-toys
+category.fourth_level_category,195,462,Others,1,others
+category.fourth_level_category,196,463,Beds & Mats,1,beds-&-mats
+category.fourth_level_category,197,463,Houses,1,houses
+category.fourth_level_category,198,463,Habitats & Accessories,1,habitats-&-accessories
+category.fourth_level_category,199,463,Cages & Crates,1,cages-&-crates
+category.fourth_level_category,200,463,Scratching Pads & Posts,1,scratching-pads-&-posts
+category.fourth_level_category,201,463,Others,1,others
+category.fourth_level_category,202,496,Bottle Cooler Bag,1,bottle-cooler-bag
+category.fourth_level_category,203,496,Bottles & Bottle accessories,1,bottles-&-bottle-accessories
+category.fourth_level_category,204,496,Bottle Cleansing,1,bottle-cleansing
+category.fourth_level_category,205,496,Warmers,1,warmers
+category.fourth_level_category,206,496,Sterilizers,1,sterilizers
+category.fourth_level_category,207,496,Others,1,others
+category.fourth_level_category,208,497,Breast Pump & Accessories,1,breast-pump-&-accessories
+category.fourth_level_category,209,497,"Breast Pads, Shells & Shields",1,breast-pads-shells-&-shields
+category.fourth_level_category,210,497,Nursing Covers,1,nursing-covers
+category.fourth_level_category,211,497,Breastmilk Storage Bags,1,breastmilk-storage-bags
+category.fourth_level_category,212,497,Others,1,others
+category.fourth_level_category,213,499,Baby Cups,1,baby-cups
+category.fourth_level_category,214,499,Baby Tableware,1,baby-tableware
+category.fourth_level_category,215,499,Baby Food Containers,1,baby-food-containers
+category.fourth_level_category,216,499,Others,1,others
+category.fourth_level_category,217,524,Blankets & Wrappers,1,blankets-&-wrappers
+category.fourth_level_category,218,524,Pillows & Bolsters,1,pillows-&-bolsters
+category.fourth_level_category,219,524,Bedsheets,1,bedsheets
+category.fourth_level_category,220,524,Others,1,others
+category.fourth_level_category,221,540,Lotion & Creams,1,lotion-&-creams
+category.fourth_level_category,222,540,Oils,1,oils
+category.fourth_level_category,223,540,Powders,1,powders
+category.fourth_level_category,224,540,Others,1,others
+category.fourth_level_category,225,549,Playgym & Playmats,1,playgym-&-playmats
+category.fourth_level_category,226,549,Playards & Playpens,1,playards-&-playpens
+category.fourth_level_category,227,549,Bath Toys,1,bath-toys
+category.fourth_level_category,228,549,Crib Mobiles & Rattles,1,crib-mobiles-&-rattles
+category.fourth_level_category,229,549,Teethers,1,teethers
+category.fourth_level_category,230,549,Others,1,others
+category.fourth_level_category,231,551,Dolls & Accessories,1,dolls-&-accessories
+category.fourth_level_category,232,551,Doll Houses & Accessories,1,doll-houses-&-accessories
+category.fourth_level_category,233,551,Stuffed Toys,1,stuffed-toys
+category.fourth_level_category,234,551,Others,1,others
+category.fourth_level_category,235,554,"Bicycles, Scooters & Ride-ons",1,bicycles-scooters-&-ride-ons
+category.fourth_level_category,236,554,Inflatables & Slides,1,inflatables-&-slides
+category.fourth_level_category,237,554,"Play Tents, Tunnels & Ball Pits",1,play-tents-tunnels-&-ball-pits
+category.fourth_level_category,238,554,"Pool, Water & Sand Toys",1,pool-water-&-sand-toys
+category.fourth_level_category,239,554,Blasters & Toy Guns,1,blasters-&-toy-guns
+category.fourth_level_category,240,554,Sports Toys,1,sports-toys
+category.fourth_level_category,241,554,"Flying Toys, Kites & Wind Spinners",1,flying-toys-kites-&-wind-spinners
+category.fourth_level_category,242,554,Others,1,others
+category.fourth_level_category,243,555,Arts & Crafts,1,arts-&-crafts
+category.fourth_level_category,244,555,Math Toys,1,math-toys
+category.fourth_level_category,245,555,Science & Tech Toys,1,science-&-tech-toys
+category.fourth_level_category,246,555,Shape Sorters,1,shape-sorters
+category.fourth_level_category,247,555,Puzzles,1,puzzles
+category.fourth_level_category,248,555,Musical Toys,1,musical-toys
+category.fourth_level_category,249,555,Toy Tablets & Computers,1,toy-tablets-&-computers
+category.fourth_level_category,250,555,Others,1,others
+category.fourth_level_category,251,562,Pants & Leggings,1,pants-&-leggings
+category.fourth_level_category,252,562,Shorts,1,shorts
+category.fourth_level_category,253,562,Skirts,1,skirts
+category.fourth_level_category,254,562,Others,1,others
+category.fourth_level_category,255,569,Backpacks,1,backpacks
+category.fourth_level_category,256,569,Crossbody & Shoulder Bags,1,crossbody-&-shoulder-bags
+category.fourth_level_category,257,569,Trolley Bags,1,trolley-bags
+category.fourth_level_category,258,569,Wallets,1,wallets
+category.fourth_level_category,259,569,Others,1,others
+category.fourth_level_category,260,578,Bracelets,1,bracelets
+category.fourth_level_category,261,578,Earrings,1,earrings
+category.fourth_level_category,262,578,Necklaces,1,necklaces
+category.fourth_level_category,263,578,Rings,1,rings
+category.fourth_level_category,264,578,Others,1,others
+category.fourth_level_category,265,579,Raincoats,1,raincoats
+category.fourth_level_category,266,579,Rain Boots,1,rain-boots
+category.fourth_level_category,267,579,Others,1,others
+category.fourth_level_category,268,586,T-shirts,1,t-shirts
+category.fourth_level_category,269,586,Polo Shirts,1,polo-shirts
+category.fourth_level_category,270,586,Shirts,1,shirts
+category.fourth_level_category,271,586,Others,1,others
+category.fourth_level_category,272,587,Regular Jackets & Coats,1,regular-jackets-&-coats
+category.fourth_level_category,273,587,Winter Outerwear,1,winter-outerwear
+category.fourth_level_category,274,587,Vests,1,vests
+category.fourth_level_category,275,587,Sweaters & Cardigans,1,sweaters-&-cardigans
+category.fourth_level_category,276,587,Blazers,1,blazers
+category.fourth_level_category,277,587,Hoodies,1,hoodies
+category.fourth_level_category,278,587,Others,1,others
+category.fourth_level_category,279,588,Jeans,1,jeans
+category.fourth_level_category,280,588,Pants,1,pants
+category.fourth_level_category,281,588,Shorts,1,shorts
+category.fourth_level_category,282,588,Overalls,1,overalls
+category.fourth_level_category,283,588,Others,1,others
+category.fourth_level_category,284,595,T-shirts,1,t-shirts
+category.fourth_level_category,285,595,Polo Shirts,1,polo-shirts
+category.fourth_level_category,286,595,Shirts & Blouses,1,shirts-&-blouses
+category.fourth_level_category,287,595,Others,1,others
+category.fourth_level_category,288,596,Regular Jackets & Coats,1,regular-jackets-&-coats
+category.fourth_level_category,289,596,Winter Outerwear,1,winter-outerwear
+category.fourth_level_category,290,596,Vests,1,vests
+category.fourth_level_category,291,596,Sweaters & Cardigans,1,sweaters-&-cardigans
+category.fourth_level_category,292,596,Blazers,1,blazers
+category.fourth_level_category,293,596,Hoodies,1,hoodies
+category.fourth_level_category,294,596,Others,1,others
+category.fourth_level_category,295,597,Jeans,1,jeans
+category.fourth_level_category,296,597,Pants,1,pants
+category.fourth_level_category,297,597,Shorts,1,shorts
+category.fourth_level_category,298,597,Skirts,1,skirts
+category.fourth_level_category,299,597,Leggings,1,leggings
+category.fourth_level_category,300,597,Others,1,others
+category.fourth_level_category,301,676,Bath Towels,1,bath-towels
+category.fourth_level_category,302,676,Face & Hand Towels,1,face-&-hand-towels
+category.fourth_level_category,303,676,Bath Robes,1,bath-robes
+category.fourth_level_category,304,676,Others,1,others
+category.fourth_level_category,305,731,Tool Boxes,1,tool-boxes
+category.fourth_level_category,306,731,Measuring Tapes,1,measuring-tapes
+category.fourth_level_category,307,731,Spanner Sets,1,spanner-sets
+category.fourth_level_category,308,731,Hammers,1,hammers
+category.fourth_level_category,309,731,Pliers,1,pliers
+category.fourth_level_category,310,731,"Nails, Screws & Fasteners",1,nails-screws-&-fasteners
+category.fourth_level_category,311,731,"Drills, Screwdrivers & Accessories",1,drills-screwdrivers-&-accessories
+category.fourth_level_category,312,731,"Saws, Cut-off Machines & Grinders",1,saws-cut-off-machines-&-grinders
+category.fourth_level_category,313,731,Pressure Washers,1,pressure-washers
+category.fourth_level_category,314,731,Power Generators,1,power-generators
+category.fourth_level_category,315,731,Electrical Testers & Multimeters,1,electrical-testers-&-multimeters
+category.fourth_level_category,316,731,Levels & Measuring Wheels,1,levels-&-measuring-wheels
+category.fourth_level_category,317,731,Rangefinders,1,rangefinders
+category.fourth_level_category,318,731,Air Compressors,1,air-compressors
+category.fourth_level_category,319,731,"Sandpaper, Power Sanders & Accessories",1,sandpaper-power-sanders-&-accessories
+category.fourth_level_category,320,731,Power Welding Tools,1,power-welding-tools
+category.fourth_level_category,321,731,Blowers,1,blowers
+category.fourth_level_category,322,731,Others,1,others
+category.fourth_level_category,323,811,Fishing Hooks,1,fishing-hooks
+category.fourth_level_category,324,811,Fishing Rods & Reels,1,fishing-rods-&-reels
+category.fourth_level_category,325,811,Fish Finders,1,fish-finders
+category.fourth_level_category,326,811,Fishing Lines,1,fishing-lines
+category.fourth_level_category,327,811,Lures & Baits,1,lures-&-baits
+category.fourth_level_category,328,811,Fishing Bags,1,fishing-bags
+category.fourth_level_category,329,811,Fishing Nets,1,fishing-nets
+category.fourth_level_category,330,811,Others,1,others
+category.fourth_level_category,331,812,Bicycles,1,bicycles
+category.fourth_level_category,332,812,Bicycle Parts & Accessories,1,bicycle-parts-&-accessories
+category.fourth_level_category,333,812,Cycling Helmets,1,cycling-helmets
+category.fourth_level_category,334,812,Others,1,others
+category.fourth_level_category,335,813,Camping Cookware,1,camping-cookware
+category.fourth_level_category,336,813,Camping Lamps & Flashlights,1,camping-lamps-&-flashlights
+category.fourth_level_category,337,813,Tents & Tent Accessories,1,tents-&-tent-accessories
+category.fourth_level_category,338,813,Sleeping Bags,1,sleeping-bags
+category.fourth_level_category,339,813,"Binoculars, Monoculars & Telescopes",1,binoculars-monoculars-&-telescopes
+category.fourth_level_category,340,813,Compasses,1,compasses
+category.fourth_level_category,341,813,Camping Knives & Survival Kits,1,camping-knives-&-survival-kits
+category.fourth_level_category,342,813,Hammocks,1,hammocks
+category.fourth_level_category,343,813,Hiking Sticks,1,hiking-sticks
+category.fourth_level_category,344,813,Picnic Mats & Baskets,1,picnic-mats-&-baskets
+category.fourth_level_category,345,813,Others,1,others
+category.fourth_level_category,346,815,Skateboards & Roller Blades,1,skateboards-&-roller-blades
+category.fourth_level_category,347,815,Scooters & Unicycles,1,scooters-&-unicycles
+category.fourth_level_category,348,815,Segways & Hoverboards,1,segways-&-hoverboards
+category.fourth_level_category,349,815,Helmets & Protective Gears,1,helmets-&-protective-gears
+category.fourth_level_category,350,815,Others,1,others
+category.fourth_level_category,351,816,Bows,1,bows
+category.fourth_level_category,352,816,Arrows,1,arrows
+category.fourth_level_category,353,816,Others,1,others
+category.fourth_level_category,354,817,Balls,1,balls
+category.fourth_level_category,355,817,Goalkeeper Gloves & Shin Guards,1,goalkeeper-gloves-&-shin-guards
+category.fourth_level_category,356,817,Goal Posts & Nets,1,goal-posts-&-nets
+category.fourth_level_category,357,817,Others,1,others
+category.fourth_level_category,358,818,Basket Balls,1,basket-balls
+category.fourth_level_category,359,818,Basketball Rings,1,basketball-rings
+category.fourth_level_category,360,818,Others,1,others
+category.fourth_level_category,361,819,Volley Balls,1,volley-balls
+category.fourth_level_category,362,819,Volley Nets,1,volley-nets
+category.fourth_level_category,363,819,Others,1,others
+category.fourth_level_category,364,820,Badminton Rackets,1,badminton-rackets
+category.fourth_level_category,365,820,Shuttlecocks,1,shuttlecocks
+category.fourth_level_category,366,820,Badminton Nets,1,badminton-nets
+category.fourth_level_category,367,820,Others,1,others
+category.fourth_level_category,368,821,Tennis Rackets,1,tennis-rackets
+category.fourth_level_category,369,821,Tennis Balls,1,tennis-balls
+category.fourth_level_category,370,821,Tennis Nets,1,tennis-nets
+category.fourth_level_category,371,821,Others,1,others
+category.fourth_level_category,372,822,Table Tennis Balls,1,table-tennis-balls
+category.fourth_level_category,373,822,Table Tennis Bats,1,table-tennis-bats
+category.fourth_level_category,374,822,Table Tennis Nets,1,table-tennis-nets
+category.fourth_level_category,375,822,Others,1,others
+category.fourth_level_category,376,823,Punching Bags & Paddings,1,punching-bags-&-paddings
+category.fourth_level_category,377,823,Martial Arts Belts,1,martial-arts-belts
+category.fourth_level_category,378,823,"Gloves, Wraps & Helmets",1,gloves-wraps-&-helmets
+category.fourth_level_category,379,823,Others,1,others
+category.fourth_level_category,380,824,Golf Balls,1,golf-balls
+category.fourth_level_category,381,824,Golf Clubs,1,golf-clubs
+category.fourth_level_category,382,824,Gears &Training Equipment,1,gears-&training-equipment
+category.fourth_level_category,383,824,Golf Bags & Organizers,1,golf-bags-&-organizers
+category.fourth_level_category,384,824,Others,1,others
+category.fourth_level_category,385,831,Swimming Caps,1,swimming-caps
+category.fourth_level_category,386,831,Swimming Goggles,1,swimming-goggles
+category.fourth_level_category,387,831,Swimming Boards,1,swimming-boards
+category.fourth_level_category,388,831,Diving Flashlights,1,diving-flashlights
+category.fourth_level_category,389,831,Diving Masks,1,diving-masks
+category.fourth_level_category,390,831,Flippers,1,flippers
+category.fourth_level_category,391,831,Life Jackets,1,life-jackets
+category.fourth_level_category,392,831,Others,1,others
+category.fourth_level_category,393,833,Yoga Mats,1,yoga-mats
+category.fourth_level_category,394,833,"Yoga Blocks, Rings & Foam Rollers",1,yoga-blocks-rings-&-foam-rollers
+category.fourth_level_category,395,833,Resistance Bands,1,resistance-bands
+category.fourth_level_category,396,833,Others,1,others
+category.fourth_level_category,397,834,Weight Training,1,weight-training
+category.fourth_level_category,398,834,Skipping Ropes,1,skipping-ropes
+category.fourth_level_category,399,834,Gym Balls,1,gym-balls
+category.fourth_level_category,400,834,Fitness Machines,1,fitness-machines
+category.fourth_level_category,401,834,Ab Rollers,1,ab-rollers
+category.fourth_level_category,402,834,Pull Up & Push Up Bars,1,pull-up-&-push-up-bars
+category.fourth_level_category,403,834,Others,1,others
+category.fourth_level_category,404,954,Ukuleles,1,ukuleles
+category.fourth_level_category,405,954,Guitars & Bass Guitars,1,guitars-&-bass-guitars
+category.fourth_level_category,406,954,Others,1,others
+category.fourth_level_category,407,992,Pistons,1,pistons
+category.fourth_level_category,408,992,Air Filters,1,air-filters
+category.fourth_level_category,409,992,Oil Filters,1,oil-filters
+category.fourth_level_category,410,992,Others,1,others
+category.fourth_level_category,411,995,Ignition,1,ignition
+category.fourth_level_category,412,995,Batteries & Accessories,1,batteries-&-accessories
+category.fourth_level_category,413,995,Lighting,1,lighting
+category.fourth_level_category,414,995,Others,1,others
+category.fourth_level_category,415,1011,Brake Fluids,1,brake-fluids
+category.fourth_level_category,416,1011,Transmissions Fluids,1,transmissions-fluids
+category.fourth_level_category,417,1011,Others,1,others
+category.fourth_level_category,418,1024,Radiators,1,radiators
+category.fourth_level_category,419,1024,Pistons,1,pistons
+category.fourth_level_category,420,1024,CDI & ECU,1,cdi-&-ecu
+category.fourth_level_category,421,1024,Spark Plugs,1,spark-plugs
+category.fourth_level_category,422,1024,Ignition Coils,1,ignition-coils
+category.fourth_level_category,423,1024,V-Belts,1,v-belts
+category.fourth_level_category,424,1024,Air Filters,1,air-filters
+category.fourth_level_category,425,1024,Others,1,others
+category.fourth_level_category,426,1028,Chains & Gears,1,chains-&-gears
+category.fourth_level_category,427,1028,Clutches,1,clutches
+category.fourth_level_category,428,1028,Bearings,1,bearings
+category.fourth_level_category,429,1028,Others,1,others
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,

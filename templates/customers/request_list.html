@@ -1,0 +1,62 @@
+{% load product_tags %}
+{% for item in return_all %}
+            
+                <tr>
+                            {% if item.variant.image  %}
+                            <td class="py-3">
+                            <center>{{item.variant.image_tag_url}}</center></td>
+                            
+                            {% else %}
+                            <td class="py-3">
+                        <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                            
+                            {% endif %}
+                         
+
+                        <td class="py-3">{{item.product.product_name}}
+                            {% if item.product.variant == "Size-Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                        </div>
+                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% elif item.product.variant == "Size" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                          </div>
+                             {% elif item.product.variant == "Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% endif %}
+
+                        </td>
+                 
+
+                        {% if item.variant %}
+                                    {% if item.variant.variant_discount %}
+                                            <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp; SGD</td>
+                                    {% else %}
+                                            <td class="py-3">${{item.product_price }} SGD</td>
+                                    {% endif %}
+                         {% else %}
+                                    {% if item.product.discount %}
+                                            <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;SGD</td>
+                                      {% else %}        
+                                            <td class="py-3">${{ item.product_price }} SGD</td>
+                                      {% endif %}
+                         {% endif %}
+
+                         <td class="py-3"><span class="badge bg-danger m-0">{{item.return_status}}</span></td>
+
+
+                         <td class="py-3"> {{item.reason}}</td>
+
+                         <td class="py-3">{{item.order.order_number}}</td>
+                         <td class="py-3">
+                            <button type="submit" class="btn btn-outline-danger btn-sm" hx-get="{% url 'discussion' item.id %}" hx-target="#dialog"></button>
+                            <!-- <a href="#return-details-{{forloop.counter}}" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal">Return/Refund Details</a> -->
+                      </td>
+                   
+                        
+                        
+                </tr>
+                <tr></tr>
+                {% endfor %}

@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+      <!-- Navbar 3 Level (Light)-->
+      <div class="page-title-overlap bg-dark pt-4">
+        <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+          <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+                <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+                <li class="breadcrumb-item text-nowrap"><a href="{% url 'store' %}">Shop</a>
+                </li>
+                <li class="breadcrumb-item text-nowrap active" aria-current="page">Order Complete</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+            <h1 class="h3 text-light mb-0">Review Order</h1>
+          </div>
+        </div>
+      </div>
+<div class="container pb-5 mb-2 mb-md-4">
+    <div class="row">
+      <section class="col-lg-12">
+<div class="steps steps-light pt-2 pb-3 mb-5"><a class="step-item active current" href="{% url 'cart' %}">
+    <div class="step-progress"><span class="step-count">1</span></div>
+    <div class="step-label"><i class="ci-cart"></i>Cart</div></a>
+    
+    <a class="step-item active current" href="{% url 'checkout' %}">
+    <div class="step-progress"><span class="step-count">2</span></div>
+    <div class="step-label"><i class="ci-user-circle"></i>Details</div></a>
+    
+    <a class="step-item active current" href="{% url 'checkout' %}">
+    <!-- <div class="step-progress"><span class="step-count">3</span></div>
+    <div class="step-label"><i class="ci-package"></i>Shipping</div></a><a class="step-item active current" href="checkout-payment.html"> -->
+    <div class="step-progress"><span class="step-count">3</span></div>
+    <div class="step-label"><i class="ci-card"></i>Payment</div></a>
+    
+    <a class="step-item active current" href="{% url 'checkout' %}">
+    <div class="step-progress"><span class="step-count">4</span></div>
+    <div class="step-label"><i class="ci-check-circle"></i>Order Complete</div></a>
+  
+  </div>
+<div class="container mt-5 mb-5">
+    <div class="justify-content-center row">
+        <div class="class col-md-8">
+            <div class="bg-white p-3">
+                <img src="{% static 'img/logo-dark.png' %}" alt="onlineshop logo" width="300">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="mt-2 mb-4">Thank you for your order.</h4>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <p class="mb-0">{{order.name}}</p>
+                        <p class="mb-0">{{order.address}}</p>
+                        <p class="mb-0">{{order.phone}}</p>
+                        <p class="mb-0">{{order.email}}</p>
+                    </div>
+                </div>
+                
+                <h6>Hello {{order.full_name}},</h6><span> Review your order details below </span>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="d-block">Order Date: </span><span class="font-weight-bold">{{order.created_at}}</span>
+                    </div>
+                    <div>
+                        <span class="d-block">Order No: </span><span class="font-weight-bold">{{order.order_number}}</span>
+                    </div>
+                    <div>
+                        <span class="d-block">Payment Method: </span><span class="font-weight-bold">{{order.payment.payment_method}}</span>
+                    </div>
+                </div>
+                <hr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="per1 text-center"></th>
+                            <th class="per70 text-center">Product</th>
+                            <th class="per5 text-center">Product Detail</th>
+                            <th class="per25 text-center">Qty</th>
+                            <th class="per25 text-center">Total</th>
+                            <th class="per1 text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in ordered_product %}
+                        <tr>
+                            <td>
+                                {% if item.variant.image %}
+                                <td><center>{{item.variant.image_tag_url}}</center></td>
+                                {% else %}
+                                <td><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                {% endif %}
+                                </td>
+                            </td>
+
+                                <td>{{item.product.product_name|truncatewords:8}}
+                                    {% if item.product.variant == "Size-Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                </div>
+                                                <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% elif item.product.variant == "Size" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                  </div>
+                                     {% elif item.product.variant == "Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% endif %}
+
+                                    </td>
+                                <td class="text-center">{{item.quantity}}</td>
+                             
+
+                                {% if item.variant %}
+                                                {% if item.variant.variant_discount %}
+                                                        <td class="text-center">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                                {% else %}
+                                                        <td class="text-center">${{ item.variant.variant_price }} SGD</td>
+                                                {% endif %}
+                                {% else %}
+                                                {% if item.product.discount %}
+                                                        <td class="text-center">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                                {% else %}        
+                                                        <td class="text-center">${{ item.product.price }} SGD</td>
+                                                {% endif %}
+                                {% endif %}
+
+
+                               
+
+
+
+                                <td></td>
+                               
+                        </tr>
+                        <tr></tr>
+                        <tr></tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+                <div class="row mt-5">
+                    <div class="d-flex justify-content-center col-md-6">
+                        <!-- <img src="{% static '/img/payment/paid.png' %}" width="200"> -->
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li style="list-style-type: none;">
+                                Subtotal :
+                                <span class="price float-right">
+                                    <span class="currency">$</span>
+                                    <span id="subtotal">{{subtotal}}</span>
+                                </span>
+                            </li>
+                            <li style="list-style-type: none;">
+                                Shipping Charges :
+                                <span class="price float-right">
+                                    <span class="currency">$</span>
+                                    <span id="subtotal">{{order.total_shipping_charge}}</span>
+                                </span>
+                            </li>
+                            <li style="list-style-type: none;">
+                                Tax :
+                                <span class="price float-right">
+                                    <span class="currency">$</span>
+                                    <span id="subtotal">0.00</span>
+                                </span>
+                            </li>
+                            <!-- {% for key,value in tax_data.items %}
+                            {% for i,j in value.items %}
+                            <li style="list-style-type: none;">
+                                {{key}} <small>{{ i }}%</small>
+                                <span class="price float-right">
+                                <span class="currency">$</span>
+                                <span id="tax-{{key}}">{{ j }}</span>
+                            </span>
+                            </li>
+                            {%endfor%}
+                            {%endfor%} -->
+
+                            <li style="list-style-type:none; font-weight : 600;">
+                                Total
+                                <span class="currency">$</span>
+                                <span id="total">{{order.order_total}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+               <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="d-block font-weight-bold">Thanks for ordering with us.</span>
+                        <span>Shopnow Team</span>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <span class="d-block font-weight-bold">Need help?</span>
+                        <span>Call - +65 12345678</span>
+                    </div>
+               </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+</section>
+</div>
+</div>
+{% endblock %}

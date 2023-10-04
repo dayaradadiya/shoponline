@@ -1,0 +1,7 @@
+<select class="custom-select mb-4" name="image" id="">
+
+    <option selected>Open this select menu</option>
+    {% for image in productImages %}
+    <option value="{{module.pk}}">{{image.image}}</option>
+    {% endfor %}
+</select>

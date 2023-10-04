@@ -1,0 +1,43 @@
+model,pk,bank_name
+accounts.bank,1,Australia and New Zealand Banking Group Limited (ANZ)
+accounts.bank,2,Bangkok Bank
+accounts.bank,3,Bank of America
+accounts.bank,4,Bank of China
+accounts.bank,5,Bank of East Asia
+accounts.bank,6,Bank of India
+accounts.bank,7,Bank of Singapore
+accounts.bank,8,Bank of Tokyo-Mitsubishi UFJ
+accounts.bank,9,BNP Paribas
+accounts.bank,10,Calyon
+accounts.bank,11,CIMB Bank
+accounts.bank,12,Citibank
+accounts.bank,13,Citibank International Personal Bank Singapore
+accounts.bank,14,Credit Agricole
+accounts.bank,15,Credit Suisse
+accounts.bank,16,DBS Bank
+accounts.bank,17,Deutsche Bank
+accounts.bank,18,GIC Private Limited
+accounts.bank,19,Hong Leong Finance
+accounts.bank,20,Hongkong and Shanghai Banking Corporation
+accounts.bank,21,HSBC
+accounts.bank,22,ICICI Bank
+accounts.bank,23,Indian Overseas Bank
+accounts.bank,24,Industrial and Commercial Bank of China (ICBC)
+accounts.bank,25,JPMorgan Chase Bank
+accounts.bank,26,Maybank
+accounts.bank,27,Merrill Lynch
+accounts.bank,28,Oversea-Chinese Banking Corporation (OCBC)
+accounts.bank,29,POSB Bank
+accounts.bank,30,PT Bank Mandiri (Persero) Tbk.
+accounts.bank,31,PT Bank Negara Indonesia (Persero) Tbk.
+accounts.bank,32,RHB Bank
+accounts.bank,33,Royal Bank of Scotland
+accounts.bank,34,Skandinaviska Enskilda Banken
+accounts.bank,35,Standard Chartered Bank
+accounts.bank,36,State Bank of India (SBI)
+accounts.bank,37,State Street Bank and Trust Company
+accounts.bank,38,The Islamic Bank of Asia
+accounts.bank,39,THE ROYAL BANK OF SCOTLAND N.V.
+accounts.bank,40,UBS AG
+accounts.bank,41,UCO Bank
+accounts.bank,42,United Overseas Bank (UOB)

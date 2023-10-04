@@ -1,0 +1,1953 @@
+{% load tailwind_filters  %}
+{% load widget_tweaks  %}
+<div hx-target="this" hx-swap="outerHTML">
+    <form method="POST" action=".">
+        {% csrf_token  %}
+
+
+        <div class="row gx-4 gy-3">
+    {% if category  %}
+            {% if category.weddding_dress_style  %}
+            <div class="col-sm-6" for="dashboard-ict">wedding Dress Style </label>
+                {% render_field specnform.Weddding_dress_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+             
+            </div>
+            {% endif  %}
+            {% if category.costume_theme  %}
+            <div class="col-sm-6" for="dashboard-ict">Costume Theme </label>
+                {% render_field specnform.costume_theme class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+
+            {% if category.waist_height  %}
+            <div class="col-sm-6" for="dashboard-ict">Waist Height </label>
+                {% render_field specnform.waist_height class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+            {% if category.length  %}
+            <div class="col-sm-6" for="dashboard-ict">Length </label>
+                {% render_field specnform.length class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+
+            {% if category.pattern  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Pattern </label>
+                {% render_field specnform.pattern class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.petite  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Petite </label>
+                {% render_field specnform.petite class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.season  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Season</label>
+                {% render_field specnform.season class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.plus_size  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Plus Size</label>
+                {% render_field specnform.plus_size class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.occasion  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Occasion </label>
+                {% render_field specnform.occasion class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+            {% if category.dress_skirt_style  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Dress Skirt Style </label>
+                {% render_field specnform.dress_skirt_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.origin_country  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Country of Origin</label>
+                {% render_field specnform.origin_country class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.bottoms_length  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Bottom Length </label>
+                {% render_field specnform.bottoms_length class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.style  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Style</label>
+                {% render_field specnform.prod_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.dress_skirt_length  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Dress Skirt Length </label>
+                {% render_field specnform.dress_skirt_length class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.brand  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Brand</label>
+
+                {% render_field specnform.brand class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.material  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Material </label>
+                {% render_field specnform.material class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.bottoms_fit_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Bottom Fit Type </label>
+                {% render_field specnform.bottoms_fit_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.neckline  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Neckline </label>
+                {% render_field specnform.neckline class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.sleeve_length  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Sleave Length </label>
+                {% render_field specnform.sleeve_length class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.outerwear_length  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Outwear Length </label>
+                {% render_field specnform.outerwear_length class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.top_length  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Top Length</label>
+                {% render_field specnform.top_length class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+            {% if category.tall_fit  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Tall Fit</label>
+                {% render_field specnform.tall_fit class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+            {% if category.fly_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Fly Type</label>
+                {% render_field specnform.fly_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.shorts_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Shorts Type</label>
+                {% render_field specnform.shorts_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+
+            {% if category.towel_robe_fabric  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Towel Rob Fabric </label>
+                {% render_field specnform.towel_robe_fabric class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.fragrance_concentration  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Fragrance Concentration </label>
+                {% render_field specnform.fragrance_concentration class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+            {% if category.jewellery_material_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Jewellery Material Type </label>
+                {% render_field specnform.jewellery_material_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.accessories_set  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Accessories Set </label>
+                {% render_field specnform.accessories_set class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.fashion_style  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Fasion style </label>
+                {% render_field specnform.fashion_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.fashion_occasion  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Fasion Occasion</label>
+                {% render_field specnform.fashion_occasion class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.couple_accessories  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Couple Accessories</label>
+                {% render_field specnform.couple_accessories class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.earing_style  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Earing Style</label>
+                {% render_field specnform.earing_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.scarve_or_shawl_material  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Scarve / Shawl Material</label>
+                {% render_field specnform.scarve_or_shawl_material class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+
+            {% endif  %}
+            {% if category.neckware_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Neckware Type</label>
+                {% render_field specnform.neckware_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.neckware_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Necklace/Bracelet Style</label>
+                {% render_field specnform.neckware_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.hat_style  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Hat Style</label>
+                {% render_field specnform.hat_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+
+            {% if category.necklace_length  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Necklace Length</label>
+                {% render_field specnform.necklace_length class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.accessories_style  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Accessories Style</label>
+                {% render_field specnform.accessories_style class="custom-select mb-4 form-control" autocomplete="off"   %}
+
+            </div>
+            {% endif  %}
+            {% if category.battery_capacity_measurement  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">battery capacity measurement</label>
+                {% render_field specnform.battery_capacity_measurement class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.rechargable_battery_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Rechargable battery type</label>
+                {% render_field specnform.rechargable_battery_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.non_rechargable_battery_type  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Non Rechargable battery type</label>
+                {% render_field specnform.non_rechargable_battery_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+            {% if category.battery_size  %}
+            <div class="col-sm-6">
+                <label class="form-label" for="dashboard-ict">Battery Size</label>
+                {% render_field specnform.battery_size class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+            </div>
+            {% endif  %}
+        {% endif  %}
+           
+        {% if sub_category  %}
+                    {% if sub_category.brand  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Brand</label>
+
+                        {% render_field specnform.brand class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+                    {% if sub_category.crepped_top  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Cropped Top</label>
+                        {% render_field specnform.crepped_top class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+                    {% if sub_category.overalls_type  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Overall Type </label>
+                        {% render_field specnform.overalls_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+                    {% if sub_category.jacket_type  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Jacket Type </label>
+                        {% render_field specnform.jacket_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+                    {% if sub_category.bra_style  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Bra Style </label>
+                        {% render_field specnform.bra_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+                    {% if sub_category.pack_type  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Pack Type </label>
+                        {% render_field specnform.pack_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+
+                    {% if sub_category.bra_type  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Bra Type </label>
+                        {% render_field specnform.bra_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+                    {% if sub_category.sexy_lingerie_style  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Sexy Lingerie Type </label>
+                        {% render_field specnform.sexy_lingerie_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+                    {% if sub_category.bra_coverage  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Bra Coverage </label>
+                        {% render_field specnform.bra_coverage class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+                    {% if sub_category.panty_style  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Panty Style </label>
+                        {% render_field specnform.panty_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+                    {% if sub_category.panties_type  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Panties Style</label>
+                        {% render_field specnform.panties_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+
+                    {% if sub_category.shaper_style  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Shaper Type </label>
+                        {% render_field specnform.shaper_style class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                    </div>
+                    {% endif  %}
+                    {% if sub_category.length  %}
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-ict">Length<b></label>
+                        {% render_field specnform.length  class="custom-select mb-4 form-control" autocomplete="off"  %}
+        
+                    </div>
+        
+                    {% endif  %}
+                    {% if sub_category.bottom_style  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Bottom Style</label>
+                                    {% render_field specnform.bottom_style  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.pack_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Pack Type</label>
+                                    {% render_field specnform.pack_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.access_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Access Type</label>
+                                    {% render_field specnform.access_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.socks_length  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Socks Length</label>
+                                    {% render_field specnform.socks_length  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.socks_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Socks Type</label>
+                                    {% render_field specnform.socks_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.pantyhose_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Pantyhose Type</label>
+                                    {% render_field specnform.pantyhose_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.button_style  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Button Style</label>
+                                    {% render_field specnform.button_style  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.leather_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Leather Type</label>
+                                    {% render_field specnform.leather_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.collar_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Collar Type</label>
+                                    {% render_field specnform.collar_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.top_fit_style  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Top Fit Style</label>
+                                    {% render_field specnform.top_fit_style  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.vent_style  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Vent Style</label>
+                                    {% render_field specnform.vent_style  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.suit_style  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Suit Style</label>
+                                    {% render_field specnform.suit_style  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.EAN  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Ean</label>
+                                    {% render_field specnform.EAN  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.cuff_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cuff Type</label>
+                                    {% render_field specnform.cuff_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.underwear_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Underwear Type</label>
+                                    {% render_field specnform.underwear_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.hair_care_benefits  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Hair Care Benefits Choices</label>
+                                    {% render_field specnform.hair_care_benefits  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.packaging_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Packaging Type</label>
+                                    {% render_field specnform.packaging_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.shampoo_formulation  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Shampoo Formulation</label>
+                                    {% render_field specnform.shampoo_formulation  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.hair_finish  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Hair Finish</label>
+                                    {% render_field specnform.hair_finish  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tool_function  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tool Function</label>
+                                    {% render_field specnform.tool_function  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.cleanser_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cleanser Type</label>
+                                    {% render_field specnform.cleanser_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.acne_treatment_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Acne Treatment Type</label>
+                                    {% render_field specnform.acne_treatment_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.lotion_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Lotion Type</label>
+                                    {% render_field specnform.lotion_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.gender  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Gender</label>
+                                    {% render_field specnform.gender  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.specialty_diet  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Specialty Diet</label>
+                                    {% render_field specnform.specialty_diet  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.food_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Food Type</label>
+                                    {% render_field specnform.food_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.weight_mgmt_supplement_functions  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Weight Mgmt Supplement Functions</label>
+                                    {% render_field specnform.weight_mgmt_supplement_functions  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.consumables_form  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Consumables Form</label>
+                                    {% render_field specnform.consumables_form  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.flavour  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Flavour</label>
+                                    {% render_field specnform.flavour  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.beauty_supplement_funcns  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Beauty Supplement Funcs</label>
+                                    {% render_field specnform.beauty_supplement_funcns  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.fitness_supplement_funcns  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Fitness Supplement Funcns</label>
+                                    {% render_field specnform.fitness_supplement_funcns  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.life_stage  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Life Stage</label>
+                                    {% render_field specnform.life_stage  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.medical_functions %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Medical Functions<b></label>
+                                    {% render_field specnform.medical_functions class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.scale_and_body_fat_analyzers_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Scale And Body Fat Analyzers Type</label>
+                                    {% render_field specnform.scale_and_body_fat_analyzers_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.electrical_device  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Electrical Device</label>
+                                    {% render_field specnform.electrical_device  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.massage_equipment_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Massage Equipment Type</label>
+                                    {% render_field specnform.massage_equipment_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.NEA_registration_no  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Nea Registration No</label>
+                                    {% render_field specnform.NEA_registration_no  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.specs_frame_material  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Specs Frame Material</label>
+                                    {% render_field specnform.specs_frame_material  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.sunglass_lens_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Sunglass Lens Type</label>
+                                    {% render_field specnform.sunglass_lens_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.sg_frame_shape  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Sg Frame Shape</label>
+                                    {% render_field specnform.sg_frame_shape  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.frame_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Frame Type</label>
+                                    {% render_field specnform.frame_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tie_width  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tie Width</label>
+                                    {% render_field specnform.tie_width  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.cufflink_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cufflink Type</label>
+                                    {% render_field specnform.cufflink_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.projector_contrast_ratio  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Projector Contrast Ratio</label>
+                                    {% render_field specnform.projector_contrast_ratio  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.resolution  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Resolution</label>
+                                    {% render_field specnform.resolution  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.projector_input_conetivty   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Projector Input Conetivty </label>
+                                    {% render_field specnform.projector_input_conetivty   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.projector_features   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Projector Features </label>
+                                    {% render_field specnform.projector_features   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.projector_type   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Projector Type </label>
+                                    {% render_field specnform.projector_type   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.projector_brightness   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Projector Brightness </label>
+                                    {% render_field specnform.projector_brightness   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.input_voltage_in_V  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Input Voltage In V</label>
+                                    {% render_field specnform.input_voltage_in_V  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.power_vonsumption_in_W  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Power Vonsumption In W</label>
+                                    {% render_field specnform.power_vonsumption_in_W  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.dimension_LxWxH  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Dimension Lxwxh</label>
+                                    {% render_field specnform.dimension_LxWxH  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.sewing_machine_material  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Sewing Machine Material</label>
+                                    {% render_field specnform.sewing_machine_material  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.no_of_stitches  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">No Of Stitche Choice</label>
+                                    {% render_field specnform.no_of_stitche_choice  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.sewing_machine_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Sewing Machine Features</label>
+                                    {% render_field specnform.sewing_machine_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.stitches_per_minute  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Stitches Per Minute</label>
+                                    {% render_field specnform.stitches_per_minute  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.iron_steamer_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Iron Steamer Type</label>
+                                    {% render_field specnform.iron_steamer_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.soleplate_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Soleplate Type</label>
+                                    {% render_field specnform.soleplate_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.iron_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Viron Features</label>
+                                    {% render_field specnform.viron_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.max_moisture_removal  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Max Moisture Removal</label>
+                                    {% render_field specnform.max_moisture_removal  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.vacuum_cleaner_funcn  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Vacuum Cleaner Funcn</label>
+                                    {% render_field specnform.vacuum_cleaner_funcn  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.run_time %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Run Tme<b></label>
+                                    {% render_field specnform.run_time class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.airwatts  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Airwatts</label>
+                                    {% render_field specnform.airwatts  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.cord_length  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cord Length</label>
+                                    {% render_field specnform.cord_length  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.suction_power  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Suction Power</label>
+                                    {% render_field specnform.suction_power  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.robot_vacuum_featrs  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Robot Vacuum Featrs</label>
+                                    {% render_field specnform.robot_vacuum_featrs  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.vacuum_clnr_featrs  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Vacuum Clnr Featrs</label>
+                                    {% render_field specnform.vacuum_clnr_featrs  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.corded_or_cordless  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Corded Or Cordless</label>
+                                    {% render_field specnform.corded_or_cordless  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.vaccume_cleaner_floor_care  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Vaccume Cleaner Floor Care</label>
+                                    {% render_field specnform.vaccume_cleaner_floor_care  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.smart_TV  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Smart Tv</label>
+                                    {% render_field specnform.smart_TV  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tv_port_input  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tv Port Input</label>
+                                    {% render_field specnform.tv_port_input  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tv_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tv Features</label>
+                                    {% render_field specnform.tv_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tv_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tv Type<b></label>
+                                    {% render_field specnform.tv_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tv_screen_size  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tv Screen Size</label>
+                                    {% render_field specnform.tv_screen_size  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tv_screen_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tv Screen Type<b></label>
+                                    {% render_field specnform.tv_screen_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.water_heater_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Water Heater Type</label>
+                                    {% render_field specnform.water_heater_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.antenna_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Antenna Type</label>
+                                    {% render_field specnform.antenna_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.manual_device  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Manual Device</label>
+                                    {% render_field specnform.manual_device  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.water_dispenser_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Water Dispenser Type</label>
+                                    {% render_field specnform.water_dispenser_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.water_purifification  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Water Purifification</label>
+                                    {% render_field specnform.water_purifification  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.water_dispenser_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Water Dispenser Features</label>
+                                    {% render_field specnform.water_dispenser_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.tv_mount_feature      %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Tv Mount Feature    </label>
+                                    {% render_field specnform.tv_mount_feature      class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.receiver_type    %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Receiver Type  </label>
+                                    {% render_field specnform.receiver_type    class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.kettle_material  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Kettle Material</label>
+                                    {% render_field specnform.kettle_material  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.kettle_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Kettle Features</label>
+                                    {% render_field specnform.kettle_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.blender_type     %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Blender Type   </label>
+                                    {% render_field specnform.blender_type     class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.blender_features %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Blender Features<b></label>
+                                    {% render_field specnform.blender_features class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.juicer_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Juicer Features</label>
+                                    {% render_field specnform.juicer_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.juicer_type      %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Juicer Type    </label>
+                                    {% render_field specnform.juicer_type      class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.coffee_machine_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Coffee Machine Type</label>
+                                    {% render_field specnform.coffee_machine_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.coffee_machine_capacity  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Coffee Machine Capacity</label>
+                                    {% render_field specnform.coffee_machine_capacity  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.coffee_machine_features   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cm Features </label>
+                                    {% render_field specnform.coffee_machine_features   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.mixer_features %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Mixer Features<b></label>
+                                    {% render_field specnform.mixer_features class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.mixer_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Mixer Type</label>
+                                    {% render_field specnform.mixer_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.stove_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Stove Type</label>
+                                    {% render_field specnform.stove_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.burner_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Burner Type</label>
+                                    {% render_field specnform.burner_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.induction_cooker_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Induction Cooker Features</label>
+                                    {% render_field specnform.induction_cooker_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.no_of_burners  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">No Of Burners</label>
+                                    {% render_field specnform.no_of_burners  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.air_fryer_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Air Fryer Features</label>
+                                    {% render_field specnform.air_fryer_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.microwave_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Microwave Type</label>
+                                    {% render_field specnform.microwave_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.microwave_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Microwave Features</label>
+                                    {% render_field specnform.microwave_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.oven_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Oven Features</label>
+                                    {% render_field specnform.oven_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.meat_grinder_type   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Meat Grinder Type </label>
+                                    {% render_field specnform.meat_grinder_type   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.power   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Power </label>
+                                    {% render_field specnform.power   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.bettery_capacity  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Bettery Capacity</label>
+                                    {% render_field specnform.bettery_capacity  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.food_processor_sets    %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Food Processor Sets  </label>
+                                    {% render_field specnform.food_processor_sets    class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.multifunction_cooker_material  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Multifunction Cooker Material</label>
+                                    {% render_field specnform.multifunction_cooker_material  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.pressure_cooker_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Pressure Cooker Features</label>
+                                    {% render_field specnform.pressure_cooker_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.rice_cooker_features   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Rice Cooker Features </label>
+                                    {% render_field specnform.rice_cooker_features   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.rice_cooker_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Rice Cooker Features</label>
+                                    {% render_field specnform.rice_cooker_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.no_of_people  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">No Of People</label>
+                                    {% render_field specnform.no_of_people  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.rice_cooker_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Rice Cooker Type</label>
+                                    {% render_field specnform.rice_cooker_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.cooling_system_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cooling System Type</label>
+                                    {% render_field specnform.cooling_system_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.energy_tick_rating  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Energy Tick Rating</label>
+                                    {% render_field specnform.energy_tick_rating  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.refrigerator_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Refrigerator Features</label>
+                                    {% render_field specnform.refrigerator_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.refrigerator_motor_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Refrigerator Motor Type</label>
+                                    {% render_field specnform.refrigerator_motor_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.refrigerator_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Refrigerator Type<b></label>
+                                    {% render_field specnform.refrigerator_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.freezer_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Freezer Type</label>
+                                    {% render_field specnform.freezer_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.hood_features  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Hood Features</label>
+                                    {% render_field specnform.hood_features  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.hood_mount_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Hood Mount Type</label>
+                                    {% render_field specnform.hood_mount_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.cord_length   %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cord Length </label>
+                                    {% render_field specnform.cord_length   class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.house_alarm_type  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">House Alarm Type</label>
+                                    {% render_field specnform.house_alarm_type  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+                    {% if sub_category.alarm_volume  %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Alarm Volume</label>
+                                    {% render_field specnform.alarm_volume  class="custom-select mb-4 form-control" autocomplete="off"  %}
+                    
+                                </div>
+                    
+                                {% endif  %}
+        
+        
+                    
+
+    {% endif  %}
+
+    {% if fourth_level_category  %}
+                    {% if fourth_level_category.ingredient %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Ingredient   </label>
+                                    {% render_field specnform.ingredient class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.igredient_preference %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Igredient Preference</label>
+                                    {% render_field specnform.igredient_preference class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.formulation %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Formulation    </label>
+                                    {% render_field specnform.formulation class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.nutrient_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Nutrient Type  </label>
+                                    {% render_field specnform.nutrient_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.expiry_date %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Expiry Date    </label>
+                                    {% render_field specnform.expiry_date class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.bodycare_benefits %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Bodycare Benefits   </label>
+                                    {% render_field specnform.bodycare_benefits class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.volume %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Volume    </label>
+                                    {% render_field specnform.volume class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.HSA_notification_no %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Hsa Notification No </label>
+                                    {% render_field specnform.HSA_notification_no class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.shelf_life %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Shelf Life</label>
+                                    {% render_field specnform.shelf_life class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.scrub_formulation %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Scrub Formulation   </label>
+                                    {% render_field specnform.scrub_formulation class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.skin_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Skin Type </label>
+                                    {% render_field specnform.skin_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.product_size %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Product Size   </label>
+                                    {% render_field specnform.product_size class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.application_area %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Application Area    </label>
+                                    {% render_field specnform.application_area class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.weight %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Weight    </label>
+                                    {% render_field specnform.weight class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.handwash_pack_size %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Handwash Pack Size  </label>
+                                    {% render_field specnform.handwash_pack_size class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.handwash_packsize_measure %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Handwash Packsize Measure   </label>
+                                    {% render_field specnform.handwash_packsize_measure class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.handwash_formulation %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Handwash Formulation</label>
+                                    {% render_field specnform.handwash_formulation class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.quantity %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Quantity </label>
+                                    {% render_field specnform.quantity class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.production_batch_number %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Production Batch Number</label>
+                                    {% render_field specnform.production_batch_number class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.INVIMA_certification %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Invima Certification</label>
+                                    {% render_field specnform.INVIMA_certification class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.FDA_Registration_No %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Fda Registration No </label>
+                                    {% render_field specnform.FDA_Registration_No class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.Manufacturer_or_trader_name %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Manufacturer Or Trader Name </label>
+                                    {% render_field specnform.Manufacturer_or_trader_name class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.warranty_duration %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Warranty Duration   </label>
+                                    {% render_field specnform.warranty_duration class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.warranty_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Warranty Type  </label>
+                                    {% render_field specnform.warranty_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.scent %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Scent</label>
+                                    {% render_field specnform.scent class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.makeup_furmulation %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Makeup Furmulation  </label>
+                                    {% render_field specnform.makeup_furmulation class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.skin_tone %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Skin Tone </label>
+                                    {% render_field specnform.skin_tone class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.SPF_choices %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Spf Choices</label>
+                                    {% render_field specnform.SPF_choices class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.foundation_coverage %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Foundation Coverage </label>
+                                    {% render_field specnform.foundation_coverage class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.makeup_finish %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Makeup Finish </label>
+                                    {% render_field specnform.makeup_finish class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.bb_or_cc_scare_benefits %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Bb Or Cc Scare Benefits </label>
+                                    {% render_field specnform.bb_or_cc_scare_benefits class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.waterproof %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Waterproof </label>
+                                    {% render_field specnform.waterproof class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.lip_benefits %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Lip Benefits </label>
+                                    {% render_field specnform.lip_benefits class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.facial_steamer_skincare_benefits %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Facial Steamer Skincare Benefits </label>
+                                    {% render_field specnform.facial_steamer_skincare_benefits class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.power_source %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Power Source   </label>
+                                    {% render_field specnform.power_source class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.safety_mark %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Safety Mark    </label>
+                                    {% render_field specnform.safety_mark class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.mask_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Mask Type </label>
+                                    {% render_field specnform.mask_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.device_compatibility %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Device Compatibility</label>
+                                    {% render_field specnform.device_compatibility class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.injury_support_area %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Injury Support Area </label>
+                                    {% render_field specnform.injury_support_area class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.contact_lens_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Contact Lens Type   </label>
+                                    {% render_field specnform.contact_lens_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.lens_power %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Lens Power </label>
+                                    {% render_field specnform.lens_power class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.bristle_hardness %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Bristle Hardness</label>
+                                    {% render_field specnform.bristle_hardness class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.oral_care_benefits %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Oral Care Benefits  </label>
+                                    {% render_field specnform.oral_care_benefits class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.wings %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Wings  </label>
+                                    {% render_field specnform.wings class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.scent_function %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Scent Function  </label>
+                                    {% render_field specnform.scent_function class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.flow_level %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Flow Level </label>
+                                    {% render_field specnform.flow_level class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.sanitary_pad_use %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Sanitary Pad Use</label>
+                                    {% render_field specnform.sanitary_pad_use class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.air_flow %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Air Flow   </label>
+                                    {% render_field specnform.air_flow class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.air_purifier_filtration_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Air Purifier Filtration Type </label>
+                                    {% render_field specnform.air_purifier_filtration_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.cadr_rating %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Cadr Rating</label>
+                                    {% render_field specnform.cadr_rating class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.noise_level %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Noise Level</label>
+                                    {% render_field specnform.noise_level class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.air_purifier_features %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Air Purifier Features   </label>
+                                    {% render_field specnform.air_purifier_features class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.room_size_m2 %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Room Size M2    </label>
+                                    {% render_field specnform.room_size_m2 class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.max_moisture_removal %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Max Moisture Removal    </label>
+                                    {% render_field specnform.max_moisture_removal class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.washing_machine_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Washing Machine Type    </label>
+                                    {% render_field specnform.washing_machine_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.washing_machine_features %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Washing Machine Features</label>
+                                    {% render_field specnform.washing_machine_features class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.spin_speed %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Spin Speed </label>
+                                    {% render_field specnform.spin_speed class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.washing_features %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Washing Features</label>
+                                    {% render_field specnform.washing_features class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.motor_type %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Motor Type </label>
+                                    {% render_field specnform.motor_type class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.weight_capacity_kg %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Weight Capacity Kg  </label>
+                                    {% render_field specnform.weight_capacity_kg class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.WELS_tick_rating %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Wels Tick Rating</label>
+                                    {% render_field specnform.WELS_tick_rating class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.model_name %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Model Name </label>
+                                    {% render_field specnform.model_name class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.WELS_water_consumption_liters_per_min %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Wels Water Consumption Liters Per Min    </label>
+                                    {% render_field specnform.WELS_water_consumption_liters_per_min class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+                    {% if fourth_level_category.supported_weight %}
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="dashboard-ict">Supported Weight</label>
+                                    {% render_field specnform.supported_weight class="custom-select mb-4 form-control" autocomplete="off"  %}
+
+                                </div>
+
+                                {% endif  %}
+
+
+
+    {% endif  %}
+
+        </div>
+
+        {% for field in imageform  %}
+        {% if field.errors  %}
+        <ul class="errorlist">
+            {% for error in field.errors  %}
+            <li style="color: red;">{{error}}</li>
+            {% endfor  %}
+        </ul>
+        {% endif  %}
+        {% endfor  %}
+
+
+        {% if specn  %}
+        <button class="btn btn-accent" hx-post="{% url 'update_specn' specn.id  %}"><i
+                class="ci-edit opacity-60 me-2"></i>Save Changes</button>
+        {% else  %}
+
+        <button class="btn btn-accent" hx-post=".">Submit</button>
+
+        {% endif  %}
+
+        
+     
+
+    </form>
+</div>

@@ -1,0 +1,142 @@
+{% load product_tags %}
+<form class="needs-validation modal fade" id="return-details-{{forloop.counter}}" action="#" tabindex="-1" method="POST" novalidate>
+    {% csrf_token %}
+    <div class="modal-dialog modal-lg" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Return Item Details</h5>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gx-4 gy-3">
+            
+           
+            <div class="col-sm-12">
+      <!-- <h6>Add New Product</h6> -->
+      
+      <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Product Details</th>
+                <th>Refund Amount</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                        {% if item.variant.image  %}
+                        <td class="py-3">
+                        <center>{{item.variant.image_tag_url}}</center></td>
+                        
+                        {% else %}
+                        <td class="py-3">
+                    <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                        
+                        {% endif %}
+                     
+
+                    <td class="py-3">{{item.product.product_name}}
+                        {% if item.product.variant == "Size-Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                    </div>
+                                    <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% elif item.product.variant == "Size" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                        {{ item.variant.size.name}}
+                                      </div>
+                         {% elif item.product.variant == "Color" %}
+                                     <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                        {% endif %}
+
+                    </td>
+             
+
+                     <td class="py-3">${{ item.total_product_amount }} SGD</td>
+                      <td class="py-3"><span class="badge bg-danger m-0">{{item.return_status}}</span></td>
+                      
+                 
+                   
+                   
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
+     
+    <label class="form-label" for="unp-featured-image">Reason for return: </label>
+    <div>
+    {{item.reason}}
+  </div>
+  
+        <label class="form-label" for="unp-featured-image"><span style="color:red;">*</span> Return Item Images from Customer: </label>
+    
+<div class="bg-light shadow-lg rounded-3 px-4 py-3 mb-5">
+<div class="px-lg-12">
+<div class="row">
+        <div class="col-lg-12 w=100 pe-lg-0 pt-lg-4">
+          <div class="product-gallery">
+                    
+
+                    <div class="product-gallery-preview order-sm-2">
+                   
+                              <div class="product-gallery-preview-item active" id="first">
+                                <img class="image-zoom" src="{{ item.product.featured_image.url }}" data-zoom="{{ item.product.featured_image.url}}" alt="Product image">
+                                  <div class="image-zoom-pane"></div>
+                              </div>
+                      
+                      {% for i in item.refundimages_set.all %} 
+                      <div class="product-gallery-preview-item" id="first{{i.id}}">
+                        <img class="image-zoom" src="{{i.image.url}}" data-zoom="{{i.image.url}}" alt="Product image">
+                          <div class="image-zoom-pane"></div>
+                      </div>
+                      {% endfor %}
+
+                    
+                    </div>
+
+                    <div class="product-gallery-thumblist order-sm-1">
+                  
+                      <a class="product-gallery-thumblist-item" href="#first" ><img src="{{ item.product.featured_image.url }}" alt="Product thumb"></a>
+                      {% for i in item.refundimages_set.all %} 
+                            <a class="product-gallery-thumblist-item" href="#first{{i.id}}" ><img src="{{i.image.url}}" alt="Product thumb"></a>
+                      {% endfor %}
+                    </div>
+
+          </div>
+          <div>
+            <br><br>
+            <label><h5><span >* Actions </span></h5></label><br>
+            <label><b>Note :</b> </label> <label  style="color:red;">If action will not be taken withing 3 to 5 business days then item will be automatically refunded</label>
+            <div><br><br>
+              <label><b>Note :</b> </label> <label  style="color:red;">If you are ok with eveidence provided by client, approve request so item will be delivered to you</small></label>
+                 <a href="{% url 'approve_return' item.id %}" class="btn btn-primary">Approve</a><br>
+            
+            </div> <br><br>
+            <div>
+              <label><b>Note :</b> </label> <label  style="color:red;">If you have delivered faultless, complete item in good working condition, please reject request with evidence of item when packed and delivered, shop will validate and update.</small></label>
+                  <a href="#reject-{{forloop.counter}}" class="btn btn-primary"  data-bs-toggle="modal">Reject</a><br>
+                  
+                   
+            </div>
+          </div>
+        </div>
+
+
+
+        </div>
+        </div>
+        </div>
+    
+    </div>
+        
+
+  </div>  
+</div>
+        
+<div class="modal-footer">
+  <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</form>

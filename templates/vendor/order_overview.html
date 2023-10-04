@@ -1,0 +1,1043 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+
+
+<link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet"/>
+ 
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#myOrdersTable').DataTable();
+    } );
+    //let table = new DataTable('#myOrdersTable');
+</script>
+<main class="page-wrapper">
+    <!-- Page Title-->
+    <div class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+        <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+              <li class="breadcrumb-item"><a class="text-nowrap" href="index.html"><i class="ci-home"></i>Home</a></li>
+              <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+              </li>
+              <li class="breadcrumb-item text-nowrap active" aria-current="page">Orders history</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+          <h1 class="h3 text-light mb-0">My orders</h1>
+        </div>
+      </div>
+    </div>
+
+    {% for item in orderproducts_cancelled %}
+    <form class="needs-validation modal fade" id="cancel-details-{{forloop.counter}}" action="#" tabindex="-1">
+   
+      <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cancellation Details</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        <div class="modal-body">
+
+          <div class="row gx-4 gy-3">
+              
+              <div class="col-sm-6">
+               
+                <label class="form-label" for="">Order No :   {{item.order.order_number}}</small></label><br><br>
+                <label class="form-label" for="">Status :  <small>{{item.status}}</small></label><br><br>
+                <label class="form-label" for="">Delivery Address :  <small>{{item.order.unit_no}} {{item.order.address_line_1}} {{item.order.country}}-{{item.order.pin_code}}</small></label><br><br>
+                <label class="form-label" for="">Cancel Date :  <small>{{item.updated_at}}</small></label><br><br>
+                <label class="form-label" for="">Cancellation Reason :  <small>{{item.cancellation_reason}}</small></label>
+             
+              </div> 
+              <div class="col-sm-6">
+                <label class="form-label" for="">Product Name : <small>{{item.product.product_name|truncatewords:8}}</small></label><br><br>
+                
+                  {% if item.variant.image  %}
+                  <div class="py-3">
+                  <center>{{item.variant.image_tag_url}}</center></div>
+                  
+                  {% else %}
+                  <div class="py-3"><small>{{item.vendor}}</small> 
+                   <center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></div>
+                
+                  {% endif %}
+              
+                      <label class="form-label" for=""> Price : 
+                        {% if item.variant %}
+                              {% if item.variant.variant_discount %}
+                                                  <td class="py-3"><small>${% call_sellprice item.variant.variant_price item.variant.variant_discount %} SGD </small></td>
+                                          {% else %}
+                                                  <td class="py-3">${{item.product_price }} SGD</td>
+                                          {% endif %}
+                              {% else %}
+                                          {% if item.product.discount %}
+                                                  <td class="py-3"><small>${% call_sellprice item.product.price  item.product.discount %} SGD </small></td>
+                                            {% else %}        
+                                                  <td class="py-3">${{ item.product_price }} SGD</td>
+                                            {% endif %}
+                              {% endif %}
+                      </label>
+
+                      <div class="py-3"> <label class="form-label" for=""> Quantity : <small>{{item.quantity}}</small></div>
+                      <div class="py-3"> <label class="form-label" for=""> Refund Amt : <small>${{item.sub_total}} SGD</small></div>
+                      <div class="py-3"><label class="form-label" for="">Sold By :  <small>{{item.vendor}}</small></label></div>
+                      <label class="form-label" for="">Cancellation Reason :  <small>{{item.cancellation_reason}}</small></label>
+            </div> 
+          </div> 
+        </div>
+        
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form> 
+    {% endfor %}
+
+    {% for item in orderproducts_toship %}
+    <form class="needs-validation modal fade" id="cancel-form-{{forloop.counter}}" action="{% url 'cancel_item_vendor' item.order.order_number item.id %}" tabindex="-1" method="POST" novalidate>
+      {% csrf_token %}
+      <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Select Cancellation Reason</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row gx-4 gy-3">
+              
+              <div class="col-sm-6">
+                <label class="form-label" for="address-zip"><small>Please note that your item will be cancelled immediately after the confirmation</small></label>
+                <select class="form-select flex-shrink-0" name="cancel_reason" style="width: 14rem;">
+                  <option>Out of stock</option>
+                  <option>Incorrect pricing</option>
+                  <option>Incorrect/incomplete/wrong selection of address</option>
+                  <option>Buyer requested</option>
+                  <option>Buyer unreachable </option>
+                  <option>System error</option>
+                 
+                  </select>
+              </div>
+             
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary btn-shadow" type="submit">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    {% endfor %}
+
+
+    <div class="container pb-5 mb-2 mb-md-4">
+      <div class="row">
+        <!-- Sidebar-->
+        <!-- Content  -->
+      
+        <section class="col-lg-12 pt-lg-4 pb-4 mb-3">
+          <button class="btn btn-secondary" onclick="history.back()"> <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+       
+          <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                      <!-- Tabs-->
+                      <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <li class="nav-item"><a class="nav-link px-0 active" href="#all" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">All</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">All</span></div></a></li>
+                            
+                                <li class="nav-item"><a class="nav-link px-0" href="#to_ship" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">To Ship</div>
+                                <div class="d-lg-none text-center"><i class="ci-location opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">To Ship</span></div></a></li>
+                            
+                                <li class="nav-item"><a class="nav-link px-0" href="#shipped" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Shipped</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Shipped</span></div></a></li>
+                            
+                                <li class="nav-item"><a class="nav-link px-0" href="#delivered" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Delivered</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Delivered</span></div></a></li>
+                                
+                        
+                                <li class="nav-item"><a class="nav-link px-0" href="#completed" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Completed</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Completed</span></div></a></li>
+                        
+                                <li class="nav-item"><a class="nav-link px-0" href="#cancelled" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Cancelled</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Cancelled</span></div></a></li>
+                        
+                                <li class="nav-item"><a class="nav-link px-0" href="#refund_return" data-bs-toggle="tab" role="tab">
+                                <div class="d-none d-lg-block">Return/Refund</div>
+                                <div class="d-lg-none text-center"><i class="ci-bag opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Return/Refund</span></div></a></li>
+                      </ul>
+                    <!-- Tab content-->
+                    <div class="tab-content">
+                      <!-- Profile-->
+    <div class="tab-pane fade show active" id="all" role="tabpanel">
+                 
+                            
+      <div class="table-responsive fs-md mb-4">
+
+            <table class="table table-hover mb-0">
+              <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Product Detail</th>
+                      <th>Qty</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Order Date</th>
+                      <th>Update Date</th>
+                      <th>Order No</th>
+                      <th>More Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in orderproducts %}
+              
+                  <tr>
+                              {% if item.variant.image  %}
+                              <td class="py-3"><small>{{item.vendor}}</small> &nbsp;&nbsp;<a href="{%  url 'vendor_detail' item.vendor.vendor_slug %}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                              <br><br> <center>{{item.variant.image_tag_url}}</center></td>
+                              
+                              {% else %}
+                              <td class="py-3"><small>{{item.vendor}}</small> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                <br><br><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                              
+                              {% endif %}
+                           
+
+                          <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                              {% if item.product.variant == "Size-Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                          </div>
+                                          <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% elif item.product.variant == "Size" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                              {{ item.variant.size.name}}
+                                            </div>
+                               {% elif item.product.variant == "Color" %}
+                                           <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                              {% endif %}
+
+                          </td>
+                          <td class="py-3">{{item.quantity}}</td>
+                   
+
+                          {% if item.variant %}
+                                      {% if item.variant.variant_discount %}
+                                              <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                      {% else %}
+                                              <td class="py-3">${{item.product_price }} SGD</td>
+                                      {% endif %}
+                           {% else %}
+                                      {% if item.product.discount %}
+                                              <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                        {% else %}        
+                                              <td class="py-3">${{ item.product_price }} SGD</td>
+                                        {% endif %}
+                           {% endif %}
+
+                            {% if item.status == 'Cancelled by Buyer' or item.status == 'Cancelled by Seller' or item.status in list_status %}
+                            <td class="py-3"><span class="badge bg-danger m-0">{{item.status}}</span></td>
+                        
+                            {% elif item.status == 'Completed' or item.status == 'Delivered' %}  
+                            <td class="py-3"><span class="badge bg-success m-0">{{item.status}}</span></td>
+
+                            {% elif item.status == 'New' or item.status == 'Packed' or item.status == 'ReadyToShip'  or item.status == 'PickedUpToDeliver'   %}     
+                            <td class="py-3"><span class="badge bg-info m-0">{{item.status}}</span></td>
+                            
+                            {% endif %} 
+
+                           <td class="py-3"> {{item.created_at}}</td>
+                           <td class="py-3"> {{item.updated_at}}</td>
+                           <td class="py-3"> {{item.order.order_number}}</td>
+                           {% if item.status == 'New' or item.status == 'Packed' %}
+                           <td class="py-3">
+                            <form action="#" method="POST" >
+                            <a href="#cancel-form-{{forloop.counter}}" class="btn btn-primary btn-sm"  data-bs-toggle="modal">Cancel Item</a>
+                          </form>
+                        </td>
+                        {% else %}
+                        <td class="py-3"> <a href="{{item.product.get_url}}" class="btn btn-primary btn-sm">Buy Again</a></td>
+                        {% endif %}
+                         
+                         
+                  </tr>
+                  <tr></tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          </div>
+                              <!-- Pagination-->  
+                            
+                              <!-- Pagination-->
+                              <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                                {% if orderproducts.has_other_pages %}
+                                    <ul class="pagination">
+                                          {% if orderproducts.has_previous %}
+                                            
+                                              <li class="page-item"><a class="page-link" href="?page={{orderproducts.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                            
+                                            {% else %}
+                                              <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                            
+                                            {% endif %}
+                      
+                                                  {% for i in orderproducts.paginator.page_range %}
+                                                  {% if orderproducts.number == i %}
+                                                  <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                                  {% else %}
+                                                  <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                                  {% endif %}
+                                                  {% endfor %}
+                                        
+                                            {% if orderproducts.has_next %}
+                                                <li class="page-item"><a class="page-link" href="?page={{orderproducts.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                            {% else %}   
+                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                            {% endif %}
+                                    </ul>
+                                {% endif %}
+                              </nav>
+                         </div>
+                    <!-- To Ship-->
+   <div class="tab-pane fade" id="to_ship" role="tabpanel">
+         
+    <!-- Orders list-->
+    
+        <!-- Pagination-->  
+  <hr class="my-3">
+                      <div class="table-responsive fs-md mb-4">
+
+            <table class="table table-hover mb-0">
+              <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Product Detail</th>
+                      <th>Qty</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Order No</th>
+                      <th>More Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in orderproducts_toship %}
+              
+                <tr>
+                            {% if item.variant.image  %}
+                            <td class="py-3"><small>{{item.vendor}}</small> &nbsp;&nbsp;<a href="{%  url 'vendor_detail' item.vendor.vendor_slug %}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                            <br><br> <center>{{item.variant.image_tag_url}}</center></td>
+                            
+                            {% else %}
+                            <td class="py-3"><small>{{item.vendor}}</small> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                              <br><br><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                            
+                            {% endif %}
+                         
+
+                        <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                            {% if item.product.variant == "Size-Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                        </div>
+                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% elif item.product.variant == "Size" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                          </div>
+                             {% elif item.product.variant == "Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% endif %}
+
+                        </td>
+                        <td class="py-3">{{item.quantity}}</td>
+                 
+
+                        {% if item.variant %}
+                                    {% if item.variant.variant_discount %}
+                                            <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                    {% else %}
+                                            <td class="py-3">${{item.product_price }} SGD</td>
+                                    {% endif %}
+                         {% else %}
+                                    {% if item.product.discount %}
+                                            <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                      {% else %}        
+                                            <td class="py-3">${{ item.product_price }} SGD</td>
+                                      {% endif %}
+                         {% endif %}
+                         <td class="py-3"><span class="badge bg-info m-0">{{item.status}}</span></td>
+                         <td class="py-3"> {{item.order.order_number}}</td>
+                        
+                         <td class="py-3">
+                          <form action="#" method="POST" >
+                          <a href="#cancel-form-{{forloop.counter}}" class="btn btn-primary btn-sm"  data-bs-toggle="modal">Cancel Item</a>
+                        </form>
+                      </td>
+                       
+                </tr>
+                <tr></tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+                      <!-- Pagination-->  
+                    
+                      <!-- Pagination-->
+                      <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                        {% if orderproducts_toship.has_other_pages %}
+                            <ul class="pagination">
+                                  {% if orderproducts_toship.has_previous %}
+                                    
+                                      <li class="page-item"><a class="page-link" href="?page={{orderproducts_toship.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% else %}
+                                      <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% endif %}
+              
+                                          {% for i in orderproducts_toship.paginator.page_range %}
+                                          {% if orderproducts_toship.number == i %}
+                                          <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                          {% else %}
+                                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                          {% endif %}
+                                          {% endfor %}
+                                
+                                    {% if orderproducts_toship.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{orderproducts_toship.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% else %}   
+                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% endif %}
+                            </ul>
+                        {% endif %}
+                      </nav>
+                 </div>
+                    <!-- Payment methods-->
+            <div class="tab-pane fade" id="shipped" role="tabpanel">
+                 
+              <!-- Orders list-->
+              
+                  <!-- Pagination-->  
+            <hr class="my-3">
+                      <!-- Orders list-->
+                      <div class="table-responsive fs-md mb-4">
+                        <table class="table table-hover mb-0">
+                          <thead>
+                            <tr>
+                              <th>Order #</th>
+                              <th>Name</th> 
+                              <th>Total</th>
+                              <th>Status</th>
+                              <th>Order No</th>
+                              <th>Date</th>
+                              
+                              
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for item in orderproducts_shipped %}
+              
+                            <tr>
+                                        {% if item.variant.image  %}
+                                        <td class="py-3"><small>{{item.vendor}}</small> &nbsp;&nbsp;<a href="{%  url 'vendor_detail' item.vendor.vendor_slug %}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                        <br><br> <center>{{item.variant.image_tag_url}}</center></td>
+                                        
+                                        {% else %}
+                                        <td class="py-3"><small>{{item.vendor}}</small> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                          <br><br><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                        
+                                        {% endif %}
+                                     
+          
+                                    <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                                        {% if item.product.variant == "Size-Color" %}
+                                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                        {{ item.variant.size.name}}
+                                                    </div>
+                                                    <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                        {% elif item.product.variant == "Size" %}
+                                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                        {{ item.variant.size.name}}
+                                                      </div>
+                                         {% elif item.product.variant == "Color" %}
+                                                     <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                        {% endif %}
+          
+                                    </td>
+                                    <td class="py-3">{{item.quantity}}</td>
+                             
+          
+                                    {% if item.variant %}
+                                                {% if item.variant.variant_discount %}
+                                                        <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                                {% else %}
+                                                        <td class="py-3">${{item.product_price }} SGD</td>
+                                                {% endif %}
+                                     {% else %}
+                                                {% if item.product.discount %}
+                                                        <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                                  {% else %}        
+                                                        <td class="py-3">${{ item.product_price }} SGD</td>
+                                                  {% endif %}
+                                     {% endif %}
+                                     <td class="py-3"><span class="badge bg-info m-0">{{item.status}}</span></td>
+                                     <td class="py-3"> {{item.order.order_number}}</td>
+                                     <td class="py-3"> </td>
+                                   
+                                   
+                            </tr>
+                            <tr></tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- Pagination-->  
+                    
+                      <!-- Pagination-->
+                      <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                        {% if orderproducts_shipped.has_other_pages %}
+                            <ul class="pagination">
+                                  {% if orderproducts_shipped.has_previous %}
+                                    
+                                      <li class="page-item"><a class="page-link" href="?page={{orderproducts_shipped.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% else %}
+                                      <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                    
+                                    {% endif %}
+              
+                                          {% for i in orderproducts_shipped.paginator.page_range %}
+                                          {% if orderproducts_shipped.number == i %}
+                                          <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                          {% else %}
+                                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                          {% endif %}
+                                          {% endfor %}
+                                
+                                    {% if orderproducts_shipped.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{orderproducts_shipped.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% else %}   
+                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                    {% endif %}
+                            </ul>
+                        {% endif %}
+                      </nav>
+                 </div>
+        
+
+                <div class="tab-pane fade" id="delivered" role="tabpanel">
+                      
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                  <!-- Orders list-->
+                  <div class="table-responsive fs-md mb-4">
+                    <table class="table table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>Order #</th>
+                          <th>Name</th> 
+                          <th>Total</th>
+                          <th>Status</th>
+                          <th>Order No</th>
+                          <th>Date</th>
+                          <th>Updated Date</th>
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in orderproducts_delivered %}
+          
+                        <tr>
+                                    {% if item.variant.image  %}
+                                    <td class="py-3"><small>{{item.vendor}}</small> &nbsp;&nbsp;<a href="{%  url 'vendor_detail' item.vendor.vendor_slug %}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                    <br><br> <center>{{item.variant.image_tag_url}}</center></td>
+                                    
+                                    {% else %}
+                                    <td class="py-3"><small>{{item.vendor}}</small> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                      <br><br><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                    
+                                    {% endif %}
+                                 
+      
+                                <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                                    {% if item.product.variant == "Size-Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                </div>
+                                                <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% elif item.product.variant == "Size" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                  </div>
+                                     {% elif item.product.variant == "Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% endif %}
+      
+                                </td>
+                                <td class="py-3">{{item.quantity}}</td>
+                         
+      
+                                {% if item.variant %}
+                                            {% if item.variant.variant_discount %}
+                                                    <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                            {% else %}
+                                                    <td class="py-3">${{item.product_price }} SGD</td>
+                                            {% endif %}
+                                 {% else %}
+                                            {% if item.product.discount %}
+                                                    <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                              {% else %}        
+                                                    <td class="py-3">${{ item.product_price }} SGD</td>
+                                              {% endif %}
+                                 {% endif %}
+                                 <td class="py-3"><span class="badge bg-success m-0">{{item.status}}</span></td>
+                                 <td class="py-3"> {{item.order.order_number}}</td>
+                                 <td class="py-3"> {{item.updated_at}}</td>
+                               
+                               
+                        </tr>
+                        <tr></tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Pagination-->  
+                
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if orderproducts_delivered.has_other_pages %}
+                        <ul class="pagination">
+                              {% if orderproducts_delivered.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{orderproducts_delivered.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in orderproducts_delivered.paginator.page_range %}
+                                      {% if orderproducts_delivered.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if orderproducts_delivered.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_delivered.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+
+               <div class="tab-pane fade" id="completed" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                  <!-- Orders list-->
+                  
+                  <div class="table-responsive fs-md mb-4">
+                    <table class="table table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>Order #</th>
+                          <th>Name</th> 
+                          <th>Total</th>
+                          <th>Status</th>
+                          <th>Order No</th>
+                          <th>Date</th>
+                          <th>Action</th>
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in orderproducts_completed %}
+          
+                        <tr>
+                                    {% if item.variant.image  %}
+                                    <td class="py-3"><small>{{item.vendor}}</small> &nbsp;&nbsp;<a href="{%  url 'vendor_detail' item.vendor.vendor_slug %}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                    <br><br> <center>{{item.variant.image_tag_url}}</center></td>
+                                    
+                                    {% else %}
+                                    <td class="py-3"><small>{{item.vendor}}</small> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                      <br><br><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                    
+                                    {% endif %}
+                                 
+      
+                                <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                                    {% if item.product.variant == "Size-Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                </div>
+                                                <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% elif item.product.variant == "Size" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                    {{ item.variant.size.name}}
+                                                  </div>
+                                     {% elif item.product.variant == "Color" %}
+                                                 <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                    {% endif %}
+      
+                                </td>
+                                <td class="py-3">{{item.quantity}}</td>
+                         
+      
+                                {% if item.variant %}
+                                            {% if item.variant.variant_discount %}
+                                                    <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                            {% else %}
+                                                    <td class="py-3">${{item.product_price }} SGD</td>
+                                            {% endif %}
+                                 {% else %}
+                                            {% if item.product.discount %}
+                                                    <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                              {% else %}        
+                                                    <td class="py-3">${{ item.product_price }} SGD</td>
+                                              {% endif %}
+                                 {% endif %}
+                                 <td class="py-3"><span class="badge bg-success m-0">{{item.status}}</span></td>
+                                 <td class="py-3"> {{item.order.order_number}}</td>
+                                 <td class="py-3">{{item.updated_at}}</td>
+                                 <td class="py-3"> <a href="{{item.product.get_url}}" class="btn btn-primary btn-sm">Buy Again</a></td>
+                               
+                               
+                        </tr>
+                        <tr></tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Pagination-->  
+        
+                  <!-- Pagination-->
+                  <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                    {% if orderproducts_completed.has_other_pages %}
+                        <ul class="pagination">
+                              {% if orderproducts_completed.has_previous %}
+                                
+                                  <li class="page-item"><a class="page-link" href="?page={{orderproducts_completed.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% else %}
+                                  <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                
+                                {% endif %}
+          
+                                      {% for i in orderproducts_completed.paginator.page_range %}
+                                      {% if orderproducts_completed.number == i %}
+                                      <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                      {% else %}
+                                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                      {% endif %}
+                                      {% endfor %}
+                            
+                                {% if orderproducts_completed.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_completed.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% else %}   
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>
+                </div>
+         <div class="tab-pane fade" id="cancelled" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+
+                    <div class="table-responsive fs-md mb-4">
+            <table class="table table-hover mb-0">
+              <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Product Detail</th>
+                      <th>Qty</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Order Date</th>
+                      <th>Cancel Date</th>
+                      <th>Order No</th>
+                      <th>Details</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for item in orderproducts_cancelled %}
+              
+                <tr>
+                            {% if item.variant.image  %}
+                            <td class="py-3"><small>{{item.vendor}}</small> &nbsp;&nbsp;<a href="{%  url 'vendor_detail' item.vendor.vendor_slug %}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                            <br><br> <center>{{item.variant.image_tag_url}}</center></td>
+                            
+                            {% else %}
+                            <td class="py-3"><small>{{item.vendor}}</small> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                              <br><br><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                            
+                            {% endif %}
+                         
+
+                        <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                            {% if item.product.variant == "Size-Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                        </div>
+                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% elif item.product.variant == "Size" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                            {{ item.variant.size.name}}
+                                          </div>
+                             {% elif item.product.variant == "Color" %}
+                                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                            {% endif %}
+
+                        </td>
+                        <td class="py-3">{{item.quantity}}</td>
+                 
+
+                        {% if item.variant %}
+                                    {% if item.variant.variant_discount %}
+                                            <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                    {% else %}
+                                            <td class="py-3">${{item.product_price }} SGD</td>
+                                    {% endif %}
+                         {% else %}
+                                    {% if item.product.discount %}
+                                            <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                      {% else %}        
+                                            <td class="py-3">${{ item.product_price }} SGD</td>
+                                      {% endif %}
+                         {% endif %}
+                         <td class="py-3"><span class="badge bg-danger m-0">{{item.status}}</span></td>
+                         <td class="py-3">{{item.created_at}}</td>
+                         <td class="py-3">{{item.updated_at}}</td>
+                         <td class="py-3">{{item.order.order_number}}</td>
+                         <td class="py-3"> 
+                       
+                         <form action="#" method="POST" >
+                          <a href="#cancel-details-{{forloop.counter}}" class="btn btn-outline-danger btn-sm"  data-bs-toggle="modal">Check Details</a>
+                        </form> <br><br>
+                      </td>
+                </tr>
+                <tr></tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+                    <!-- Pagination-->
+                    <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                      {% if orderproducts_cancelled.has_other_pages %}
+                          <ul class="pagination">
+                                {% if orderproducts_cancelled.has_previous %}
+                                  
+                                    <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                  
+                                  {% else %}
+                                    <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                  
+                                  {% endif %}
+            
+                                        {% for i in orderproducts_cancelled.paginator.page_range %}
+                                        {% if orderproducts_cancelled.number == i %}
+                                        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                        {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                              
+                                  {% if orderproducts_cancelled.has_next %}
+                                      <li class="page-item"><a class="page-link" href="?page={{orderproducts_cancelled.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                  {% else %}   
+                                  <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                  {% endif %}
+                          </ul>
+                      {% endif %}
+                    </nav>
+                  </div>
+                  
+                    <div class="tab-pane fade" id="refund_return" role="tabpanel">
+                    
+                      <!-- Orders list-->
+                      
+                          <!-- Pagination-->  
+                    <hr class="my-3">
+                          <div class="table-responsive fs-md mb-4">
+                            <table class="table table-hover mb-0">
+                              <thead>
+                                <tr>
+                                  <th>Order #</th>
+                                  <th>Name</th> 
+                                  <th>Total</th>
+                                  <th>Status</th>
+                                  <th>Order No</th>
+                                  <th>Date</th>
+                                  <th>Action</th>
+                                  
+                                  
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {% for item in orderproducts_returned %}
+              
+                                <tr>
+                                            {% if item.variant.image  %}
+                                            <td class="py-3"><small>{{item.vendor}}</small> &nbsp;&nbsp;<a href="{%  url 'vendor_detail' item.vendor.vendor_slug %}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                            <br><br> <center>{{item.variant.image_tag_url}}</center></td>
+                                            
+                                            {% else %}
+                                            <td class="py-3"><small>{{item.vendor}}</small> <a href="{{item.product.get_url}}" class="btn btn-outline-danger btn-sm">View Shop</a>
+                                              <br><br><center><img src="{{item.product.featured_image.url}}" width="100" alt="Product image"></center></td>
+                                            
+                                            {% endif %}
+                                         
+              
+                                        <td class="py-3">{{item.product.product_name|truncatewords:8}}
+                                            {% if item.product.variant == "Size-Color" %}
+                                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                            {{ item.variant.size.name}}
+                                                        </div>
+                                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                            {% elif item.product.variant == "Size" %}
+                                                         <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                            {{ item.variant.size.name}}
+                                                          </div>
+                                             {% elif item.product.variant == "Color" %}
+                                                         <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                            {% endif %}
+              
+                                        </td>
+                                        <td class="py-3">{{item.quantity}}</td>
+                                 
+              
+                                        {% if item.variant %}
+                                                    {% if item.variant.variant_discount %}
+                                                            <td class="py-3">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                                                    {% else %}
+                                                            <td class="py-3">${{item.product_price }} SGD</td>
+                                                    {% endif %}
+                                         {% else %}
+                                                    {% if item.product.discount %}
+                                                            <td class="py-3">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                                                      {% else %}        
+                                                            <td class="py-3">${{ item.product_price }} SGD</td>
+                                                      {% endif %}
+                                         {% endif %}
+                                         <td class="py-3"><span class="badge bg-danger m-0">{{item.status}}</span></td>
+                                         <td class="py-3"> {{item.order.order_number}}</td>
+                                         <td class="py-3"> <a href="{{item.product.get_url}}" class="btn btn-primary btn-sm">Return/Refund</a></td>
+                                       
+                                       
+                                </tr>
+                                <tr></tr>
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- Pagination-->  
+                        <hr class="my-3">
+                          <!-- Pagination-->
+                          <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+                            {% if orderproducts_returned.has_other_pages %}
+                                <ul class="pagination">
+                                      {% if orderproducts_returned.has_previous %}
+                                        
+                                          <li class="page-item"><a class="page-link" href="?page={{orderproducts_returned.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                        
+                                        {% else %}
+                                          <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                                        
+                                        {% endif %}
+                  
+                                              {% for i in orderproducts_returned.paginator.page_range %}
+                                              {% if orderproducts_returned.number == i %}
+                                              <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                              {% else %}
+                                              <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                              {% endif %}
+                                              {% endfor %}
+                                    
+                                        {% if orderproducts_returned.has_next %}
+                                            <li class="page-item"><a class="page-link" href="?page={{orderproducts_returned.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                        {% else %}   
+                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                                        {% endif %}
+                                </ul>
+                            {% endif %}
+                          </nav>
+                    </div>
+    
+                 </div>
+                  </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+  <script>  
+
+
+  $('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    var formData = {
+        'orderId': $('input[name=ordernumber]').val(),
+        'email': $('input[name=email]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+    };
+    $.ajax({
+            type: 'POST',
+            url: '{% url "tracker" %}',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            updates = JSON.parse(data);
+            if (updates.length > 0 & updates != {}) {
+                for (i = 0; i < updates.length; i++) {
+                    let text = updates[i]['text'];
+                    let time = updates[i]['time'];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${text}
+                    <span class="badge bg-info ms-2">${time}</span>
+                </li>`
+                    $('#items').append(mystr);
+                }
+            } else {
+            	mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    Sorry, We are not able to fetch this order id, Make sure to type correct order Id.</li>`
+            	$('#items').append(mystr);
+            }
+        });
+    event.preventDefault();
+});
+</script>
+  {% endblock %}

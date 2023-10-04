@@ -1,0 +1,27 @@
+model,pk,name,slug
+category.main_category,8,Fashion Accessories,fashion-accessories
+category.main_category,9,Home Appliances,home-appliances
+category.main_category,10,Men Shoes,men-shoes
+category.main_category,11,Mobile & Gadgets,mobile-and-gadgets
+category.main_category,12,Muslim Fashion,muslim-fashion
+category.main_category,13,Travel & Luggage,travel-and-luggage
+category.main_category,14,Women Bags,women-bags
+category.main_category,15,Women Shoes,women-shoes
+category.main_category,16,Men Bags,men-bags
+category.main_category,17,Watches,watches
+category.main_category,18,Audio,audio
+category.main_category,19,Food & Beverage,food-and-beverage
+category.main_category,20,Pets,pets
+category.main_category,21,Mom & Baby,mom-and-baby
+category.main_category,22,Baby & Kids Fashion,baby-and-kids-fashion
+category.main_category,23,Gaming & Consoles,gaming-and-consoles
+category.main_category,24,Cameras & Drones,cameras-and-drones
+category.main_category,25,Home & Living,home-and-living
+category.main_category,26,Sports & Outdoors,sports-and-outdoors
+category.main_category,27,Stationery,stationery
+category.main_category,28,Hobbies & Collections,hobbies-and-collections
+category.main_category,29,Automobiles,automobiles
+category.main_category,30,Motorcycles,motorcycles
+category.main_category,31,"Tickets, Vouchers & Services",tickets-vouchers-and-services
+category.main_category,32,Books & Magazines,books-and-magazines
+category.main_category,33,Computers & Accessories,computers-and-accessories

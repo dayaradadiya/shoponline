@@ -1,0 +1,11 @@
+
+{% autoescape off %}
+Hi {{ user.first_name }}
+
+{% if is_approved %}
+Congratulations! your shop has been approved by our admin team. --MultiVendor shopOnline
+{% else %}
+We're sorry! you are not eligible to publish your shop products in our marketplace. For more details, please contact support@shoponline.com. --MultiVendor shopOnline"
+{% endif %}
+
+{% endautoescape %}

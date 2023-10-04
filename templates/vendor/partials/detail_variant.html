@@ -1,0 +1,112 @@
+
+<div hx-target="this" hx-swap="outerHTML">
+
+
+  <table class="table table-hover ">
+               
+        <tbody>
+            <tr>
+    {% if variant.title %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><b>Title:</b></span>
+    {{ variant.title}}
+    
+    </div>
+</td>
+    {% endif %}
+    {% if variant.size %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><b>Size:</b></span>
+    {{ variant.size}}
+    </div>
+</td>
+    {% endif %}
+
+    {% if variant.storage_capacity %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><b>Storage Capacity:</b></span>
+    {{ variant.storage_capacity}}
+    </div>
+</td>
+    {% endif %}
+
+    {% if variant.model_compatibility %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><b>Model Compatibility:</b></span>
+    {{ variant.model_compatibility}}
+    </div>
+</td>
+    {% endif %}
+
+    {% if variant.vehicle_brand %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><b>Vehicle Brand:</b></span>
+    {{ variant.vehicle_brand}}
+    </div>
+</td>
+    {% endif %}
+
+    {% if variant.image %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><b>Image:</b></span>
+    {{ variant.image_tag }}
+    <!-- <img src="{{ variant.image_tag}}" style="height: 70px"> -->
+    </div>
+</td>
+    {% endif %}
+
+
+    {% if variant.variant_stock %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><B>Quantity:</b></span>
+    {{ variant.variant_stock}}
+    </div>
+</td>
+    {% endif %}
+
+    {% if variant.variant_price %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><B>Price:</b></span>
+    {{ variant.variant_price}}
+    </div>
+</td>
+    {% endif %}
+
+    {% if variant.variant_discount %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><B>Discount:</b></span>
+    {{ variant.variant_discount}}
+    </div>
+</td>
+    {% endif %}
+
+    {% if variant.variant_max_allowed_quantity %}
+    <td>
+    <div class="fs-sm"><span class="text-muted me-2"><B>Max Allowed quantity:</b></span>
+    {{ variant.variant_max_allowed_quantity}}
+    </div>
+</td>
+    {% endif %}
+</tr>
+<tr>
+<td>
+    <!-- <button class="btn btn-accent" hx-get="{% url 'update_variant' variant.id %}"><i class="ci-edit opacity-60 me-2"></i>Update</button>
+    <button class="btn btn-primary" hx-post="{% url 'delete_variant' variant.id %}"><i class="fa fa-minus opacity-60 me-2"></i>Delete</button> -->
+
+  
+
+    <div class="d-flex justify-content-center justify-content-sm-start pt-3">
+        <!-- <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Download"><i class="ci-download text-accent"></i></button> -->
+        <a hx-get="{% url 'update_variant' variant.id %}"><button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Add/Edit Variant"><i class="ci-edit text-info"></i></button></a>
+    
+        <a hx-get="{% url 'delete_variant' variant.id %}" onclick="return confirm('Are you sure you want to delete this image?')"><button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i class="ci-trash text-danger"></i></button></a>
+    
+     </div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+    <!--  -->
+</div>

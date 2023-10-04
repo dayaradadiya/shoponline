@@ -1,0 +1,156 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load product_tags %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
+<main class="page-wrapper">
+    <div class="page-title-overlap bg-dark pt-4">
+        <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+          <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+                <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+                <li class="breadcrumb-item text-nowrap"><a href="#">Account</a>
+                </li>
+                <li class="breadcrumb-item text-nowrap active" aria-current="page">Return Details</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+            <h1 class="h3 text-light mb-0">Return Details</h1>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container pb-5 mb-2 mb-md-4">
+        <div class="row">
+          <!-- Sidebar-->
+          {% include 'includes/v_sidebar.html' %}
+          <!-- Content  -->
+          <section class="col-lg-8">
+            <!-- Toolbar-->
+            <div class="d-flex justify-content-between align-items-center pt-lg-2 pb-4 pb-lg-5 mb-lg-3">
+              <div class="d-flex align-items-center">
+                <!-- <label class="d-none d-lg-block fs-sm text-light text-nowrap opacity-75 me-2" for="order-sort">Sort orders:</label> -->
+                <!-- <label class="d-lg-none fs-sm text-nowrap opacity-75 me-2" for="order-sort">Sort orders:</label>
+                <select class="form-select" id="order-sort">
+                  <option>All</option>
+                  <option>Delivered</option>
+                  <option>In Progress</option>
+                  <option>Delayed</option>
+                  <option>Canceled</option>
+                </select> -->
+              </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" href="{% url 'logout' %}"><i class="ci-sign-out me-2"></i>Sign out</a>
+            </div>
+<div class="container">
+              
+<form   method="POST" enctype="multipart/form-data"  >
+  {% csrf_token %}
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Upload Evidence</h5>
+       </div>
+      <div class="modal-body">
+        <div class="row gx-4 gy-3">
+          
+         
+          <div class="col-sm-12">
+            <div class="tab-pane fade show active" id="profile" role="tabpanel">  
+          
+              <div class="bg-secondary rounded-3 p-4 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="ps-3">
+                 
+                   <label>Please upload evidence as requested</label> <br><br>
+                   <label>Please read instructions before upload</label><br><br>
+                   <label class="form-label"><b>Photo/Video :</b></label> (Maximum file upload size: 10 MB per picture Format : (MP4/MOV/JPEG/PNG))<br><br>
+              
+                
+                <label class="text-danger">{{ disputform.videofile.errors }}</label>
+              </div>
+              </div>
+            </div>
+    
+              
+            <div class="bg-secondary rounded-3 p-4 mb-4">
+              
+              <div class="d-flex align-items-center">
+               
+                <div class="ps-3">
+                  <label>*Photos to show that seller has shipped out product to Buyer in good and working condition :</label>
+                  <div class="file-drop-area mb-3">
+                      <div class="file-drop-icon ci-cloud-upload"></div><span class="file-drop-message">Drag and drop here to upload product screenshot</span>
+                      <input class="file-drop-input" type="file" multiple name="images">
+                      <button class="file-drop-btn btn btn-primary btn-sm mb-2" type="button">Upload Files </button>
+                  </div>
+                
+                <label class="text-danger">{{ disputform.image.errors }}</label>
+              </div>
+              </div>
+            </div>
+            
+             
+    
+             <div class="bg-secondary rounded-3 p-4 mb-4">
+              
+              <div class="d-flex align-items-center">
+                <div class="ps-3">
+                  <label>Packing video to show that seller has packaged and shipped out product to Buyer ib good condition</label>
+                  <div class="upload-gallery">
+                      {{ disputform.videofile }}
+                  </div>
+                
+                <label class="text-danger">{{ disputform.videofile.errors }}</label>
+              </div>
+              </div>
+            </div>
+    
+            <div class="bg-secondary rounded-3 p-4 mb-4">
+              
+              <div class="d-flex align-items-center">
+                <div class="ps-3">
+                  <label>For non-int. forward delivery:- POD which shows parcel packaging not damaged/tampered and taken at Buyer's address</label>
+                  <div class="upload-gallery">
+                      {{ disputform.videopod }}
+                  </div>
+                
+                <label class="text-danger">{{ disputform.videofile.errors }}</label>
+              </div>
+              </div>
+            </div>
+          </div>
+          {% for field in disputform %}
+                {% if field.errors %}
+                <ul class="errorlist">
+                  {% for error in field.errors %}
+                  <li style="color: red;">{{error}}</li>
+                  {% endfor %}
+                  </ul>
+                {% endif %} 
+              {% endfor %}
+
+  </div>
+</div>  
+</div>
+      
+<div class="modal-footer">
+
+<button type="submit" class="btn btn-primary btn-shadow btn-sm" id="confirm">Submit</button>
+
+<a href="{% url 'close_window_selr' %}"> <button class="btn btn-secondary btn-sm" type="button" >Cancel</button></a>
+
+</div>
+
+</div>
+</div>
+</form>
+</div>
+          </section>
+          </div>
+          </div>
+          </main>
+          {% endblock %}

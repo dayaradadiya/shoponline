@@ -1,0 +1,124 @@
+model,pk,name
+store.material,1,Chiffon
+store.material,2,Chinos
+store.material,3,Cotton
+store.material,4,Denim
+store.material,5,Down
+store.material,6,Felt
+store.material,7,Flannelette
+store.material,8,Fleece
+store.material,9,Fur
+store.material,10,Khaki
+store.material,11,Knit
+store.material,12,Lace
+store.material,13,Leather
+store.material,14,Linen
+store.material,15,Nylon
+store.material,16,Others
+store.material,17,Quilted
+store.material,18,Silk
+store.material,19,Synthetic
+store.material,20,Textile
+store.material,21,Velvet
+store.material,22,Wool
+store.pattern,1,Batik
+store.pattern,2,Checkered/ Plaid
+store.pattern,3,Floral
+store.pattern,4,Others
+store.pattern,5,Plain
+store.pattern,6,Polka Dotted
+store.pattern,7,Print
+store.pattern,8,Striped
+store.pattern,9,Tie Dye
+store.style,1,Athletic
+store.style,2,Basic
+store.style,3,Boho
+store.style,4,Korean
+store.style,5,Minimalist
+store.style,6,Retro
+store.style,7,Sexy
+store.style,8,Street Style
+store.style,9,Tailored
+store.style,10,Vintage
+app.brand,30,ALL WOULD ENVY
+app.brand,31,ANTICLOCKWISE
+app.brand,32,And Well Dressed
+app.brand,33,Angelic Eyes
+app.brand,34,Anna Mu
+app.brand,35,DABAGIRL
+app.brand,36,BEGA
+app.brand,37,CHERRYKOKO
+app.brand,38,CONVERSE
+app.brand,39,ENVYLOOK
+app.brand,40,CRUMP
+app.brand,41,EVELLET
+app.brand,42,DRRESSABELLE
+app.brand,43,Ed Hardy
+app.brand,44,Batik Luhur
+app.brand,45,Carrislabelle
+app.brand,46,Catwalkclose
+app.brand,47,Ellysage
+app.brand,48,FUNFIT
+app.brand,49,Fash Mob
+app.brand,50,Fashion Club
+app.brand,51,Fayth
+app.brand,52,Dorothy Perkins
+app.brand,53,Blair Wears
+app.brand,54,Halo
+app.brand,55,JUSTONE
+app.brand,56,Harry Potter
+app.brand,57,Jaipur Kurti
+app.brand,58,Goldwood
+app.brand,59,Graphics Entity
+app.brand,60,GreenChef
+app.brand,61,Hollyhoque
+app.brand,62,HydraPak
+app.brand,63,hervelvetvase
+app.brand,64,MAGJAY
+app.brand,65,MAIISO
+app.brand,66,MANOHARI
+app.brand,67,NAADAM
+app.brand,68,OB Design
+app.brand,69,NEONMELLO
+app.brand,70,MDS COLLECTIONS
+app.brand,71,ONE
+app.brand,72,OOTD
+app.brand,73,LOVET
+app.brand,74,MFW
+app.brand,75,MGP Label
+app.brand,76,LUBNA
+app.brand,77,MINA
+app.brand,78,Ohvola
+app.brand,79,MOONRIVER
+app.brand,80,Ouwey
+app.brand,81,MUSE LABEL
+app.brand,82,Leline Style
+app.brand,83,Mango
+app.brand,84,Peppythread
+app.brand,85,TEMT
+app.brand,86,nassa
+app.brand,87,SHOP SASSY DREAM
+app.brand,88,THECLOSETLOVER
+app.brand,89,Hopeshow
+app.brand,90,LBR Label
+app.brand,91,Runway Bandits
+app.brand,92,Ripples
+app.brand,93,TOPAZETTE
+app.brand,94,TRACYEINNY
+app.brand,95,Purpur
+app.brand,96,Pyzis
+app.brand,97,Montifs
+app.brand,98,More Than Dope
+app.brand,99,The Design Closets
+app.brand,100,Mugigae
+app.brand,101,The Grandahlia
+app.brand,102,The Scarlet Room
+app.brand,103,The Stage Walk
+app.brand,104,The Tinsel Rack
+app.brand,105,Three One Duo
+app.brand,106,Something Borrowed
+app.brand,107,Sophialuv
+app.brand,108,SweetangelShop
+app.brand,109,UNO Apparel
+app.brand,110,VETEZE
+app.brand,111,UniqTee

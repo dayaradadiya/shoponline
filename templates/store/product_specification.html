@@ -1,0 +1,173 @@
+{% if product_specn %}
+        <h2 class="h3 mb-4 pb-2">Product Specification</h2>
+            <div class="col-lg-5 col-sm-6">
+              <h3 class="h6">General specs</h3>
+                <ul class="list-unstyled fs-sm pb-2">
+                 
+                    {% if product_specn.brand %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Brand:</span><span>
+                    {{ product_specn.brand}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.crepped_top %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Cropped Top:</span><span>
+                    {{ product_specn.crepped_top}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.prod_style %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Style:</span><span>
+                    {{ product_specn.prod_style}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.season %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Season:</span><span>
+                    {{ product_specn.season}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.plus_size %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Plus Size:</span><span>
+                        {{ product_specn.plus_size}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.material %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Material:</span><span>
+                    {{ product_specn.material}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.petite %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Petite:</span><span>
+                    {{ product_specn.petite}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.origin_country %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Country of Origin:</span><span>
+                    {{ product_specn.origin_country}}
+                    </span></li>
+                    {% endif %} 
+
+                    {% if product_specn.pattern %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Pattern:</span><span>
+                    {{ product_specn.pattern}}
+                    </span></li>
+                    {% endif %}
+
+                    {% if product_specn.top_length %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Top Length:</span><span>
+                    {{ product_specn.top_length}}
+                    </span></li>
+                    {% endif %}
+
+
+
+                    {% if product_specn.sleeve_length %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Sleeve Length:</span><span>
+                    {{ product_specn.sleeve_length}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.neckline %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Neckline:</span><span>
+                    {{ product_specn.neckline}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.occasion %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Occasion:</span><span>
+                    {{ product_specn.occasion}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.waist_height %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Waist Size:</span><span>
+                    {{ product_specn.waist_height}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.bottoms_length %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Bottoms Length:</span><span>
+                    {{ product_specn.bottoms_length}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.bottoms_fit_type %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Fit Type:</span><span>
+                    {{ product_specn.bottoms_fit_type}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.dress_skirt_style %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Skirt Style:</span><span>
+                    {{ product_specn.dress_skirt_style}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.dress_skirt_length %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Skirt Length:</span><span>
+                    {{ product_specn.dress_skirt_length}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.overalls_type %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Overall Type:</span><span>
+                    {{ product_specn.overalls_type}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.outerwear_length %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Outerwear Length:</span><span>
+                    {{ product_specn.outerwear_length}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.jacket_type %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Jacket Type:</span><span>
+                    {{ product_specn.jacket_type}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.apparel_type %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Apparel Type:</span><span>
+                    {{ product_specn.apparel_type}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.bra_style %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Bra Style:</span><span>
+                    {{ product_specn.bra_style}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.pack_type %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Pack Type:</span><span>
+                    {{ product_specn.pack_type}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.bra_type %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Bra Type:</span><span>
+                    {{ product_specn.bra_type}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.sexy_lingerie_style %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Sexy Lingerie Style:</span><span>
+                    {{ product_specn.sexy_lingerie_style}}
+                    </span></li>
+                    {% endif %} 
+                    {% if product_specn.bra_coverage %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Bra Coverage:</span><span>
+                    {{ product_specn.bra_coverage}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.panty_style %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Panty Style:</span><span>
+                    {{ product_specn.panty_style}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.panties_type %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Panties Type:</span><span>
+                    {{ product_specn.panties_type}}
+                    </span></li>
+                    {% endif %}
+                    {% if product_specn.shaper_style %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Shaper Style:</span><span>
+                    {{ product_specn.shaper_style}}
+                    </span></li>
+                    {% endif %}
+                </ul>
+            </div>
+            
+
+{% endif %}

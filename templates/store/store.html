@@ -1,0 +1,575 @@
+
+{% extends 'base_shop.html' %}
+{% load static %}
+{% load product_tags %}
+{% block content %}
+
+
+<main class="page-wrapper">
+  <!-- Quick View Modal-->
+
+  <!-- Page Title-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+            <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+            <li class="breadcrumb-item text-nowrap"><a href="#">Shop</a>
+            </li>
+            <li class="breadcrumb-item text-nowrap active" aria-current="page">Store</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <!-- <h1 class="h3 text-light mb-0">Shop grid left sidebar</h1> -->
+      </div>
+    </div>
+  </div>
+  <div class="container pb-5 mb-2 mb-md-4">
+    <div class="row">
+      <!-- Sidebar-->
+      
+{% block script %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    
+    $(".ajaxLoader").hide()
+    $(document).ready(function(){
+        $(".form-check-input,#priceFilterBtn,#catlist").on('click', function(){
+            var filter_object={};
+            var _minPrice=$('#maxPrice').attr('min');
+            var _maxPrice=$('#maxPrice').val()
+            filter_object.minPrice=_minPrice;
+            filter_object.maxPrice=_maxPrice;
+            $(".form-check-input").each(function(index,ele){
+                var filter_value=$(this).val();
+                var filter_key=$(this).data('filter');
+                filter_object[filter_key]=Array.from(document.querySelectorAll('input[data-filter='+filter_key+']:checked')).map(function(el){
+                    return el.value;
+                });
+            });
+            console.log(filter_object)
+            $.ajax({
+                url:"{% url 'filter-data' %}",
+                data:filter_object,
+                dataType:'json',
+                beforeSend:function(){
+                    $(".ajaxLoader").show()
+                }	,		
+                success:function(res){
+                    console.log(res)
+                    $(".ajaxLoader").hide()
+                    $("#filteredProducts").html(res.data)
+                    // window.location.href ="http://127.0.0.1:8000/ajax/product-list.html"
+                }
+            });
+        });
+    // Filter Product According to the price
+    $("#maxPrice").on('blur',function(){
+        var _min=$(this).attr('min');
+        var _max=$(this).attr('max');
+        var _value=$(this).val();
+        console.log(_value,_min,_max);
+        if(_value < parseInt(_min) || _value > parseInt(_max)){
+            alert('Values should be '+_min+'-'+_max);
+            $(this).val(_min);
+            $(this).focus();
+            $("#rangeInput").val(_min);
+            return false;
+        }
+    });
+// End
+});
+
+
+  
+    </script>
+{% endblock %}
+
+<!-- <style>
+    input[type=range]{
+    -webkit-appearance: none;
+    width:100%;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+    width: 1000px;
+    height: 5px;
+    background: #FCBE00;
+    border: none;
+    border-radius: 3px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -5px;
+    }
+    input[type=range]:focus {
+    outline: none;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #FCBE00;
+    }
+ </style> -->
+
+
+
+<aside class="col-lg-4">
+    <!-- Sidebar-->
+    <div class="offcanvas offcanvas-collapse bg-white w-100 rounded-3 shadow-lg py-1" id="shop-sidebar" style="max-width: 22rem;">
+      <div class="offcanvas-header align-items-center shadow-sm">
+        <h2 class="h5 mb-0">Filters</h2>
+        <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter" >
+        <!-- Categories-->
+        <div class="widget widget-categories mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Categories</h3>
+          
+          <div class="accordion mt-n1" id="shop-categories">
+              
+            
+           
+              {% for i in main_category %}
+                <div class="accordion-item">
+                    <h3 class="accordion-header"><a class="accordion-button collapsed" href="#data-{{i.id}}" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="data-{{i.id}}">{{i.name}}</a></h3>
+                    <div class="accordion-collapse collapse py-3" id="data-{{i.id}}" data-bs-parent="#shop-categories">
+                      <div class="accordion-body">
+                        <div class="widget widget-links widget-filter">
+                            <div class="input-group input-group-sm mb-2">
+                              <input class="widget-filter-search form-control rounded-end" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+                            </div>
+                                <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+                                    <li class="widget-list-item widget-filter-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'main_category_product_list' i.id  %}"><span class="widget-filter-item-text">View all</span>
+                                      <!-- <span class="fs-xs text-muted ms-3">{{main_cat_count}}</span> -->
+                                    </a></li>
+                                  
+                                  {% for cat in i.category_set.all %}
+                                      <li class="widget-list-item widget-filter-item" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'category_product_list' cat.id  %}"><span class="widget-filter-item-text">{{cat.name}}</span>
+                                        <!-- <span class="fs-xs text-muted ms-3">{{products_cat_count}}</span> -->
+                                      </a></li>
+                                  {% endfor %} 
+                                </ul>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              {% endfor %}
+          </div>
+         
+        </div>
+
+        <!-- Price range-->
+        <!-- <div class="widget mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Price</h3>
+          <div class="range-slider" data-start-min="250" data-start-max="680" data-min="0" data-max="1000" data-step="1">
+            <div class="range-slider-ui"></div>
+            <div class="d-flex pb-1">
+              <div class="w-50 pe-2 me-2">
+                <div class="input-group input-group-sm"><span class="input-group-text">$</span>
+                  <input class="form-control range-slider-value-min" type="text">
+                </div>
+              </div>
+              <div class="w-50 ps-2">
+                <div class="input-group input-group-sm"><span class="input-group-text">$</span>
+                  <input class="form-control range-slider-value-max" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+              <!-- <div class="product-widget mb-30">
+                <h5 class="pt-title">Filter By Price</h5>
+                <div class="price__slider mt-30">
+                    <li class="list-group-item">
+                        <input type="range" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{min_price.price__min}} id="rangeInput" oninput="maxPrice.value=this.value" />
+                        <p>{{minMaxPrice.price__min}}-{{minMaxPrice.price__max}}</p>
+                    </li>
+                    <li class="list-group-item">
+                        Max: <input type="number" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value" id="maxPrice" />
+                        <button id="priceFilterBtn" class="btn btn-primary btn-sm mt-1">Filter</button>
+                    </li>
+                </div>
+            </div> -->
+
+             <!-- For filtering based on Price -->
+             <h3 class="widget-title">Filter By Price</h3>
+              <select class="form-select" name="price" id="price-list" onchange="location = finalurl2();" style="margin-left: auto;">
+                <option value="" id="price-placeholder" disabled selected hidden>Price</option>
+                <option id="pr100" value="100">less than 100</option>
+                <option id="pr200" value="200">less than 200</option>
+                <option id="pr500" value="500">less than 500</option>
+                <option id="pr1000" value="10000">less than 10000</option>
+              </select>
+       
+            <!-- <div class="product-widget mb-30">
+              <h5 class="pt-title">Filter By Price</h5>
+              <div class="price__slider mt-30">
+                 <input type="range" class="multi-range success" style="color:red;" value="{{FilterPrice}}" min="{{minMaxPrice.price__min}}" max="{{minMaxPrice.price__max}}" id="rangeInput" oninput="maxPrice.value=this.value" width="400px;"/>
+                 <div>
+                    <form action="" class="s-form mt-20" method="get">
+                       <b>$</b><input type="number" id="maxPrice" readonly="" name="FilterPrice" onkeyup="rangeInput.value=this.value" value={{FilterPrice}}{{minMaxPrice.price__min}}>
+                       <button type="submit" id="priceFilterBtn" class="btn btn-primary btn-sm mt-1">Filter</button>
+                    </form>
+                 </div>
+              </div>
+           </div> -->
+       <br>
+        <!-- Filter by Brand-->
+        <div class="widget widget-filter mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Brand</h3>
+          <div class="input-group input-group-sm mb-2">
+            <input class="widget-filter-search form-control rounded-end pe-5" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+          </div>
+          <ul class="widget-list widget-filter-list list-unstyled pt-1" style="max-height: 11rem;" data-simplebar data-simplebar-auto-hide="false">
+            {% for i in brand %}
+            <li class="widget-filter-item d-flex justify-content-between align-items-center mb-1">
+              <div class="form-check">
+                <input type="checkbox" data-filter="brand" id="brand-{{i.id}}" value="{{i.id}}" class="form-check-input">
+                <label class="form-check-label widget-filter-item-text" for="brand-{{i.id}}">{{i.name}}</label>
+              <!-- </div><span class="fs-xs text-muted">425</span> -->
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Filter by Size-->
+        <div class="widget widget-filter mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Size</h3>
+          <div class="input-group input-group-sm mb-2">
+            <input class="widget-filter-search form-control rounded-end pe-5" type="text" placeholder="Search"><i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>
+          </div>
+          <ul class="widget-list widget-filter-list list-unstyled pt-1" style="max-height: 11rem;" data-simplebar data-simplebar-auto-hide="false">
+            {% for i in size %}
+            <li class="widget-filter-item d-flex justify-content-between align-items-center mb-1">
+              <div class="form-check">
+                <input  type="checkbox" data-filter="size" id="size-{{i.size__id}}" value="{{i.size__id}}" class="form-check-input">
+                <label class="form-check-label widget-filter-item-text" for="size-{{i.size__id}}">{{i.size__name}}</label>
+              <!-- </div><span class="fs-xs text-muted">34</span> -->
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Filter by Color-->
+        <div class="widget">
+          <h3 class="widget-title">Color</h3>
+          <div class="d-flex flex-wrap">
+            {% for i in color %}
+            <div class="form-check form-option text-center mb-2 mx-1" style="width: 4rem;">
+              <input  type="checkbox" data-filter="color" id="color-{{i.color__id}}" value="{{i.color__id}}" class="form-check-input">
+              <label class="form-option-label rounded-circle" for="color-{{i.color__id}}"><span class="form-option-color rounded-circle" style="background-color: {{i.color__code}};"></span></label>
+              <label class="d-block fs-xs text-muted mt-n1" for="color-{{i.color__id}}">{{i.color__name}}</label>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+      <!-- Content  -->
+      <section class="col-lg-8">
+        <!-- Toolbar-->
+        <div class="d-flex justify-content-center justify-content-sm-between align-items-center pt-2 pb-4 pb-sm-5">
+          <div class="d-flex flex-wrap">
+            <div class="d-flex align-items-center flex-nowrap me-3 me-sm-4 pb-3">
+              <label class="text-light opacity-75 text-nowrap fs-sm me-2 d-none d-sm-block" for="sort-list">Sort by:</label>
+              <select class="form-select" id="sort-list" onchange="location=finalurl();">
+                <option value="" id="placeholder" disabled selected hidden>Sort</option>
+                <option id="price" value="price">Price : Low - High </option>
+                <option id="-price" value="-price">Price : High - Low </option>
+                <option id="product_name" value="product_name">A - Z Order</option>
+                <option id="-product_name" value="-product_name">Z - A Order</option>
+                <option id="-created_date" value="-created_date">What's New</option>
+              </select><span class="fs-sm text-light opacity-75 text-nowrap ms-2 d-none d-md-block">{{product_count}} products found</span>
+            </div>
+          </div>
+          <div class="d-flex pb-3"><a class="nav-link-style nav-link-light me-3" href="#"></a><span class="fs-md text-light"></span><a class="nav-link-style nav-link-light ms-3" href="#"></a></div>
+          <div class="d-none d-sm-flex pb-3" id="btnContainer">
+              <button class="btn btn-icon nav-link-style bg-light text-dark  opacity-100 me-2  btnview" id="gridViewBtn"><i class="ci-view-grid"></i></button>
+              <button class="btn btn-icon nav-link-style nav-link-light btnview" id="listViewBtn"><i class="ci-view-list"></i></button>
+          </div>
+        </div>
+        <!-- Products grid-->
+
+        <script>
+          // Get the elements with class="column"
+          var elements = document.getElementsByClassName("column");
+          // Declare a loop variable
+          var i;
+          
+          // List View
+          function listView() {
+            for (i = 0; i < elements.length; i++) {
+              elements[i].style.width = "100%";
+            }
+
+          }
+          
+          // Grid View
+          function gridView() {
+            for (i = 0; i < elements.length; i++) {
+              elements[i].style.width = "33%";
+            }
+           
+
+          }
+          
+          /* Optional: Add active class to the current button (highlight it) */
+          var container = document.getElementById("btnContainer");
+          var btns = container.getElementsByClassName("btnview");
+          for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("active");
+              current[0].className = current[0].className.replace("active", "");
+              this.className += " active";
+            });
+          }
+
+
+         
+          </script>
+
+        <div id="gridView"> 
+            <div class="row mx-n2">
+              <div class="row g-0" id="filteredProducts">
+              <p class="ajaxLoader"><i class="fa fa-spinner"></i>Loading.....</p>
+              {% for product in products %}
+              <div class="col-md-4 col-sm-6 px-2 mb-4 column">
+                <div class="card product-card">
+                  {% if product.discount %}
+                           <span class="badge bg-danger badge-shadow">{{product.discount}}% OFF</span>
+                  {% endif %}
+                  <button class="btn-wishlist btn-sm " id="add-to-wishlist"  type="button" data-bs-toggle="tooltip" data-bs-placement="left" data-product-item="{{product.id}}" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="{{product.get_url}}"><img src="{{product.featured_image.url}}" alt="Product" style="height:250px; width:300px;"></a>
+                  <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">{{product.category}}</a>
+                    <h3 class="product-title fs-sm"><a href="{{product.get_url}}">{{product.product_name|truncatewords:8}}</a></h3>
+                    <div class="d-flex justify-content-between">
+                      <!-- <div class="product-price"><span class="text-accent">${{product.price}}</span></div> -->
+                      {% if product.discount %}
+                              <div class="product-price"><span class="text-accent">${% call_sellprice product.price product.discount%}</span> &nbsp; 
+                              <del class="fs-sm text-muted">${{product.price }}</del></div>
+                     {% else %}
+                              <div class="product-price"><span class="text-accent">${{product.price}}</span></div>
+                     {% endif %}
+                     
+                      <div class="rating-star">
+                        <span>
+                            <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                            <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                            <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                            <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                            <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                           
+                        </span>
+                    </div>
+                  </div>
+                    </div>
+                  
+                  <div class="card-body card-body-hidden">
+                  
+                        <a href="{{ product.get_url }}"><button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button"><i class="ci-cart fs-sm me-1"></i>View Details</button></a>
+                    <!-- <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view" data-bs-toggle="modal" data-bs-target="#productModalId-{{forloop.counter}}"><i class="ci-eye align-middle me-1"></i>Quick view</a></div> -->
+                  </div>
+                </div>
+                <hr class="d-sm-none">
+                </div>
+                
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div id="listView" style="display: none;">
+            <div id="filteredProducts">
+              <p class="ajaxLoader"><i class="fa fa-spinner"></i>Loading.....</p>
+              {% for product in products %}
+            <div class="card product-card product-list">
+              {% if product.discount %}
+              <span class="badge bg-danger badge-shadow">{{product.discount}}% OFF</span>
+              {% endif %}
+              <button class="btn-wishlist btn-sm " id="add-to-wishlist"  type="button" data-bs-toggle="tooltip" data-bs-placement="left" data-product-item="{{product.id}}" title="Add to wishlist"><i class="ci-heart"></i></button>
+              <div class="d-sm-flex align-items-center"><a class="product-list-thumb" href="{{product.get_url}}"><img src="{{product.featured_image.url}}" alt="Product"></a>
+                <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">{{product.category}}</a>
+                  <h3 class="product-title fs-base"><a href="{{product.get_url}}">{{product.product_name|truncatewords:8}}</a></h3>
+                  
+                  <div class="d-flex justify-content-between">
+    
+                  
+                      {% if product.discount %}
+                                    <div class="product-price"><span class="text-accent">${% call_sellprice product.price product.discount %}</span> &nbsp; 
+                                    <del class="fs-sm text-muted">${{product.price }}</del></div>
+                           {% else %}
+                                    <div class="product-price"><span class="text-accent">${{product.price}}</span></div>
+                           {% endif %}
+                   
+                 
+                    <div class="rating-star">
+                          <span>
+                              <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                              <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                              <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                              <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                              <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                            
+                          </span>
+                      </div>
+                  </div>
+                 
+                  <div class="card-body card-body-hidden">
+                 
+                     
+                      <a href="{{ product.get_url }}"><button class="btn btn-primary btn-sm" type="button"><i class="ci-cart fs-sm me-1"></i>View Details</button></a>
+                    
+                    <!-- <div class="text-start"><a class="nav-link-style fs-ms" href="#quick-view" data-bs-toggle="modal"><i class="ci-eye align-middle me-1"></i>Quick view</a></div> -->
+                  </div>
+                 
+                </div>
+              </div>
+          </div>    <!-- product list -->
+      {% endfor %}
+        </div>   
+      </div>
+        <!-- Banner-->
+        
+        <!-- Products grid-->
+        
+       
+        <hr class="my-3">
+        <!-- Pagination-->
+        <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+          {% if products.has_other_pages %}
+              <ul class="pagination">
+                    {% if products.has_previous %}
+                      
+                        <li class="page-item"><a class="page-link" href="?page={{products.previous_page_number}}"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                      
+                      {% else %}
+                        <li class="page-item disabled"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                      
+                      {% endif %}
+
+                            {% for i in products.paginator.page_range %}
+                            {% if products.number == i %}
+                            <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                            {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                  
+                      {% if products.has_next %}
+                          <li class="page-item"><a class="page-link" href="?page={{products.next_page_number}}" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                       {% else %}   
+                       <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                      {% endif %}
+              </ul>
+          {% endif %}
+        </nav>
+      </section>
+    </div>
+  </div>
+  {% if user.is_authenticated %}
+      {% include 'chat/partials/chat_bubble.html' %}
+      {% endif %}
+</main>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script>
+  // for getting the sorting status to be displayed in sorting dropdown placeholder
+  function get(name) {
+    if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))  //location.search give query sling part
+      return decodeURIComponent(name[1]);
+  }
+
+  if(get('ordering'))
+  document.getElementById('placeholder').innerHTML = "Sort: " + document.getElementById(get('ordering')).innerHTML;
+
+  if(get('price'))
+  document.getElementById('price-placeholder').innerHTML = "Price: " + document.getElementById('pr'+get('price')).innerHTML;
+
+
+
+  
+  
+
+  // for getting url after applying ordering
+  function finalurl() {
+    var url = new URL(window.location.href);
+    var search_params = url.searchParams;
+    search_params.set('ordering', document.getElementById("sort-list").value);
+    url.search = search_params.toString();
+    var new_url = url.toString();
+    return new_url
+  }
+  
+  // for getting url after applying price filtering
+  function finalurl2() {
+    var url = new URL(window.location.href);
+    var search_params = url.searchParams;
+    search_params.set('price', document.getElementById("price-list").value);
+    url.search = search_params.toString();
+    var new_url = url.toString();
+    return new_url
+  }
+
+</script>
+<script>
+  $(document).on('click', '#add-to-wishlist',function(e){
+    e.preventDefault();
+     let product_id = $(this).attr("data-product-item")
+     let this_val = $(this)
+
+     console.log('product id is :',product_id)
+
+     $.ajax({
+      url:'{% url "add-to-wishlist" %}',
+      data:{
+          "id":product_id,
+      },
+      dataType : "json",
+      beforeSend : function(){
+        console.log("Adding to wishlist....")
+      },
+      success: function (res) {
+        if (res.bool === true){
+          this_val.html("✓")
+          $('#wishlist_counter').html(res.wishlist_counter['wishlist_count'])
+          console.log("Added to wishlist...");
+        }
+      },
+});
+
+  })
+
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       
+<script>
+ 
+  
+    $(document).on('click', '#listViewBtn',function(e){
+      e.preventDefault();
+    
+      var gridViewBtn = document.getElementById("gridViewBtn");
+      var listViewBtn = document.getElementById("listViewBtn");
+      var gridView = document.getElementById("gridView");
+      var listView = document.getElementById("listView");
+      gridView.style.display = "none";
+      listView.style.display = "block";
+    });
+
+    $(document).on('click', '#gridViewBtn',function(e){
+      e.preventDefault();
+    
+      var gridViewBtn = document.getElementById("gridViewBtn");
+      var listViewBtn = document.getElementById("listViewBtn");
+      var gridView = document.getElementById("gridView");
+      var listView = document.getElementById("listView");
+      gridView.style.display = "block"; 
+      listView.style.display = "none";
+    });
+
+</script>
+{% endblock %}

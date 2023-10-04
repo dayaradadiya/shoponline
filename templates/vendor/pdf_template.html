@@ -1,0 +1,186 @@
+
+{% load static %}
+{% load product_tags %}
+<html>
+<head>
+    <style>
+        @page {
+            size: a4 portrait;
+            @frame header_frame {           /* Static Frame */
+                -pdf-frame-content: header_content;
+                left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+            }
+            @frame content_frame {          /* Content Frame */
+                left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+            }
+            @frame footer_frame {           /* Another static Frame */
+                -pdf-frame-content: footer_content;
+                left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    <div id="header_content">
+        <h3>Shopnow</h3>
+    </div>
+
+    <!-- Content for Static Frame 'footer_frame' -->
+    <div id="footer_content">(c) - page <pdf:pagenumber>
+        of <pdf:pagecount>
+    </div>
+
+    <table>
+        <tr>
+           
+            <td><h3>TO(ADDRESS)</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+           
+            <td>{{first_product.order.full_name}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            
+            <td>{{first_product.order.address_line_1}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            
+            <td>{{first_product.order.phone}} {{first_product.order.country}},</td>
+            <td></td>
+           
+        </tr>
+        <tr>
+           
+            <td>{{first_product.order.pin_code}}</td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            
+            <td>{{first_product.order.email}}</td>
+            <td></td>
+        </tr>
+   
+</table>
+                  
+                    
+                    <h6>Hello {{first_product.order.full_name}},</h6><span> Review your order details below </span>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        
+                        <div>
+                            <span class="d-block"><b> Order Date:</b> </span><span class="font-weight-bold">{{first_product.order.created_at}}</span>
+                        </div>
+                        <div>
+                            <span class="d-block"><b>Order No:</b> </span><span class="font-weight-bold">{{first_product.order.order_number}}</span>
+                        </div>
+                        <div>
+                            <span class="d-block"><b>Payment Method:</b> </span><span class="font-weight-bold">{{first_product.order.payment.payment_method}}</span>
+                        </div>
+                        <div>
+                            <span class="d-block"><b>Transaction No:</b> </span><span class="font-weight-bold">{{first_product.order.payment.payment_id}}</span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Product Detail</th>
+                                <th>Qty</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in ordered_products %}
+                            <tr>
+                             
+                                 
+                                    <td><center>{{item.product.product_name}}</center></td>
+                                    <td><center>
+                                        {% if item.product.variant == "Size-Color" %}
+                                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                        {{ item.variant.size.name}}
+                                                    </div>
+                                                    <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                        {% elif item.product.variant == "Size" %}
+                                                     <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+                                        {{ item.variant.size.name}}
+                                                      </div>
+                                         {% elif item.product.variant == "Color" %}
+                                                     <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+                                        {% endif %}
+                                    </center>                   
+                                    </td>
+                                    <td><center>{{item.quantity}}</center></td>
+                                
+                                        
+                                 
+
+                                    {% if item.variant %}
+                                                        {% if item.variant.variant_discount %}
+                                                                <td><center>${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</center></td>
+                                                        {% else %}
+                                                                <td><center>${{ item.variant.variant_price }} SGD</center></td>
+                                                        {% endif %}
+                                     {% else %}
+                                                        {% if item.product.discount %}
+                                                                <td><center>${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</center></td>
+                                                        {% else %}        
+                                                                <td><center>${{ item.product.price }} SGD</center></td>
+                                                        {% endif %}
+                                    {% endif %}
+
+
+                                   
+                            </tr>
+                      
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                    <div class="row mt-5">
+                       
+                        <div class="col-md-6">
+                            <ul>
+                                <li style="list-style-type: none;">
+                                    Sub total :
+                                    <span class="price float-right">
+                                        <span class="currency">$</span>
+                                        <span id="subtotal">{{total}}</span>
+                                    </span>
+                                </li>
+                                <li style="list-style-type: none;">
+                                    Tax :
+                                    <span class="price float-right">
+                                        <span class="currency">$</span>
+                                        <span id="subtotal">0.00 SGD</span>
+                                    </span>
+                                </li>
+    
+                                <li style="list-style-type:none; font-weight : 600;">
+                                    Total
+                                    <span class="currency">$</span>
+                                    <span id="total">{{total}} SGD</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                   <div class="d-flex justify-content-between">
+                        <div>
+                            <span class="d-block font-weight-bold">Thanks for ordering with us.</span>
+                            <span>Shop online Team</span>
+                        </div>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <span class="d-block font-weight-bold">Need help?</span>
+                            <span>Call - +65 12345678</span>
+                        </div>
+                   </div>
+                
+      </body>
+      </html>

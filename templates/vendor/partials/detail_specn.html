@@ -1,0 +1,46 @@
+
+<div hx-target="this" hx-swap="outerHTML">
+    
+    {% if specn.get_fields %}
+   
+    <div class="col-lg-5 col-sm-6">
+      <h3 class="h6">General specs</h3>
+      
+      <ul class="list-unstyled fs-sm pb-2">
+        <table class="table table-hover ">
+               
+          <tbody>
+              <tr>
+        <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium">Brand</span><span>{{specn.brand}}  </span></li>
+        {% for label, value in specn.get_fields %}
+             {% if value  %}
+                    <li class="d-flex justify-content-between pb-2 border-bottom"><span class="text-dark fw-medium"><b>{{ label|capfirst }}</b></span><span>
+                      {{ value }}
+                      </span></li>
+              {% endif %}
+          {% endfor %}
+                      </tr>
+                     
+
+      </ul>
+    </div>
+    {% endif %}
+
+
+
+    <!-- <button class="btn btn-accent" hx-get="{% url 'update_specn' specn.id %}"><i class="ci-edit opacity-60 me-2"></i>Update</button>
+    <button class="btn btn-primary" hx-post="{% url 'delete_specn' specn.id %}"><i class="fa fa-minus opacity-60 me-2"></i>Delete</button> -->
+<tr>
+   <td>
+   <div class="d-flex justify-content-center justify-content-sm-start pt-3">
+    <a hx-get="{% url 'update_specn' specn.id %}"><button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Add/Edit Specification"><i class="ci-edit text-info"></i></button></a>
+
+    <a hx-get="{% url 'delete_specn' specn.id %}" onclick="return confirm('Are you sure you want to delete this image?')"><button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i class="ci-trash text-danger"></i></button></a>
+  </div>
+  </td>
+  </tr>
+  </tbody>
+</table>
+
+    <!--  -->
+</div>

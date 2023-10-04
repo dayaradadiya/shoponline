@@ -1,0 +1,154 @@
+
+{% autoescape off %}
+{% load product_tags %}
+Hi {{ user.first_name }}
+
+Thank you for your order
+
+Your order number  : {{ order.order_number }}
+{% if trans_id %}
+Transaction id is : {{ trans_id }}
+{% endif %}    
+
+{% endautoescape %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" lang="en">
+
+<head><link rel="stylesheet" type="text/css" hs-webfonts="true" href="https://fonts.googleapis.com/css?family=Lato|Lato:i,b,bi">
+    <meta property="og:title" content="Email template">  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <style type="text/css">
+      #email {
+        margin: auto;
+        width: 600px;
+        background-color: white;
+      }  
+      .activate-btn{
+        font: inherit;
+        background-color: #3251c3;
+        border: none;
+        padding: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+        border-radius: 5px; 
+        text-decoration: none;
+      }      
+    </style>    
+  </head>    
+<body bgcolor="#F5F8FA" style="width: 100%; margin: auto 0; padding:0; font-family:Lato, sans-serif; font-size:16px; color:#33475B; word-break:break-word">
+  
+<div id="email">
+  <table role="presentation" width="100%">
+    <tr>
+    <td  align="center" style="color: white;">
+     <img alt="Logo" src="https://rathank.com/foodonline/logo/logo.png" width="400px" align="middle">
+      </td>
+  </table>
+
+  <table bgcolor="#EAF0F6" width="100%" role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 30px 30px 60px 60px;">
+    <tr>
+      <td>
+        <h2 style="text-align: center;">Thank you for your order</h2>
+        <p style="text-align: center;">Review your order information below.</p>
+        
+      </td> 
+    </tr>
+    <tr>
+        <td>
+            Order Date : {{order.created_at}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Order number : {{order.order_number}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Payment method : {{order.payment.payment_method}}
+        </td>
+    </tr>
+    {% if trans_id %}
+    <tr>
+        <td>
+            Transaction ID :  {{ trans_id }}    
+        </td>
+    </tr>
+    {% endif %}
+  </table>
+
+  <!-- ordered food table -->
+  <table bgcolor="#EAF0F6" width="100%" role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 30px 30px 30px 30px;">
+    <tbody>
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+        </tr>
+       
+        {% for item in ordered_product_to_vendor %}
+        <tr>
+            <td> <img src="http://{{ domain }}{{ item.product.featured_image.url }}" alt="Product Image" width="60"></td>
+            <td>{{item.product.product_name|truncatewords:8}}
+              {% if item.product.variant == "Size-Color" %}
+                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+              {{ item.variant.size.name}}
+                          </div>
+                          <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+              {% elif item.product.variant == "Size" %}
+                           <div class="fs-sm"><span class="text-muted me-2">Size:</span>
+              {{ item.variant.size.name}}
+                            </div>
+               {% elif item.product.variant == "Color" %}
+                           <div class="fs-sm"><span class="text-muted me-2">Color:</span>{{item.variant.color.name | capfirst}}</div>
+              {% endif %}
+
+            <small><a href="http://{{ domain }}{% url 'vendor_detail' item.product.vendor.vendor_slug %}">{{item.product.vendor.vendor_name}}</a></small>
+            </td>
+            <td>
+                {{item.quantity}}
+            </td>
+            {% if item.variant %}
+                 {% if item.variant.variant_discount %}
+                         <td class="text-center">${% call_sellprice item.variant.variant_price item.variant.variant_discount %} &nbsp;<del class="fs-sm text-muted me-2">${{ item.variant.variant_price }}</del> SGD</td>
+                  {% else %}
+                         <td class="text-center">${{ item.variant.variant_price }} SGD</td>
+                  {% endif %}
+            {% else %}
+                  {% if item.product.discount %}
+                          <td class="text-center">${% call_sellprice item.product.price  item.product.discount %}&nbsp;<del class="fs-sm text-muted me-2">${{ item.product.price }}</del> SGD</td>
+                   {% else %}        
+                          <td class="text-center">${{ item.product.price }} SGD</td>
+                   {% endif %}
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+  </table>
+  <!-- order amount -->
+  <table bgcolor="#EAF0F6" width="100%" role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 30px 30px 60px 60px;">
+    <tbody>
+        <tr>Subtotal : ${{ vendor_subtotal }}</tr>
+        <tr>Shipping Charge : ${{ vendor_ship_charge }}</tr>
+        <tr><b></b>Grand Total : ${{ vendor_total }}</b></tr>
+       
+
+    </tbody>
+    </table>
+
+  <table role="presentation" bgcolor="#3251c3" width="100%">
+      <tr>
+        <td align="center" style="padding: 15px 15px; color: #fff;">
+          <p>© {% now "Y" %} SG Shops Marketplace, All Rights Reserved.</p>
+          <a href="http://{{domain}}" style="color:#fff;">Visit Website</a>      
+        </td>
+      </tr>
+  </table> 
+</div>
+</body>
+</html>

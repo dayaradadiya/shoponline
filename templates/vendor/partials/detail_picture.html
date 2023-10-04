@@ -1,0 +1,16 @@
+
+<div class="d-block d-sm-flex align-items-center py-4 border-bottom" hx-target="this" hx-swap="outerHTML" hx-encoding="multipart/form-data">
+
+
+    {% if image.pk %}
+    <div class="fs-sm"><span class="text-muted me-2">Image ID:</span>
+    {{ image.pk}}
+    </div>
+    {% endif %}
+    &nbsp; &nbsp;
+    {% if image %}
+            <div class="d-flex align-items-center"><img class="rounded" src="{{image.image.url}}" width="50"></div>
+    {% endif %}
+
+
+</div>

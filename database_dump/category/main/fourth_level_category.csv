@@ -1,0 +1,1660 @@
+model,pk,sub_category,name,slug,pk
+category.fourth_level_category,1,1,Others,others,1
+category.fourth_level_category,2,2,Others,others,2
+category.fourth_level_category,3,3,Others,others,3
+category.fourth_level_category,4,4,Others,others,4
+category.fourth_level_category,6,6,Others,others,6
+category.fourth_level_category,7,7,Others,others,7
+category.fourth_level_category,8,8,Others,others,8
+category.fourth_level_category,9,9,Others,others,9
+category.fourth_level_category,10,10,Others,others,10
+category.fourth_level_category,11,11,Others,others,11
+category.fourth_level_category,12,12,Others,others,12
+category.fourth_level_category,13,13,Others,others,13
+category.fourth_level_category,14,14,Others,others,14
+category.fourth_level_category,15,15,Others,others,15
+category.fourth_level_category,16,16,Others,others,16
+category.fourth_level_category,17,17,Others,others,17
+category.fourth_level_category,18,18,Others,others,18
+category.fourth_level_category,19,19,Others,others,19
+category.fourth_level_category,20,20,Others,others,20
+category.fourth_level_category,21,21,Others,others,21
+category.fourth_level_category,22,22,Others,others,22
+category.fourth_level_category,23,23,Others,others,23
+category.fourth_level_category,24,24,Others,others,24
+category.fourth_level_category,25,25,Others,others,25
+category.fourth_level_category,26,26,Others,others,26
+category.fourth_level_category,27,27,Others,others,27
+category.fourth_level_category,28,28,Others,others,28
+category.fourth_level_category,29,29,Others,others,29
+category.fourth_level_category,30,30,Others,others,30
+category.fourth_level_category,31,31,Others,others,31
+category.fourth_level_category,32,32,Others,others,32
+category.fourth_level_category,33,33,Others,others,33
+category.fourth_level_category,34,34,Others,others,34
+category.fourth_level_category,35,35,Others,others,35
+category.fourth_level_category,36,36,Straps,straps,36
+category.fourth_level_category,37,36,Paddings,paddings,37
+category.fourth_level_category,38,36,Nipple Stickers,nipple-stickers,38
+category.fourth_level_category,39,36,Others,others,39
+category.fourth_level_category,40,37,Others,others,40
+category.fourth_level_category,41,38,Others,others,41
+category.fourth_level_category,42,39,Others,others,42
+category.fourth_level_category,43,40,Others,others,43
+category.fourth_level_category,44,41,Others,others,44
+category.fourth_level_category,45,42,Others,others,45
+category.fourth_level_category,46,43,Others,others,46
+category.fourth_level_category,47,44,Others,others,47
+category.fourth_level_category,48,45,Others,others,48
+category.fourth_level_category,49,46,Others,others,49
+category.fourth_level_category,50,47,Others,others,50
+category.fourth_level_category,51,48,Others,others,51
+category.fourth_level_category,52,49,Others,others,52
+category.fourth_level_category,53,50,Others,others,53
+category.fourth_level_category,54,51,Others,others,54
+category.fourth_level_category,55,52,Others,others,55
+category.fourth_level_category,56,53,Others,others,56
+category.fourth_level_category,57,54,Others,others,57
+category.fourth_level_category,58,55,Others,others,58
+category.fourth_level_category,59,56,Others,others,59
+category.fourth_level_category,60,57,Others,others,60
+category.fourth_level_category,61,58,Others,others,61
+category.fourth_level_category,62,59,Others,others,62
+category.fourth_level_category,63,60,Others,others,63
+category.fourth_level_category,64,61,Others,others,64
+category.fourth_level_category,65,62,Others,others,65
+category.fourth_level_category,66,63,Others,others,66
+category.fourth_level_category,67,64,Others,others,67
+category.fourth_level_category,68,65,Others,others,68
+category.fourth_level_category,69,66,Others,others,69
+category.fourth_level_category,70,67,Others,others,70
+category.fourth_level_category,71,68,Others,others,71
+category.fourth_level_category,72,69,Others,others,72
+category.fourth_level_category,73,70,Others,others,73
+category.fourth_level_category,74,71,Others,others,74
+category.fourth_level_category,75,72,Others,others,75
+category.fourth_level_category,76,73,Others,others,76
+category.fourth_level_category,77,74,Others,others,77
+category.fourth_level_category,78,75,Others,others,78
+category.fourth_level_category,79,76,Others,others,79
+category.fourth_level_category,80,77,Others,others,80
+category.fourth_level_category,81,78,Others,others,81
+category.fourth_level_category,82,79,Others,others,82
+category.fourth_level_category,83,80,Others,others,83
+category.fourth_level_category,84,81,Others,others,84
+category.fourth_level_category,85,82,Others,others,85
+category.fourth_level_category,86,83,Others,others,86
+category.fourth_level_category,87,84,Others,others,87
+category.fourth_level_category,88,85,Others,others,88
+category.fourth_level_category,89,86,Others,others,89
+category.fourth_level_category,90,87,Others,others,90
+category.fourth_level_category,91,88,Others,others,91
+category.fourth_level_category,92,89,Others,others,92
+category.fourth_level_category,93,90,Others,others,93
+category.fourth_level_category,94,91,Others,others,94
+category.fourth_level_category,95,92,Others,others,95
+category.fourth_level_category,96,93,Others,others,96
+category.fourth_level_category,97,94,Others,others,97
+category.fourth_level_category,98,95,Others,others,98
+category.fourth_level_category,99,96,Others,others,99
+category.fourth_level_category,100,97,Others,others,100
+category.fourth_level_category,101,98,Others,others,101
+category.fourth_level_category,102,99,Others,others,102
+category.fourth_level_category,103,100,Others,others,103
+category.fourth_level_category,104,101,Others,others,104
+category.fourth_level_category,105,102,Others,others,105
+category.fourth_level_category,106,103,Others,others,106
+category.fourth_level_category,107,104,Hand Masks,hand-masks,107
+category.fourth_level_category,108,104,"Lotion, Cream & Scrubs",lotion-cream-scrubs,108
+category.fourth_level_category,109,104,Hand Washes,hand-washes,109
+category.fourth_level_category,110,104,Others,others,110
+category.fourth_level_category,111,105,Foot Deodorant,foot-deodorant,111
+category.fourth_level_category,112,105,Foot Masks,foot-masks,112
+category.fourth_level_category,113,105,"Lotion, Cream & Scrubs",lotion-cream-scrubs,113
+category.fourth_level_category,114,105,Others,others,114
+category.fourth_level_category,115,106,Base & Top Coat,base-top-coat,115
+category.fourth_level_category,116,106,Nail Polish,nail-polish,116
+category.fourth_level_category,117,106,Nail Polish Remover,nail-polish-remover,117
+category.fourth_level_category,118,106,Nail Treatment,nail-treatment,118
+category.fourth_level_category,119,106,Artificial Nail,artificial-nail,119
+category.fourth_level_category,120,106,Nail Art & Sticker,nail-art-sticker,120
+category.fourth_level_category,121,106,Manicure Tools & Devices,manicure-tools-devices,121
+category.fourth_level_category,122,106,Others,others,122
+category.fourth_level_category,123,106,Nail Gel,nail-gel,123
+category.fourth_level_category,124,107,Others,others,124
+category.fourth_level_category,125,108,Others,others,125
+category.fourth_level_category,126,109,Others,others,126
+category.fourth_level_category,127,110,Others,others,127
+category.fourth_level_category,128,111,Others,others,128
+category.fourth_level_category,129,112,Others,others,129
+category.fourth_level_category,130,113,Others,others,130
+category.fourth_level_category,131,114,Others,others,131
+category.fourth_level_category,132,115,Facial Cleanser,facial-cleanser,132
+category.fourth_level_category,133,115,Moisturizer & Treatment,moisturizer-treatment,133
+category.fourth_level_category,134,115,Others,others,134
+category.fourth_level_category,135,116,Aftershave,aftershave,135
+category.fourth_level_category,136,116,"Creams, Foams & Gels",creams-foams-gels,136
+category.fourth_level_category,137,116,Razors & Blades,razors-blades,137
+category.fourth_level_category,138,116,Shavers,shavers,138
+category.fourth_level_category,139,116,Shaving Brushes,shaving-brushes,139
+category.fourth_level_category,140,116,"Trimmers, Clippers & Multi-functional Groomers",trimmers-clippers-multi-functional-groomers,140
+category.fourth_level_category,141,116,Shaving Accessories,shaving-accessories,141
+category.fourth_level_category,142,116,Others,others,142
+category.fourth_level_category,143,117,Others,others,143
+category.fourth_level_category,144,118,Others,others,144
+category.fourth_level_category,145,119,Others,others,145
+category.fourth_level_category,146,120,Others,others,146
+category.fourth_level_category,147,121,Others,others,147
+category.fourth_level_category,148,122,Others,others,148
+category.fourth_level_category,149,123,Others,others,149
+category.fourth_level_category,150,124,Others,others,150
+category.fourth_level_category,151,125,Blood Pressure Monitors,blood-pressure-monitors,151
+category.fourth_level_category,152,125,Blood Glucose Monitors,blood-glucose-monitors,152
+category.fourth_level_category,153,125,Pulse Oximeters,pulse-oximeters,153
+category.fourth_level_category,154,125,Thermometers,thermometers,154
+category.fourth_level_category,155,125,Others,others,155
+category.fourth_level_category,156,126,Others,others,156
+category.fourth_level_category,157,127,Others,others,157
+category.fourth_level_category,158,128,Plasters & Bandages,plasters-bandages,158
+category.fourth_level_category,159,128,First Aid Accessories,first-aid-accessories,159
+category.fourth_level_category,160,128,Ointments & Creams,ointments-creams,160
+category.fourth_level_category,161,128,Medical Antiseptics & Disinfectants,medical-antiseptics-disinfectants,161
+category.fourth_level_category,162,128,Others,others,162
+category.fourth_level_category,163,129,Others,others,163
+category.fourth_level_category,164,130,Others,others,164
+category.fourth_level_category,165,131,Others,others,165
+category.fourth_level_category,166,132,Others,others,166
+category.fourth_level_category,167,133,Walking Aids,walking-aids,167
+category.fourth_level_category,168,133,Wheelchairs,wheelchairs,168
+category.fourth_level_category,169,133,Braces & Supports,braces-supports,169
+category.fourth_level_category,170,133,Hearing Aids,hearing-aids,170
+category.fourth_level_category,171,133,Others,others,171
+category.fourth_level_category,172,134,Others,others,172
+category.fourth_level_category,173,135,Others,others,173
+category.fourth_level_category,174,136,Contact lens,contact-lens,174
+category.fourth_level_category,175,136,Lens Solutions & Eyedrops,lens-solutions-eyedrops,175
+category.fourth_level_category,176,136,Others,others,176
+category.fourth_level_category,177,137,Others,others,177
+category.fourth_level_category,178,138,Manual Toothbrushes,manual-toothbrushes,178
+category.fourth_level_category,179,138,Electric Toothbrushes & Accessories,electric-toothbrushes-accessories,179
+category.fourth_level_category,180,138,Toothpastes,toothpastes,180
+category.fourth_level_category,181,138,Dental Floss,dental-floss,181
+category.fourth_level_category,182,138,Mouth Wash,mouth-wash,182
+category.fourth_level_category,183,138,Denture Care,denture-care,183
+category.fourth_level_category,184,138,Teeth Whitening,teeth-whitening,184
+category.fourth_level_category,185,138,Orthodontic Accessories,orthodontic-accessories,185
+category.fourth_level_category,186,138,Others,others,186
+category.fourth_level_category,187,139,Others,others,187
+category.fourth_level_category,188,140,Sanitary Napkins & Panty Liners,sanitary-napkins-panty-liners,188
+category.fourth_level_category,189,140,Tampons,tampons,189
+category.fourth_level_category,190,140,Pregnancy & Fertility Tests,pregnancy-fertility-tests,190
+category.fourth_level_category,191,140,Menstrual Cup,menstrual-cup,191
+category.fourth_level_category,192,140,Feminine Wash,feminine-wash,192
+category.fourth_level_category,193,140,Vaginal Cream,vaginal-cream,193
+category.fourth_level_category,194,140,Others,others,194
+category.fourth_level_category,195,141,Others,others,195
+category.fourth_level_category,196,142,Others,others,196
+category.fourth_level_category,197,143,Others,others,197
+category.fourth_level_category,198,144,Others,others,198
+category.fourth_level_category,199,145,Others,others,199
+category.fourth_level_category,200,146,Others,others,200
+category.fourth_level_category,201,147,Others,others,201
+category.fourth_level_category,202,148,Others,others,202
+category.fourth_level_category,203,149,Others,others,203
+category.fourth_level_category,204,150,Others,others,204
+category.fourth_level_category,205,151,Others,others,205
+category.fourth_level_category,206,152,Others,others,206
+category.fourth_level_category,207,153,Others,others,207
+category.fourth_level_category,208,154,Others,others,208
+category.fourth_level_category,209,155,Others,others,209
+category.fourth_level_category,210,156,Others,others,210
+category.fourth_level_category,211,157,Others,others,211
+category.fourth_level_category,212,158,Others,others,212
+category.fourth_level_category,213,159,Others,others,213
+category.fourth_level_category,214,160,Others,others,214
+category.fourth_level_category,215,161,Others,others,215
+category.fourth_level_category,216,162,Others,others,216
+category.fourth_level_category,217,163,Others,others,217
+category.fourth_level_category,218,164,Others,others,218
+category.fourth_level_category,219,165,Others,others,219
+category.fourth_level_category,220,166,Others,others,220
+category.fourth_level_category,221,167,Others,others,221
+category.fourth_level_category,222,168,Others,others,222
+category.fourth_level_category,223,169,Others,others,223
+category.fourth_level_category,224,170,Others,others,224
+category.fourth_level_category,225,171,Others,others,225
+category.fourth_level_category,226,172,Others,others,226
+category.fourth_level_category,227,173,Others,others,227
+category.fourth_level_category,228,174,Others,others,228
+category.fourth_level_category,229,175,Others,others,229
+category.fourth_level_category,230,176,Others,others,230
+category.fourth_level_category,231,177,Others,others,231
+category.fourth_level_category,232,178,Corded Phones,corded-phones,232
+category.fourth_level_category,233,178,Cordless Phones,cordless-phones,233
+category.fourth_level_category,234,178,Fax Machines,fax-machines,234
+category.fourth_level_category,235,178,Others,others,235
+category.fourth_level_category,236,179,Others,others,236
+category.fourth_level_category,237,180,Purifiers,purifiers,237
+category.fourth_level_category,238,180,Dehumidifiers,dehumidifiers,238
+category.fourth_level_category,239,180,Others,others,239
+category.fourth_level_category,240,181,Others,others,240
+category.fourth_level_category,241,182,Others,others,241
+category.fourth_level_category,242,183,Washing Machines,washing-machines,242
+category.fourth_level_category,243,183,Laundry Dryers,laundry-dryers,243
+category.fourth_level_category,244,183,Others,others,244
+category.fourth_level_category,245,184,Others,others,245
+category.fourth_level_category,246,185,Air-Conditioners,air-conditioners,246
+category.fourth_level_category,247,185,Air Coolers & Portable Aircons,air-coolers-portable-aircons,247
+category.fourth_level_category,248,185,Fans,fans,248
+category.fourth_level_category,249,185,Others,others,249
+category.fourth_level_category,250,186,Others,others,250
+category.fourth_level_category,251,187,Others,others,251
+category.fourth_level_category,252,188,Others,others,252
+category.fourth_level_category,253,189,Others,others,253
+category.fourth_level_category,254,190,Others,others,254
+category.fourth_level_category,255,191,Others,others,255
+category.fourth_level_category,256,192,Others,others,256
+category.fourth_level_category,257,193,Others,others,257
+category.fourth_level_category,258,194,Others,others,258
+category.fourth_level_category,259,195,Others,others,259
+category.fourth_level_category,260,196,Others,others,260
+category.fourth_level_category,261,197,Others,others,261
+category.fourth_level_category,262,198,Others,others,262
+category.fourth_level_category,263,199,Others,others,263
+category.fourth_level_category,264,200,Others,others,264
+category.fourth_level_category,265,201,Others,others,265
+category.fourth_level_category,266,202,Others,others,266
+category.fourth_level_category,267,203,Others,others,267
+category.fourth_level_category,268,204,Others,others,268
+category.fourth_level_category,269,205,Others,others,269
+category.fourth_level_category,270,206,Others,others,270
+category.fourth_level_category,271,207,Others,others,271
+category.fourth_level_category,272,208,Others,others,272
+category.fourth_level_category,273,209,Others,others,273
+category.fourth_level_category,274,210,Others,others,274
+category.fourth_level_category,275,211,Others,others,275
+category.fourth_level_category,276,212,Waffle & Crepe Makers,waffle-crepe-makers,276
+category.fourth_level_category,277,212,Egg Boilers,egg-boilers,277
+category.fourth_level_category,278,212,Bread Makers,bread-makers,278
+category.fourth_level_category,279,212,Takoyaki Makers,takoyaki-makers,279
+category.fourth_level_category,280,212,Dessert Machine,dessert-machine,280
+category.fourth_level_category,281,212,Soda Makers,soda-makers,281
+category.fourth_level_category,282,212,Others,others,282
+category.fourth_level_category,283,213,Others,others,283
+category.fourth_level_category,284,214,Others,others,284
+category.fourth_level_category,285,215,Others,others,285
+category.fourth_level_category,286,216,Others,others,286
+category.fourth_level_category,287,217,Others,others,287
+category.fourth_level_category,288,218,Others,others,288
+category.fourth_level_category,289,219,Others,others,289
+category.fourth_level_category,290,220,Others,others,290
+category.fourth_level_category,291,221,Others,others,291
+category.fourth_level_category,292,222,Others,others,292
+category.fourth_level_category,293,223,Others,others,293
+category.fourth_level_category,294,224,Others,others,294
+category.fourth_level_category,295,225,Others,others,295
+category.fourth_level_category,296,226,Others,others,296
+category.fourth_level_category,297,227,Others,others,297
+category.fourth_level_category,298,228,Others,others,298
+category.fourth_level_category,299,229,Others,others,299
+category.fourth_level_category,300,230,Others,others,300
+category.fourth_level_category,301,231,Others,others,301
+category.fourth_level_category,302,232,Others,others,302
+category.fourth_level_category,303,233,Others,others,303
+category.fourth_level_category,304,234,Others,others,304
+category.fourth_level_category,305,235,Others,others,305
+category.fourth_level_category,306,236,Others,others,306
+category.fourth_level_category,307,237,Others,others,307
+category.fourth_level_category,308,238,Others,others,308
+category.fourth_level_category,309,239,Others,others,309
+category.fourth_level_category,310,240,Others,others,310
+category.fourth_level_category,311,241,Others,others,311
+category.fourth_level_category,312,242,Others,others,312
+category.fourth_level_category,313,243,Others,others,313
+category.fourth_level_category,314,244,Selfie Sticks,selfie-sticks,314
+category.fourth_level_category,315,244,Lazypods,lazypods,315
+category.fourth_level_category,316,244,Remote Shutters,remote-shutters,316
+category.fourth_level_category,317,244,Others,others,317
+category.fourth_level_category,318,245,Others,others,318
+category.fourth_level_category,319,246,Others,others,319
+category.fourth_level_category,320,247,Others,others,320
+category.fourth_level_category,321,248,Others,others,321
+category.fourth_level_category,322,249,Others,others,322
+category.fourth_level_category,323,250,Others,others,323
+category.fourth_level_category,324,251,Others,others,324
+category.fourth_level_category,325,252,Others,others,325
+category.fourth_level_category,326,253,Others,others,326
+category.fourth_level_category,327,254,"Cable Cases, Protectors, & Winders",cable-cases-protectors-winders,327
+category.fourth_level_category,328,254,Travel Adaptors,travel-adaptors,328
+category.fourth_level_category,329,254,Mobile Cables & Converters,mobile-cables-converters,329
+category.fourth_level_category,330,254,Chargers,chargers,330
+category.fourth_level_category,331,254,Docks & Stands,docks-stands,331
+category.fourth_level_category,332,254,Others,others,332
+category.fourth_level_category,333,255,Others,others,333
+category.fourth_level_category,334,256,Others,others,334
+category.fourth_level_category,335,257,Batteries,batteries,335
+category.fourth_level_category,336,257,Powerbanks,powerbanks,336
+category.fourth_level_category,337,257,Powercases,powercases,337
+category.fourth_level_category,338,257,Others,others,338
+category.fourth_level_category,339,258,Others,others,339
+category.fourth_level_category,340,259,Others,others,340
+category.fourth_level_category,341,260,"Tablet Cases, Covers, & Skins",tablet-cases-covers-skins,341
+category.fourth_level_category,342,260,"Phone Cases, Covers, & Skins",phone-cases-covers-skins,342
+category.fourth_level_category,343,260,Others,others,343
+category.fourth_level_category,344,261,Others,others,344
+category.fourth_level_category,345,262,Khimar,khimar,345
+category.fourth_level_category,346,262,Instant Hijab,instant-hijab,346
+category.fourth_level_category,347,262,Square Hijab,square-hijab,347
+category.fourth_level_category,348,262,Pashmina,pashmina,348
+category.fourth_level_category,349,262,Hijab Accessories,hijab-accessories,349
+category.fourth_level_category,350,262,Others,others,350
+category.fourth_level_category,351,263,Socks,socks,351
+category.fourth_level_category,352,263,Handsocks,handsocks,352
+category.fourth_level_category,353,263,Others,others,353
+category.fourth_level_category,354,264,Others,others,354
+category.fourth_level_category,355,265,Others,others,355
+category.fourth_level_category,356,266,Tunic,tunic,356
+category.fourth_level_category,357,266,"Shirts, Blouses & Inner Blouses",shirts-blouses-inner-blouses,357
+category.fourth_level_category,358,266,Nursing Blouse,nursing-blouse,358
+category.fourth_level_category,359,266,Others,others,359
+category.fourth_level_category,360,267,Robe & Jubah,robe-jubah,360
+category.fourth_level_category,361,267,Abaya Cloak,abaya-cloak,361
+category.fourth_level_category,362,267,Nursing Jubah,nursing-jubah,362
+category.fourth_level_category,363,267,Kaftan,kaftan,363
+category.fourth_level_category,364,267,Baju Kelawar,baju-kelawar,364
+category.fourth_level_category,365,267,Baju Kurung,baju-kurung,365
+category.fourth_level_category,366,267,Set Warda,set-warda,366
+category.fourth_level_category,367,267,Jumpsuits,jumpsuits,367
+category.fourth_level_category,368,267,Others,others,368
+category.fourth_level_category,369,268,Skirt,skirt,369
+category.fourth_level_category,370,268,Pants,pants,370
+category.fourth_level_category,371,268,Leggings,leggings,371
+category.fourth_level_category,372,268,Palazzo,palazzo,372
+category.fourth_level_category,373,268,Others,others,373
+category.fourth_level_category,374,269,Others,others,374
+category.fourth_level_category,375,270,Others,others,375
+category.fourth_level_category,376,271,Others,others,376
+category.fourth_level_category,377,272,Others,others,377
+category.fourth_level_category,378,273,Others,others,378
+category.fourth_level_category,379,274,Others,others,379
+category.fourth_level_category,380,275,Others,others,380
+category.fourth_level_category,381,276,Others,others,381
+category.fourth_level_category,382,277,Others,others,382
+category.fourth_level_category,383,278,Others,others,383
+category.fourth_level_category,384,279,Others,others,384
+category.fourth_level_category,385,280,Others,others,385
+category.fourth_level_category,386,281,Others,others,386
+category.fourth_level_category,387,282,Veils,veils,387
+category.fourth_level_category,388,282,Telekung,telekung,388
+category.fourth_level_category,389,282,Attire Piece & Sets,attire-piece-sets,389
+category.fourth_level_category,390,282,Others,others,390
+category.fourth_level_category,391,283,Others,others,391
+category.fourth_level_category,392,284,Others,others,392
+category.fourth_level_category,393,285,Others,others,393
+category.fourth_level_category,394,286,Others,others,394
+category.fourth_level_category,395,287,Others,others,395
+category.fourth_level_category,396,288,Others,others,396
+category.fourth_level_category,397,289,Others,others,397
+category.fourth_level_category,398,290,Others,others,398
+category.fourth_level_category,399,291,Others,others,399
+category.fourth_level_category,400,292,Others,others,400
+category.fourth_level_category,401,293,Others,others,401
+category.fourth_level_category,402,294,Others,others,402
+category.fourth_level_category,403,295,Others,others,403
+category.fourth_level_category,404,296,Others,others,404
+category.fourth_level_category,405,297,Others,others,405
+category.fourth_level_category,406,298,Others,others,406
+category.fourth_level_category,407,299,Others,others,407
+category.fourth_level_category,408,300,Others,others,408
+category.fourth_level_category,409,301,Others,others,409
+category.fourth_level_category,410,302,Others,others,410
+category.fourth_level_category,411,303,Others,others,411
+category.fourth_level_category,412,304,Others,others,412
+category.fourth_level_category,413,305,Others,others,413
+category.fourth_level_category,414,306,Others,others,414
+category.fourth_level_category,415,307,Others,others,415
+category.fourth_level_category,416,308,Others,others,416
+category.fourth_level_category,417,309,Others,others,417
+category.fourth_level_category,418,310,Others,others,418
+category.fourth_level_category,419,311,Others,others,419
+category.fourth_level_category,420,312,Others,others,420
+category.fourth_level_category,421,313,Others,others,421
+category.fourth_level_category,422,314,Others,others,422
+category.fourth_level_category,423,315,Others,others,423
+category.fourth_level_category,424,316,Others,others,424
+category.fourth_level_category,425,317,Others,others,425
+category.fourth_level_category,426,318,Others,others,426
+category.fourth_level_category,427,319,Others,others,427
+category.fourth_level_category,428,320,Others,others,428
+category.fourth_level_category,429,321,Others,others,429
+category.fourth_level_category,430,322,Others,others,430
+category.fourth_level_category,431,323,Others,others,431
+category.fourth_level_category,432,324,Others,others,432
+category.fourth_level_category,433,325,Others,others,433
+category.fourth_level_category,434,326,Others,others,434
+category.fourth_level_category,435,327,Others,others,435
+category.fourth_level_category,436,328,Others,others,436
+category.fourth_level_category,437,329,Others,others,437
+category.fourth_level_category,438,330,Others,others,438
+category.fourth_level_category,439,331,Others,others,439
+category.fourth_level_category,440,332,Others,others,440
+category.fourth_level_category,441,333,Others,others,441
+category.fourth_level_category,442,334,Others,others,442
+category.fourth_level_category,443,335,Others,others,443
+category.fourth_level_category,444,336,Others,others,444
+category.fourth_level_category,445,337,Others,others,445
+category.fourth_level_category,446,338,Others,others,446
+category.fourth_level_category,447,339,Others,others,447
+category.fourth_level_category,448,340,Others,others,448
+category.fourth_level_category,449,341,Others,others,449
+category.fourth_level_category,450,342,Others,others,450
+category.fourth_level_category,451,343,Others,others,451
+category.fourth_level_category,452,344,Others,others,452
+category.fourth_level_category,453,345,Others,others,453
+category.fourth_level_category,454,346,Others,others,454
+category.fourth_level_category,455,347,Others,others,455
+category.fourth_level_category,456,348,Others,others,456
+category.fourth_level_category,457,349,Others,others,457
+category.fourth_level_category,458,350,Others,others,458
+category.fourth_level_category,459,351,Others,others,459
+category.fourth_level_category,460,352,Others,others,460
+category.fourth_level_category,461,353,Others,others,461
+category.fourth_level_category,462,354,Others,others,462
+category.fourth_level_category,463,355,Others,others,463
+category.fourth_level_category,464,356,Others,others,464
+category.fourth_level_category,465,357,Others,others,465
+category.fourth_level_category,466,358,Others,others,466
+category.fourth_level_category,467,359,Others,others,467
+category.fourth_level_category,468,360,Others,others,468
+category.fourth_level_category,469,361,Others,others,469
+category.fourth_level_category,470,362,Others,others,470
+category.fourth_level_category,471,363,Others,others,471
+category.fourth_level_category,472,364,Others,others,472
+category.fourth_level_category,473,365,Others,others,473
+category.fourth_level_category,474,366,Others,others,474
+category.fourth_level_category,475,367,Others,others,475
+category.fourth_level_category,476,368,Others,others,476
+category.fourth_level_category,477,369,Others,others,477
+category.fourth_level_category,478,370,Others,others,478
+category.fourth_level_category,479,371,Others,others,479
+category.fourth_level_category,480,372,Others,others,480
+category.fourth_level_category,481,373,Others,others,481
+category.fourth_level_category,482,374,Others,others,482
+category.fourth_level_category,483,375,Others,others,483
+category.fourth_level_category,484,376,Others,others,484
+category.fourth_level_category,485,377,Others,others,485
+category.fourth_level_category,486,378,Others,others,486
+category.fourth_level_category,487,379,Others,others,487
+category.fourth_level_category,488,380,Others,others,488
+category.fourth_level_category,489,381,Others,others,489
+category.fourth_level_category,490,382,Others,others,490
+category.fourth_level_category,491,383,Others,others,491
+category.fourth_level_category,492,384,Others,others,492
+category.fourth_level_category,493,385,Canned Fruits,canned-fruits,493
+category.fourth_level_category,494,385,Canned Meat,canned-meat,494
+category.fourth_level_category,495,385,Canned Seafood,canned-seafood,495
+category.fourth_level_category,496,385,Canned Vegetables,canned-vegetables,496
+category.fourth_level_category,497,385,Canned Soup,canned-soup,497
+category.fourth_level_category,498,385,Others,others,498
+category.fourth_level_category,499,386,Others,others,499
+category.fourth_level_category,500,387,Others,others,500
+category.fourth_level_category,501,388,Pepper,pepper,501
+category.fourth_level_category,502,388,Salt,salt,502
+category.fourth_level_category,503,388,Herbs & Spices,herbs-spices,503
+category.fourth_level_category,504,388,Sauce,sauce,504
+category.fourth_level_category,505,388,Chilli & Sambal,chilli-sambal,505
+category.fourth_level_category,506,388,Vinegar,vinegar,506
+category.fourth_level_category,507,388,Cooking Wine,cooking-wine,507
+category.fourth_level_category,508,388,Dressing,dressing,508
+category.fourth_level_category,509,388,Others,others,509
+category.fourth_level_category,510,389,Others,others,510
+category.fourth_level_category,511,390,Others,others,511
+category.fourth_level_category,512,391,Others,others,512
+category.fourth_level_category,513,392,Others,others,513
+category.fourth_level_category,514,393,Others,others,514
+category.fourth_level_category,515,394,Others,others,515
+category.fourth_level_category,516,395,Others,others,516
+category.fourth_level_category,517,396,Others,others,517
+category.fourth_level_category,518,397,Others,others,518
+category.fourth_level_category,519,398,Others,others,519
+category.fourth_level_category,520,399,Others,others,520
+category.fourth_level_category,521,400,Others,others,521
+category.fourth_level_category,522,401,Others,others,522
+category.fourth_level_category,523,402,Others,others,523
+category.fourth_level_category,524,403,Others,others,524
+category.fourth_level_category,525,404,Others,others,525
+category.fourth_level_category,526,405,Others,others,526
+category.fourth_level_category,527,406,Others,others,527
+category.fourth_level_category,528,407,Others,others,528
+category.fourth_level_category,529,408,Others,others,529
+category.fourth_level_category,530,409,Others,others,530
+category.fourth_level_category,531,410,Others,others,531
+category.fourth_level_category,532,411,Others,others,532
+category.fourth_level_category,533,412,Others,others,533
+category.fourth_level_category,534,413,Others,others,534
+category.fourth_level_category,535,414,Others,others,535
+category.fourth_level_category,536,415,Others,others,536
+category.fourth_level_category,537,416,Others,others,537
+category.fourth_level_category,538,417,Others,others,538
+category.fourth_level_category,539,418,Others,others,539
+category.fourth_level_category,540,419,Others,others,540
+category.fourth_level_category,541,420,Others,others,541
+category.fourth_level_category,542,421,Others,others,542
+category.fourth_level_category,543,422,Fresh Milk,fresh-milk,543
+category.fourth_level_category,544,422,UHT Milk,uht-milk,544
+category.fourth_level_category,545,422,Condensed & Evaporated Milk,condensed-evaporated-milk,545
+category.fourth_level_category,546,422,Powdered Milk,powdered-milk,546
+category.fourth_level_category,547,422,Others,others,547
+category.fourth_level_category,548,423,Others,others,548
+category.fourth_level_category,549,424,Others,others,549
+category.fourth_level_category,550,425,Others,others,550
+category.fourth_level_category,551,426,Others,others,551
+category.fourth_level_category,552,427,Others,others,552
+category.fourth_level_category,553,428,Others,others,553
+category.fourth_level_category,554,429,Others,others,554
+category.fourth_level_category,555,430,Others,others,555
+category.fourth_level_category,556,431,Beef,beef,556
+category.fourth_level_category,557,431,Poultry,poultry,557
+category.fourth_level_category,558,431,Pork,pork,558
+category.fourth_level_category,559,431,Lamb,lamb,559
+category.fourth_level_category,560,431,Others,others,560
+category.fourth_level_category,561,432,Fish,fish,561
+category.fourth_level_category,562,432,Prawn,prawn,562
+category.fourth_level_category,563,432,Crab,crab,563
+category.fourth_level_category,564,432,Others,others,564
+category.fourth_level_category,565,433,Others,others,565
+category.fourth_level_category,566,434,Others,others,566
+category.fourth_level_category,567,435,Cabbage & Brussel Sprouts,cabbage-brussel-sprouts,567
+category.fourth_level_category,568,435,Fresh Herbs,fresh-herbs,568
+category.fourth_level_category,569,435,Leafy Vegetables,leafy-vegetables,569
+category.fourth_level_category,570,435,"Brinjals, Gourds & Squashes",brinjals-gourds-squashes,570
+category.fourth_level_category,571,435,Broccoli & Cauliflowers,broccoli-cauliflowers,571
+category.fourth_level_category,572,435,Chilli & Capsicum,chilli-capsicum,572
+category.fourth_level_category,573,435,"Garlic, Ginger & Onion",garlic-ginger-onion,573
+category.fourth_level_category,574,435,"Peas, Beans, Nuts & Corn",peas-beans-nuts-corn,574
+category.fourth_level_category,575,435,Root & Stem Vegetables,root-stem-vegetables,575
+category.fourth_level_category,576,435,Sprouts,sprouts,576
+category.fourth_level_category,577,435,Salads Vegetables,salads-vegetables,577
+category.fourth_level_category,578,435,Pre-cut & Assorted Vegetable Set,pre-cut-assorted-vegetable-set,578
+category.fourth_level_category,579,435,Others,others,579
+category.fourth_level_category,580,436,Apples & Pears,apples-pears,580
+category.fourth_level_category,581,436,Bananas,bananas,581
+category.fourth_level_category,582,436,Berries,berries,582
+category.fourth_level_category,583,436,Citrus,citrus,583
+category.fourth_level_category,584,436,Grapes,grapes,584
+category.fourth_level_category,585,436,Melons,melons,585
+category.fourth_level_category,586,436,Stonefruits,stonefruits,586
+category.fourth_level_category,587,436,Tropical & Exotic Fruits,tropical-exotic-fruits,587
+category.fourth_level_category,588,436,Pre-cut & Assorted Fruit Set,pre-cut-assorted-fruit-set,588
+category.fourth_level_category,589,436,Others,others,589
+category.fourth_level_category,590,437,Others,others,590
+category.fourth_level_category,591,438,Others,others,591
+category.fourth_level_category,592,439,Others,others,592
+category.fourth_level_category,593,440,Others,others,593
+category.fourth_level_category,594,441,Others,others,594
+category.fourth_level_category,595,442,Others,others,595
+category.fourth_level_category,596,443,Others,others,596
+category.fourth_level_category,597,444,Others,others,597
+category.fourth_level_category,598,445,Others,others,598
+category.fourth_level_category,599,446,Others,others,599
+category.fourth_level_category,600,447,Others,others,600
+category.fourth_level_category,601,448,Others,others,601
+category.fourth_level_category,602,449,Others,others,602
+category.fourth_level_category,603,450,Others,others,603
+category.fourth_level_category,604,451,Others,others,604
+category.fourth_level_category,605,452,Others,others,605
+category.fourth_level_category,606,453,Others,others,606
+category.fourth_level_category,607,454,Others,others,607
+category.fourth_level_category,608,455,Others,others,608
+category.fourth_level_category,609,456,Others,others,609
+category.fourth_level_category,610,457,Others,others,610
+category.fourth_level_category,611,458,Others,others,611
+category.fourth_level_category,612,459,Others,others,612
+category.fourth_level_category,613,460,Others,others,613
+category.fourth_level_category,614,461,Others,others,614
+category.fourth_level_category,615,462,Dog & Cat Toys,dog-cat-toys,615
+category.fourth_level_category,616,462,Small Pet Toys,small-pet-toys,616
+category.fourth_level_category,617,462,Bird Toys,bird-toys,617
+category.fourth_level_category,618,462,Others,others,618
+category.fourth_level_category,619,463,Beds & Mats,beds-mats,619
+category.fourth_level_category,620,463,Houses,houses,620
+category.fourth_level_category,621,463,Habitats & Accessories,habitats-accessories,621
+category.fourth_level_category,622,463,Cages & Crates,cages-crates,622
+category.fourth_level_category,623,463,Scratching Pads & Posts,scratching-pads-posts,623
+category.fourth_level_category,624,463,Others,others,624
+category.fourth_level_category,625,464,Others,others,625
+category.fourth_level_category,626,465,Others,others,626
+category.fourth_level_category,627,466,Others,others,627
+category.fourth_level_category,628,467,Others,others,628
+category.fourth_level_category,629,468,Others,others,629
+category.fourth_level_category,630,469,Others,others,630
+category.fourth_level_category,631,470,Others,others,631
+category.fourth_level_category,632,471,Others,others,632
+category.fourth_level_category,633,472,Others,others,633
+category.fourth_level_category,634,473,Others,others,634
+category.fourth_level_category,635,474,Others,others,635
+category.fourth_level_category,636,475,Others,others,636
+category.fourth_level_category,637,476,Others,others,637
+category.fourth_level_category,638,477,Others,others,638
+category.fourth_level_category,639,478,Others,others,639
+category.fourth_level_category,640,479,Others,others,640
+category.fourth_level_category,641,480,Others,others,641
+category.fourth_level_category,642,481,Others,others,642
+category.fourth_level_category,643,482,Others,others,643
+category.fourth_level_category,644,483,Others,others,644
+category.fourth_level_category,645,484,Others,others,645
+category.fourth_level_category,646,485,Others,others,646
+category.fourth_level_category,647,486,Others,others,647
+category.fourth_level_category,648,487,Others,others,648
+category.fourth_level_category,649,488,Others,others,649
+category.fourth_level_category,650,489,Others,others,650
+category.fourth_level_category,651,490,Others,others,651
+category.fourth_level_category,652,491,Others,others,652
+category.fourth_level_category,653,492,Others,others,653
+category.fourth_level_category,654,493,Others,others,654
+category.fourth_level_category,655,494,Others,others,655
+category.fourth_level_category,656,495,Others,others,656
+category.fourth_level_category,657,496,Bottle Cooler Bag,bottle-cooler-bag,657
+category.fourth_level_category,658,496,Bottles & Bottle accessories,bottles-bottle-accessories,658
+category.fourth_level_category,659,496,Bottle Cleansing,bottle-cleansing,659
+category.fourth_level_category,660,496,Warmers,warmers,660
+category.fourth_level_category,661,496,Sterilizers,sterilizers,661
+category.fourth_level_category,662,496,Others,others,662
+category.fourth_level_category,663,497,Breast Pump & Accessories,breast-pump-accessories,663
+category.fourth_level_category,664,497,"Breast Pads, Shells & Shields",breast-pads-shells-shields,664
+category.fourth_level_category,665,497,Nursing Covers,nursing-covers,665
+category.fourth_level_category,666,497,Breastmilk Storage Bags,breastmilk-storage-bags,666
+category.fourth_level_category,667,497,Others,others,667
+category.fourth_level_category,668,498,Others,others,668
+category.fourth_level_category,669,499,Baby Cups,baby-cups,669
+category.fourth_level_category,670,499,Baby Tableware,baby-tableware,670
+category.fourth_level_category,671,499,Baby Food Containers,baby-food-containers,671
+category.fourth_level_category,672,499,Others,others,672
+category.fourth_level_category,673,500,Others,others,673
+category.fourth_level_category,674,501,Others,others,674
+category.fourth_level_category,675,502,Others,others,675
+category.fourth_level_category,676,503,Others,others,676
+category.fourth_level_category,677,504,Others,others,677
+category.fourth_level_category,678,505,Others,others,678
+category.fourth_level_category,679,506,Others,others,679
+category.fourth_level_category,680,507,Others,others,680
+category.fourth_level_category,681,508,Others,others,681
+category.fourth_level_category,682,509,Others,others,682
+category.fourth_level_category,683,510,Others,others,683
+category.fourth_level_category,684,511,Others,others,684
+category.fourth_level_category,685,512,Others,others,685
+category.fourth_level_category,686,513,Others,others,686
+category.fourth_level_category,687,514,Others,others,687
+category.fourth_level_category,688,515,Others,others,688
+category.fourth_level_category,689,516,Others,others,689
+category.fourth_level_category,690,517,Others,others,690
+category.fourth_level_category,691,518,Others,others,691
+category.fourth_level_category,692,519,Others,others,692
+category.fourth_level_category,693,520,Others,others,693
+category.fourth_level_category,694,521,Others,others,694
+category.fourth_level_category,695,522,Others,others,695
+category.fourth_level_category,696,523,Others,others,696
+category.fourth_level_category,697,524,Blankets & Wrappers,blankets-wrappers,697
+category.fourth_level_category,698,524,Pillows & Bolsters,pillows-bolsters,698
+category.fourth_level_category,699,524,Bedsheets,bedsheets,699
+category.fourth_level_category,700,524,Others,others,700
+category.fourth_level_category,701,525,Others,others,701
+category.fourth_level_category,702,526,Others,others,702
+category.fourth_level_category,703,527,Others,others,703
+category.fourth_level_category,704,528,Others,others,704
+category.fourth_level_category,705,529,Others,others,705
+category.fourth_level_category,706,530,Others,others,706
+category.fourth_level_category,707,531,Others,others,707
+category.fourth_level_category,708,532,Others,others,708
+category.fourth_level_category,709,533,Others,others,709
+category.fourth_level_category,710,534,Others,others,710
+category.fourth_level_category,711,535,Others,others,711
+category.fourth_level_category,712,536,Others,others,712
+category.fourth_level_category,713,537,Others,others,713
+category.fourth_level_category,714,538,Others,others,714
+category.fourth_level_category,715,539,Others,others,715
+category.fourth_level_category,716,540,Lotion & Creams,lotion-creams,716
+category.fourth_level_category,717,540,Oils,oils,717
+category.fourth_level_category,718,540,Powders,powders,718
+category.fourth_level_category,719,540,Others,others,719
+category.fourth_level_category,720,541,Others,others,720
+category.fourth_level_category,721,542,Others,others,721
+category.fourth_level_category,722,543,Others,others,722
+category.fourth_level_category,723,544,Others,others,723
+category.fourth_level_category,724,545,Others,others,724
+category.fourth_level_category,725,546,Others,others,725
+category.fourth_level_category,726,547,Others,others,726
+category.fourth_level_category,727,548,Others,others,727
+category.fourth_level_category,728,549,Playgym & Playmats,playgym-playmats,728
+category.fourth_level_category,729,549,Playards & Playpens,playards-playpens,729
+category.fourth_level_category,730,549,Bath Toys,bath-toys,730
+category.fourth_level_category,731,549,Crib Mobiles & Rattles,crib-mobiles-rattles,731
+category.fourth_level_category,732,549,Teethers,teethers,732
+category.fourth_level_category,733,549,Others,others,733
+category.fourth_level_category,734,550,Others,others,734
+category.fourth_level_category,735,551,Dolls & Accessories,dolls-accessories,735
+category.fourth_level_category,736,551,Doll Houses & Accessories,doll-houses-accessories,736
+category.fourth_level_category,737,551,Stuffed Toys,stuffed-toys,737
+category.fourth_level_category,738,551,Others,others,738
+category.fourth_level_category,739,552,Others,others,739
+category.fourth_level_category,740,553,Others,others,740
+category.fourth_level_category,741,554,"Bicycles, Scooters & Ride-ons",bicycles-scooters-ride-ons,741
+category.fourth_level_category,742,554,Inflatables & Slides,inflatables-slides,742
+category.fourth_level_category,743,554,"Play Tents, Tunnels & Ball Pits",play-tents-tunnels-ball-pits,743
+category.fourth_level_category,744,554,"Pool, Water & Sand Toys",pool-water-sand-toys,744
+category.fourth_level_category,745,554,Blasters & Toy Guns,blasters-toy-guns,745
+category.fourth_level_category,746,554,Sports Toys,sports-toys,746
+category.fourth_level_category,747,554,"Flying Toys, Kites & Wind Spinners",flying-toys-kites-wind-spinners,747
+category.fourth_level_category,748,554,Others,others,748
+category.fourth_level_category,749,555,Arts & Crafts,arts-crafts,749
+category.fourth_level_category,750,555,Math Toys,math-toys,750
+category.fourth_level_category,751,555,Science & Tech Toys,science-tech-toys,751
+category.fourth_level_category,752,555,Shape Sorters,shape-sorters,752
+category.fourth_level_category,753,555,Puzzles,puzzles,753
+category.fourth_level_category,754,555,Musical Toys,musical-toys,754
+category.fourth_level_category,755,555,Toy Tablets & Computers,toy-tablets-computers,755
+category.fourth_level_category,756,555,Others,others,756
+category.fourth_level_category,757,556,Others,others,757
+category.fourth_level_category,758,557,Others,others,758
+category.fourth_level_category,759,558,Others,others,759
+category.fourth_level_category,760,559,Others,others,760
+category.fourth_level_category,761,560,Others,others,761
+category.fourth_level_category,762,561,Others,others,762
+category.fourth_level_category,763,562,Pants & Leggings,pants-leggings,763
+category.fourth_level_category,764,562,Shorts,shorts,764
+category.fourth_level_category,765,562,Skirts,skirts,765
+category.fourth_level_category,766,562,Others,others,766
+category.fourth_level_category,767,563,Others,others,767
+category.fourth_level_category,768,564,Others,others,768
+category.fourth_level_category,769,565,Others,others,769
+category.fourth_level_category,770,566,Others,others,770
+category.fourth_level_category,771,567,Others,others,771
+category.fourth_level_category,772,568,Others,others,772
+category.fourth_level_category,773,569,Backpacks,backpacks,773
+category.fourth_level_category,774,569,Crossbody & Shoulder Bags,crossbody-shoulder-bags,774
+category.fourth_level_category,775,569,Trolley Bags,trolley-bags,775
+category.fourth_level_category,776,569,Wallets,wallets,776
+category.fourth_level_category,777,569,Others,others,777
+category.fourth_level_category,778,570,Others,others,778
+category.fourth_level_category,779,571,Others,others,779
+category.fourth_level_category,780,572,Others,others,780
+category.fourth_level_category,781,573,Others,others,781
+category.fourth_level_category,782,574,Others,others,782
+category.fourth_level_category,783,575,Others,others,783
+category.fourth_level_category,784,576,Others,others,784
+category.fourth_level_category,785,577,Others,others,785
+category.fourth_level_category,786,578,Bracelets,bracelets,786
+category.fourth_level_category,787,578,Earrings,earrings,787
+category.fourth_level_category,788,578,Necklaces,necklaces,788
+category.fourth_level_category,789,578,Rings,rings,789
+category.fourth_level_category,790,578,Others,others,790
+category.fourth_level_category,791,579,Raincoats,raincoats,791
+category.fourth_level_category,792,579,Rain Boots,rain-boots,792
+category.fourth_level_category,793,579,Others,others,793
+category.fourth_level_category,794,580,Others,others,794
+category.fourth_level_category,795,581,Others,others,795
+category.fourth_level_category,796,582,Others,others,796
+category.fourth_level_category,797,583,Others,others,797
+category.fourth_level_category,798,584,Others,others,798
+category.fourth_level_category,799,585,Others,others,799
+category.fourth_level_category,800,586,T-shirts,t-shirts,800
+category.fourth_level_category,801,586,Polo Shirts,polo-shirts,801
+category.fourth_level_category,802,586,Shirts,shirts,802
+category.fourth_level_category,803,586,Others,others,803
+category.fourth_level_category,804,587,Regular Jackets & Coats,regular-jackets-coats,804
+category.fourth_level_category,805,587,Winter Outerwear,winter-outerwear,805
+category.fourth_level_category,806,587,Vests,vests,806
+category.fourth_level_category,807,587,Sweaters & Cardigans,sweaters-cardigans,807
+category.fourth_level_category,808,587,Blazers,blazers,808
+category.fourth_level_category,809,587,Hoodies,hoodies,809
+category.fourth_level_category,810,587,Others,others,810
+category.fourth_level_category,811,588,Jeans,jeans,811
+category.fourth_level_category,812,588,Pants,pants,812
+category.fourth_level_category,813,588,Shorts,shorts,813
+category.fourth_level_category,814,588,Overalls,overalls,814
+category.fourth_level_category,815,588,Others,others,815
+category.fourth_level_category,816,589,Others,others,816
+category.fourth_level_category,817,590,Others,others,817
+category.fourth_level_category,818,591,Others,others,818
+category.fourth_level_category,819,592,Others,others,819
+category.fourth_level_category,820,593,Others,others,820
+category.fourth_level_category,821,594,Others,others,821
+category.fourth_level_category,822,595,T-shirts,t-shirts,822
+category.fourth_level_category,823,595,Polo Shirts,polo-shirts,823
+category.fourth_level_category,824,595,Shirts & Blouses,shirts-blouses,824
+category.fourth_level_category,825,595,Others,others,825
+category.fourth_level_category,826,596,Regular Jackets & Coats,regular-jackets-coats,826
+category.fourth_level_category,827,596,Winter Outerwear,winter-outerwear,827
+category.fourth_level_category,828,596,Vests,vests,828
+category.fourth_level_category,829,596,Sweaters & Cardigans,sweaters-cardigans,829
+category.fourth_level_category,830,596,Blazers,blazers,830
+category.fourth_level_category,831,596,Hoodies,hoodies,831
+category.fourth_level_category,832,596,Others,others,832
+category.fourth_level_category,833,597,Jeans,jeans,833
+category.fourth_level_category,834,597,Pants,pants,834
+category.fourth_level_category,835,597,Shorts,shorts,835
+category.fourth_level_category,836,597,Skirts,skirts,836
+category.fourth_level_category,837,597,Leggings,leggings,837
+category.fourth_level_category,838,597,Others,others,838
+category.fourth_level_category,839,598,Others,others,839
+category.fourth_level_category,840,599,Others,others,840
+category.fourth_level_category,841,600,Others,others,841
+category.fourth_level_category,842,601,Others,others,842
+category.fourth_level_category,843,602,Others,others,843
+category.fourth_level_category,844,603,Others,others,844
+category.fourth_level_category,845,604,Others,others,845
+category.fourth_level_category,846,605,Others,others,846
+category.fourth_level_category,847,606,Others,others,847
+category.fourth_level_category,848,607,Others,others,848
+category.fourth_level_category,849,608,Others,others,849
+category.fourth_level_category,850,609,Others,others,850
+category.fourth_level_category,851,610,Others,others,851
+category.fourth_level_category,852,611,Others,others,852
+category.fourth_level_category,853,612,Others,others,853
+category.fourth_level_category,854,613,Others,others,854
+category.fourth_level_category,855,614,Others,others,855
+category.fourth_level_category,856,615,Others,others,856
+category.fourth_level_category,857,616,Others,others,857
+category.fourth_level_category,858,617,Others,others,858
+category.fourth_level_category,859,618,Others,others,859
+category.fourth_level_category,860,619,Others,others,860
+category.fourth_level_category,861,620,Others,others,861
+category.fourth_level_category,862,621,Others,others,862
+category.fourth_level_category,863,622,Others,others,863
+category.fourth_level_category,864,623,Others,others,864
+category.fourth_level_category,865,624,Others,others,865
+category.fourth_level_category,866,625,Others,others,866
+category.fourth_level_category,867,626,Others,others,867
+category.fourth_level_category,868,627,Others,others,868
+category.fourth_level_category,869,628,Others,others,869
+category.fourth_level_category,870,629,Others,others,870
+category.fourth_level_category,871,630,Others,others,871
+category.fourth_level_category,872,631,Others,others,872
+category.fourth_level_category,873,632,Others,others,873
+category.fourth_level_category,874,633,Others,others,874
+category.fourth_level_category,875,634,Others,others,875
+category.fourth_level_category,876,635,Others,others,876
+category.fourth_level_category,877,636,Others,others,877
+category.fourth_level_category,878,637,Others,others,878
+category.fourth_level_category,879,638,Others,others,879
+category.fourth_level_category,880,639,Others,others,880
+category.fourth_level_category,881,640,Others,others,881
+category.fourth_level_category,882,641,Others,others,882
+category.fourth_level_category,883,642,Others,others,883
+category.fourth_level_category,884,643,Others,others,884
+category.fourth_level_category,885,644,Others,others,885
+category.fourth_level_category,886,645,Others,others,886
+category.fourth_level_category,887,646,Others,others,887
+category.fourth_level_category,888,647,Others,others,888
+category.fourth_level_category,889,648,Others,others,889
+category.fourth_level_category,890,649,Others,others,890
+category.fourth_level_category,891,650,Others,others,891
+category.fourth_level_category,892,651,Others,others,892
+category.fourth_level_category,893,652,Others,others,893
+category.fourth_level_category,894,653,Others,others,894
+category.fourth_level_category,895,654,Others,others,895
+category.fourth_level_category,896,655,Others,others,896
+category.fourth_level_category,897,656,Others,others,897
+category.fourth_level_category,898,657,Others,others,898
+category.fourth_level_category,899,658,Others,others,899
+category.fourth_level_category,900,659,Others,others,900
+category.fourth_level_category,901,660,Others,others,901
+category.fourth_level_category,902,661,Others,others,902
+category.fourth_level_category,903,662,Others,others,903
+category.fourth_level_category,904,663,Others,others,904
+category.fourth_level_category,905,664,Others,others,905
+category.fourth_level_category,906,665,Others,others,906
+category.fourth_level_category,907,666,Others,others,907
+category.fourth_level_category,908,667,Others,others,908
+category.fourth_level_category,909,668,Others,others,909
+category.fourth_level_category,910,669,Others,others,910
+category.fourth_level_category,911,670,Others,others,911
+category.fourth_level_category,912,671,Others,others,912
+category.fourth_level_category,913,672,Others,others,913
+category.fourth_level_category,914,673,Others,others,914
+category.fourth_level_category,915,674,Others,others,915
+category.fourth_level_category,916,675,Others,others,916
+category.fourth_level_category,917,676,Bath Towels,bath-towels,917
+category.fourth_level_category,918,676,Face & Hand Towels,face-hand-towels,918
+category.fourth_level_category,919,676,Bath Robes,bath-robes,919
+category.fourth_level_category,920,676,Others,others,920
+category.fourth_level_category,921,677,Others,others,921
+category.fourth_level_category,922,678,Others,others,922
+category.fourth_level_category,923,679,Others,others,923
+category.fourth_level_category,924,680,Others,others,924
+category.fourth_level_category,925,681,Others,others,925
+category.fourth_level_category,926,682,Others,others,926
+category.fourth_level_category,927,683,Others,others,927
+category.fourth_level_category,928,684,Others,others,928
+category.fourth_level_category,929,685,Others,others,929
+category.fourth_level_category,930,686,Others,others,930
+category.fourth_level_category,931,687,Others,others,931
+category.fourth_level_category,932,688,Others,others,932
+category.fourth_level_category,933,689,Others,others,933
+category.fourth_level_category,934,690,Others,others,934
+category.fourth_level_category,935,691,Others,others,935
+category.fourth_level_category,936,692,Others,others,936
+category.fourth_level_category,937,693,Others,others,937
+category.fourth_level_category,938,694,Others,others,938
+category.fourth_level_category,939,695,Others,others,939
+category.fourth_level_category,940,696,Others,others,940
+category.fourth_level_category,941,697,Others,others,941
+category.fourth_level_category,942,698,Others,others,942
+category.fourth_level_category,943,699,Others,others,943
+category.fourth_level_category,944,700,Others,others,944
+category.fourth_level_category,945,701,Others,others,945
+category.fourth_level_category,946,702,Others,others,946
+category.fourth_level_category,947,703,Others,others,947
+category.fourth_level_category,948,704,Others,others,948
+category.fourth_level_category,949,705,Others,others,949
+category.fourth_level_category,950,706,Others,others,950
+category.fourth_level_category,951,707,Others,others,951
+category.fourth_level_category,952,708,Others,others,952
+category.fourth_level_category,953,709,Others,others,953
+category.fourth_level_category,954,710,Others,others,954
+category.fourth_level_category,955,711,Others,others,955
+category.fourth_level_category,956,712,Others,others,956
+category.fourth_level_category,957,713,Others,others,957
+category.fourth_level_category,958,714,Others,others,958
+category.fourth_level_category,959,715,Others,others,959
+category.fourth_level_category,960,716,Others,others,960
+category.fourth_level_category,961,717,Others,others,961
+category.fourth_level_category,962,718,Others,others,962
+category.fourth_level_category,963,719,Others,others,963
+category.fourth_level_category,964,720,Others,others,964
+category.fourth_level_category,965,721,Others,others,965
+category.fourth_level_category,966,722,Others,others,966
+category.fourth_level_category,967,723,Others,others,967
+category.fourth_level_category,968,724,Others,others,968
+category.fourth_level_category,969,725,Others,others,969
+category.fourth_level_category,970,726,Others,others,970
+category.fourth_level_category,971,727,Others,others,971
+category.fourth_level_category,972,728,Others,others,972
+category.fourth_level_category,973,729,Others,others,973
+category.fourth_level_category,974,730,Others,others,974
+category.fourth_level_category,975,731,Tool Boxes,tool-boxes,975
+category.fourth_level_category,976,731,Measuring Tapes,measuring-tapes,976
+category.fourth_level_category,977,731,Spanner Sets,spanner-sets,977
+category.fourth_level_category,978,731,Hammers,hammers,978
+category.fourth_level_category,979,731,Pliers,pliers,979
+category.fourth_level_category,980,731,"Nails, Screws & Fasteners",nails-screws-fasteners,980
+category.fourth_level_category,981,731,"Drills, Screwdrivers & Accessories",drills-screwdrivers-accessories,981
+category.fourth_level_category,982,731,"Saws, Cut-off Machines & Grinders",saws-cut-off-machines-grinders,982
+category.fourth_level_category,983,731,Pressure Washers,pressure-washers,983
+category.fourth_level_category,984,731,Power Generators,power-generators,984
+category.fourth_level_category,985,731,Electrical Testers & Multimeters,electrical-testers-multimeters,985
+category.fourth_level_category,986,731,Levels & Measuring Wheels,levels-measuring-wheels,986
+category.fourth_level_category,987,731,Rangefinders,rangefinders,987
+category.fourth_level_category,988,731,Air Compressors,air-compressors,988
+category.fourth_level_category,989,731,"Sandpaper, Power Sanders & Accessories",sandpaper-power-sanders-accessories,989
+category.fourth_level_category,990,731,Power Welding Tools,power-welding-tools,990
+category.fourth_level_category,991,731,Blowers,blowers,991
+category.fourth_level_category,992,731,Others,others,992
+category.fourth_level_category,993,732,Others,others,993
+category.fourth_level_category,994,733,Others,others,994
+category.fourth_level_category,995,734,Others,others,995
+category.fourth_level_category,996,735,Others,others,996
+category.fourth_level_category,997,736,Others,others,997
+category.fourth_level_category,998,737,Others,others,998
+category.fourth_level_category,999,738,Others,others,999
+category.fourth_level_category,1000,739,Others,others,1000
+category.fourth_level_category,1001,740,Others,others,1001
+category.fourth_level_category,1002,741,Others,others,1002
+category.fourth_level_category,1003,742,Others,others,1003
+category.fourth_level_category,1004,743,Others,others,1004
+category.fourth_level_category,1005,744,Others,others,1005
+category.fourth_level_category,1006,745,Others,others,1006
+category.fourth_level_category,1007,746,Others,others,1007
+category.fourth_level_category,1008,747,Others,others,1008
+category.fourth_level_category,1009,748,Others,others,1009
+category.fourth_level_category,1010,749,Others,others,1010
+category.fourth_level_category,1011,750,Others,others,1011
+category.fourth_level_category,1012,751,Others,others,1012
+category.fourth_level_category,1013,752,Others,others,1013
+category.fourth_level_category,1014,753,Others,others,1014
+category.fourth_level_category,1015,754,Others,others,1015
+category.fourth_level_category,1016,755,Others,others,1016
+category.fourth_level_category,1017,756,Others,others,1017
+category.fourth_level_category,1018,757,Others,others,1018
+category.fourth_level_category,1019,758,Others,others,1019
+category.fourth_level_category,1020,759,Others,others,1020
+category.fourth_level_category,1021,760,Others,others,1021
+category.fourth_level_category,1022,761,Others,others,1022
+category.fourth_level_category,1023,762,Others,others,1023
+category.fourth_level_category,1024,763,Others,others,1024
+category.fourth_level_category,1025,764,Others,others,1025
+category.fourth_level_category,1026,765,Others,others,1026
+category.fourth_level_category,1027,766,Others,others,1027
+category.fourth_level_category,1028,767,Others,others,1028
+category.fourth_level_category,1029,768,Others,others,1029
+category.fourth_level_category,1030,769,Others,others,1030
+category.fourth_level_category,1031,770,Others,others,1031
+category.fourth_level_category,1032,771,Others,others,1032
+category.fourth_level_category,1033,772,Others,others,1033
+category.fourth_level_category,1034,773,Others,others,1034
+category.fourth_level_category,1035,774,Others,others,1035
+category.fourth_level_category,1036,775,Others,others,1036
+category.fourth_level_category,1037,776,Others,others,1037
+category.fourth_level_category,1038,777,Others,others,1038
+category.fourth_level_category,1039,778,Others,others,1039
+category.fourth_level_category,1040,779,Others,others,1040
+category.fourth_level_category,1041,780,Others,others,1041
+category.fourth_level_category,1042,781,Others,others,1042
+category.fourth_level_category,1043,782,Others,others,1043
+category.fourth_level_category,1044,783,Others,others,1044
+category.fourth_level_category,1045,784,Others,others,1045
+category.fourth_level_category,1046,785,Others,others,1046
+category.fourth_level_category,1047,786,Others,others,1047
+category.fourth_level_category,1048,787,Others,others,1048
+category.fourth_level_category,1049,788,Others,others,1049
+category.fourth_level_category,1050,789,Others,others,1050
+category.fourth_level_category,1051,790,Others,others,1051
+category.fourth_level_category,1052,791,Others,others,1052
+category.fourth_level_category,1053,792,Others,others,1053
+category.fourth_level_category,1054,793,Others,others,1054
+category.fourth_level_category,1055,794,Others,others,1055
+category.fourth_level_category,1056,795,Others,others,1056
+category.fourth_level_category,1057,796,Others,others,1057
+category.fourth_level_category,1058,797,Others,others,1058
+category.fourth_level_category,1059,798,Others,others,1059
+category.fourth_level_category,1060,799,Others,others,1060
+category.fourth_level_category,1061,800,Others,others,1061
+category.fourth_level_category,1062,801,Others,others,1062
+category.fourth_level_category,1063,802,Others,others,1063
+category.fourth_level_category,1064,803,Others,others,1064
+category.fourth_level_category,1065,804,Others,others,1065
+category.fourth_level_category,1066,805,Others,others,1066
+category.fourth_level_category,1067,806,Others,others,1067
+category.fourth_level_category,1068,807,Others,others,1068
+category.fourth_level_category,1069,808,Others,others,1069
+category.fourth_level_category,1070,809,Others,others,1070
+category.fourth_level_category,1071,810,Others,others,1071
+category.fourth_level_category,1072,811,Fishing Hooks,fishing-hooks,1072
+category.fourth_level_category,1073,811,Fishing Rods & Reels,fishing-rods-reels,1073
+category.fourth_level_category,1074,811,Fish Finders,fish-finders,1074
+category.fourth_level_category,1075,811,Fishing Lines,fishing-lines,1075
+category.fourth_level_category,1076,811,Lures & Baits,lures-baits,1076
+category.fourth_level_category,1077,811,Fishing Bags,fishing-bags,1077
+category.fourth_level_category,1078,811,Fishing Nets,fishing-nets,1078
+category.fourth_level_category,1079,811,Others,others,1079
+category.fourth_level_category,1080,812,Bicycles,bicycles,1080
+category.fourth_level_category,1081,812,Bicycle Parts & Accessories,bicycle-parts-accessories,1081
+category.fourth_level_category,1082,812,Cycling Helmets,cycling-helmets,1082
+category.fourth_level_category,1083,812,Others,others,1083
+category.fourth_level_category,1084,813,Camping Cookware,camping-cookware,1084
+category.fourth_level_category,1085,813,Camping Lamps & Flashlights,camping-lamps-flashlights,1085
+category.fourth_level_category,1086,813,Tents & Tent Accessories,tents-tent-accessories,1086
+category.fourth_level_category,1087,813,Sleeping Bags,sleeping-bags,1087
+category.fourth_level_category,1088,813,"Binoculars, Monoculars & Telescopes",binoculars-monoculars-telescopes,1088
+category.fourth_level_category,1089,813,Compasses,compasses,1089
+category.fourth_level_category,1090,813,Camping Knives & Survival Kits,camping-knives-survival-kits,1090
+category.fourth_level_category,1091,813,Hammocks,hammocks,1091
+category.fourth_level_category,1092,813,Hiking Sticks,hiking-sticks,1092
+category.fourth_level_category,1093,813,Picnic Mats & Baskets,picnic-mats-baskets,1093
+category.fourth_level_category,1094,813,Others,others,1094
+category.fourth_level_category,1095,814,Others,others,1095
+category.fourth_level_category,1096,815,Skateboards & Roller Blades,skateboards-roller-blades,1096
+category.fourth_level_category,1097,815,Scooters & Unicycles,scooters-unicycles,1097
+category.fourth_level_category,1098,815,Segways & Hoverboards,segways-hoverboards,1098
+category.fourth_level_category,1099,815,Helmets & Protective Gears,helmets-protective-gears,1099
+category.fourth_level_category,1100,815,Others,others,1100
+category.fourth_level_category,1101,816,Bows,bows,1101
+category.fourth_level_category,1102,816,Arrows,arrows,1102
+category.fourth_level_category,1103,816,Others,others,1103
+category.fourth_level_category,1104,817,Balls,balls,1104
+category.fourth_level_category,1105,817,Goalkeeper Gloves & Shin Guards,goalkeeper-gloves-shin-guards,1105
+category.fourth_level_category,1106,817,Goal Posts & Nets,goal-posts-nets,1106
+category.fourth_level_category,1107,817,Others,others,1107
+category.fourth_level_category,1108,818,Basket Balls,basket-balls,1108
+category.fourth_level_category,1109,818,Basketball Rings,basketball-rings,1109
+category.fourth_level_category,1110,818,Others,others,1110
+category.fourth_level_category,1111,819,Volley Balls,volley-balls,1111
+category.fourth_level_category,1112,819,Volley Nets,volley-nets,1112
+category.fourth_level_category,1113,819,Others,others,1113
+category.fourth_level_category,1114,820,Badminton Rackets,badminton-rackets,1114
+category.fourth_level_category,1115,820,Shuttlecocks,shuttlecocks,1115
+category.fourth_level_category,1116,820,Badminton Nets,badminton-nets,1116
+category.fourth_level_category,1117,820,Others,others,1117
+category.fourth_level_category,1118,821,Tennis Rackets,tennis-rackets,1118
+category.fourth_level_category,1119,821,Tennis Balls,tennis-balls,1119
+category.fourth_level_category,1120,821,Tennis Nets,tennis-nets,1120
+category.fourth_level_category,1121,821,Others,others,1121
+category.fourth_level_category,1122,822,Table Tennis Balls,table-tennis-balls,1122
+category.fourth_level_category,1123,822,Table Tennis Bats,table-tennis-bats,1123
+category.fourth_level_category,1124,822,Table Tennis Nets,table-tennis-nets,1124
+category.fourth_level_category,1125,822,Others,others,1125
+category.fourth_level_category,1126,823,Punching Bags & Paddings,punching-bags-paddings,1126
+category.fourth_level_category,1127,823,Martial Arts Belts,martial-arts-belts,1127
+category.fourth_level_category,1128,823,"Gloves, Wraps & Helmets",gloves-wraps-helmets,1128
+category.fourth_level_category,1129,823,Others,others,1129
+category.fourth_level_category,1130,824,Golf Balls,golf-balls,1130
+category.fourth_level_category,1131,824,Golf Clubs,golf-clubs,1131
+category.fourth_level_category,1132,824,Gears &Training Equipment,gears-training-equipment,1132
+category.fourth_level_category,1133,824,Golf Bags & Organizers,golf-bags-organizers,1133
+category.fourth_level_category,1134,824,Others,others,1134
+category.fourth_level_category,1135,825,Others,others,1135
+category.fourth_level_category,1136,826,Others,others,1136
+category.fourth_level_category,1137,827,Others,others,1137
+category.fourth_level_category,1138,828,Others,others,1138
+category.fourth_level_category,1139,829,Others,others,1139
+category.fourth_level_category,1140,830,Others,others,1140
+category.fourth_level_category,1141,831,Swimming Caps,swimming-caps,1141
+category.fourth_level_category,1142,831,Swimming Goggles,swimming-goggles,1142
+category.fourth_level_category,1143,831,Swimming Boards,swimming-boards,1143
+category.fourth_level_category,1144,831,Diving Flashlights,diving-flashlights,1144
+category.fourth_level_category,1145,831,Diving Masks,diving-masks,1145
+category.fourth_level_category,1146,831,Flippers,flippers,1146
+category.fourth_level_category,1147,831,Life Jackets,life-jackets,1147
+category.fourth_level_category,1148,831,Others,others,1148
+category.fourth_level_category,1149,832,Others,others,1149
+category.fourth_level_category,1150,833,Yoga Mats,yoga-mats,1150
+category.fourth_level_category,1151,833,"Yoga Blocks, Rings & Foam Rollers",yoga-blocks-rings-foam-rollers,1151
+category.fourth_level_category,1152,833,Resistance Bands,resistance-bands,1152
+category.fourth_level_category,1153,833,Others,others,1153
+category.fourth_level_category,1154,834,Weight Training,weight-training,1154
+category.fourth_level_category,1155,834,Skipping Ropes,skipping-ropes,1155
+category.fourth_level_category,1156,834,Gym Balls,gym-balls,1156
+category.fourth_level_category,1157,834,Fitness Machines,fitness-machines,1157
+category.fourth_level_category,1158,834,Ab Rollers,ab-rollers,1158
+category.fourth_level_category,1159,834,Pull Up & Push Up Bars,pull-up-push-up-bars,1159
+category.fourth_level_category,1160,834,Others,others,1160
+category.fourth_level_category,1161,835,Others,others,1161
+category.fourth_level_category,1162,836,Others,others,1162
+category.fourth_level_category,1163,837,Others,others,1163
+category.fourth_level_category,1164,838,Others,others,1164
+category.fourth_level_category,1165,839,Others,others,1165
+category.fourth_level_category,1166,840,Others,others,1166
+category.fourth_level_category,1167,841,Others,others,1167
+category.fourth_level_category,1168,842,Others,others,1168
+category.fourth_level_category,1169,843,Others,others,1169
+category.fourth_level_category,1170,844,Others,others,1170
+category.fourth_level_category,1171,845,Others,others,1171
+category.fourth_level_category,1172,846,Others,others,1172
+category.fourth_level_category,1173,847,Others,others,1173
+category.fourth_level_category,1174,848,Others,others,1174
+category.fourth_level_category,1175,849,Others,others,1175
+category.fourth_level_category,1176,850,Others,others,1176
+category.fourth_level_category,1177,851,Others,others,1177
+category.fourth_level_category,1178,852,Others,others,1178
+category.fourth_level_category,1179,853,Others,others,1179
+category.fourth_level_category,1180,854,Others,others,1180
+category.fourth_level_category,1181,855,Others,others,1181
+category.fourth_level_category,1182,856,Others,others,1182
+category.fourth_level_category,1183,857,Others,others,1183
+category.fourth_level_category,1184,858,Others,others,1184
+category.fourth_level_category,1185,859,Others,others,1185
+category.fourth_level_category,1186,860,Others,others,1186
+category.fourth_level_category,1187,861,Others,others,1187
+category.fourth_level_category,1188,862,Others,others,1188
+category.fourth_level_category,1189,863,Others,others,1189
+category.fourth_level_category,1190,864,Others,others,1190
+category.fourth_level_category,1191,865,Others,others,1191
+category.fourth_level_category,1192,866,Others,others,1192
+category.fourth_level_category,1193,867,Others,others,1193
+category.fourth_level_category,1194,868,Others,others,1194
+category.fourth_level_category,1195,869,Others,others,1195
+category.fourth_level_category,1196,870,Others,others,1196
+category.fourth_level_category,1197,871,Others,others,1197
+category.fourth_level_category,1198,872,Others,others,1198
+category.fourth_level_category,1199,873,Others,others,1199
+category.fourth_level_category,1200,874,Others,others,1200
+category.fourth_level_category,1201,875,Others,others,1201
+category.fourth_level_category,1202,876,Others,others,1202
+category.fourth_level_category,1203,877,Others,others,1203
+category.fourth_level_category,1204,878,Others,others,1204
+category.fourth_level_category,1205,879,Others,others,1205
+category.fourth_level_category,1206,880,Others,others,1206
+category.fourth_level_category,1207,881,Others,others,1207
+category.fourth_level_category,1208,882,Others,others,1208
+category.fourth_level_category,1209,883,Others,others,1209
+category.fourth_level_category,1210,884,Others,others,1210
+category.fourth_level_category,1211,885,Others,others,1211
+category.fourth_level_category,1212,886,Others,others,1212
+category.fourth_level_category,1213,887,Others,others,1213
+category.fourth_level_category,1214,888,Others,others,1214
+category.fourth_level_category,1215,889,Others,others,1215
+category.fourth_level_category,1216,890,Others,others,1216
+category.fourth_level_category,1217,891,Others,others,1217
+category.fourth_level_category,1218,892,Others,others,1218
+category.fourth_level_category,1219,893,Others,others,1219
+category.fourth_level_category,1220,894,Others,others,1220
+category.fourth_level_category,1221,895,Others,others,1221
+category.fourth_level_category,1222,896,Others,others,1222
+category.fourth_level_category,1223,897,Others,others,1223
+category.fourth_level_category,1224,898,Others,others,1224
+category.fourth_level_category,1225,899,Others,others,1225
+category.fourth_level_category,1226,900,Others,others,1226
+category.fourth_level_category,1227,901,Others,others,1227
+category.fourth_level_category,1228,902,Others,others,1228
+category.fourth_level_category,1229,903,Others,others,1229
+category.fourth_level_category,1230,904,Others,others,1230
+category.fourth_level_category,1231,905,Others,others,1231
+category.fourth_level_category,1232,906,Others,others,1232
+category.fourth_level_category,1233,907,Others,others,1233
+category.fourth_level_category,1234,908,Others,others,1234
+category.fourth_level_category,1235,909,Others,others,1235
+category.fourth_level_category,1236,910,Others,others,1236
+category.fourth_level_category,1237,911,Others,others,1237
+category.fourth_level_category,1238,912,Others,others,1238
+category.fourth_level_category,1239,913,Others,others,1239
+category.fourth_level_category,1240,914,Others,others,1240
+category.fourth_level_category,1241,915,Others,others,1241
+category.fourth_level_category,1242,916,Others,others,1242
+category.fourth_level_category,1243,917,Others,others,1243
+category.fourth_level_category,1244,918,Others,others,1244
+category.fourth_level_category,1245,919,Others,others,1245
+category.fourth_level_category,1246,920,Others,others,1246
+category.fourth_level_category,1247,921,Others,others,1247
+category.fourth_level_category,1248,922,Others,others,1248
+category.fourth_level_category,1249,923,Others,others,1249
+category.fourth_level_category,1250,924,Others,others,1250
+category.fourth_level_category,1251,925,Others,others,1251
+category.fourth_level_category,1252,926,Others,others,1252
+category.fourth_level_category,1253,927,Others,others,1253
+category.fourth_level_category,1254,928,Others,others,1254
+category.fourth_level_category,1255,929,Others,others,1255
+category.fourth_level_category,1256,930,Others,others,1256
+category.fourth_level_category,1257,931,Others,others,1257
+category.fourth_level_category,1258,932,Others,others,1258
+category.fourth_level_category,1259,933,Others,others,1259
+category.fourth_level_category,1260,934,Others,others,1260
+category.fourth_level_category,1261,935,Others,others,1261
+category.fourth_level_category,1262,936,Others,others,1262
+category.fourth_level_category,1263,937,Others,others,1263
+category.fourth_level_category,1264,938,Others,others,1264
+category.fourth_level_category,1265,939,Others,others,1265
+category.fourth_level_category,1266,940,Others,others,1266
+category.fourth_level_category,1267,941,Others,others,1267
+category.fourth_level_category,1268,942,Others,others,1268
+category.fourth_level_category,1269,943,Others,others,1269
+category.fourth_level_category,1270,944,Others,others,1270
+category.fourth_level_category,1271,945,Others,others,1271
+category.fourth_level_category,1272,946,Others,others,1272
+category.fourth_level_category,1273,947,Others,others,1273
+category.fourth_level_category,1274,948,Others,others,1274
+category.fourth_level_category,1275,949,Others,others,1275
+category.fourth_level_category,1276,950,Others,others,1276
+category.fourth_level_category,1277,951,Others,others,1277
+category.fourth_level_category,1278,952,Others,others,1278
+category.fourth_level_category,1279,953,Others,others,1279
+category.fourth_level_category,1280,954,Ukuleles,ukuleles,1280
+category.fourth_level_category,1281,954,Guitars & Bass Guitars,guitars-bass-guitars,1281
+category.fourth_level_category,1282,954,Others,others,1282
+category.fourth_level_category,1283,955,Others,others,1283
+category.fourth_level_category,1284,956,Others,others,1284
+category.fourth_level_category,1285,957,Others,others,1285
+category.fourth_level_category,1286,958,Others,others,1286
+category.fourth_level_category,1287,959,Others,others,1287
+category.fourth_level_category,1288,960,Others,others,1288
+category.fourth_level_category,1289,961,Others,others,1289
+category.fourth_level_category,1290,962,Others,others,1290
+category.fourth_level_category,1291,963,Others,others,1291
+category.fourth_level_category,1292,964,Others,others,1292
+category.fourth_level_category,1293,965,Others,others,1293
+category.fourth_level_category,1294,966,Others,others,1294
+category.fourth_level_category,1295,967,Others,others,1295
+category.fourth_level_category,1296,968,Others,others,1296
+category.fourth_level_category,1297,969,Others,others,1297
+category.fourth_level_category,1298,970,Others,others,1298
+category.fourth_level_category,1299,971,Others,others,1299
+category.fourth_level_category,1300,972,Others,others,1300
+category.fourth_level_category,1301,973,Others,others,1301
+category.fourth_level_category,1302,974,Others,others,1302
+category.fourth_level_category,1303,975,Others,others,1303
+category.fourth_level_category,1304,976,Others,others,1304
+category.fourth_level_category,1305,977,Others,others,1305
+category.fourth_level_category,1306,978,Others,others,1306
+category.fourth_level_category,1307,979,Others,others,1307
+category.fourth_level_category,1308,980,Others,others,1308
+category.fourth_level_category,1309,981,Others,others,1309
+category.fourth_level_category,1310,982,Others,others,1310
+category.fourth_level_category,1311,983,Others,others,1311
+category.fourth_level_category,1312,984,Others,others,1312
+category.fourth_level_category,1313,985,Others,others,1313
+category.fourth_level_category,1314,986,Others,others,1314
+category.fourth_level_category,1315,987,Others,others,1315
+category.fourth_level_category,1316,988,Others,others,1316
+category.fourth_level_category,1317,989,Others,others,1317
+category.fourth_level_category,1318,990,Others,others,1318
+category.fourth_level_category,1319,991,Others,others,1319
+category.fourth_level_category,1320,992,Pistons,pistons,1320
+category.fourth_level_category,1321,992,Air Filters,air-filters,1321
+category.fourth_level_category,1322,992,Oil Filters,oil-filters,1322
+category.fourth_level_category,1323,992,Others,others,1323
+category.fourth_level_category,1324,993,Others,others,1324
+category.fourth_level_category,1325,994,Others,others,1325
+category.fourth_level_category,1326,995,Ignition,ignition,1326
+category.fourth_level_category,1327,995,Batteries & Accessories,batteries-accessories,1327
+category.fourth_level_category,1328,995,Lighting,lighting,1328
+category.fourth_level_category,1329,995,Others,others,1329
+category.fourth_level_category,1330,996,Others,others,1330
+category.fourth_level_category,1331,997,Others,others,1331
+category.fourth_level_category,1332,998,Others,others,1332
+category.fourth_level_category,1333,999,Others,others,1333
+category.fourth_level_category,1334,1000,Others,others,1334
+category.fourth_level_category,1335,1001,Others,others,1335
+category.fourth_level_category,1336,1002,Others,others,1336
+category.fourth_level_category,1337,1003,Others,others,1337
+category.fourth_level_category,1338,1004,Others,others,1338
+category.fourth_level_category,1339,1005,Others,others,1339
+category.fourth_level_category,1340,1006,Others,others,1340
+category.fourth_level_category,1341,1007,Others,others,1341
+category.fourth_level_category,1342,1008,Others,others,1342
+category.fourth_level_category,1343,1009,Others,others,1343
+category.fourth_level_category,1344,1010,Others,others,1344
+category.fourth_level_category,1345,1011,Brake Fluids,brake-fluids,1345
+category.fourth_level_category,1346,1011,Transmissions Fluids,transmissions-fluids,1346
+category.fourth_level_category,1347,1011,Others,others,1347
+category.fourth_level_category,1348,1012,Others,others,1348
+category.fourth_level_category,1349,1013,Others,others,1349
+category.fourth_level_category,1350,1014,Others,others,1350
+category.fourth_level_category,1351,1015,Others,others,1351
+category.fourth_level_category,1352,1016,Others,others,1352
+category.fourth_level_category,1353,1017,Others,others,1353
+category.fourth_level_category,1354,1018,Others,others,1354
+category.fourth_level_category,1355,1019,Others,others,1355
+category.fourth_level_category,1356,1020,Others,others,1356
+category.fourth_level_category,1357,1021,Others,others,1357
+category.fourth_level_category,1358,1022,Others,others,1358
+category.fourth_level_category,1359,1023,Others,others,1359
+category.fourth_level_category,1360,1024,Radiators,radiators,1360
+category.fourth_level_category,1361,1024,Pistons,pistons,1361
+category.fourth_level_category,1362,1024,CDI & ECU,cdi-ecu,1362
+category.fourth_level_category,1363,1024,Spark Plugs,spark-plugs,1363
+category.fourth_level_category,1364,1024,Ignition Coils,ignition-coils,1364
+category.fourth_level_category,1365,1024,V-Belts,v-belts,1365
+category.fourth_level_category,1366,1024,Air Filters,air-filters,1366
+category.fourth_level_category,1367,1024,Others,others,1367
+category.fourth_level_category,1368,1025,Others,others,1368
+category.fourth_level_category,1369,1026,Others,others,1369
+category.fourth_level_category,1370,1027,Others,others,1370
+category.fourth_level_category,1371,1028,Chains & Gears,chains-gears,1371
+category.fourth_level_category,1372,1028,Clutches,clutches,1372
+category.fourth_level_category,1373,1028,Bearings,bearings,1373
+category.fourth_level_category,1374,1028,Others,others,1374
+category.fourth_level_category,1375,1029,Others,others,1375
+category.fourth_level_category,1376,1030,Others,others,1376
+category.fourth_level_category,1377,1031,Others,others,1377
+category.fourth_level_category,1378,1032,Others,others,1378
+category.fourth_level_category,1379,1033,Others,others,1379
+category.fourth_level_category,1380,1034,Others,others,1380
+category.fourth_level_category,1381,1035,Others,others,1381
+category.fourth_level_category,1382,1036,Others,others,1382
+category.fourth_level_category,1383,1037,Others,others,1383
+category.fourth_level_category,1384,1038,Others,others,1384
+category.fourth_level_category,1385,1039,Others,others,1385
+category.fourth_level_category,1386,1040,Others,others,1386
+category.fourth_level_category,1387,1041,Others,others,1387
+category.fourth_level_category,1388,1042,Others,others,1388
+category.fourth_level_category,1389,1043,Others,others,1389
+category.fourth_level_category,1390,1044,Others,others,1390
+category.fourth_level_category,1391,1045,Others,others,1391
+category.fourth_level_category,1392,1046,Others,others,1392
+category.fourth_level_category,1393,1047,Others,others,1393
+category.fourth_level_category,1394,1048,Others,others,1394
+category.fourth_level_category,1395,1049,Others,others,1395
+category.fourth_level_category,1396,1050,Others,others,1396
+category.fourth_level_category,1397,1051,Others,others,1397
+category.fourth_level_category,1398,1052,Others,others,1398
+category.fourth_level_category,1399,1053,Others,others,1399
+category.fourth_level_category,1400,1054,Others,others,1400
+category.fourth_level_category,1401,1055,Others,others,1401
+category.fourth_level_category,1402,1056,Others,others,1402
+category.fourth_level_category,1403,1057,Others,others,1403
+category.fourth_level_category,1404,1058,Others,others,1404
+category.fourth_level_category,1405,1059,Others,others,1405
+category.fourth_level_category,1406,1060,Others,others,1406
+category.fourth_level_category,1407,1061,Others,others,1407
+category.fourth_level_category,1408,1062,Others,others,1408
+category.fourth_level_category,1409,1063,Others,others,1409
+category.fourth_level_category,1410,1064,Others,others,1410
+category.fourth_level_category,1411,1065,Others,others,1411
+category.fourth_level_category,1412,1066,Others,others,1412
+category.fourth_level_category,1413,1067,Others,others,1413
+category.fourth_level_category,1414,1068,Others,others,1414
+category.fourth_level_category,1415,1069,Others,others,1415
+category.fourth_level_category,1416,1070,Others,others,1416
+category.fourth_level_category,1417,1071,Others,others,1417
+category.fourth_level_category,1418,1072,Others,others,1418
+category.fourth_level_category,1419,1073,Others,others,1419
+category.fourth_level_category,1420,1074,Others,others,1420
+category.fourth_level_category,1421,1075,Others,others,1421
+category.fourth_level_category,1422,1076,Others,others,1422
+category.fourth_level_category,1423,1077,Others,others,1423
+category.fourth_level_category,1424,1078,Others,others,1424
+category.fourth_level_category,1425,1079,Others,others,1425
+category.fourth_level_category,1426,1080,Others,others,1426
+category.fourth_level_category,1427,1081,Others,others,1427
+category.fourth_level_category,1428,1082,Others,others,1428
+category.fourth_level_category,1429,1083,Others,others,1429
+category.fourth_level_category,1430,1084,Others,others,1430
+category.fourth_level_category,1431,1085,Others,others,1431
+category.fourth_level_category,1432,1086,Others,others,1432
+category.fourth_level_category,1433,1087,Others,others,1433
+category.fourth_level_category,1434,1088,Others,others,1434
+category.fourth_level_category,1435,1089,Others,others,1435
+category.fourth_level_category,1436,1090,Others,others,1436
+category.fourth_level_category,1437,1091,Others,others,1437
+category.fourth_level_category,1438,1092,Others,others,1438
+category.fourth_level_category,1439,1093,Others,others,1439
+category.fourth_level_category,1440,1094,Others,others,1440
+category.fourth_level_category,1441,1095,Others,others,1441
+category.fourth_level_category,1442,1096,Others,others,1442
+category.fourth_level_category,1443,1097,Others,others,1443
+category.fourth_level_category,1444,1098,Others,others,1444
+category.fourth_level_category,1445,1099,Others,others,1445
+category.fourth_level_category,1446,1100,Others,others,1446
+category.fourth_level_category,1447,1101,Others,others,1447
+category.fourth_level_category,1448,1102,Others,others,1448
+category.fourth_level_category,1449,1103,Others,others,1449
+category.fourth_level_category,1450,1104,Others,others,1450
+category.fourth_level_category,1451,1105,Others,others,1451
+category.fourth_level_category,1452,1106,Others,others,1452
+category.fourth_level_category,1453,1107,Others,others,1453
+category.fourth_level_category,1454,1108,Others,others,1454
+category.fourth_level_category,1455,1109,Others,others,1455
+category.fourth_level_category,1456,1110,Others,others,1456
+category.fourth_level_category,1457,1111,Others,others,1457
+category.fourth_level_category,1458,1112,Others,others,1458
+category.fourth_level_category,1459,1113,Others,others,1459
+category.fourth_level_category,1460,1114,Others,others,1460
+category.fourth_level_category,1461,1115,Others,others,1461
+category.fourth_level_category,1462,1116,Others,others,1462
+category.fourth_level_category,1463,1117,Others,others,1463
+category.fourth_level_category,1464,1118,Others,others,1464
+category.fourth_level_category,1465,1119,Others,others,1465
+category.fourth_level_category,1466,1120,Others,others,1466
+category.fourth_level_category,1467,1121,Others,others,1467
+category.fourth_level_category,1468,1122,Others,others,1468
+category.fourth_level_category,1469,1123,Others,others,1469
+category.fourth_level_category,1470,1124,Others,others,1470
+category.fourth_level_category,1471,1125,Others,others,1471
+category.fourth_level_category,1472,1126,Others,others,1472
+category.fourth_level_category,1473,1127,Others,others,1473
+category.fourth_level_category,1474,1128,Others,others,1474
+category.fourth_level_category,1475,1129,Others,others,1475
+category.fourth_level_category,1476,1130,Others,others,1476
+category.fourth_level_category,1477,1131,Others,others,1477
+category.fourth_level_category,1478,1132,Others,others,1478
+category.fourth_level_category,1479,1133,Others,others,1479
+category.fourth_level_category,1480,1134,Others,others,1480
+category.fourth_level_category,1481,1135,Others,others,1481
+category.fourth_level_category,1482,1136,Others,others,1482
+category.fourth_level_category,1483,1137,Others,others,1483
+category.fourth_level_category,1484,1138,Others,others,1484
+category.fourth_level_category,1485,1139,Others,others,1485
+category.fourth_level_category,1486,1140,Others,others,1486
+category.fourth_level_category,1487,1141,Others,others,1487
+category.fourth_level_category,1488,1142,Others,others,1488
+category.fourth_level_category,1489,1143,Others,others,1489
+category.fourth_level_category,1490,1144,Others,others,1490
+category.fourth_level_category,1491,1145,Others,others,1491
+category.fourth_level_category,1492,1146,Others,others,1492
+category.fourth_level_category,1493,1147,Others,others,1493
+category.fourth_level_category,1494,1148,Others,others,1494
+category.fourth_level_category,1495,1149,Others,others,1495
+category.fourth_level_category,1496,1150,Others,others,1496
+category.fourth_level_category,1497,1151,Others,others,1497
+category.fourth_level_category,1498,1152,Others,others,1498
+category.fourth_level_category,1499,1153,Others,others,1499
+category.fourth_level_category,1500,1154,Others,others,1500
+category.fourth_level_category,1501,1155,Others,others,1501
+category.fourth_level_category,1502,1156,Others,others,1502
+category.fourth_level_category,1503,1157,Others,others,1503
+category.fourth_level_category,1504,1158,Others,others,1504
+category.fourth_level_category,1505,1159,Others,others,1505
+category.fourth_level_category,1506,1160,Others,others,1506
+category.fourth_level_category,1507,1161,Others,others,1507
+category.fourth_level_category,1508,1162,Others,others,1508
+category.fourth_level_category,1509,1163,Others,others,1509
+category.fourth_level_category,1510,1164,Others,others,1510
+category.fourth_level_category,1511,1165,Others,others,1511
+category.fourth_level_category,1512,1166,Others,others,1512
+category.fourth_level_category,1513,1167,Others,others,1513
+category.fourth_level_category,1514,1168,Others,others,1514
+category.fourth_level_category,1515,1169,Others,others,1515
+category.fourth_level_category,1516,1170,Others,others,1516
+category.fourth_level_category,1517,1171,Others,others,1517
+category.fourth_level_category,1518,1172,Others,others,1518
+category.fourth_level_category,1519,1173,Others,others,1519
+category.fourth_level_category,1520,1174,Others,others,1520
+category.fourth_level_category,1521,1175,Others,others,1521
+category.fourth_level_category,1522,1176,Others,others,1522
+category.fourth_level_category,1523,1177,Others,others,1523
+category.fourth_level_category,1524,1178,Others,others,1524
+category.fourth_level_category,1525,1179,Others,others,1525
+category.fourth_level_category,1526,1180,Others,others,1526
+category.fourth_level_category,1527,1181,Others,others,1527
+category.fourth_level_category,1528,1182,Others,others,1528
+category.fourth_level_category,1529,1183,Others,others,1529
+category.fourth_level_category,1530,1184,Others,others,1530
+category.fourth_level_category,1531,1185,Others,others,1531
+category.fourth_level_category,1532,1186,Others,others,1532
+category.fourth_level_category,1533,1187,Others,others,1533
+category.fourth_level_category,1534,1188,Others,others,1534
+category.fourth_level_category,1535,1189,Others,others,1535
+category.fourth_level_category,1536,1190,Others,others,1536
+category.fourth_level_category,1537,1191,Others,others,1537
+category.fourth_level_category,1538,1192,Others,others,1538
+category.fourth_level_category,1539,1193,Others,others,1539
+category.fourth_level_category,1540,1194,Others,others,1540
+category.fourth_level_category,1541,1195,Others,others,1541
+category.fourth_level_category,1542,1196,Others,others,1542
+category.fourth_level_category,1543,1197,Others,others,1543
+category.fourth_level_category,1544,1198,Others,others,1544
+category.fourth_level_category,1545,1199,Others,others,1545
+category.fourth_level_category,1546,1200,Others,others,1546
+category.fourth_level_category,1547,1201,Others,others,1547
+category.fourth_level_category,1548,1202,Others,others,1548
+category.fourth_level_category,1549,1203,Others,others,1549
+category.fourth_level_category,1550,1204,Others,others,1550
+category.fourth_level_category,1551,1205,Others,others,1551
+category.fourth_level_category,1552,1206,Others,others,1552
+category.fourth_level_category,1553,1207,Others,others,1553
+category.fourth_level_category,1554,1208,Others,others,1554
+category.fourth_level_category,1555,1209,Others,others,1555
+category.fourth_level_category,1556,1210,Others,others,1556
+category.fourth_level_category,1557,1211,Others,others,1557
+category.fourth_level_category,1558,1212,Others,others,1558
+category.fourth_level_category,1559,1213,Others,others,1559
+category.fourth_level_category,1560,1214,Others,others,1560
+category.fourth_level_category,1561,1215,Others,others,1561
+category.fourth_level_category,1562,1216,Others,others,1562
+category.fourth_level_category,1563,1217,Others,others,1563
+category.fourth_level_category,1564,1218,Others,others,1564
+category.fourth_level_category,1565,1219,Others,others,1565
+category.fourth_level_category,1566,1220,Others,others,1566
+category.fourth_level_category,1567,1221,Others,others,1567
+category.fourth_level_category,1568,1222,Others,others,1568
+category.fourth_level_category,1569,1223,Others,others,1569
+category.fourth_level_category,1570,1224,Others,others,1570
+category.fourth_level_category,1571,1225,Others,others,1571
+category.fourth_level_category,1572,1226,Others,others,1572
+category.fourth_level_category,1573,1227,Others,others,1573
+category.fourth_level_category,1574,1228,Others,others,1574
+category.fourth_level_category,1575,1229,Others,others,1575
+category.fourth_level_category,1576,1230,Others,others,1576
+category.fourth_level_category,1577,1231,Others,others,1577
+category.fourth_level_category,1578,1232,Others,others,1578
+category.fourth_level_category,1579,1233,Others,others,1579
+category.fourth_level_category,1580,1234,Others,others,1580
+category.fourth_level_category,1581,1235,Others,others,1581
+category.fourth_level_category,1582,1236,Others,others,1582
+category.fourth_level_category,1583,1237,Others,others,1583
+category.fourth_level_category,1584,1238,Others,others,1584
+category.fourth_level_category,1585,1239,Others,others,1585
+category.fourth_level_category,1586,1240,Others,others,1586
+category.fourth_level_category,1587,1241,Others,others,1587
+category.fourth_level_category,1588,1242,Others,others,1588
+category.fourth_level_category,1589,1243,Others,others,1589
+category.fourth_level_category,1590,1244,Others,others,1590
+category.fourth_level_category,1591,1245,Others,others,1591
+category.fourth_level_category,1592,1246,Others,others,1592
+category.fourth_level_category,1593,1247,Others,others,1593
+category.fourth_level_category,1594,1248,Others,others,1594
+category.fourth_level_category,1595,1249,Others,others,1595
+category.fourth_level_category,1596,1250,Others,others,1596
+category.fourth_level_category,1597,1251,Others,others,1597
+category.fourth_level_category,1598,1252,Others,others,1598
+category.fourth_level_category,1599,1253,Others,others,1599
+category.fourth_level_category,1600,1254,Others,others,1600
+category.fourth_level_category,1601,1255,Others,others,1601
+category.fourth_level_category,1602,1256,Others,others,1602
+category.fourth_level_category,1603,1257,Others,others,1603
+category.fourth_level_category,1604,1258,Others,others,1604
+category.fourth_level_category,1605,1259,Others,others,1605
+category.fourth_level_category,1606,1260,Others,others,1606
+category.fourth_level_category,1607,1261,Others,others,1607
+category.fourth_level_category,1608,1262,Others,others,1608
+category.fourth_level_category,1609,1263,Others,others,1609
+category.fourth_level_category,1610,1264,Others,others,1610
+category.fourth_level_category,1611,1265,Others,others,1611
+category.fourth_level_category,1612,1266,Others,others,1612
+category.fourth_level_category,1613,1267,Others,others,1613
+category.fourth_level_category,1614,1268,Others,others,1614
+category.fourth_level_category,1615,1269,Others,others,1615
+category.fourth_level_category,1616,1270,Others,others,1616
+category.fourth_level_category,1617,1271,Others,others,1617
+category.fourth_level_category,1618,1272,Others,others,1618
+category.fourth_level_category,1619,1273,Others,others,1619
+category.fourth_level_category,1620,1274,Others,others,1620
+category.fourth_level_category,1621,1275,Others,others,1621
+category.fourth_level_category,1622,1276,Others,others,1622
+category.fourth_level_category,1623,1277,Others,others,1623
+category.fourth_level_category,1624,1278,Others,others,1624
+category.fourth_level_category,1625,1279,Others,others,1625
+category.fourth_level_category,1626,1280,Others,others,1626
+category.fourth_level_category,1627,1281,Others,others,1627
+category.fourth_level_category,1628,1282,Others,others,1628
+category.fourth_level_category,1629,1283,Others,others,1629
+category.fourth_level_category,1630,1284,Others,others,1630
+category.fourth_level_category,1631,1285,Others,others,1631
+category.fourth_level_category,1632,1286,Others,others,1632
+category.fourth_level_category,1633,1287,Others,others,1633
+category.fourth_level_category,1634,1288,Others,others,1634
+category.fourth_level_category,1635,1289,Others,others,1635
+category.fourth_level_category,1636,1290,Others,others,1636
+category.fourth_level_category,1637,1291,Others,others,1637
+category.fourth_level_category,1638,1292,Others,others,1638
+category.fourth_level_category,1639,1293,Others,others,1639
+category.fourth_level_category,1640,1294,Others,others,1640
+category.fourth_level_category,1641,1295,Others,others,1641
+category.fourth_level_category,1642,1296,Others,others,1642
+category.fourth_level_category,1643,1297,Others,others,1643
+category.fourth_level_category,1644,1298,Others,others,1644
+category.fourth_level_category,1645,1299,Others,others,1645
+category.fourth_level_category,1646,1300,Others,others,1646
+category.fourth_level_category,1647,1301,Others,others,1647
+category.fourth_level_category,1648,1302,Others,others,1648
+category.fourth_level_category,1649,1303,Others,others,1649
+category.fourth_level_category,1650,1304,Others,others,1650
+category.fourth_level_category,1651,1305,Others,others,1651
+category.fourth_level_category,1652,1306,Others,others,1652
+category.fourth_level_category,1653,1307,Others,others,1653
+category.fourth_level_category,1654,1308,Others,others,1654
+category.fourth_level_category,1655,1309,Others,others,1655
+category.fourth_level_category,1656,1310,Others,others,1656
+category.fourth_level_category,1657,1311,Others,others,1657
+category.fourth_level_category,1658,1312,Others,others,1658
+category.fourth_level_category,1659,1313,Others,others,1659
+category.fourth_level_category,1660,1314,Others,others,1660

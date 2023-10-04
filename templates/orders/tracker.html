@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+      <!-- Navbar 3 Level (Light)-->
+       <div class="page-title-overlap bg-dark pt-4">
+        <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+          <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
+                <li class="breadcrumb-item"><a class="text-nowrap" href="{% url 'home' %}"><i class="ci-home"></i>Home</a></li>
+                <li class="breadcrumb-item text-nowrap"><a href="{% url 'store' %}">shop</a>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+            <h1 class="h3 text-light mb-0">Order Tracker</h1>
+          </div>
+        </div>
+      </div>
+        <!-- Steps-->
+        <div class="container pb-5 mb-sm-4 mt-5 mb-5">
+            <div class="panel-body p30">
+            <div class="justify-content-center row">
+                <div class="class col-md-8">
+              <section class="col-lg-12">
+<!-- Notifications-->
+<!-- <div class="tab-pane fade" id="notifications" role="tabpanel"> -->
+                    <form action="#" method="POST" id="trackingForm">
+                    {% csrf_token %}
+                    <div class="row gx-4 gy-3">
+                        <label class="form-label" for="">Enter order number to track your order </label>
+                    </div>
+                    <div class="row gx-4 gy-3">
+                    <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-fn">Order No</label>
+                        <input type="text" name="ordernumber" class="form-control" id="ordernumber">
+                    </div>
+                    </div> 
+                    <br>
+                    <div class="row gx-4 gy-3">
+                        <div class="col-sm-6">
+                        <label class="form-label" for="dashboard-fn">Email</label>
+                        <input type="text" name="email" class="form-control" id="email">
+                        </div>
+                        </div> 
+                    <br>     
+                    <button type="submit" class="btn btn-primary" >Track Order</button>
+                            
+                    </form> 
+                    <div class="col my-4">
+                        <h2>Your Order Status</h2>
+                        <div class="my-4">
+                            <ul class="list-group" id="items">
+                            Enter your order Id and Email and click Track Order to find details about your order!
+                            </ul>
+                        </div>
+                    </div>
+                    {% if user.is_authenticated %}
+{% include 'chat/partials/chat_bubble.html' %}
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+    
+  <!-- </div> -->
+      
+</section>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script>  
+
+
+
+
+
+$('#trackingForm').submit(function(event) {
+  $('#items').empty();
+  var formData = {
+      'orderId': $('input[name=ordernumber]').val(),
+      'email': $('input[name=email]').val(),
+      'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+  };
+  $.ajax({
+          type: 'POST',
+          url: '{% url "tracker" %}',
+          data: formData,
+          encode: true
+      })
+      .done(function(data) {
+          console.log(data)
+          updates = JSON.parse(data);
+          if (updates.length > 0 & updates != {}) {
+              for (i = 0; i < updates.length; i++) {
+                  let text = updates[i]['text'];
+                  let time = updates[i]['time'];
+                  mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                  ${text}
+                  <span class="badge bg-info ms-2">${time}</span>
+              </li>`
+                  $('#items').append(mystr);
+              }
+          } else {
+              mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                  Sorry, We are not able to fetch this order id, Make sure to type correct order Id.</li>`
+              $('#items').append(mystr);
+          }
+      });
+  event.preventDefault();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,171 @@
+
+{% load static %}
+
+  
+
+
+
+<aside class="col-lg-4">
+    <!-- Sidebar-->
+    <div class="offcanvas offcanvas-collapse bg-white w-100 rounded-3 shadow-lg py-1" id="shop-sidebar" style="max-width: 22rem;">
+      <div class="offcanvas-header align-items-center shadow-sm">
+        <h2 class="h5 mb-0">Filters</h2>
+        <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+        <!-- Categories-->
+        <div class="widget widget-categories mb-4 pb-4 border-bottom">
+          <h3 class="widget-title">Dashboard</h3>
+          
+          <div class="accordion mt-n1" id="shop-categories">
+              
+
+           
+                <div class="accordion-item">
+                    <h3 class="accordion-header"><a class="accordion-button collapsed   {% if 'vendorDashboard' in request.path or '/accounts/vendor/' == request.path %}active{% endif %}" href="#SellerDashboard" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="SellerDashboard">Seller Dashboard</a></h3>
+                    
+                    <div class="accordion-collapse collapse" id="SellerDashboard" data-bs-parent="#shop-categories">
+                      <div class="accordion-body">
+                        <div class="widget widget-links widget-filter">
+                            
+                                <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+
+                                  <li class="widget-list-item widget-filter-item" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendorDashboard' %}"><span class="widget-filter-item-text">Dashboard</span>
+                                  </a></li>
+                                </ul>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header"><a class="accordion-button collapsed" href="#Product" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Product">Product</a></h3>
+                  
+                  <div class="accordion-collapse collapse" id="Product" data-bs-parent="#shop-categories">
+                    <div class="accordion-body">
+                      <div class="widget widget-links widget-filter">
+                          
+                              <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+
+                              
+                                <li class="widget-list-item widget-filter-item {% if 'add-product' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'add_product' %}"><span class="widget-filter-item-text">Add New Product</span>
+                                </a></li>
+                                <li class="widget-list-item widget-filter-item {% if 'product-builder' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'product_builder' %}"><span class="widget-filter-item-text">Update Product</span>
+                                </a></li>
+
+                              </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item border-bottom">
+                  <h3 class="accordion-header"><a class="accordion-button collapsed" href="#upload" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Product">Mass Upload</a></h3>
+                  
+                  <div class="accordion-collapse collapse" id="upload" data-bs-parent="#shop-categories">
+                    <div class="accordion-body">
+                      <div class="widget widget-links widget-filter">
+                          
+                              <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+
+                              
+                                <li class="widget-list-item widget-filter-item {% if 'bulk_product' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'bulk_product' %}"><span class="widget-filter-item-text">Product Bulk Upload</span>
+                                </a></li>
+                            
+
+                              </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header"><a class="accordion-button collapsed" href="#Category" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Product">Categories</a></h3>
+                  
+                  <div class="accordion-collapse collapse" id="Category" data-bs-parent="#shop-categories">
+                    <div class="accordion-body">
+                      <div class="widget widget-links widget-filter">
+                          
+                              <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+
+                              
+                                <li class="widget-list-item widget-filter-item {% if 'vendor_maincategory' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendor_maincategory' %}"><span class="widget-filter-item-text">Add Main Category</span>
+                                  <li class="widget-list-item widget-filter-item {% if 'vendor_cat' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendor_cat' %}"><span class="widget-filter-item-text">Add Category</span>
+                                    <li class="widget-list-item widget-filter-item {% if 'vendor_subcategory' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendor_subcategory' %}"><span class="widget-filter-item-text">Add Sub Category</span>
+                                </a></li>
+                               
+
+                              </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header"><a class="accordion-button collapsed" href="#Order" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Order">Order</a></h3>
+                  
+                  <div class="accordion-collapse collapse" id="Order" data-bs-parent="#shop-categories">
+                    <div class="accordion-body">
+                      <div class="widget widget-links widget-filter">
+                          
+                              <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+    <li class="widget-list-item widget-filter-item {% if '/my_orders/' in request.path or '/order_details/' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendor_my_orders' %}"><span class="widget-filter-item-text">My Orders</span> </a></li>
+    <li class="widget-list-item widget-filter-item {% if '/my_orders/' in request.path or '/order_overview/' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'orders_overview' %}"><span class="widget-filter-item-text">Orders Overview</span></a></li>
+    <li class="widget-list-item widget-filter-item {% if '/my_orders/' in request.path or '/vendorder_cancellation/' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendorder_cancellation' %}"><span class="widget-filter-item-text">Cancellation</span> </a></li>
+    <li class="widget-list-item widget-filter-item {% if '/my_orders/' in request.path or '/return_orders/' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'return_orders' %}"><span class="widget-filter-item-text">Return Orders</span> </a></li>
+    <li class="widget-list-item widget-filter-item {% if '/my_orders/' in request.path or '/vendor_my_returns/' in request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendor_my_returns' %}"><span class="widget-filter-item-text">My Returns</span> </a></li>
+                            </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header"><a class="accordion-button collapsed" href="#freport" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="setting"> Finance Reports</a></h3>
+                  
+                  <div class="accordion-collapse collapse" id="freport" data-bs-parent="#shop-categories">
+                    <div class="accordion-body">
+                      <div class="widget widget-links widget-filter">
+                          
+                              <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+
+                                <li class="widget-list-item widget-filter-item  {% if '/vendor/vendor_balance/' == request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendor_balance' %}"><span class="widget-filter-item-text">My Balance</span>
+                                </a></li>
+                               
+                               
+                                </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                        
+               <div class="accordion-item">
+                  <h3 class="accordion-header"><a class="accordion-button collapsed" href="#setting" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="setting"> Account Setting</a></h3>
+                  
+                  <div class="accordion-collapse collapse" id="setting" data-bs-parent="#shop-categories">
+                    <div class="accordion-body">
+                      <div class="widget widget-links widget-filter">
+                          
+                              <ul class="widget-list widget-filter-list pt-1" style="height: 12rem;" data-simplebar data-simplebar-auto-hide="false">
+
+                                <li class="widget-list-item widget-filter-item  {% if '/vendor/profile/' == request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vprofile' %}"><span class="widget-filter-item-text">Profile info</span>
+                                </a></li>
+                                <li class="widget-list-item widget-filter-item {% if '/vendor/address/' == request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vendor_address' %}"><span class="widget-filter-item-text">My Addresses</span>
+                                </a></li>
+                                <li class="widget-list-item widget-filter-item {% if '/vendor/account/' == request.path %}active{% endif %}" id="catlist"><a class="widget-list-link d-flex justify-content-between align-items-center" href="{% url 'vaccount' %}"><span class="widget-filter-item-text">Account Details</span>
+                                </a></li>
+                               
+                                </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                
+                
+          </div>
+         
+        </div>
+
+      </div>
+    </div>
+  </aside>
